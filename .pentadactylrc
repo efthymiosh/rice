@@ -1,0 +1,12 @@
+"hg7226
+
+loadplugins '\.(js|penta)$'
+group user
+colorscheme dark-pastels
+map -count -modes=n,v j -builtin <count>8j
+map -count -modes=n,v k -builtin <count>8k
+map -count -modes=n,v h -builtin <count>3h
+map -count -modes=n,v l -builtin <count>3l
+set cdpath=''
+
+" vim: set ft=pentadactyl:
