@@ -14,9 +14,7 @@ startup_message off
 #      .      leave color unchanged
 
 # hard status bar at bottom:
-# hardstatus alwayslastline "%{rk}%H %{gk}%c %{yk}%M%d %{wk}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw%?"
-# hardstatus alwayslastline '%{= kd}[ %{G}%H %{g}][%= %{= kB}%?%-Lw%?%{+b r}(%{G}%n*%f %t%?(%u)%?%{r})%{-b B}%?%+Lw%?%?%= %{g}%]'
-hardstatus alwayslastline '%{= kd}[%{D}%H%{= kd}]%{kd}[%= %{= kC}%?%-Lw%?%{+b r}(%{d}%n*%f %t%?(%u)%?%{r})%{-b C}%?%+Lw%?%?%= %{kd}%]'
+hardstatus alwayslastline '%{= kd}[%{D}%H%{= kd}]%{kd}[%= %{= kd}%?%-w%?%{+b g}%n %t%?(%u)%?%{-b kd}%?%+w%?%?%= %{kd}%]'
 
 # window captions
 caption string "%{= kC} %3n %{kd}%t"
