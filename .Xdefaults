@@ -41,13 +41,25 @@
 #define dpt_color15  #ffffef
 #define dpt_cursorColor #A05040
 
+! change to urxvt-unicode for different kinds of headaches
 URxvt*termName: xterm
+! enable blinking cursor
 URxvt*cursorBlink: true
+! true:line cursor / false: block cursor
 URxvt*cursorUnderline: true
+! set transparency
 URxvt*transparent: false
+! remove borders on edge
 URxvt*borderLess: false
 URxvt*externalBorder: 0
 URxvt*internalBorder: 0
+! set urgency when bell rings
+URxvt*urgentOnBell: true
+
+! enable recognition and opening of links
+URxvt*perl-ext-common: default,matcher,vtwheel
+URxvt*matcher.button: 1
+URxvt*urlLauncher: firefox
 
 ! tint with any color; i.e., blue, red, tomato4, olivedrab2, etc.
 !   some nice listings are at:
