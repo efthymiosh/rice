@@ -1,49 +1,53 @@
+! COLORSCHEMES !
+
 ! Dark Pastel !
-#define dark_pastel_foreground #dcdccc
-#define dark_pastel_background #262626
-#define dark_pastel_color0   #3f3f3f
-#define dark_pastel_color1   #705050
-#define dark_pastel_color2   #60b48a
-#define dark_pastel_color3   #dfaf8f
-#define dark_pastel_color4   #9ab9d7
-#define dark_pastel_color5   #dc8cc4
-#define dark_pastel_color6   #8cd1d3
-#define dark_pastel_color7   #dcdccd
-#define dark_pastel_color8   #709080
-#define dark_pastel_color9   #dca3a3
-#define dark_pastel_color10  #72d5a2
-#define dark_pastel_color11  #f0dfaf
-#define dark_pastel_color12  #94c0f3
-#define dark_pastel_color13  #ec93d5
-#define dark_pastel_color14  #93e1e3
-#define dark_pastel_color15  #ffffff
-#define dark_pastel_cursorColor #e79a00
+#define dp_foreground #dcdccc
+#define dp_background #262626
+#define dp_color0   #3f3f3f
+#define dp_color1   #705050
+#define dp_color2   #60b48a
+#define dp_color3   #dfaf8f
+#define dp_color4   #9ab9d7
+#define dp_color5   #dc8cc4
+#define dp_color6   #8cd1d3
+#define dp_color7   #dcdccd
+#define dp_color8   #709080
+#define dp_color9   #dca3a3
+#define dp_color10  #72d5a2
+#define dp_color11  #f0dfaf
+#define dp_color12  #94c0f3
+#define dp_color13  #ec93d5
+#define dp_color14  #93e1e3
+#define dp_color15  #ffffff
+#define dp_cursorColor #e79a00
 ! Dark Pastel Tinted !
-#define dark_pastel_tinted_foreground #dcdcbc
-#define dark_pastel_tinted_background #262626
-#define dark_pastel_tinted_color0   #3f3f3f
-#define dark_pastel_tinted_color1   #705040
-#define dark_pastel_tinted_color2   #60b47a
-#define dark_pastel_tinted_color3   #dfaf7f
-#define dark_pastel_tinted_color4   #9ab9c7
-#define dark_pastel_tinted_color5   #dc8cb4
-#define dark_pastel_tinted_color6   #8cd1c3
-#define dark_pastel_tinted_color7   #dcdcbd
-#define dark_pastel_tinted_color8   #709070
-#define dark_pastel_tinted_color9   #dca393
-#define dark_pastel_tinted_color10  #72d592
-#define dark_pastel_tinted_color11  #f0df9f
-#define dark_pastel_tinted_color12  #94c0e3
-#define dark_pastel_tinted_color13  #ec93c5
-#define dark_pastel_tinted_color14  #93e1d3
-#define dark_pastel_tinted_color15  #ffffef
-#define dark_pastel_tinted_cursorColor #D05040
+#define dpt_foreground #dcdcbc
+#define dpt_background #262626
+#define dpt_color0   #3f3f3f
+#define dpt_color1   #705040
+#define dpt_color2   #60b47a
+#define dpt_color3   #dfaf7f
+#define dpt_color4   #9ab9c7
+#define dpt_color5   #dc8cb4
+#define dpt_color6   #8cd1c3
+#define dpt_color7   #dcdcbd
+#define dpt_color8   #709070
+#define dpt_color9   #dca393
+#define dpt_color10  #72d592
+#define dpt_color11  #f0df9f
+#define dpt_color12  #94c0e3
+#define dpt_color13  #ec93c5
+#define dpt_color14  #93e1d3
+#define dpt_color15  #ffffef
+#define dpt_cursorColor #A05040
 
 URxvt*termName: xterm
-URxvt*cursorUnderline: true
 URxvt*cursorBlink: true
-! transparency - true or false (default)
+URxvt*cursorUnderline: true
 URxvt*transparent: false
+URxvt*borderLess: false
+URxvt*externalBorder: 0
+URxvt*internalBorder: 0
 
 ! tint with any color; i.e., blue, red, tomato4, olivedrab2, etc.
 !   some nice listings are at:
@@ -104,25 +108,25 @@ URxvt*scrollBar_right: false
 ! scrollbar style - rxvt (default), plain, next, or URxvt
 URxvt*scrollstyle: rxvt
 
-URxvt*color0         : dark_pastel_tinted_color0
-URxvt*color1         : dark_pastel_tinted_color1
-URxvt*color2         : dark_pastel_tinted_color2
-URxvt*color3         : dark_pastel_tinted_color3
-URxvt*color4         : dark_pastel_tinted_color4
-URxvt*color5         : dark_pastel_tinted_color5
-URxvt*color6         : dark_pastel_tinted_color6
-URxvt*color7         : dark_pastel_tinted_color7
-URxvt*color8         : dark_pastel_tinted_color8
-URxvt*color9         : dark_pastel_tinted_color9
-URxvt*color10        : dark_pastel_tinted_color10
-URxvt*color11        : dark_pastel_tinted_color11
-URxvt*color12        : dark_pastel_tinted_color12
-URxvt*color13        : dark_pastel_tinted_color13
-URxvt*color14        : dark_pastel_tinted_color14
-URxvt*color15        : dark_pastel_tinted_color15
-URxvt*foreground     : dark_pastel_tinted_foreground
-URxvt*background     : dark_pastel_tinted_background
-URxvt*cursorColor    : dark_pastel_tinted_cursorColor
+URxvt*color0         : dpt_color0
+URxvt*color1         : dpt_color1
+URxvt*color2         : dpt_color2
+URxvt*color3         : dpt_color3
+URxvt*color4         : dpt_color4
+URxvt*color5         : dpt_color5
+URxvt*color6         : dpt_color6
+URxvt*color7         : dpt_color7
+URxvt*color8         : dpt_color8
+URxvt*color9         : dpt_color9
+URxvt*color10        : dpt_color10
+URxvt*color11        : dpt_color11
+URxvt*color12        : dpt_color12
+URxvt*color13        : dpt_color13
+URxvt*color14        : dpt_color14
+URxvt*color15        : dpt_color15
+URxvt*foreground     : dpt_foreground
+URxvt*background     : dpt_background
+URxvt*cursorColor    : dpt_cursorColor
 ! URxvt*colorBD        : _colorBD
 ! URxvt*colorIT        : _colorIT
 ! URxvt*colorUL        : _colorUL
