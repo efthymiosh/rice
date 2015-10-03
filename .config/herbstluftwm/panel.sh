@@ -12,10 +12,11 @@ x=${geometry[0]}
 y=${geometry[1]}
 panel_width=${geometry[2]}
 panel_height=16
-font="-*-fixed-medium-*-*-*-12-*-*-*-*-*-*-*"
+font="-*-fixed-medium-*-normal-*-12-*-*-*-*-*-*-*"
+# font="-*-fixed-medium-*-normal-*-10-*-*-*-*-*-*"
 bgcolor=$(hc get window_border_normal_color)
 selbg=$(hc get window_border_active_color)
-selfg='#101010'
+selfg=$(hc get window_border_normal_color)
 
 ####
 # Try to find textwidth binary.
@@ -88,19 +89,19 @@ hc pad $monitor $panel_height
         # draw tags
         for i in "${tags[@]}" ; do
             case ${i:0:1} in
-                '#')
+                '#') # current tag
                     echo -n "^bg($selbg)^fg($selfg)"
                     ;;
-                '+')
-                    echo -n "^bg(#9CA668)^fg(#141414)"
+                '+') # active on other monitor
+                    echo -n "^bg(#565656)^fg($selfg)"
                     ;;
-                ':')
-                    echo -n "^bg()^fg(#ffffff)"
+                ':') # inactive tag that contains windows
+                    echo -n "^bg()^fg(#fefefe)"
                     ;;
-                '!')
+                '!') # urgent tag
                     echo -n "^bg(#FF0675)^fg(#141414)"
                     ;;
-                *)
+                *)   # inactive tag that doesn't contain windows
                     echo -n "^bg()^fg(#ababab)"
                     ;;
             esac
@@ -118,7 +119,11 @@ hc pad $monitor $panel_height
         echo -n "$separator"
         echo -n "^bg()^fg() ${windowtitle//^/^^}"
         # small adjustments
-        right="$separator^bg() $song $separator^bg() $date $separator"
+        if [ -z "$song" ] ; then
+            right="$separator^bg() $date $separator"
+        else
+            right="$separator^bg() $song $separator^bg() $date $separator"
+        fi
         right_text_only=$(echo -n "$right" | sed 's.\^[^(]*([^)]*)..g')
         # get width of right aligned text.. and add some space..
         width=$($textwidth "$font" "$right_text_only    ")
@@ -179,11 +184,10 @@ hc pad $monitor $panel_height
                 ;;
         esac
     done
-
     ### dzen2 ###
     # After the data is gathered and processed, the output of the previous block
     # gets piped to dzen2.
 
 } 2> /dev/null | dzen2 -w $panel_width -x $x -y $y -fn "$font" -h $panel_height \
     -e 'button3=;button4=exec:herbstclient use_index -1;button5=exec:herbstclient use_index +1' \
-    -ta l -bg "$bgcolor" -fg '#efefef'
+    -ta l -bg "$bgcolor" -fg '#dcdccc'

@@ -4,11 +4,11 @@ hc() {
     herbstclient "$@"
 }
 
-#color_accent='#863325'
-#color_bg='#263238'
-#dmenu_accent='#B63325'
+# color_accent='#C6892E'
+# color_bg='#262626'
+# dmenu_accent="$color_accent"
 
-color_accent='#C6892E'
+color_accent='#A1B4A5'
 color_bg='#262626'
 dmenu_accent="$color_accent"
 
@@ -18,8 +18,8 @@ dmenu_accent="$color_accent"
 
 #startup applications
 setxkbmap us
-wmname LG3D
-compton -c -C -e 0.85 -r 5 -l -8 -t -8 -m 0.95 -G -D 15 --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc -b
+# wmname LG3D
+compton -c -C -r 5 -l -8 -t -8 -m 0.95 -G -D 15 --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc -b
 if [[ `pidof syndaemon` -ne 0 ]]; then
     killall syndaemon
 fi
@@ -48,7 +48,7 @@ hc keybind $Mod-Shift-c close
 hc keybind $Mod-Return spawn konsole
 
 # Launcher
-hc keybind $Mod-d spawn dmenu_run -fn -*-terminus-*-r-normal-*-14-*-*-*-*-*-* -nb "$color_bg" -nf "$dmenu_accent" -sb "$dmenu_accent" -sf "$color_bg"
+hc keybind $Mod-d spawn dmenu_run -fn -*-terminus-medium-r-normal-*-14-*-*-*-*-*-* -nb "$color_bg" -nf "$dmenu_accent" -sb "$dmenu_accent" -sf "$color_bg"
 
 # Screenshot
 hc keybind Print spawn scrot 
