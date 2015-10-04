@@ -98,6 +98,9 @@ endif
 
 "** Efthymios settings **"
 
+"Force 8 colors for 88color/256color terminals. We are humans, not mantis shrimps.
+set t_Co=8
+
 " No annoying vim files in my folders (Enabling adds features, e.g. cross-session undos)
 set noswapfile 
 set noundofile

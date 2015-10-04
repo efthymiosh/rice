@@ -14,10 +14,10 @@ startup_message off
 #      .      leave color unchanged
 
 # hard status bar at bottom:
-hardstatus alwayslastline '%{= kd}[%{D}%H%{= kd}]%{kd}[%= %{= kd}%?%-w%?%{+b g}%n %t%?(%u)%?%{-b kd}%?%+w%?%?%= %{kd}%]'
+hardstatus alwayslastline '%{= kd}[%{D}%H%{= kd}]%{kd}[%= %{= kd}%?%-w%?%{r}%n %t%?(%u)%?%{-b kd}%?%+w%?%?%= %{kd}%]'
 
 # window captions
-caption string "%{= kC} %3n %{kd}%t"
+caption string "%{= kr} %3n %{kd}%t"
 
 # vertical bar
 sorendition "Yk"
@@ -25,6 +25,8 @@ sorendition "Yk"
 # Scrollback buffer, in lines (default= 100 ?)
 defscrollback 5000
 
+# fix issues with ncurses-based applications
+altscreen on
 
 #####SHORTCUTS#####
 ####################

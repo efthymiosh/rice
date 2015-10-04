@@ -13,10 +13,11 @@ y=${geometry[1]}
 panel_width=${geometry[2]}
 panel_height=16
 font="-*-fixed-medium-*-normal-*-12-*-*-*-*-*-*-*"
-# font="-*-fixed-medium-*-normal-*-10-*-*-*-*-*-*"
+# font="xft:Deja Vu Sans Mono:pixelsize=13:antialias=false:hinting=false"
 bgcolor=$(hc get window_border_normal_color)
 selbg=$(hc get window_border_active_color)
 selfg=$(hc get window_border_normal_color)
+noticolor=$(hc get window_border_urgent_color)
 
 ####
 # Try to find textwidth binary.
@@ -99,7 +100,8 @@ hc pad $monitor $panel_height
                     echo -n "^bg()^fg(#fefefe)"
                     ;;
                 '!') # urgent tag
-                    echo -n "^bg(#FF0675)^fg(#141414)"
+                    # echo -n "^bg(#FF0675)^fg(#141414)"
+                    echo -n "^bg($noticolor)^fg(#FFDD00)"
                     ;;
                 *)   # inactive tag that doesn't contain windows
                     echo -n "^bg()^fg(#ababab)"

@@ -1,3 +1,14 @@
+! XFT stuff..
+Xft.antialias:  1
+Xft.autohint:   0
+Xft.dpi:        96
+Xft.hinting:    1
+Xft.hintstyle:  hintfull
+Xft.lcdfilter:  lcddefault
+Xft.rgba:       rgb
+
+
+
 ! COLORSCHEMES !
 
 ! Dark Pastel !
@@ -42,19 +53,31 @@
 #define dpt_cursorColor #A05040
 
 ! change to urxvt-unicode for different kinds of headaches
-URxvt*termName: xterm
+! ..if so, disable the home/end modifications.
+! URxvt*termName: xterm
+! URxvt*keysym.Home:		\033OH
+! URxvt*keysym.End:		\033OF
+
 ! enable blinking cursor
 URxvt*cursorBlink: true
 ! true:line cursor / false: block cursor
 URxvt*cursorUnderline: true
 ! set transparency
 URxvt*transparent: false
+URxvt*inheritPixmap: false
 ! remove borders on edge
 URxvt*borderLess: false
 URxvt*externalBorder: 0
 URxvt*internalBorder: 0
 ! set urgency when bell rings
 URxvt*urgentOnBell: true
+
+
+! set to refresh terminal on 60fps. unset to refresh asap
+URxvt*skipScroll: true
+! double buffering for xft fonts
+URxvt*buffered: true
+URxvt*skipBuiltinGlyphs: true
 
 ! enable recognition and opening of links
 URxvt*perl-ext-common: default,matcher,vtwheel
@@ -87,10 +110,11 @@ URxvt*saveLines: 4096
 !
 ! Xft: DejaVu fonts
 !  Fedora/debian packages: dejavu-sans-mono-fonts/ttf-dejavu 
-URxvt*font: xft:DejaVu Sans Mono:pixelsize=13:antialias=true:hinting=false
-URxvt*boldFont: xft:DejaVu Sans Mono:bold:pixelsize=13:antialias=true:hinting=false
+URxvt*font: xft:DejaVu Sans Mono:pixelsize=13:antialias=true:hinting=true
+URxvt*boldFont: xft:DejaVu Sans Mono:bold:pixelsize=13:antialias=true:hinting=true
 URxvt*letterSpace: -1
 URxvt*lineSpace: 0
+
 ! Xft: Liberation fonts
 !  Fedora/debian packages: liberation-mono-fonts/ttf-liberation
 !URxvt*font: xft:Liberation Mono:pixelsize=13:antialias=true:hinting=true
@@ -118,7 +142,7 @@ URxvt*scrollBar: false
 URxvt*scrollBar_right: false
 
 ! scrollbar style - rxvt (default), plain, next, or URxvt
-URxvt*scrollstyle: rxvt
+URxvt*scrollstyle: plain
 
 URxvt*color0         : dpt_color0
 URxvt*color1         : dpt_color1
@@ -139,29 +163,23 @@ URxvt*color15        : dpt_color15
 URxvt*foreground     : dpt_foreground
 URxvt*background     : dpt_background
 URxvt*cursorColor    : dpt_cursorColor
-! URxvt*colorBD        : _colorBD
-! URxvt*colorIT        : _colorIT
-! URxvt*colorUL        : _colorUL
-!UXTerm*color0         : _color0
-!UXTerm*color1         : _color1
-!UXTerm*color2         : _color2
-!UXTerm*color3         : _color3
-!UXTerm*color4         : _color4
-!UXTerm*color5         : _color5
-!UXTerm*color6         : _color6
-!UXTerm*color7         : _color7
-!UXTerm*color8         : _color8
-!UXTerm*color9         : _color9
-!UXTerm*color10        : _color10
-!UXTerm*color11        : _color11
-!UXTerm*color12        : _color12
-!UXTerm*color13        : _color13
-!UXTerm*color14        : _color14
-!UXTerm*color15        : _color15
-!UXTerm*colorBD        : _colorBD
-!UXTerm*colorIT        : _colorIT
-!UXTerm*colorUL        : _colorUL
-!UXTerm*foreground     : _foreground
-!UXTerm*background     : _background
-!UXTerm*cursorColor    : _cursorColor
+XTerm*color0         : dpt_color0
+XTerm*color1         : dpt_color1
+XTerm*color2         : dpt_color2
+XTerm*color3         : dpt_color3
+XTerm*color4         : dpt_color4
+XTerm*color5         : dpt_color5
+XTerm*color6         : dpt_color6
+XTerm*color7         : dpt_color7
+XTerm*color8         : dpt_color8
+XTerm*color9         : dpt_color9
+XTerm*color10        : dpt_color10
+XTerm*color11        : dpt_color11
+XTerm*color12        : dpt_color12
+XTerm*color13        : dpt_color13
+XTerm*color14        : dpt_color14
+XTerm*color15        : dpt_color15
+XTerm*foreground     : dpt_foreground
+XTerm*background     : dpt_background
+XTerm*cursorColor    : dpt_cursorColor
 
