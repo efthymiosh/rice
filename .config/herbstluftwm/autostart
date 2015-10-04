@@ -50,7 +50,7 @@ hc keybind $Mod-Return spawn urxvtcd
 
 # Launcher
 # hc keybind $Mod-d spawn dmenu_run -fn -*-terminus-medium-r-normal-*-14-*-*-*-*-*-* -nb "$color_bg" -nf "$dmenu_accent" -sb "$dmenu_accent" -sf "$color_bg"
-hc keybind $Mod-d spawn dmenu_run -fn "xft:Deja Vu Sans Mono:pixelsize=13:antialias=true:hinting=true" -nb "$color_bg" -nf "$dmenu_accent" -sb "$dmenu_accent" -sf "$color_bg"
+hc keybind $Mod-d spawn dmenu_run -fn "Deja Vu Sans Mono-10:book:pixelsize=13:antialias=true:hinting=true" -nb "$color_bg" -nf "$dmenu_accent" -sb "$dmenu_accent" -sf "$color_bg"
 
 # Screenshot
 hc keybind Print spawn scrot 
