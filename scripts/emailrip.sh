@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Thunderbird email format ripper.
+
 grep $1 -ie "from: .*di.uoa.gr" | awk -F"From: " '{print $2}' | sed 's/"//g' | sed 's/\t//g' | sort -u | while read MLINE
 do
     ADDR=$(echo "$MLINE" | cut -d\< -f2 | cut -d\> -f1)

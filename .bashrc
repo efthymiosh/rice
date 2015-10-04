@@ -56,8 +56,14 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+
+HOSTNUM="$(hostname | tr a-z.\- 0-90-90-9)"
+HOSTNUM="$(expr $HOSTNUM / ${#HOSTNUM} + 5)"
+COLORCODE="$(expr $HOSTNUM % 8 + 1)"
+
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[00;33m\]\u\[\033[00m\]@\h:\w\$ '
+#    PS1='${debian_chroot:+($debian_chroot)}\[\033[00;36m\]\u\[\033[00m\]@\h:\w\$ '
+    PS1="\${debian_chroot:+(\$debian_chroot)}\\[\\033[00;3${COLORCODE}m\\]\\u\\[\\033[00m\\]@\\h:\\w\\\$ "
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi

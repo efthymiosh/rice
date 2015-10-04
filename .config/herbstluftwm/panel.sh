@@ -11,8 +11,8 @@ fi
 x=${geometry[0]}
 y=${geometry[1]}
 panel_width=${geometry[2]}
-panel_height=16
-font="-*-fixed-medium-*-normal-*-12-*-*-*-*-*-*-*"
+panel_height=19
+font="-*-fixed-medium-r-normal-*-12-*-*-*-*-*-iso8859-7"
 # font="xft:Deja Vu Sans Mono:pixelsize=13:antialias=false:hinting=false"
 bgcolor=$(hc get window_border_normal_color)
 selbg=$(hc get window_border_active_color)
