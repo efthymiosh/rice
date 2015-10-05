@@ -1,6 +1,7 @@
 # Disable initial message:
 startup_message off
-
+defutf8 on
+utf8 on on
 #      colors (Capitalized versions are bold)
 #      k      black
 #      r      red
@@ -14,7 +15,7 @@ startup_message off
 #      .      leave color unchanged
 
 # hard status bar at bottom:
-hardstatus alwayslastline '%{= kd}[%{D}%H%{= kd}]%{kd}[%= %{= kd}%?%-w%?%{r}%n %t%?(%u)%?%{-b kd}%?%+w%?%?%= %{kd}%]'
+hardstatus alwayslastline '%{= kd}[%{D}%H%{= kd}]%{kd}[%= %{= kd}%?%-w%?%{r}>%{d} %t%?(%u)%?%{-b kd}%?%+w%?%?%= %{kd}%]'
 
 # window captions
 caption string "%{= kr} %3n %{kd}%t"
