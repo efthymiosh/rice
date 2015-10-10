@@ -89,10 +89,7 @@ feature-list=mark-fcc-seen,
 	use-sender-not-x-sender
 
 # Alpine executes these keys upon startup (e.g. to view msg 13: i,j,1,3,CR,v)
-initial-keystroke-list=.,
-	.,
-	n,
-	.
+initial-keystroke-list=.,.,n,.
 
 # Only show these headers (by default) when composing messages
 default-composer-hdrs=
@@ -513,7 +510,7 @@ patterns-other=
 patterns-search=
 
 # Controls display of color
-color-style=use-termdef
+color-style=force-ansi-8color
 
 # Controls display of color for current index line
 current-indexline-style=

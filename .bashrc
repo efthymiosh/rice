@@ -59,7 +59,7 @@ fi
 if [ "$color_prompt" = yes ]; then
     HOSTNUM="$(hostname | tr a-z.\- 0-90-90-9)"
     HOSTNUM="$(expr $HOSTNUM / ${#HOSTNUM} + 5)"
-    HOSTNUM=$(echo $(hostname | tr a-z.\- 0-90-90-9 | sed 's/[0-9]/&+/g')4 | bc)
+    HOSTNUM=$(echo $(hostname | tr a-z.\- 0-90-90-9 | sed 's/[0-9]/&+/g')2 | bc)
     COLORCODE="$(expr $HOSTNUM % 6 + 1)"
     PS1="\${debian_chroot:+(\$debian_chroot)}\\[\\033[00;3${COLORCODE}m\\]\\u\\[\\033[00m\\]@\\h:\\w\\\$ "
 else
