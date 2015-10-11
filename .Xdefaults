@@ -50,7 +50,7 @@ Xft.rgba:       rgb
 #define dpt_color13  #ec93c5
 #define dpt_color14  #93e1d3
 #define dpt_color15  #ffffef
-#define dpt_cursorColor #A05040
+#define dpt_cursorColor #A1B4A5
 
 ! change to urxvt-unicode for different kinds of headaches
 ! ..if so, disable the home/end modifications.
@@ -59,9 +59,9 @@ Xft.rgba:       rgb
 ! URxvt*keysym.End:		\033OF
 
 ! enable blinking cursor
-URxvt*cursorBlink: true
+URxvt*cursorBlink: false
 ! true:line cursor / false: block cursor
-URxvt*cursorUnderline: true
+URxvt*cursorUnderline: false
 ! set transparency
 URxvt*transparent: false
 URxvt*inheritPixmap: false
