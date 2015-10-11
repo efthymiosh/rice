@@ -2,7 +2,8 @@
 " This must be first, because it changes other options as a side effect.
 " also required for Vundle.
 set nocompatible
-" Vundle specific settings {{{1
+
+" Vundle-specific settings {{{
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -16,6 +17,13 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Syntastic: syntax check plugin
 Plugin 'scrooloose/syntastic'
+
+" NerdTree: alternative file explorer
+Plugin 'scrooloose/nerdtree'
+
+" UltiSnips: Snippets (tab-completing specified keywords 
+Plugin 'SirVer/ultisnips'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -46,6 +54,18 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+" }}}
+
+" UltiSnips-specific settings {{{
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
 " }}}
 
 "An example for a vimrc file.
@@ -199,4 +219,11 @@ set cursorline
 highlight CursorLine cterm=NONE ctermbg=NONE
 highlight CursorLineNr term=bold ctermfg=Black ctermbg=Brown
 
-" vim: fdm=marker
+function! StartUp()
+    if 0 == argc() 
+        NERDTree
+    end
+endfunction
+
+autocmd VimEnter * call StartUp()
+" vim: set fdm=marker filetype=vim syntax=vim:
