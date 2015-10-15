@@ -34,7 +34,7 @@ nitrogen --restore
 hc emit_hook reload
 
 xsetroot -solid $color_bg
-
+xset r rate 200 30
 # remove all existing keybindings
 hc keyunbind --all
 
