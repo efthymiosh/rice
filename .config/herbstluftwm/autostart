@@ -33,6 +33,9 @@ nitrogen --restore
 
 hc emit_hook reload
 
+# set keyboard repeat-key-when-pressed delay to 200ms, repeat to 30 keystrokes per second.
+xset r rate 200 30
+
 # remove all existing keybindings
 hc keyunbind --all
 
