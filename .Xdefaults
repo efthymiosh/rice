@@ -80,7 +80,7 @@ URxvt*buffered: true
 URxvt*skipBuiltinGlyphs: true
 
 ! enable recognition and opening of links
-URxvt*perl-ext-common: default,matcher,vtwheel
+URxvt*perl-ext-common: default,matcher
 URxvt*matcher.button: 1
 URxvt*urlLauncher: firefox
 
