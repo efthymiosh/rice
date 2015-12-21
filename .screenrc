@@ -76,8 +76,12 @@ bindkey ^[^J focus down
 
 #SIMPLE
 
-screen -t "secondary" 1 /bin/bash
-screen -t "primary" 0 /bin/bash
+#screen -t "secondary" 1 /bin/bash
+#screen -t "primary" 0 /bin/bash
+
+#BASIC (vimdev)
+screen -t "shell" 1 bash
+screen -t "vim" 0 vim -u ~/.vimdevrc
 
 #http://ubuntuforums.org/showthread.php?t=299286
 #multiuser on
