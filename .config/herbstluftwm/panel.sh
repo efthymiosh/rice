@@ -1,6 +1,9 @@
 #!/bin/bash
 
+iconpath=~/.config/herbstluftwm/icons/
+
 hc() { "${herbstclient_command[@]:-herbstclient}" "$@" ;}
+
 monitor=${1:-0}
 geometry=( $(herbstclient monitor_rect "$monitor") )
 if [ -z "$geometry" ] ;then
@@ -13,11 +16,17 @@ y=${geometry[1]}
 panel_width=${geometry[2]}
 panel_height=19
 font="-*-fixed-medium-r-normal-*-12-*-*-*-*-*-iso8859-7"
-# font="xft:Deja Vu Sans Mono:pixelsize=13:antialias=false:hinting=false"
+#font="-bitstream-bitstream charter-medium-r-normal--14-0-0-0-p-0-iso10646-1"
+#font="xft:Deja Vu Sans Mono:pixelsize=13:antialias=true:hinting=true"
 bgcolor=$(hc get window_border_normal_color)
 selbg=$(hc get window_border_active_color)
 selfg=$(hc get window_border_normal_color)
 noticolor=$(hc get window_border_urgent_color)
+clientcount="0"
+
+getxbmicon() {
+    echo -n "^fg(#000000)^fg()^bg($bgcolor)^fg($selbg) ^i($iconpath/${1}.xbm) ^fg(#000000)^fg()^bg()"
+}
 
 ####
 # Try to find textwidth binary.
@@ -77,6 +86,10 @@ hc pad $monitor $panel_height
 } 2> /dev/null | {
     IFS=$'\t' read -ra tags <<< "$(hc tag_status $monitor)"
     visible=true
+    clock="$(getxbmicon clock)"
+    icon_music_stopped="$(getxbmicon pause)"
+    icon_music="$(getxbmicon phones)"
+    icon_clients="$(getxbmicon cpu)"
     date=""
     windowtitle=""
     while true ; do
@@ -87,6 +100,7 @@ hc pad $monitor $panel_height
 
         bordercolor="#26221C"
         separator="^bg()^fg($selbg)|"
+        
         # draw tags
         for i in "${tags[@]}" ; do
             case ${i:0:1} in
@@ -118,13 +132,13 @@ hc pad $monitor $panel_height
                 echo -n " ${i:1} "
             fi
         done
-        echo -n "$separator"
+        echo -n "$separator$icon_clients$clientcount$separator"
         echo -n "^bg()^fg() ${windowtitle//^/^^}"
         # small adjustments
         if [ -z "$song" ] ; then
-            right="$separator^bg() $date $separator"
+            right="$separator^bg() $clock$date $separator"
         else
-            right="$separator^bg() $song $separator^bg() $date $separator"
+            right="$separator^bg() $icon_music$song $separator^bg() $clock$date $separator"
         fi
         right_text_only=$(echo -n "$right" | sed 's.\^[^(]*([^)]*)..g')
         # get width of right aligned text.. and add some space..
@@ -177,12 +191,12 @@ hc pad $monitor $panel_height
                 ;;
             focus_changed|window_title_changed)
                 windowtitle="${cmd[@]:2}"
+                clientcount="$(hc attr tags.focus.client_count) "
                 ;;
             player)
-                song=$(mpc current)
-                if [ ! -z "$song" ] ; then
-	                song="^fg(#909090)Playing ^fg()$song"
-		fi
+                song=$(mpc current -f %title%)
+                song=${song:0:40}
+                [[ `mpc status | grep "\[paused\]"` ]] && song="$icon_music_stopped$song"
                 ;;
         esac
     done
