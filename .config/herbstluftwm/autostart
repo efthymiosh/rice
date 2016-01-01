@@ -8,7 +8,7 @@ hc() {
 # color_bg='#262626'
 # dmenu_accent="$color_accent"
 
-color_accent='#A1B4A5'
+color_accent='#94C0E3'
 color_bg='#262626'
 color_urgent='#718475'
 dmenu_accent="$color_accent"
@@ -159,7 +159,14 @@ hc set frame_bg_transparent 1
 hc set frame_normal_opacity 0
 hc set frame_active_opacity 0
 hc set frame_transparent_width 0
-hc set frame_gap 0
+hc set frame_padding 0
+hc set frame_gap 16
+
+hc set window_gap 0
+hc set smart_window_surroundings 0
+hc set smart_frame_surroundings 0
+hc set mouse_recenter_gap 0
+hc set default_frame_layout 2
 
 hc attr theme.active.color $color_accent
 hc attr theme.normal.color $color_bg
@@ -173,12 +180,6 @@ hc attr theme.floating.outer_color $color_bg
 hc attr theme.active.inner_color $color_bg
 hc attr theme.active.outer_color $color_bg
 hc attr theme.background_color $color_bg
-
-hc set window_gap 8
-hc set frame_padding 0
-hc set smart_window_surroundings 0
-hc set smart_frame_surroundings 1
-hc set mouse_recenter_gap 1
 
 # rules
 hc unrule -F

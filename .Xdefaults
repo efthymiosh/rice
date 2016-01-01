@@ -30,7 +30,7 @@ Xft.rgba:       rgb
 #define dp_color13  #ec93d5
 #define dp_color14  #93e1e3
 #define dp_color15  #ffffff
-#define dp_cursorColor #e79a00
+#define dp_cursorColor #94C0E3
 ! Dark Pastel Tinted !
 #define dpt_foreground #dcdcbc
 #define dpt_background #262626
@@ -50,7 +50,7 @@ Xft.rgba:       rgb
 #define dpt_color13  #ec93c5
 #define dpt_color14  #93e1d3
 #define dpt_color15  #ffffef
-#define dpt_cursorColor #A1B4A5
+#define dpt_cursorColor #94C0E3
 
 ! change to urxvt-unicode for different kinds of headaches
 ! ..if so, disable the home/end modifications.
