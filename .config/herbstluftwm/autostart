@@ -33,8 +33,8 @@ nitrogen --restore
 
 hc emit_hook reload
 
-# set keyboard repeat-key-when-pressed delay to 200ms, repeat to 30 keystrokes per second.
-xset r rate 200 30
+# set keyboard repeat-key-when-pressed delay to 250ms, repeat to 30 keystrokes per second.
+xset r rate 250 30
 
 # remove all existing keybindings
 hc keyunbind --all
@@ -72,10 +72,10 @@ hc keybind XF86MonBrightnessDown spawn xbacklight -dec 10
 
 # basic movement
 # focusing clients
-hc keybind $Mod-Left  focus left
-hc keybind $Mod-Down  focus down
-hc keybind $Mod-Up    focus up
-hc keybind $Mod-Right focus right
+# hc keybind $Mod-Left  focus left
+# hc keybind $Mod-Down  focus down
+# hc keybind $Mod-Up    focus up
+# hc keybind $Mod-Right focus right
 hc keybind $Mod-h     focus left
 hc keybind $Mod-j     focus down
 hc keybind $Mod-k     focus up
@@ -108,6 +108,9 @@ hc keybind $Mod-Control-Left    resize left +$resizestep
 hc keybind $Mod-Control-Down    resize down +$resizestep
 hc keybind $Mod-Control-Up      resize up +$resizestep
 hc keybind $Mod-Control-Right   resize right +$resizestep
+
+hc keybind $Mod-w            set_attr theme.active.color $color_accent
+hc keybind $Mod-Shift-w      set_attr theme.active.color $color_bg
 
 
 # tags
