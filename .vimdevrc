@@ -16,7 +16,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Syntastic: syntax check plugin
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 
 " NerdTree: alternative file explorer
 Plugin 'scrooloose/nerdtree'
