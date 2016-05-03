@@ -16,6 +16,8 @@ y=${geometry[1]}
 panel_width=${geometry[2]}
 panel_height=19
 font="-*-fixed-medium-r-normal-*-12-*-*-*-*-*-iso8859-7"
+#font="Times New Roman"
+#font="xft:sans:pixelsize=10"
 #font="-bitstream-bitstream charter-medium-r-normal--14-0-0-0-p-0-iso10646-1"
 #font="xft:Deja Vu Sans Mono:pixelsize=13:antialias=true:hinting=true"
 bgcolor=$(hc get window_border_normal_color)
@@ -204,6 +206,6 @@ hc pad $monitor $panel_height
     # After the data is gathered and processed, the output of the previous block
     # gets piped to dzen2.
 
-} | dzen2 -w $panel_width -x $x -y $y -fn "$font" -h $panel_height \
+} | dzen2 -fn "$font" -w $panel_width -x $x -y $y -h $panel_height \
     -e 'button3=;button4=exec:herbstclient use_index -1;button5=exec:herbstclient use_index +1' \
     -ta l -bg "$bgcolor" -fg '#dcdccc'
