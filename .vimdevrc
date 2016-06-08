@@ -25,7 +25,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'SirVer/ultisnips'
 
 " YouCompleteMe: Code completer
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -71,13 +71,14 @@ let g:UltiSnipsEditSplit="vertical"
 
 " }}}
 
-" YouCompleteMe-specific setings {{{
-let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
-let g:ycm_auto_trigger = 0
+" " YouCompleteMe-specific setings {{{
+" let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
+" let g:ycm_auto_trigger = 0
+" 
+" set completeopt-=preview
+" let g:ycm_add_preview_to_completeopt = 0
+" " }}}
 
-set completeopt-=preview
-let g:ycm_add_preview_to_completeopt = 0
-" }}}
 "An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
@@ -174,6 +175,14 @@ if !exists(":DiffOrig")
 endif
 
 "** Efthymios settings **"
+
+"Set alternative greek keymap while in insert mode.
+"(ctrl + 6 to switch between keymaps)
+set keymap=greek_utf-8
+"set default insert keymap on startup
+set iminsert=0
+"set search keymap same as insert keymap
+set imsearch=-1
 
 "Force 8 colors for 88color/256color terminals. We are humans, not mantis shrimps.
 if &t_Co > 2

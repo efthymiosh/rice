@@ -1,0 +1,89 @@
+# Disable initial message:
+startup_message off
+defutf8 on
+utf8 on on
+#      colors (Capitalized versions are bold)
+#      k      black
+#      r      red
+#      g      green
+#      y      yellow
+#      b      blue
+#      m      magenta
+#      c      cyan
+#      w      white
+#      d      default color
+#      .      leave color unchanged
+
+# hard status bar at bottom:
+hardstatus alwayslastline '%{= kd}[%{D}%H%{= kd}]%{kd}[%= %{= kd}%?%-w%?%{r}>%{d} %t%?(%u)%?%{-b kd}%?%+w%?%?%= %{kd}%]'
+
+# window captions
+caption string "%{= kr} %3n %{kd}%t"
+
+# vertical bar
+sorendition "Yk"
+
+# Scrollback buffer, in lines (default= 100 ?)
+defscrollback 5000
+
+# fix issues with ncurses-based applications
+altscreen on
+
+#####SHORTCUTS#####
+####################
+bindkey ^[^N next 
+bindkey ^[^P prev 
+
+# LEFT SPLIT
+# Ctrl + Alt + Left from gnome-terminal
+bindkey ^[[1;7C focus right
+bindkey ^[^L focus right
+
+# Ctrl + Alt + Left from putty
+# bindkey ^[^[[D focus right
+
+# RIGHT SPLIT
+# Ctrl + Alt + Right from gnome-terminal
+bindkey ^[[1;7D focus left
+bindkey ^[^H focus left
+
+# Ctrl + Alt + Right from putty
+# bindkey ^[^[[C focus left
+
+# RIGHT SPLIT
+# Ctrl + Alt + Up from gnome-terminal
+bindkey ^[[1;7A focus up
+bindkey ^[^K focus up
+
+# RIGHT SPLIT
+# Ctrl + Alt + Right from gnome-terminal
+bindkey ^[[1;7B focus down
+bindkey ^[^J focus down
+
+#######LAYOUT#######
+####################
+
+#split -v
+#resize 80
+#split
+#focus down
+#resize 20
+#screen -t "handiwork" 1 /bin/bash
+#focus up
+#screen -t "git log" 0 /bin/bash
+#focus right
+#screen -t "main" 2 /bin/bash
+
+#SIMPLE
+
+#screen -t "secondary" 1 /bin/bash
+#screen -t "primary" 0 /bin/bash
+
+#BASIC (vimdev)
+screen -t "shell" 1 bash
+screen -t "vim" 0 vim -u ~/.vimdevrc
+
+#http://ubuntuforums.org/showthread.php?t=299286
+#multiuser on
+#acladd USERNAME
+#acldel USERNAME
