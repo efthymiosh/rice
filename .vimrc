@@ -98,6 +98,15 @@ endif
 
 "** Efthymios settings **"
 
+"Set alternative greek keymap while in insert mode.
+"(ctrl + 6 to switch between keymaps)
+set keymap=greek_utf-8
+"set default insert keymap on startup
+set iminsert=0
+"set search keymap same as insert keymap
+set imsearch=-1
+
+
 "Force 8 colors for 88color/256color terminals. We are humans, not mantis shrimps.
 if &t_Co > 2
     set t_Co=8
