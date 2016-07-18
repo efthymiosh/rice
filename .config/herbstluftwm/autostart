@@ -66,6 +66,9 @@ hc keybind XF86AudioRaiseVolume spawn amixer -D pulse sset Master 5%+
 hc keybind XF86AudioLowerVolume spawn amixer -D pulse sset Master 5%-
 hc keybind XF86AudioMute spawn amixer -D pulse sset Master 1+ toggle
 
+hc keybind $Mod-equal spawn amixer -D pulse sset Master 5%+
+hc keybind $Mod-minus spawn amixer -D pulse sset Master 5%-
+
 # Brightness
 hc keybind XF86MonBrightnessUp spawn xbacklight -inc 10
 hc keybind XF86MonBrightnessDown spawn xbacklight -dec 10
