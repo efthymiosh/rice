@@ -11,8 +11,14 @@ do
 	OLDPATHNAME=`ls "${FOLDER}" | grep -i ".mp4"`
 	if [[ -f "${FOLDER}${OLDPATHNAME}" ]];
 	then
-		mv "${FOLDER}${OLDPATHNAME}" "$TORR_PATH/${GOODNAME}.mp4"
-	fi
+		ln "${FOLDER}${OLDPATHNAME}" "$TORR_PATH/${GOODNAME}.mp4"
+    else    
+        OLDPATHNAME=`ls "${FOLDER}" | grep -i ".mkv"`
+        if [[ -f "${FOLDER}${OLDPATHNAME}" ]];
+        then
+            ln -v "${FOLDER}${OLDPATHNAME}" "$TORR_PATH/${GOODNAME}.mkv"
+        fi
+    fi
 done
 
 #move .mp4 files from torrents folder to their respective show folders.
@@ -20,7 +26,7 @@ done
 ls "$SHOWS_PATH" | while read SHOW
 do
     NORMALIZED_SHOW=`echo "$SHOW" | sed 's/\ /\./g'`
-	TORRS=`ls "$TORR_PATH"/*.mp4 2> /dev/null | grep -i ${NORMALIZED_SHOW}`
+	TORRS=`ls "$TORR_PATH"/*.mp4 "$TORR_PATH"/*.mkv 2> /dev/null | grep -i ${NORMALIZED_SHOW}`
 	if [[ "$?" -eq "0" ]];
 	then
         DIR="$SHOWS_PATH/$SHOW"

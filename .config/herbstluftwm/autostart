@@ -20,7 +20,7 @@ dmenu_accent="$color_accent"
 #startup applications
 setxkbmap us
 # wmname LG3D
-compton -c -C -r 5 -l -8 -t -8 -m 0.95 -G -D 15 --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc -b
+compton -c -C -r 5 -l -8 -t -8 -m 0.95 -G -D 15 --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc &
 if [[ `pidof syndaemon` -ne 0 ]]; then
     killall syndaemon
 fi
