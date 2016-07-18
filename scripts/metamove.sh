@@ -11,12 +11,12 @@ do
 	OLDPATHNAME=`ls "${FOLDER}" | grep -i ".mp4"`
 	if [[ -f "${FOLDER}${OLDPATHNAME}" ]];
 	then
-		mv "${FOLDER}${OLDPATHNAME}" "$TORR_PATH/${GOODNAME}.mp4"
+		ln "${FOLDER}${OLDPATHNAME}" "$TORR_PATH/${GOODNAME}.mp4"
     else    
         OLDPATHNAME=`ls "${FOLDER}" | grep -i ".mkv"`
         if [[ -f "${FOLDER}${OLDPATHNAME}" ]];
         then
-            mv "${FOLDER}${OLDPATHNAME}" "$TORR_PATH/${GOODNAME}.mkv"
+            ln -v "${FOLDER}${OLDPATHNAME}" "$TORR_PATH/${GOODNAME}.mkv"
         fi
     fi
 done
