@@ -29,6 +29,9 @@ defscrollback 5000
 # fix issues with ncurses-based applications
 altscreen on
 
+# Fix color issues
+term screen-256color
+
 #####SHORTCUTS#####
 ####################
 bindkey ^[^N next 
