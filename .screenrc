@@ -15,13 +15,13 @@ utf8 on on
 #      .      leave color unchanged
 
 # hard status bar at bottom:
-hardstatus alwayslastline '%{= kd}[%{D}%H%{= kd}]%{kd}[%= %{= kd}%?%-w%?%{r}>%{d} %t%?(%u)%?%{-b kd}%?%+w%?%?%= %{kd}%]'
+hardstatus alwayslastline '%{= Kd}[%{D}%H%{= Kd}]%{Kd}[%= %{= Kd}%?%-w%?%{r}>%{d} %t%?(%u)%?%{-b Kd}%?%+w%?%?%= %{Kd}%]'
 
 # window captions
 caption string "%{= kr} %3n %{kd}%t"
 
 # vertical bar
-sorendition "Yk"
+sorendition "YK"
 
 # Scrollback buffer, in lines (default= 100 ?)
 defscrollback 5000

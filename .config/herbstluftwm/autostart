@@ -8,9 +8,14 @@ hc() {
 # color_bg='#262626'
 # dmenu_accent="$color_accent"
 
-color_accent='#94C0E3'
-color_bg='#262626'
-color_urgent='#718475'
+# lightblue
+# color_accent='#94C0E3'
+# lightgreen
+color_accent='#74A370'
+# dark orange
+color_accent='#ac581c'
+color_bg='#fbf1d7'
+color_urgent='#c07a25'
 dmenu_accent="$color_accent"
 
 #xrandr monitors

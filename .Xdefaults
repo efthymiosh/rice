@@ -1,56 +1,141 @@
 ! XFT stuff..
-Xft.antialias:  1
-Xft.autohint:   0
 Xft.dpi:        96
-Xft.hinting:    1
+Xft.antialias:  true
+Xft.rgba:       none
+Xft.hinting:    true
+Xft.autohint:   true
 Xft.hintstyle:  hintfull
 Xft.lcdfilter:  lcddefault
-Xft.rgba:       rgb
 
+
+
+! ACTIVE COLOR SCHEME !
+#define GRUVBOX
+
+! CURSOR COLOR !
+! lightgreen
+! #define def_cursorColor #74A370
+!orange
+#define def_cursorColor #ac581c
 
 
 ! COLORSCHEMES !
 
+#ifdef DARK_PASTEL
 ! Dark Pastel !
-#define dp_foreground #dcdccc
-#define dp_background #262626
-#define dp_color0   #3f3f3f
-#define dp_color1   #705050
-#define dp_color2   #60b48a
-#define dp_color3   #dfaf8f
-#define dp_color4   #9ab9d7
-#define dp_color5   #dc8cc4
-#define dp_color6   #8cd1d3
-#define dp_color7   #dcdccd
-#define dp_color8   #709080
-#define dp_color9   #dca3a3
-#define dp_color10  #72d5a2
-#define dp_color11  #f0dfaf
-#define dp_color12  #94c0f3
-#define dp_color13  #ec93d5
-#define dp_color14  #93e1e3
-#define dp_color15  #ffffff
-#define dp_cursorColor #94C0E3
+#define def_foreground #dcdccc
+#define def_background #262626
+#define def_color0   #3f3f3f
+#define def_color1   #705050
+#define def_color2   #60b48a
+#define def_color3   #dfaf8f
+#define def_color4   #9ab9d7
+#define def_color5   #dc8cc4
+#define def_color6   #8cd1d3
+#define def_color7   #dcdccd
+#define def_color8   #709080
+#define def_color9   #dca3a3
+#define def_color10  #72d5a2
+#define def_color11  #f0dfaf
+#define def_color12  #94c0f3
+#define def_color13  #ec93d5
+#define def_color14  #93e1e3
+#define def_color15  #ffffff
+
+#elif defined (DARK_PASTEL_TINTED)
 ! Dark Pastel Tinted !
-#define dpt_foreground #dcdcbc
-#define dpt_background #262626
-#define dpt_color0   #3f3f3f
-#define dpt_color1   #705040
-#define dpt_color2   #60b47a
-#define dpt_color3   #dfaf7f
-#define dpt_color4   #9ab9c7
-#define dpt_color5   #dc8cb4
-#define dpt_color6   #8cd1c3
-#define dpt_color7   #dcdcbd
-#define dpt_color8   #709070
-#define dpt_color9   #dca393
-#define dpt_color10  #72d592
-#define dpt_color11  #f0df9f
-#define dpt_color12  #94c0e3
-#define dpt_color13  #ec93c5
-#define dpt_color14  #93e1d3
-#define dpt_color15  #ffffef
-#define dpt_cursorColor #94C0E3
+
+#define def_foreground #dcdcbc
+#define def_background #262626
+#define def_color0   #3f3f3f
+#define def_color1   #705040
+#define def_color2   #60b47a
+#define def_color3   #dfaf7f
+#define def_color4   #9ab9c7
+#define def_color5   #dc8cb4
+#define def_color6   #8cd1c3
+#define def_color7   #dcdcbd
+#define def_color8   #709070
+#define def_color9   #dca393
+#define def_color10  #72d592
+#define def_color11  #f0df9f
+#define def_color12  #94c0e3
+#define def_color13  #ec93c5
+#define def_color14  #93e1d3
+#define def_color15  #ffffef
+
+#elif defined (SEOUL_LIGHT)
+! Seoul Light !
+
+#define def_foreground #383838
+#define def_background #dadada
+#define def_color0   #434343
+#define def_color1   #aa2c28
+#define def_color2   #5d8760
+#define def_color3   #a9824b
+#define def_color4   #5887a0
+#define def_color5   #cd5985
+#define def_color6   #376361
+#define def_color7   #d0cfca
+#define def_color8   #5d5d5d
+#define def_color9   #ea615f
+#define def_color10  #7aab87
+#define def_color11  #c9a26b
+#define def_color12  #6890b5
+#define def_color13  #e599b3
+#define def_color14  #589e9b
+#define def_color15  #f4f2ec
+
+#elif defined (AMPLE_LIGHT)
+! Ample Light !
+
+#define def_foreground #434343
+#define def_background #cbc9b1
+#define def_color0   #252525
+#define def_color1   #9d2512
+#define def_color2   #057f40
+#define def_color3   #7d7c21
+#define def_color4   #4170b3
+#define def_color5   #cd5985
+#define def_color6   #376361
+#define def_color7   #d0cfca
+#define def_color8   #5d5d5d
+#define def_color9   #cd5542
+#define def_color10  #4a8f30
+#define def_color11  #5d5c01
+#define def_color12  #528fd1
+#define def_color13  #e599b3
+#define def_color14  #589e9b
+#define def_color15  #f4f2ec
+
+#elif defined (GRUVBOX)
+! GruvBox Light !
+
+! soft contrast:
+! #define def_background #f2e5bc
+! harder:
+! #define def_background #fbf1c7
+! efthymiosh:
+#define def_background #fbf1df
+#define def_foreground #3c3836
+#define def_color0  #fdeedf
+#define def_color8  #928374
+#define def_color1  #cc241d
+#define def_color9  #9d0006
+#define def_color2  #98971a
+#define def_color10 #79740e
+#define def_color3  #d79921
+#define def_color11 #b57614
+#define def_color4  #458588
+#define def_color12 #076678
+#define def_color5  #b16286
+#define def_color13 #8f3f71
+#define def_color6  #689d6a
+#define def_color14 #427b58
+#define def_color7  #7c6f64
+#define def_color15 #3c3836
+
+#endif
 
 ! change to urxvt-unicode for different kinds of headaches
 ! ..if so, disable the home/end modifications.
@@ -98,10 +183,11 @@ URxvt*urlLauncher: firefox
 URxvt*saveLines: 4096
 
 ! Xft: DejaVu fonts
-URxvt*font: xft:DejaVu Sans Mono:pixelsize=13:antialias=true:hinting=true
-!URxvt*boldFont: xft:DejaVu Sans Mono:bold:pixelsize=13:antialias=true:hinting=true
+
+URxvt*allow_bold: false
+URxvt*font: xft:DejaVu Sans Mono:pixelsize=13
+URxvt*boldFont: xft:DejaVu Sans Mono:bold:pixelsize=13
 URxvt*letterSpace: -1
-URxvt*lineSpace: 0
 
 ! scrollbar - true (default) or false
 URxvt*scrollBar: false
@@ -112,42 +198,42 @@ URxvt*scrollBar_right: false
 ! scrollbar style - rxvt (default), plain, next, or URxvt
 URxvt*scrollstyle: plain
 
-URxvt*color0         : dpt_color0
-URxvt*color1         : dpt_color1
-URxvt*color2         : dpt_color2
-URxvt*color3         : dpt_color3
-URxvt*color4         : dpt_color4
-URxvt*color5         : dpt_color5
-URxvt*color6         : dpt_color6
-URxvt*color7         : dpt_color7
-URxvt*color8         : dpt_color8
-URxvt*color9         : dpt_color9
-URxvt*color10        : dpt_color10
-URxvt*color11        : dpt_color11
-URxvt*color12        : dpt_color12
-URxvt*color13        : dpt_color13
-URxvt*color14        : dpt_color14
-URxvt*color15        : dpt_color15
-URxvt*foreground     : dpt_foreground
-URxvt*background     : dpt_background
-URxvt*cursorColor    : dpt_cursorColor
-XTerm*color0         : dpt_color0
-XTerm*color1         : dpt_color1
-XTerm*color2         : dpt_color2
-XTerm*color3         : dpt_color3
-XTerm*color4         : dpt_color4
-XTerm*color5         : dpt_color5
-XTerm*color6         : dpt_color6
-XTerm*color7         : dpt_color7
-XTerm*color8         : dpt_color8
-XTerm*color9         : dpt_color9
-XTerm*color10        : dpt_color10
-XTerm*color11        : dpt_color11
-XTerm*color12        : dpt_color12
-XTerm*color13        : dpt_color13
-XTerm*color14        : dpt_color14
-XTerm*color15        : dpt_color15
-XTerm*foreground     : dpt_foreground
-XTerm*background     : dpt_background
-XTerm*cursorColor    : dpt_cursorColor
+URxvt*color0         : def_color0
+URxvt*color1         : def_color1
+URxvt*color2         : def_color2
+URxvt*color3         : def_color3
+URxvt*color4         : def_color4
+URxvt*color5         : def_color5
+URxvt*color6         : def_color6
+URxvt*color7         : def_color7
+URxvt*color8         : def_color8
+URxvt*color9         : def_color9
+URxvt*color10        : def_color10
+URxvt*color11        : def_color11
+URxvt*color12        : def_color12
+URxvt*color13        : def_color13
+URxvt*color14        : def_color14
+URxvt*color15        : def_color15
+URxvt*foreground     : def_foreground
+URxvt*background     : def_background
+URxvt*cursorColor    : def_cursorColor
+XTerm*color0         : def_color0
+XTerm*color1         : def_color1
+XTerm*color2         : def_color2
+XTerm*color3         : def_color3
+XTerm*color4         : def_color4
+XTerm*color5         : def_color5
+XTerm*color6         : def_color6
+XTerm*color7         : def_color7
+XTerm*color8         : def_color8
+XTerm*color9         : def_color9
+XTerm*color10        : def_color10
+XTerm*color11        : def_color11
+XTerm*color12        : def_color12
+XTerm*color13        : def_color13
+XTerm*color14        : def_color14
+XTerm*color15        : def_color15
+XTerm*foreground     : def_foreground
+XTerm*background     : def_background
+XTerm*cursorColor    : def_cursorColor
 
