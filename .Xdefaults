@@ -116,7 +116,7 @@ Xft.lcdfilter:  lcddefault
 ! harder:
 ! #define def_background #fbf1c7
 ! efthymiosh:
-#define def_background #fbf1df
+#define def_background #fbf1d7
 #define def_foreground #3c3836
 #define def_color0  #fdeedf
 #define def_color8  #928374
