@@ -10,7 +10,7 @@ Xft.lcdfilter:  lcddefault
 
 
 ! ACTIVE COLOR SCHEME !
-#define GRUVBOX
+#define SEOUL_LIGHT
 
 ! CURSOR COLOR !
 ! lightgreen
@@ -68,7 +68,7 @@ Xft.lcdfilter:  lcddefault
 ! Seoul Light !
 
 #define def_foreground #383838
-#define def_background #dadada
+#define def_background #eaeaea
 #define def_color0   #434343
 #define def_color1   #aa2c28
 #define def_color2   #5d8760
