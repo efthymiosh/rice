@@ -95,6 +95,8 @@ herbstclient keybind $Mod-Shift-l     shift right
 # create an empty frame at the specified direction
 herbstclient keybind $Mod-u       split   bottom  0.5
 herbstclient keybind $Mod-o       split   right   0.5
+herbstclient keybind $Mod-Shift-o split   right   0.67
+
 # let the current frame explode into subframes
 herbstclient keybind $Mod-Control-space split explode
 
