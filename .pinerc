@@ -357,7 +357,7 @@ incoming-folders=Remote.Inbox {mail.uoa.gr:993/novalidate-cert/user=efthymiosh/s
 	Sent {mail.uoa.gr:993/novalidate-cert/user=efthymiosh/ssl}INBOX.Sent,
 	Trash {mail.uoa.gr:993/ssl/novalidate-cert/user=efthymiosh}INBOX.Trash,
 	DI {mail.uoa.gr:993/ssl/novalidate-cert/user=efthymiosh}DI,
-	DI.Postgrad {mail.uoa.gr:993/ssl/novalidate-cert/user=efthymiosh}DI.PostGrad,
+	DI.PhD {mail.uoa.gr:993/ssl/novalidate-cert/user=efthymiosh}DI.PhD,
 	UoA.Announcements {mail.uoa.gr:993/ssl/novalidate-cert/user=efthymiosh}Announcements
 
 # List of directories where saved-message folders may be. First one is

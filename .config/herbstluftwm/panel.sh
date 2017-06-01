@@ -79,7 +79,7 @@ hc pad $monitor $panel_height
         # "date" output is checked once a second, but an event is only
         # generated if the output changed compared to the previous run.
 #        date +$'date\t^fg(#efefef)%H:%M^fg(#909090), %Y-%m-^fg(#efefef)%d'
-        date +$'date\t^fg(#efefef)%H:%M^fg(#909090), ^fg(#efefef)%d^fg(#909090)-%m-%Y'
+        date +$'date\t^fg()%H:%M^fg(#909090), ^fg()%d^fg(#909090)-%m-%Y'
         sleep 2 || break
     done > >(uniq_linebuffered) &
     childpid=$!
@@ -113,7 +113,7 @@ hc pad $monitor $panel_height
                     echo -n "^bg(#565656)^fg($selfg)"
                     ;;
                 ':') # inactive tag that contains windows
-                    echo -n "^bg()^fg(#fefefe)"
+                    echo -n "^bg()^fg()"
                     ;;
                 '!') # urgent tag
                     # echo -n "^bg(#FF0675)^fg(#141414)"
@@ -208,4 +208,4 @@ hc pad $monitor $panel_height
 
 } | dzen2 -fn "$font" -w $panel_width -x $x -y $y -h $panel_height \
     -e 'button3=;button4=exec:herbstclient use_index -1;button5=exec:herbstclient use_index +1' \
-    -ta l -bg "$bgcolor" -fg '#dcdccc'
+    -ta l -bg "$bgcolor" -fg '#3c3836'
