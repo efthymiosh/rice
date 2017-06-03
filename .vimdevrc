@@ -30,6 +30,9 @@ Plugin 'tpope/vim-fugitive'
 " Neocomplete:
 Plugin 'Shougo/neocomplete'
 
+" Clang:
+Plugin 'justmao945/vim-clang'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -62,7 +65,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 " NerdTree-specific settings {{{
 
-nnoremap <c-l> :NERDTreeToggle<CR>
+nnoremap <c-h> :NERDTreeToggle<CR>
 " }}}
 
 " UltiSnips-specific settings {{{
@@ -100,7 +103,8 @@ let g:neocomplete#sources#dictionary#dictionaries = {
 
 " Manual completion using C-n
 let g:neocomplete#disable_auto_complete=1
-inoremap <expr><C-n>  pumvisible() ? "\<C-n>" : neocomplete#start_manual_complete()
+inoremap <expr><C-n>  pumvisible() ? "\<C-n>" : neocomplete#start_manual_complete()."\<C-n>"
+inoremap <expr><C-j>  neocomplete#start_manual_complete()
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
@@ -124,8 +128,8 @@ endfunction
 " <TAB>: completion.
 "inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-h> neocomplete#smart_close_popup()
+"inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 " Close popup by <Space>.
 "inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
