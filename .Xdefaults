@@ -1,12 +1,11 @@
 ! XFT stuff..
 Xft.dpi:        96
 Xft.antialias:  true
-Xft.rgba:       none
+Xft.rgba:       rgb
 Xft.hinting:    true
-Xft.autohint:   true
-Xft.hintstyle:  hintfull
+Xft.autohint:   false
+Xft.hintstyle:  hintslight
 Xft.lcdfilter:  lcddefault
-
 
 
 ! ACTIVE COLOR SCHEME !
