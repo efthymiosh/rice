@@ -35,6 +35,8 @@ herbstclient emit_hook reload
 
 # set keyboard repeat-key-when-pressed delay to 250ms, repeat to 30 keystrokes per second.
 xset r rate 350 30
+#disable screen blanking on idle
+xset s off
 
 # remove all existing keybindings
 herbstclient keyunbind --all
