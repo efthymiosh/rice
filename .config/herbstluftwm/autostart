@@ -9,7 +9,7 @@
 # lightgreen
 #color_accent='#74A370'
 # dark orange
-color_accent='#ac581c'
+color_accent='#59639e'
 color_bg='#eaeaea'
 color_urgent='#c07a25'
 dmenu_accent="$color_accent"
