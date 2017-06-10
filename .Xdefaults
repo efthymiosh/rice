@@ -14,8 +14,8 @@ Xft.lcdfilter:  lcddefault
 ! CURSOR COLOR !
 ! lightgreen
 ! #define def_cursorColor #74A370
-!orange
-#define def_cursorColor #ac581c
+!purple
+#define def_cursorColor #59639e
 
 
 ! COLORSCHEMES !
