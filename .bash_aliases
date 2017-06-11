@@ -1,5 +1,5 @@
 alias emacs='emacs -nw'
-alias git-log='git log --oneline --decorate --graph'
+alias git-log='git log --oneline --decorate --graph --all'
 alias trc='transmission-remote-cli'
 alias cgrep='grep --color=always'
 alias grep='grep --color=auto'
