@@ -18,10 +18,10 @@ utf8 on on
 hardstatus alwayslastline '%{= Wd}[%{D}%H%{= Wd}]%{Wd}[%= %{= Wd}%?%-w%?%{r}>%{d} %t%?(%u)%?%{-b Wd}%?%+w%?%?%= %{Wd}%]'
 
 # window captions
-caption string "%{= kr} %3n %{kd}%t"
+caption string "%{= Wr} %3n %{Wd}%t"
 
 # vertical bar
-sorendition "YK"
+sorendition "YW"
 
 # Scrollback buffer, in lines (default= 100 ?)
 defscrollback 5000
