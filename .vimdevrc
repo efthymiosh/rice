@@ -30,8 +30,11 @@ Plugin 'tpope/vim-fugitive'
 " Neocomplete:
 Plugin 'Shougo/neocomplete'
 
-" Clang:
+" ClangCompletion:
 Plugin 'justmao945/vim-clang'
+
+" VimJavacomplete2:
+Plugin 'artur-shaik/vim-javacomplete2'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
