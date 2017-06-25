@@ -33,9 +33,6 @@ Plugin 'Shougo/neocomplete'
 " ClangCompletion:
 Plugin 'justmao945/vim-clang'
 
-" VimJavacomplete2:
-Plugin 'artur-shaik/vim-javacomplete2'
-
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
