@@ -146,6 +146,9 @@ colorscheme slate
 set ignorecase
 set smartcase
 
+" When done autocompleting, close any preview windows
+autocmd CompleteDone *pclose
+
 " Set line numbering and its highlighting.
 set number
 highlight LineNr term=bold cterm=NONE ctermfg=LightGrey ctermbg=Black gui=NONE guifg=LightGrey guibg=Black
