@@ -130,6 +130,10 @@ set hidden
 if has("autocmd")
     " Support Format-Flowed when composing mail.
     autocmd FileType mail setlocal fo+=aw tw=72
+
+    " When done autocompleting, close any preview windows
+    autocmd CompleteDone * pclose
+
 endif
 
 " Enable spell checking (z= in normal mode for suggestions)
@@ -145,9 +149,6 @@ colorscheme slate
 " Set smart search (case sensitive only when capital letters in search phrase)
 set ignorecase
 set smartcase
-
-" When done autocompleting, close any preview windows
-autocmd CompleteDone *pclose
 
 " Set line numbering and its highlighting.
 set number
