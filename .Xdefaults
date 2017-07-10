@@ -21,7 +21,7 @@ Xft.lcdfilter:  lcddefault
 ! COLORSCHEMES !
 #ifdef APPLE_BRIGHT
 !apple-bright
-#define def_foreground:   #1b0b10
+#define def_foreground    #1b0b10
 #define def_background	  #ccbbb0
 #define def_color0	      #1b0b10
 #define def_color1	      #82354f
