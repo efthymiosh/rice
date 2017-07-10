@@ -19,6 +19,27 @@ Xft.lcdfilter:  lcddefault
 
 
 ! COLORSCHEMES !
+#ifdef APPLE_BRIGHT
+!apple-bright
+#define def_foreground:   #1b0b10
+#define def_background	  #ccbbb0
+#define def_color0	      #1b0b10
+#define def_color1	      #82354f
+#define def_color2	      #803466
+#define def_color3	      #4f3480
+#define def_color4	      #346580
+#define def_color5	      #348068
+#define def_color6	      #6e804d
+#define def_color7	      #b3a49a
+#define def_color8	      #241016
+#define def_color9	      #b33e65
+#define def_color10	      #b33e8c
+#define def_color11	      #673eb3
+#define def_color12	      #3e8ab3
+#define def_color13	      #3eb38c
+#define def_color14	      #9ab36b
+#define def_color15	      #ccbbb0
+#endif
 
 #ifdef IVORYLIGHT
 !baskerville-ivorylight
