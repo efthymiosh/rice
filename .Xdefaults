@@ -22,112 +22,133 @@ Xft.lcdfilter:  lcddefault
 #ifdef APPLE_BRIGHT
 !apple-bright
 #define def_foreground    #1b0b10
-#define def_background	  #ccbbb0
-#define def_color0	      #1b0b10
-#define def_color1	      #82354f
-#define def_color2	      #803466
-#define def_color3	      #4f3480
-#define def_color4	      #346580
-#define def_color5	      #348068
-#define def_color6	      #6e804d
-#define def_color7	      #b3a49a
-#define def_color8	      #241016
-#define def_color9	      #b33e65
-#define def_color10	      #b33e8c
-#define def_color11	      #673eb3
-#define def_color12	      #3e8ab3
-#define def_color13	      #3eb38c
-#define def_color14	      #9ab36b
-#define def_color15	      #ccbbb0
+#define def_background   #ccbbb0
+#define def_color0       #1b0b10
+#define def_color1       #82354f
+#define def_color2       #803466
+#define def_color3       #4f3480
+#define def_color4       #346580
+#define def_color5       #348068
+#define def_color6       #6e804d
+#define def_color7       #b3a49a
+#define def_color8       #241016
+#define def_color9       #b33e65
+#define def_color10       #b33e8c
+#define def_color11       #673eb3
+#define def_color12       #3e8ab3
+#define def_color13       #3eb38c
+#define def_color14       #9ab36b
+#define def_color15       #ccbbb0
 #endif
 
 #ifdef IVORYLIGHT
 !baskerville-ivorylight
-#define def_foreground	 #6D727E
-#define def_background	 #FEF9EC
-#define def_color0	     #C5C1B4
-#define def_color1	     #E75C58
-#define def_color2	     #00A250
-#define def_color3	     #A08A00
-#define def_color4	     #208FFB
-#define def_color5	     #D160C4
-#define def_color6	     #00A4C1
-#define def_color7	     #3E424D
-#define def_color8	     #A1A6B2
-#define def_color9	     #B22B31
-#define def_color10	     #007427
-#define def_color11	     #715F00
-#define def_color12	     #0065CA
-#define def_color13	     #A03196
-#define def_color14	     #007693
-#define def_color15	     #282C36
+#define def_foreground  #6D727E
+#define def_background  #FEF9EC
+#define def_color0      #C5C1B4
+#define def_color1      #E75C58
+#define def_color2      #00A250
+#define def_color3      #A08A00
+#define def_color4      #208FFB
+#define def_color5      #D160C4
+#define def_color6      #00A4C1
+#define def_color7      #3E424D
+#define def_color8      #A1A6B2
+#define def_color9      #B22B31
+#define def_color10      #007427
+#define def_color11      #715F00
+#define def_color12      #0065CA
+#define def_color13      #A03196
+#define def_color14      #007693
+#define def_color15      #282C36
 #endif
 
+#ifdef swayr
+#define def_background #1c1709
+#define def_foreground #c2b9a1
+#define def_color0    #1c1709
+#define def_color1    #8e4317
+#define def_color2    #787200
+#define def_color3    #945c00
+#define def_color4    #315094
+#define def_color5    #5c2e40
+#define def_color6    #00617d
+#define def_color7    #c2b9a1
+#define def_color8    #4f4939
+#define def_color9    #f07935
+#define def_color10     #d9d138
+#define def_color11     #ffab26
+#define def_color12     #8aa9ed
+#define def_color13     #ff8cb8
+#define def_color14     #43bfe0
+#define def_color15     #f2e8c9
+
+#endif
 
 #ifdef BLIZZARD_ORB
 ! █▓▒░ blizzard orb colors
 ! by xero <http://xero.nu>
-#define def_foreground	  #111111
-#define def_background	  #fcfcfc
-#define def_color0	      #000000
-#define def_color1	      #6688AA
-#define def_color2	      #94B6CC
-#define def_color3	      #4C6E84
-#define def_color4	      #6688AA
-#define def_color5	      #94B6CC
-#define def_color6	      #4C6E84
-#define def_color7	      #87875f
-#define def_color8	      #000000
-#define def_color9	      #6688AA
-#define def_color10	      #94B6CC
-#define def_color11	      #4C6E84
-#define def_color12	      #6688AA
-#define def_color13	      #94B6CC
-#define def_color14	      #4C6E84
-#define def_color15	      #87875f
+#define def_foreground   #111111
+#define def_background   #fcfcfc
+#define def_color0       #000000
+#define def_color1       #6688AA
+#define def_color2       #94B6CC
+#define def_color3       #4C6E84
+#define def_color4       #6688AA
+#define def_color5       #94B6CC
+#define def_color6       #4C6E84
+#define def_color7       #87875f
+#define def_color8       #000000
+#define def_color9       #6688AA
+#define def_color10       #94B6CC
+#define def_color11       #4C6E84
+#define def_color12       #6688AA
+#define def_color13       #94B6CC
+#define def_color14       #4C6E84
+#define def_color15       #87875f
 #endif
 
 #ifdef VWBUG
 !!!! dkeg - vwbug !!!! 
-#define def_background	#170f0d 
-#define def_foreground	#746c48 
-#define def_color0	    #261E26 
-#define def_color1	    #312C38 
-#define def_color2	    #4D353B 
-#define def_color3	    #503B43 
-#define def_color4	    #57403E 
-#define def_color5	    #665453 
-#define def_color6	    #6E5450 
-#define def_color7	    #8E7266 
-#define def_color8	    #906756 
-#define def_color9	    #927E7E 
-#define def_color10	    #AD6042 
-#define def_color11	    #B48B6F 
-#define def_color12	    #C4AB98 
-#define def_color13	    #D9C9B6 
-#define def_color14	    #E7DDD1 
-#define def_color15	    #FAF7F2 
+#define def_background #170f0d 
+#define def_foreground #746c48 
+#define def_color0     #261E26 
+#define def_color1     #312C38 
+#define def_color2     #4D353B 
+#define def_color3     #503B43 
+#define def_color4     #57403E 
+#define def_color5     #665453 
+#define def_color6     #6E5450 
+#define def_color7     #8E7266 
+#define def_color8     #906756 
+#define def_color9     #927E7E 
+#define def_color10     #AD6042 
+#define def_color11     #B48B6F 
+#define def_color12     #C4AB98 
+#define def_color13     #D9C9B6 
+#define def_color14     #E7DDD1 
+#define def_color15     #FAF7F2 
 #endif
 
 
 #ifdef ZENBURN
 ! Zenburn
-#define def_color0	 #1E2320
-#define def_color1	 #705050
-#define def_color2	 #60b48a
-#define def_color3	 #dfaf8f
-#define def_color4	 #506070
-#define def_color5	 #dc8cc3
-#define def_color6	 #8cd0d3
-#define def_color7	 #dcdccc
-#define def_color8	 #709080
-#define def_color9	 #dca3a3
-#define def_color10	 #c3bf9f
-#define def_color11	 #f0dfaf
-#define def_color12	 #94bff3
-#define def_color13	 #ec93d3
-#define def_color14	 #93e0e3
-#define def_color15	 #ffffff
+#define def_color0  #1E2320
+#define def_color1  #705050
+#define def_color2  #60b48a
+#define def_color3  #dfaf8f
+#define def_color4  #506070
+#define def_color5  #dc8cc3
+#define def_color6  #8cd0d3
+#define def_color7  #dcdccc
+#define def_color8  #709080
+#define def_color9  #dca3a3
+#define def_color10  #c3bf9f
+#define def_color11  #f0dfaf
+#define def_color12  #94bff3
+#define def_color13  #ec93d3
+#define def_color14  #93e0e3
+#define def_color15  #ffffff
 #endif
 
 #ifdef DARK_PASTEL
@@ -250,8 +271,8 @@ Xft.lcdfilter:  lcddefault
 ! change to urxvt-unicode for different kinds of headaches
 ! ..if so, disable the home/end modifications.
 ! URxvt*termName: xterm
-! URxvt*keysym.Home:		\033OH
-! URxvt*keysym.End:		\033OF
+! URxvt*keysym.Home:  \033OH
+! URxvt*keysym.End:  \033OF
 
 ! enable blinking cursor
 URxvt*cursorBlink: false
