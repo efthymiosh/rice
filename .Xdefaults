@@ -48,7 +48,6 @@ Xft.lcdfilter:  lcddefault
 ! by xero <http://xero.nu>
 #define def_foreground	  #111111
 #define def_background	  #fcfcfc
-#define def_cursorColor	  #94B6CC
 #define def_color0	      #000000
 #define def_color1	      #6688AA
 #define def_color2	      #94B6CC
