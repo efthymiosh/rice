@@ -20,6 +20,96 @@ Xft.lcdfilter:  lcddefault
 
 ! COLORSCHEMES !
 
+#ifdef IVORYLIGHT
+!baskerville-ivorylight
+#define def_foreground	 #6D727E
+#define def_background	 #FEF9EC
+#define def_color0	     #C5C1B4
+#define def_color1	     #E75C58
+#define def_color2	     #00A250
+#define def_color3	     #A08A00
+#define def_color4	     #208FFB
+#define def_color5	     #D160C4
+#define def_color6	     #00A4C1
+#define def_color7	     #3E424D
+#define def_color8	     #A1A6B2
+#define def_color9	     #B22B31
+#define def_color10	     #007427
+#define def_color11	     #715F00
+#define def_color12	     #0065CA
+#define def_color13	     #A03196
+#define def_color14	     #007693
+#define def_color15	     #282C36
+#endif
+
+
+#ifdef BLIZZARD_ORB
+! █▓▒░ blizzard orb colors
+! by xero <http://xero.nu>
+#define def_foreground	  #111111
+#define def_background	  #fcfcfc
+#define def_cursorColor	  #94B6CC
+#define def_color0	      #000000
+#define def_color1	      #6688AA
+#define def_color2	      #94B6CC
+#define def_color3	      #4C6E84
+#define def_color4	      #6688AA
+#define def_color5	      #94B6CC
+#define def_color6	      #4C6E84
+#define def_color7	      #87875f
+#define def_color8	      #000000
+#define def_color9	      #6688AA
+#define def_color10	      #94B6CC
+#define def_color11	      #4C6E84
+#define def_color12	      #6688AA
+#define def_color13	      #94B6CC
+#define def_color14	      #4C6E84
+#define def_color15	      #87875f
+#endif
+
+#ifdef VWBUG
+!!!! dkeg - vwbug !!!! 
+#define def_background	#170f0d 
+#define def_foreground	#746c48 
+#define def_color0	    #261E26 
+#define def_color1	    #312C38 
+#define def_color2	    #4D353B 
+#define def_color3	    #503B43 
+#define def_color4	    #57403E 
+#define def_color5	    #665453 
+#define def_color6	    #6E5450 
+#define def_color7	    #8E7266 
+#define def_color8	    #906756 
+#define def_color9	    #927E7E 
+#define def_color10	    #AD6042 
+#define def_color11	    #B48B6F 
+#define def_color12	    #C4AB98 
+#define def_color13	    #D9C9B6 
+#define def_color14	    #E7DDD1 
+#define def_color15	    #FAF7F2 
+#endif
+
+
+#ifdef ZENBURN
+! Zenburn
+#define def_color0	 #1E2320
+#define def_color1	 #705050
+#define def_color2	 #60b48a
+#define def_color3	 #dfaf8f
+#define def_color4	 #506070
+#define def_color5	 #dc8cc3
+#define def_color6	 #8cd0d3
+#define def_color7	 #dcdccc
+#define def_color8	 #709080
+#define def_color9	 #dca3a3
+#define def_color10	 #c3bf9f
+#define def_color11	 #f0dfaf
+#define def_color12	 #94bff3
+#define def_color13	 #ec93d3
+#define def_color14	 #93e0e3
+#define def_color15	 #ffffff
+#endif
+
 #ifdef DARK_PASTEL
 ! Dark Pastel !
 #define def_foreground #dcdccc
@@ -40,8 +130,9 @@ Xft.lcdfilter:  lcddefault
 #define def_color13  #ec93d5
 #define def_color14  #93e1e3
 #define def_color15  #ffffff
+#endif
 
-#elif defined (DARK_PASTEL_TINTED)
+#ifdef DARK_PASTEL_TINTED
 ! Dark Pastel Tinted !
 
 #define def_foreground #dcdcbc
@@ -62,10 +153,10 @@ Xft.lcdfilter:  lcddefault
 #define def_color13  #ec93c5
 #define def_color14  #93e1d3
 #define def_color15  #ffffef
+#endif
 
-#elif defined (SEOUL_LIGHT)
+#ifdef SEOUL_LIGHT
 ! Seoul Light !
-
 #define def_foreground #383838
 #define def_background #eaeaea
 #define def_color0   #434343
@@ -84,10 +175,10 @@ Xft.lcdfilter:  lcddefault
 #define def_color13  #e599b3
 #define def_color14  #589e9b
 #define def_color15  #f4f2ec
+#endif
 
-#elif defined (AMPLE_LIGHT)
+#ifdef AMPLE_LIGHT
 ! Ample Light !
-
 #define def_foreground #434343
 #define def_background #cbc9b1
 #define def_color0   #252525
@@ -106,8 +197,9 @@ Xft.lcdfilter:  lcddefault
 #define def_color13  #e599b3
 #define def_color14  #589e9b
 #define def_color15  #f4f2ec
+#endif
 
-#elif defined (GRUVBOX)
+#ifdef GRUVBOX
 ! GruvBox Light !
 
 ! soft contrast:
@@ -133,7 +225,6 @@ Xft.lcdfilter:  lcddefault
 #define def_color14 #427b58
 #define def_color7  #7c6f64
 #define def_color15 #3c3836
-
 #endif
 
 ! change to urxvt-unicode for different kinds of headaches
