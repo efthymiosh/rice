@@ -1,7 +1,7 @@
 :root {
     /* TAB VARIABLES */
-    --bg-light: #C6892E; --bg-dark: #262626;
-    --fg-light: #FEFEEE; --fg-dark: #DCDCCC;
+    --bg-light: #59639E; --bg-dark: #EAEAEA;
+    --fg-light: #FEFEEE; --fg-dark: #262626;
     --tab-triangle-correction: -1px;
     --tab-height: 24px; --tab-icon-size: 10px; --tab-strip-margin: -11px; --tab-overlap: -5px;
     --tab-fonts: "Lemon",monospace,"Dejavu Sans"; --tab-font-size: 9pt;
@@ -17,3 +17,5 @@
     
     margin-bottom: 0 /* var(--url-height) */ !important;
 }
+
+
