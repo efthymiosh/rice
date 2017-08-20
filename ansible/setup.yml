@@ -1,0 +1,165 @@
+- name: Configure arch desktop
+  hosts: myhost
+  sudo: True
+  tasks:
+      - name: config bashrc
+        file: >
+            dest=../../.bashrc
+            src=../.bashrc
+            state=link
+
+      - name: config screenrc
+        file: >
+            dest=../../.screenrc
+            src=../.screenrc
+            state=link
+
+      - name: config inputrc
+        file: >
+            dest=../../.inputrc
+            src=../.inputrc
+            state=link
+
+      - name: config bash aliases
+        file: >
+            dest=../../.bash_aliases
+            src=../.bash_aliases
+            state=link
+
+      - name: install nitrogen
+        pacman: name=nitrogen update_cache=yes cache_valid_time=3600
+
+      - name: install dunst
+        pacman: name=dunst update_cache=yes cache_valid_time=3600
+
+      - name: link dunst config folder
+        file: >
+            dest=../../.config/dunst
+            src=../.config/dunst
+            state=link
+
+      - name: install zathura
+        pacman: name=zathura update_cache=yes cache_valid_time=3600
+
+      - name: link zathura config folder
+        file: >
+            dest=../../.config/zathura
+            src=../.config/zathura
+            state=link
+
+      - name: install compton
+        pacman: name=compton update_cache=yes cache_valid_time=3600
+
+      - name: install rxvt-unicode
+        pacman: name=rxvt-unicode update_cache=yes cache_valid_time=3600
+
+      - name: config .Xdefaults
+        command: cpp ../.Xdefaults -P > ../../.Xdefaults 
+
+      - name: install sxiv
+        pacman: name=sxiv update_cache=yes cache_valid_time=3600
+
+      - name: install vim
+        pacman: name=vim update_cache=yes cache_valid_time=3600
+
+      - name: link vimrc
+        file: >
+            dest=../../.vimrc
+            src=../.vimrc
+            state=link
+
+      - name: link vimdevrc
+        file: >
+            dest=../../.vimdevrc
+            src= ../.vimdevrc
+            state=link
+
+      - name: install git
+        pacman: name=git update_cache=yes cache_valid_time=3600
+
+      - name: install xf86-input-synaptics
+        pacman: name=xf86-input-synaptics update_cache=yes cache_valid_time=3600
+
+      - name: install bash-completion
+        pacman: name=bash-completion update_cache=yes cache_valid_time=3600
+
+      - name: install mpd
+        pacman: name=mpd update_cache=yes cache_valid_time=3600
+
+      - name: config mpd
+        file: >
+            dest=../../.mpdconf
+            src=../.mpdconf
+            state=link
+
+      - name: install ncmpcpp
+        pacman: name=ncmpcpp update_cache=yes cache_valid_time=3600
+
+      - name: config ncmpcpp
+        file: >
+            dest=../../.ncmpcpp
+            src=../.ncmpcpp
+            state=link
+
+      - name: install vifm
+        pacman: name=vifm update_cache=yes cache_valid_time=3600
+
+      - name: config vifm
+        file: >
+            dest=../../.vifm
+            src=../.vifm
+            state=link
+
+      - name: install weechat
+        pacman: name=weechat update_cache=yes cache_valid_time=3600
+
+      - name: config weechat
+        file: >
+            dest=../../.weechat
+            src=../.weechat
+            state=link
+
+      - name: install bitlbee
+        pacman: name=bitlbee update_cache=yes cache_valid_time=3600
+
+      - name: install dzen2
+        pacman: name=dzen2 update_cache=yes cache_valid_time=3600
+
+      - name: install herbstluftwm
+        pacman: name=herbstluftwm update_cache=yes cache_valid_time=3600
+
+      - name: link herbstluftwm autostart
+        file: >
+            dest=../../.config/herbstluftwm/autostart
+            src=../.config/herbstluftwm/autostart
+            state=link
+
+      - name: link herbstluftwm icons folder
+        file: >
+            dest=../../.config/herbstluftwm/icons
+            src=../.config/herbstluftwm/icons
+            state=link
+
+      - name: link herbstluftwm panel.sh
+        file: >
+            dest=../../.config/herbstluftwm/panel.sh
+            src=../.config/herbstluftwm/panel.sh
+            state=link
+
+      - name: update AUR
+        command: yaourt -Sy
+
+      - name: install AUR packages
+        command: yaourt -S urxvtcd alpine --noconfirm --needed
+
+      - name: config mail addressbook
+        file: >
+            dest=../../.addressbook
+            src=../.addressbook
+            state=link
+
+      - name: config alpine
+        file: >
+            dest=../../.pinerc
+            src=../.pinerc
+            state=link
