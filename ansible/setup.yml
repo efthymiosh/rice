@@ -1,5 +1,5 @@
 - name: Configure arch desktop
-  hosts: myhost
+  hosts: localhost
   become: True
   tasks:
       - name: config bashrc
@@ -27,10 +27,10 @@
             state=link
 
       - name: install nitrogen
-        pacman: name=nitrogen update_cache=yes
+        pacman: name=nitrogen
 
       - name: install dunst
-        pacman: name=dunst update_cache=yes
+        pacman: name=dunst
 
       - name: link dunst config folder
         file: >
@@ -39,7 +39,7 @@
             state=link
 
       - name: install zathura
-        pacman: name=zathura update_cache=yes
+        pacman: name=zathura
 
       - name: link zathura config folder
         file: >
@@ -48,19 +48,19 @@
             state=link
 
       - name: install compton
-        pacman: name=compton update_cache=yes
+        pacman: name=compton
 
       - name: install rxvt-unicode
-        pacman: name=rxvt-unicode update_cache=yes
+        pacman: name=rxvt-unicode
 
       - name: config .Xdefaults
         command: cpp /home/efthymiosh/.rice/.Xdefaults -P -o ~/.Xdefaults 
 
       - name: install sxiv
-        pacman: name=sxiv update_cache=yes
+        pacman: name=sxiv
 
       - name: install vim
-        pacman: name=vim update_cache=yes
+        pacman: name=vim
 
       - name: link vimrc
         file: >
@@ -75,16 +75,16 @@
             state=link
 
       - name: install git
-        pacman: name=git update_cache=yes
+        pacman: name=git
 
       - name: install xf86-input-synaptics
-        pacman: name=xf86-input-synaptics update_cache=yes
+        pacman: name=xf86-input-synaptics
 
       - name: install bash-completion
-        pacman: name=bash-completion update_cache=yes
+        pacman: name=bash-completion
 
       - name: install mpd
-        pacman: name=mpd update_cache=yes
+        pacman: name=mpd
 
       - name: config mpd
         file: >
@@ -93,7 +93,7 @@
             state=link
 
       - name: install ncmpcpp
-        pacman: name=ncmpcpp update_cache=yes
+        pacman: name=ncmpcpp
 
       - name: config ncmpcpp
         file: >
@@ -102,7 +102,7 @@
             state=link
 
       - name: install vifm
-        pacman: name=vifm update_cache=yes
+        pacman: name=vifm
 
       - name: config vifm
         file: >
@@ -111,7 +111,7 @@
             state=link
 
       - name: install weechat
-        pacman: name=weechat update_cache=yes
+        pacman: name=weechat
 
       - name: config weechat
         file: >
@@ -120,13 +120,13 @@
             state=link
 
       - name: install bitlbee
-        pacman: name=bitlbee update_cache=yes
+        pacman: name=bitlbee
 
       - name: install dzen2
-        pacman: name=dzen2 update_cache=yes
+        pacman: name=dzen2
 
       - name: install herbstluftwm
-        pacman: name=herbstluftwm update_cache=yes
+        pacman: name=herbstluftwm
 
       - name: link herbstluftwm autostart
         file: >
@@ -144,22 +144,4 @@
         file: >
             dest=/home/efthymiosh/.config/herbstluftwm/panel.sh
             src=/home/efthymiosh/.rice/.config/herbstluftwm/panel.sh
-            state=link
-
-      - name: update AUR
-        command: yaourt -Sy
-
-      - name: install AUR packages
-        command: yaourt -S urxvtcd alpine --noconfirm --needed
-
-      - name: config mail addressbook
-        file: >
-            dest=/home/efthymiosh/.addressbook
-            src=/home/efthymiosh/.rice/.addressbook
-            state=link
-
-      - name: config alpine
-        file: >
-            dest=/home/efthymiosh/.pinerc
-            src=/home/efthymiosh/.rice/.pinerc
             state=link
