@@ -125,8 +125,16 @@
       - name: install dzen2
         pacman: name=dzen2
 
+      - name: install dmenu
+        pacman: name=dmenu
+
       - name: install herbstluftwm
         pacman: name=herbstluftwm
+
+      - name: herbstluft config dir
+        file: >
+            path=/home/efthymiosh/.config/herbstluftwm/
+            state=directory
 
       - name: link herbstluftwm autostart
         file: >
