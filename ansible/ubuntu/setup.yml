@@ -1,0 +1,252 @@
+- name: Configure ubuntu desktop
+  hosts: localhost
+  become: True
+  vars:
+      home_folder
+  tasks:
+      - name: remove oldbashrc
+        file:
+            dest: /home/efthymiosh/.bashrc.bak
+            src: /home/efthymiosh/.bashrc
+            state: absent
+            
+      - name: config bashrc
+        file:
+            dest: /home/efthymiosh/.bashrc
+            src: /home/efthymiosh/.rice/.bashrc
+            state: link
+
+      - name: config screenrc
+        file:
+            dest: /home/efthymiosh/.screenrc
+            src: /home/efthymiosh/.rice/.screenrc
+            state: link
+
+      - name: config inputrc
+        file:
+            dest: /home/efthymiosh/.inputrc
+            src: /home/efthymiosh/.rice/.inputrc
+            state: link
+
+      - name: config bash aliases
+        file:
+            dest: /home/efthymiosh/.bash_aliases
+            src: /home/efthymiosh/.rice/.bash_aliases
+            state: link
+
+      - name: update cache
+        apt:
+            update_cache: yes
+
+      - name: install build-essential
+        apt:
+            name: build-essential
+            state: present
+            update_cache: no
+
+
+      - name: install nitrogen
+        apt:
+            name: nitrogen
+            state: present
+            update_cache: no
+
+        - name: install dunst
+          apt:
+              name: dunst
+              state: present
+              update_cache: no
+
+        - name: link dunst config folder
+          file:
+              dest: /home/efthymiosh/.config/dunst
+              src: /home/efthymiosh/.rice/.config/dunst
+              state: link
+
+        - name: install zathura
+          apt:
+              name: zathura
+              state: present
+              update_cache: no
+
+        - name: link zathura config folder
+          file:
+              dest: /home/efthymiosh/.config/zathura
+              src: /home/efthymiosh/.rice/.config/zathura
+              state: link
+
+        - name: install compton
+          apt:
+              name: compton
+              state: present
+              update_cache: no
+
+        - name: install rxvt-unicode
+          apt:
+              name: rxvt-unicode
+              state: present
+              update_cache: no
+
+        - name: config .Xdefaults
+          command: cpp /home/efthymiosh/.rice/.Xdefaults.source -P -o /home/efthymiosh/.Xdefaults 
+
+        - name: install sxiv
+          apt:
+              name: sxiv
+              state: present
+              update_cache: no
+
+        - name: install vim
+          apt:
+              name: vim
+              state: present
+              update_cache: no
+
+        - name: link vimrc
+          file:
+              dest: /home/efthymiosh/.vimrc
+              src: /home/efthymiosh/.rice/.vimrc
+              state: link
+
+        - name: link vimdevrc
+          file:
+              dest: /home/efthymiosh/.vimdevrc
+              src: /home/efthymiosh/.rice/.vimdevrc
+              state: link
+
+        - name: install git
+          apt:
+              name: git
+              state: present
+              update_cache: no
+
+        - name: install xf86-input-synaptics
+          apt:
+              name: xf86-input-synaptics
+              state: present
+              update_cache: no
+
+        - name: install bash-completion
+          apt:
+              name: bash-completion
+              state: present
+              update_cache: no
+
+        - name: install mpd
+          apt:
+              name: mpd
+              state: present
+              update_cache: no
+
+        - name: config mpd
+          file:
+              dest: /home/efthymiosh/.mpdconf
+              src: /home/efthymiosh/.rice/.mpdconf
+              state: link
+
+        - name: install ncmpcpp
+          apt:
+              name: ncmpcpp
+              state: present
+              update_cache: no
+
+        - name: config ncmpcpp
+          file:
+              dest: /home/efthymiosh/.ncmpcpp
+              src: /home/efthymiosh/.rice/.ncmpcpp
+              state: link
+
+        - name: install vifm
+          apt:
+              name: vifm
+              state: present
+              update_cache: no
+
+        - name: config vifm
+          file:
+              dest: /home/efthymiosh/.vifm
+              src: /home/efthymiosh/.rice/.vifm
+              state: link
+
+        - name: install weechat
+          apt:
+              name: weechat
+              state: present
+              update_cache: no
+
+        - name: config weechat
+          file:
+              dest: /home/efthymiosh/.weechat
+              src: /home/efthymiosh/.rice/.weechat
+              state: link
+
+        - name: install bitlbee
+          apt:
+              name: bitlbee
+              state: present
+              update_cache: no
+
+        - name: install dzen2
+          apt:
+              name: dzen2
+              state: present
+              update_cache: no
+
+        - name: install dmenu
+          apt:
+              name: dmenu
+              state: present
+              update_cache: no
+
+        - name: install herbstluftwm
+          apt:
+              name: herbstluftwm
+              state: present
+              update_cache: no
+
+        - name: herbstluft config dir
+          file:
+              path: /home/efthymiosh/.config/herbstluftwm/
+              state: directory
+
+        - name: link herbstluftwm autostart
+          file:
+              dest: /home/efthymiosh/.config/herbstluftwm/autostart
+              src: /home/efthymiosh/.rice/.config/herbstluftwm/autostart
+              state: link
+
+        - name: link herbstluftwm icons folder
+          file:
+              dest: /home/efthymiosh/.config/herbstluftwm/icons
+              src: /home/efthymiosh/.rice/.config/herbstluftwm/icons
+              state: link
+
+        - name: link herbstluftwm panel.sh
+          file:
+              dest: /home/efthymiosh/.config/herbstluftwm/panel.sh
+              src: /home/efthymiosh/.rice/.config/herbstluftwm/panel.sh
+              state: link
+
+        - name: install alpine
+          apt:
+              name: alpine
+              state: present
+              update_cache: no
+
+        - name: install rxvt-unicode
+          apt:
+              name: alpine
+              state: present
+              update_cache: no
+
+        - name: config mail addressbook
+          file:
+              dest: /home/efthymiosh/.addressbook
+              src: /home/efthymiosh/.rice/.addressbook
+              state: link
+
+        - name: config alpine
+          file:
+              dest: /home/efthymiosh/.pinerc
+              src: /home/efthymiosh/.rice/.pinerc
+              state: link
