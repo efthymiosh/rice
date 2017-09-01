@@ -1,8 +1,6 @@
 - name: Configure ubuntu desktop
   hosts: localhost
   become: True
-  vars:
-      home_folder
   tasks:
       - name: remove oldbashrc
         file:
@@ -250,3 +248,20 @@
               dest: /home/efthymiosh/.pinerc
               src: /home/efthymiosh/.rice/.pinerc
               state: link
+
+        - name: retrieve terraform
+          get_url:
+              url: "https://releases.hashicorp.com/terraform/0.10.3/terraform_0.10.3_linux_amd64.zip"
+              dest: /home/efthymiosh/terraform.zip 
+              mode: 0755
+              owner: efthymiosh
+              group: efthymiosh
+        - name: extract binary
+
+        unarchive:
+            remote_src: no
+            src: /home/efthymiosh/terraform.zip
+            dest: /opt/terraform
+            owner: root
+            group: root
+
