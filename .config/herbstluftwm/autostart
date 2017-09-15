@@ -20,7 +20,7 @@ setxkbmap us
 if [[ `pidof compton` -ne 0 ]]; then
     killall compton
 fi
-compton -c -C -r 5 -l -8 -t -8 -m 0.95 -G -D 15 --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc &
+compton -c -C -r 5 -l -8 -t -8 -m 0.95 -G -D 15 --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc --opacity-rule 90:'name *= ""' &
 if [[ `pidof syndaemon` -ne 0 ]]; then
     killall syndaemon
 fi
@@ -54,6 +54,7 @@ herbstclient keybind $Mod-Return spawn urxvtcd
 # Launcher
 # herbstclient keybind $Mod-d spawn dmenu_run -fn -*-terminus-medium-r-normal-*-14-*-*-*-*-*-* -nb "$color_bg" -nf "$dmenu_accent" -sb "$dmenu_accent" -sf "$color_bg"
 herbstclient keybind $Mod-d spawn dmenu_run -fn "Deja Vu Sans Mono-10:book:pixelsize=13:antialias=true:hinting=true" -nb "$color_bg" -nf "$dmenu_accent" -sb "$dmenu_accent" -sf "$color_bg"
+herbstclient keybind XF86Search spawn dmenu_run -fn "Deja Vu Sans Mono-10:book:pixelsize=13:antialias=true:hinting=true" -nb "$color_bg" -nf "$dmenu_accent" -sb "$dmenu_accent" -sf "$color_bg"
 
 # Screenshot
 herbstclient keybind Print spawn scrot 

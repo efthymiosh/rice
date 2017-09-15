@@ -18,7 +18,7 @@ music_directory		"/home/efthymiosh/Music/"
 # playlist files not created by the server but only if they are in the MPD
 # format. This setting defaults to playlist saving being disabled.
 #
-playlist_directory		"/home/efthymiosh/.config/mpd/playlists"
+playlist_directory		"/home/efthymiosh/.mpd/playlists"
 #
 # This setting sets the location of the MPD database. This file is used to
 # load the database at server start up and store the database while the 
@@ -35,7 +35,7 @@ db_file			"/home/efthymiosh/.config/mpd/tag_cache"
 # The special value "syslog" makes MPD use the local syslog daemon. This
 # setting defaults to logging to syslog, otherwise logging is disabled.
 #
-#log_file			"/home/efthymiosh/.mpd.log"
+log_file			"/home/efthymiosh/.mpd/log"
 #
 # This setting sets the location of the file which stores the process ID
 # for use of mpd --kill and some init scripts. This setting is disabled by
@@ -81,7 +81,6 @@ user				"efthymiosh"
 #
 # For network
 bind_to_address		"localhost"
-bind_to_address		"192.168.1.107"
 #
 # And for Unix Socket
 #bind_to_address		"/run/mpd/socket"
