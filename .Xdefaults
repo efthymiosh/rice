@@ -218,6 +218,28 @@ Xft.lcdfilter:  lcddefault
 #define def_color15  #f4f2ec
 #endif
 
+#ifdef SEOUL
+! Seoul !
+#define def_foreground #d0d0d0
+#define def_background #3a3a3a
+#define def_color0 #4e4e4e
+#define def_color1 #d68787
+#define def_color2 #5f865f
+#define def_color3 #d8af5f
+#define def_color4 #85add4
+#define def_color5 #d7afaf
+#define def_color6 #87afaf
+#define def_color7 #d0d0d0
+#define def_color8 #626262
+#define def_color9 #d75f87
+#define def_color10 #87af87
+#define def_color11 #c9a26b
+#define def_color12 #add4fb
+#define def_color13 #100afaf
+#define def_color14 #87d7d7
+#define def_color15 #e4e4e4
+#endif
+
 #ifdef AMPLE_LIGHT
 ! Ample Light !
 #define def_foreground #434343
