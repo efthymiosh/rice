@@ -70,11 +70,14 @@ set editing-mode vi
 
 $if mode=vi
     set show-mode-in-prompt on
-    set keymap vi-command
+    set vi-cmd-mode-string :
+    set vi-ins-mode-string +
+
     # these are for vi-command mode
+    set keymap vi-command
     Control-l: clear-screen
     
-    set keymap vi-insert
     # these are for vi-insert mode
+    set keymap vi-insert
     Control-l: clear-screen 
 $endif
