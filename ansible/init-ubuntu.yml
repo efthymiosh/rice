@@ -3,18 +3,24 @@
   become: True
 
   vars:
-    rice_location: /home/efthymiosh/cloned/rice
+    home_folder: "{{ home_folder }}"
+    rice_location: "{{ home_folder }}/cloned/rice"
 
   tasks:
   - name: update apt package information
     apt:
       update_cache: yes
 
-  - name: install {{ item }}
+  - name: remove .bashrc
+    file:
+      src: "{{ home_folder }}/.bashrc"
+      state: absent
+
+  - name: install terminal packages
     apt:
       name: "{{ item }}"
       state: present
-        update_cache: no
+      update_cache: no
     with_items:
     - "build-essential"
     - "alpine"
@@ -29,11 +35,11 @@
     - terminal
     - desktop
 
-  - name: install {{ item }}
+  - name: install desktop packages
     apt:
       name: "{{ item }}"
       state: present
-        update_cache: no
+      update_cache: no
     with_items:
     - "dzen2"
     - "dmenu"
@@ -46,9 +52,9 @@
     - "sxiv"
     tags: desktop
 
-  - name: add configuration for {{ item }}
+  - name: add configuration for terminal programs
     file:
-      dest: "/home/efthymiosh/{{ item }}"
+      dest: "{{ home_folder }}/{{ item }}"
       src:  "{{ rice_location }}/{{ item }}"
       state: link
     with_items:
@@ -68,9 +74,9 @@
     - terminal
     - desktop
 
-  - name: add configuration for {{ item }}
+  - name: add configuration for desktop programs
     file:
-      dest: "/home/efthymiosh/{{ item }}"
+      dest: "{{ home_folder }}/{{ item }}"
       src:  "{{ rice_location }}/{{ item }}"
       state: link
     with_items:
