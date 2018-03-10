@@ -1,0 +1,82 @@
+- name: Configure ubuntu desktop
+  hosts: localhost
+  become: True
+
+  vars:
+    rice_location: /home/efthymiosh/cloned/rice
+
+  tasks:
+  - name: update apt package information
+    apt:
+      update_cache: yes
+
+  - name: install {{ item }}
+    apt:
+      name: "{{ item }}"
+      state: present
+        update_cache: no
+    with_items:
+    - "build-essential"
+    - "alpine"
+    - "vim"
+    - "git"
+    - "mpd"
+    - "ncmpcpp"
+    - "vifm"
+    - "weechat"
+    - "bitlbee"
+    tags:
+    - terminal
+    - desktop
+
+  - name: install {{ item }}
+    apt:
+      name: "{{ item }}"
+      state: present
+        update_cache: no
+    with_items:
+    - "dzen2"
+    - "dmenu"
+    - "herbstluftwm"
+    - "nitrogen"
+    - "dunst"
+    - "zathura"
+    - "compton"
+    - "rxvt-unicode"
+    - "sxiv"
+    tags: desktop
+
+  - name: add configuration for {{ item }}
+    file:
+      dest: "/home/efthymiosh/{{ item }}"
+      src:  "{{ rice_location }}/{{ item }}"
+      state: link
+    with_items:
+    - ".bashrc"
+    - ".bash_aliases"
+    - ".screenrc"
+    - ".inputrc"
+    - ".vimrc"
+    - ".vimdevrc"
+    - ".mpdconf"
+    - ".ncmpcpp"
+    - ".vifm"
+    - ".weechat"
+    - ".addressbook"
+    - ".pinerc"
+    tags:
+    - terminal
+    - desktop
+
+  - name: add configuration for {{ item }}
+    file:
+      dest: "/home/efthymiosh/{{ item }}"
+      src:  "{{ rice_location }}/{{ item }}"
+      state: link
+    with_items:
+    - ".config/herbstluftwm/autostart"
+    - ".config/herbstluftwm/panel.sh"
+    - ".config/herbstluftwm/icons"
+    - ".config/dunst"
+    - ".config/zathura"
+    tags: desktop
