@@ -1,0 +1,88 @@
+- name: Configure ubuntu desktop
+  hosts: localhost
+  become: True
+
+  vars:
+    home_folder: "{{ home_folder }}"
+    rice_location: "{{ home_folder }}/cloned/rice"
+
+  tasks:
+  - name: update apt package information
+    apt:
+      update_cache: yes
+
+  - name: remove .bashrc
+    file:
+      src: "{{ home_folder }}/.bashrc"
+      state: absent
+
+  - name: install terminal packages
+    apt:
+      name: "{{ item }}"
+      state: present
+      update_cache: no
+    with_items:
+    - "build-essential"
+    - "alpine"
+    - "vim"
+    - "git"
+    - "mpd"
+    - "ncmpcpp"
+    - "vifm"
+    - "weechat"
+    - "bitlbee"
+    tags:
+    - terminal
+    - desktop
+
+  - name: install desktop packages
+    apt:
+      name: "{{ item }}"
+      state: present
+      update_cache: no
+    with_items:
+    - "dzen2"
+    - "dmenu"
+    - "herbstluftwm"
+    - "nitrogen"
+    - "dunst"
+    - "zathura"
+    - "compton"
+    - "rxvt-unicode"
+    - "sxiv"
+    tags: desktop
+
+  - name: add configuration for terminal programs
+    file:
+      dest: "{{ home_folder }}/{{ item }}"
+      src:  "{{ rice_location }}/{{ item }}"
+      state: link
+    with_items:
+    - ".bashrc"
+    - ".bash_aliases"
+    - ".screenrc"
+    - ".inputrc"
+    - ".vimrc"
+    - ".vimdevrc"
+    - ".mpdconf"
+    - ".ncmpcpp"
+    - ".vifm"
+    - ".weechat"
+    - ".addressbook"
+    - ".pinerc"
+    tags:
+    - terminal
+    - desktop
+
+  - name: add configuration for desktop programs
+    file:
+      dest: "{{ home_folder }}/{{ item }}"
+      src:  "{{ rice_location }}/{{ item }}"
+      state: link
+    with_items:
+    - ".config/herbstluftwm/autostart"
+    - ".config/herbstluftwm/panel.sh"
+    - ".config/herbstluftwm/icons"
+    - ".config/dunst"
+    - ".config/zathura"
+    tags: desktop
