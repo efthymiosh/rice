@@ -337,7 +337,7 @@ Xft.lcdfilter:  lcddefault
 
 #ifdef TERMSEXY_GRAY
 #define def_foreground #c5c8c6
-#define def_background #1d1f21
+#define def_background #262626
 #define def_color0   #282a2e
 #define def_color8   #373b41
 #define def_color1   #a54242
@@ -407,6 +407,11 @@ URxvt*allow_bold: false
 URxvt*font: xft:DejaVu Sans Mono:pixelsize=13
 URxvt*boldFont: xft:DejaVu Sans Mono:bold:pixelsize=13
 URxvt*letterSpace: -1
+
+! URxvt*allow_bold: false
+! URxvt*font: xft:Fira Code:pixelsize=12
+! URxvt*boldFont: xft:Fira Code:bold:pixelsize=13
+! URxvt*letterSpace: -3
 
 ! scrollbar - true (default) or false
 URxvt*scrollBar: false
