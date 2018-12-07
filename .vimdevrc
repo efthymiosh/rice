@@ -16,13 +16,19 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Syntastic: syntax check plugin
-" Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
+
+" Ale: syntax check plugin
+" Plugin 'w0rp/ale'
 
 " NerdTree: alternative file explorer
 Plugin 'scrooloose/nerdtree'
 
 " UltiSnips: Snippets (tab-completing specified keywords 
 Plugin 'SirVer/ultisnips'
+
+" Ctrl-P: Fuzzy searching
+Plugin 'kien/ctrlp.vim'
 
 " Fugitive:
 Plugin 'tpope/vim-fugitive'
@@ -38,6 +44,15 @@ Plugin 'myhere/vim-nodejs-complete'
 
 " vim-terraform:
 Plugin 'hashivim/vim-terraform'
+
+" Jinja2 Syntax:
+Plugin 'Glench/Vim-Jinja2-Syntax'
+
+" Rust Syntax:
+Plugin 'rust-lang/rust.vim'
+
+" Rust Autocomplete:
+Plugin 'racer-rust/vim-racer'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.

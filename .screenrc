@@ -15,7 +15,7 @@ utf8 on on
 #      .      leave color unchanged
 
 # hard status bar at bottom:
-hardstatus alwayslastline '%{= Wd}[%{D}%H%{= Wd}]%{Wd}[%= %{= Wd}%?%-w%?%{r}>%{d} %t%?(%u)%?%{-b Wd}%?%+w%?%?%= %{Wd}%]'
+hardstatus alwayslastline '%{= Kd}[%{D}%H%{= Kd}]%{Kd}[%= %{= Kd}%?%-w%?%{r}>%{d} %t%?(%u)%?%{-b Kd}%?%+w%?%?%= %{Kd}%]'
 
 # window captions
 caption string "%{= Wr} %3n %{Wd}%t"

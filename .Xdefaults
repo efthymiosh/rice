@@ -9,16 +9,40 @@ Xft.lcdfilter:  lcddefault
 
 
 ! ACTIVE COLOR SCHEME !
-#define SEOUL_LIGHT
+#define SEOUL
 
 ! CURSOR COLOR !
 ! lightgreen
 ! #define def_cursorColor #74A370
-!purple
-#define def_cursorColor #59639e
+! purple
+! #define def_cursorColor #59639e
+! teal
+#define def_cursorColor #81c8c5
+
 
 
 ! COLORSCHEMES !
+#ifdef TERMINAL_SEXY_FLORA
+#define def_foreground    #c8cac4
+#define def_background    #0f100f
+#define def_color0        #191a18
+#define def_color8        #ecc4ae
+#define def_color1        #222221
+#define def_color9        #dfbaca
+#define def_color2        #333432
+#define def_color10       #8aaebc
+#define def_color3        #4a4b48
+#define def_color11       #cfc4e4
+#define def_color4        #676865
+#define def_color12       #a3cddd
+#define def_color5        #8a8c87
+#define def_color13       #6facc0
+#define def_color6        #b3b5af
+#define def_color14       #8ebdcf
+#define def_color7        #e1e3dc
+#define def_color15       #6cb79d
+#endif
+
 #ifdef APPLE_BRIGHT
 !apple-bright
 #define def_foreground    #1b0b10

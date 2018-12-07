@@ -70,6 +70,8 @@ set editing-mode vi
 
 $if mode=vi
     set show-mode-in-prompt on
+    set vi-cmd-mode-string :
+    set vi-ins-mode-string +
     set keymap vi-command
     # these are for vi-command mode
     Control-l: clear-screen

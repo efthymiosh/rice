@@ -78,8 +78,8 @@ hc pad $monitor $panel_height
     while true ; do
         # "date" output is checked once a second, but an event is only
         # generated if the output changed compared to the previous run.
-#        date +$'date\t^fg(#efefef)%H:%M^fg(#909090), %Y-%m-^fg(#efefef)%d'
-        date +$'date\t^fg()%H:%M^fg(#909090), ^fg()%d^fg(#909090)-%m-%Y'
+        date +$'date\t^fg(#efefef)%H:%M^fg(#909090), %Y-%m-^fg(#efefef)%d'
+#        date +$'date\t^fg()%H:%M^fg(#909090), ^fg()%d^fg(#909090)-%m-%Y'
         sleep 2 || break
     done > >(uniq_linebuffered) &
     childpid=$!
@@ -110,10 +110,10 @@ hc pad $monitor $panel_height
                     echo -n "^bg($selbg)^fg($selfg)"
                     ;;
                 '+') # active on other monitor
-                    echo -n "^bg(#565656)^fg($selfg)"
+                    echo -n "^bg($selbg)^fg($selfg)"
                     ;;
                 ':') # inactive tag that contains windows
-                    echo -n "^bg()^fg()"
+                    echo -n "^bg()^fg($selbg)"
                     ;;
                 '!') # urgent tag
                     # echo -n "^bg(#FF0675)^fg(#141414)"
@@ -134,8 +134,8 @@ hc pad $monitor $panel_height
                 echo -n " ${i:1} "
             fi
         done
-        echo -n "$separator$icon_clients$clientcount$separator"
-        echo -n "^bg()^fg() ${windowtitle//^/^^}"
+        echo -n "$separator$icon_clients^bg()^fg($selbg)$clientcount$separator"
+        echo -n "^bg()^fg($selbg) ${windowtitle//^/^^}"
         # small adjustments
         if [ -z "$song" ] ; then
             right="$separator^bg() $clock$date $separator"

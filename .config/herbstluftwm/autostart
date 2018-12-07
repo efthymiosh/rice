@@ -8,9 +8,11 @@
 #color_accent='#94C0E3'
 # lightgreen
 #color_accent='#74A370'
-# dark orange
-color_accent='#59639e'
-color_bg='#eaeaea'
+# purple
+#color_accent='#59639e'
+# teal
+color_accent='#81c8c5'
+color_bg='#3a3a3a'
 color_urgent='#c07a25'
 dmenu_accent="$color_accent"
 
@@ -20,7 +22,7 @@ setxkbmap us
 if [[ `pidof compton` -ne 0 ]]; then
     killall compton
 fi
-compton -c -C -r 5 -l -8 -t -8 -m 0.95 -G -D 15 --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc --opacity-rule 90:'name *= ""' &
+compton -c -C -r 5 -l -8 -t -8 -m 0.95 -G -D 15 --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc --opacity-rule 95:'name *= ""' &
 if [[ `pidof syndaemon` -ne 0 ]]; then
     killall syndaemon
 fi

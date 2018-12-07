@@ -120,3 +120,5 @@ if ! shopt -oq posix; then
 fi
 
 export PATH="$PATH:~/scripts/"
+
+complete -C /usr/local/bin/nomad nomad
