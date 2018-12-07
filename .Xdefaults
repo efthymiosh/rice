@@ -9,7 +9,7 @@ Xft.lcdfilter:  lcddefault
 
 
 ! ACTIVE COLOR SCHEME !
-#define SEOUL
+#define TERMSEXY_GRAY
 
 ! CURSOR COLOR !
 ! lightgreen
@@ -312,6 +312,48 @@ Xft.lcdfilter:  lcddefault
 #define def_color14 #427b58
 #define def_color7  #7c6f64
 #define def_color15 #3c3836
+#endif
+
+#ifdef TERMSEXY_PURPLISH_DARK
+#define def_foreground #c1cbc8
+#define def_background #0e100f
+#define def_color0   #181a19
+#define def_color1   #303332
+#define def_color2   #414443
+#define def_color3   #575c5a
+#define def_color4   #636968
+#define def_color5   #858d8b
+#define def_color6   #acb6b3
+#define def_color7   #d9e5e2
+#define def_color8   #bb8bda
+#define def_color9   #dfa7ba
+#define def_color10  #54a492
+#define def_color11  #c29562
+#define def_color12  #d8a872
+#define def_color13  #d399ac
+#define def_color14  #a2cf67
+#define def_color15  #c49f7a
+#endif
+
+#ifdef TERMSEXY_GRAY
+#define def_foreground #c5c8c6
+#define def_background #1d1f21
+#define def_color0   #282a2e
+#define def_color8   #373b41
+#define def_color1   #a54242
+#define def_color9   #cc6666
+#define def_color2   #8c9440
+#define def_color10  #b5bd68
+#define def_color3   #de935f
+#define def_color11  #f0c675
+#define def_color4   #5f819d
+#define def_color12  #81a2be
+#define def_color5   #85678f
+#define def_color13  #b294bb
+#define def_color6   #5e8d87
+#define def_color14  #8abeb7
+#define def_color7   #707880
+#define def_color15  #c5c8c6
 #endif
 
 ! change to urxvt-unicode for different kinds of headaches
