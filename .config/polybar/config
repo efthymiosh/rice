@@ -55,6 +55,7 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = Fira Code:size=9;0
+font-1 = Fira Code:size=9:fontformat=truetype;0
 
 modules-left = ewmh volume
 modules-center = xbacklight  xwindow
@@ -350,8 +351,8 @@ format-disconnected = <label-disconnected>
 ; ;   %downspeed% [wireless+wired]
 ; ;   %linkspeed% [wired]
 ; ; Default: %ifname% %local_ip%
-label-connected = %essid% %upspeed:8% %downspeed:8%
-label-connected-foreground = #eefafafa
+label-connected = %essid% ⇃%downspeed:8% ↿%upspeed:8%
+label-connected-foreground = ${colors.foreground}
 ;
 ; ; Available tokens:
 ; ;   %ifname%    [wireless+wired]
@@ -360,7 +361,7 @@ label-connected-foreground = #eefafafa
 #format-disconnected = <label-disconnected>
 format-disconnected-underline = ${self.format-connected-underline}
 label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.foreground}
+label-disconnected-foreground = ${colors.background-alt}
 
 ;
 ; ; Available tokens:
