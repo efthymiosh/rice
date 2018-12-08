@@ -16,26 +16,24 @@ color_bg='#262626'
 color_urgent='#c07a25'
 dmenu_accent="$color_accent"
 
+function kill_wait {
+    killall -q "$1"
+    while pgrep -x "$1" >/dev/null; do sleep 0.2; done
+}
+
 #startup applications
 setxkbmap us
-# wmname LG3D
-if [[ `pidof compton` -ne 0 ]]; then
-    killall compton
-fi
+
+kill_wait compton
+kill_wait polybar
+
 compton -c -C -r 5 -l -8 -t -8 -m 0.95 -G -D 15 --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc --opacity-rule 95:'name *= ""' &
-if [[ `pidof syndaemon` -ne 0 ]]; then
-    killall syndaemon
-fi
-syndaemon -i 1 -d
-mpd
+
 nitrogen --restore
-~/scripts/hhpc.sh
-
-
 
 herbstclient emit_hook reload
 
-# set keyboard repeat-key-when-pressed delay to 250ms, repeat to 30 keystrokes per second.
+# set keyboard repeat-key-when-pressed delay to 350ms, repeat to 30 keystrokes per second.
 xset r rate 350 30
 #disable screen blanking on idle
 xset s off
@@ -54,7 +52,6 @@ herbstclient keybind $Mod-Shift-c close
 herbstclient keybind $Mod-Return spawn alacritty
 
 # Launcher
-# herbstclient keybind $Mod-d spawn dmenu_run -fn -*-terminus-medium-r-normal-*-14-*-*-*-*-*-* -nb "$color_bg" -nf "$dmenu_accent" -sb "$dmenu_accent" -sf "$color_bg"
 herbstclient keybind $Mod-d spawn dmenu_run -fn "Deja Vu Sans Mono-10:book:pixelsize=13:antialias=true:hinting=true" -nb "$color_bg" -nf "$dmenu_accent" -sb "$dmenu_accent" -sf "$color_bg"
 herbstclient keybind XF86Search spawn dmenu_run -fn "Deja Vu Sans Mono-10:book:pixelsize=13:antialias=true:hinting=true" -nb "$color_bg" -nf "$dmenu_accent" -sb "$dmenu_accent" -sf "$color_bg"
 
@@ -62,8 +59,6 @@ herbstclient keybind XF86Search spawn dmenu_run -fn "Deja Vu Sans Mono-10:book:p
 herbstclient keybind Print spawn scrot 
 
 # Keyboard locale
-# herbstclient keybind $Mod-bracketleft    spawn setxkbmap us
-# herbstclient keybind $Mod-bracketright   spawn setxkbmap gr
 setxkbmap -option grp:win_space_toggle us,el
 
 # Sound
@@ -80,20 +75,12 @@ herbstclient keybind XF86MonBrightnessDown spawn xbacklight -dec 10
 
 # basic movement
 # focusing clients
-# herbstclient keybind $Mod-Left  focus left
-# herbstclient keybind $Mod-Down  focus down
-# herbstclient keybind $Mod-Up    focus up
-# herbstclient keybind $Mod-Right focus right
 herbstclient keybind $Mod-h     focus left
 herbstclient keybind $Mod-j     focus down
 herbstclient keybind $Mod-k     focus up
 herbstclient keybind $Mod-l     focus right
 
 # moving clients
-herbstclient keybind $Mod-Shift-Left  shift left
-herbstclient keybind $Mod-Shift-Down  shift down
-herbstclient keybind $Mod-Shift-Up    shift up
-herbstclient keybind $Mod-Shift-Right shift right
 herbstclient keybind $Mod-Shift-h     shift left
 herbstclient keybind $Mod-Shift-j     shift down
 herbstclient keybind $Mod-Shift-k     shift up
@@ -114,20 +101,14 @@ herbstclient keybind $Mod-Control-h       resize left +$resizestep
 herbstclient keybind $Mod-Control-j       resize down +$resizestep
 herbstclient keybind $Mod-Control-k       resize up +$resizestep
 herbstclient keybind $Mod-Control-l       resize right +$resizestep
-herbstclient keybind $Mod-Control-Left    resize left +$resizestep
-herbstclient keybind $Mod-Control-Down    resize down +$resizestep
-herbstclient keybind $Mod-Control-Up      resize up +$resizestep
-herbstclient keybind $Mod-Control-Right   resize right +$resizestep
 
 herbstclient keybind $Mod-w            set_attr theme.active.color $color_accent
 herbstclient keybind $Mod-Shift-w      set_attr theme.active.color $color_bg
 
 
 # tags
-#tag_names=( {1..9} )
-tag_names=( '!' '@' '#' '$' '%' '&' )
-#tag_keys=( ampersand eacute quotedbl apostrophe parenleft section egrave exclam ccedilla 0 )
-tag_keys=( {1..6} 0 )
+tag_names=( 'main' 'work' 'lab' 'comms' )
+tag_keys=( {1..4} 0 )
 
 herbstclient rename default "${tag_names[0]}" || true
 for i in ${!tag_names[@]} ; do
@@ -219,9 +200,6 @@ done
 
 # find the panel
 panel=~/.config/polybar/panel.sh
-
-killall -q polybar
-while pgrep -x polybar >/dev/null; do sleep 1; done
 
 for monitor in $(polybar -m | cut -d: -f1) ; do
     # start it on each monitor
