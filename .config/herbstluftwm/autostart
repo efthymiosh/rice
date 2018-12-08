@@ -11,7 +11,7 @@
 # purple
 #color_accent='#59639e'
 # teal
-color_accent='#81c8c5'
+color_accent='#de935f'
 color_bg='#262626'
 color_urgent='#c07a25'
 dmenu_accent="$color_accent"

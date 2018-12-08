@@ -99,7 +99,7 @@ label-monitor = %name%
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-active = "%name% "
+label-active = "%name%"
 label-active-foreground = ${colors.foreground}
 label-active-background = ${colors.background}
 label-active-underline = ${colors.yellow}
@@ -109,7 +109,7 @@ label-active-underline = ${colors.yellow}
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-occupied = "%name% "
+label-occupied = "%name%"
 label-occupied-foreground = ${colors.foreground}
 label-occupied-background = ${colors.background}
 label-occupied-underline = ${colors.blue}
@@ -119,7 +119,7 @@ label-occupied-underline = ${colors.blue}
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-urgent = "%name% "
+label-urgent = "%name%"
 label-urgent-foreground = ${colors.background}
 label-urgent-background = ${colors.foreground}
 label-urgent-underline = ${colors.red}
@@ -129,8 +129,13 @@ label-urgent-underline = ${colors.red}
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-empty = "%name% "
+label-empty = "%name%"
 label-empty-foreground = ${colors.foreground}
+
+label-active-padding = 1
+label-occupied-padding = 1
+label-urgent-padding = 1
+label-empty-padding = 1
 
 
 [module/xwindow]
