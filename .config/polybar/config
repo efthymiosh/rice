@@ -554,7 +554,7 @@ menu-2-1-exec = menu-open-0
 screenchange-reload = false
 
 [global/wm]
-margin-top = 5
-margin-bottom = 5
+margin-top = 2
+margin-bottom = 2
 
 ; vim:ft=dosini
