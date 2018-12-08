@@ -94,19 +94,19 @@ font:
   normal:
     family: Fira Code
     # The `style` can be specified to pick a specific face.
-    #style: Regular
+    style: Regular
 
   # Bold font face
   bold:
     family: Fira Code
     # The `style` can be specified to pick a specific face.
-    #style: Bold
+    style: Bold
 
   # Italic font face
   italic:
     family: Fira Code
     # The `style` can be specified to pick a specific face.
-    #style: Italic
+    style: Light
 
   # Point size
   size: 8
