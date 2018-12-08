@@ -9,15 +9,21 @@
 
 [colors]
 background = #262626
-background-alt = #262626
+background-alt = #3f3f3f
 foreground = #c5c8c6
-foreground-alt = #c5c8c6
 primary = #5e8d87
 secondary = #f0c675
 alert = #a54242
 
-linecolor = #fba922
-bordercolor = #262626
+black = #282a2e
+red = #a54242
+green = #8c9440
+yellow = #de935f
+blue = #5f819d
+magenta = #85678f
+cyan = #5e8d87
+white = #707880
+
 accent = #e60053
 
 [bar/my-awesome-polybar]
@@ -32,7 +38,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
-line-color = ${colors.linecolor}
+line-color = ${colors.yellow}
 
 overline-size = 3
 overline-color = ${colors.accent}
@@ -40,9 +46,9 @@ underline-size = 3
 underline-color = ${colors.accent}
 
 border-size = 4
-border-color = ${colors.bordercolor}
+border-color = ${colors.background}
 
-padding-left = 0
+padding-left = 1
 padding-right = 2
 
 module-margin-left = 1
@@ -58,44 +64,6 @@ tray-position = right
 tray-padding = 9
 tray-maxsize = 18
 
-[bar/bottom-bar]
-enable-ipc = true
-
-width = 100%
-height = 10
-
-bottom = true
-
-;offset-x = 1%
-#offset-y = 1050
-;radius = 0
-fixed-center = false
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 3
-line-color = ${colors.linecolor}
-
-underline-size = 2
-overline-size = 2
-
-border-size = 4
-border-color = ${colors.bordercolor}
-
-padding-left = 2
-padding-right = 2
-
-module-margin-left = 4
-module-margin-right = 4
-
-font-0 = Fira Code:size=9;0
-
-modules-left = mpd
-modules-center =
-modules-right = ip-wireless ip-wired filesystem
-
-
 [module/ewmh]
 type = internal/xworkspaces
 
@@ -109,11 +77,11 @@ pin-workspaces = false
 
 ; Create click handler used to focus desktop
 ; Default: true
-enable-click = true
+enable-click = false
 
 ; Create scroll handlers used to cycle desktops
 ; Default: true
-enable-scroll = true
+enable-scroll = false
 
 ; Available tags:
 ;   <label-monitor>
@@ -131,36 +99,38 @@ label-monitor = %name%
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-active = %icon% %name%
-label-active-foreground = #ffffff
-label-active-background = #3f3f3f
-label-active-underline = #fba922
+label-active = "%name% "
+label-active-foreground = ${colors.foreground}
+label-active-background = ${colors.background}
+label-active-underline = ${colors.yellow}
 
 ; Available tokens:
 ;   %name%
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-occupied = %icon% %name%
-label-occupied-underline = #555555
+label-occupied = "%name% "
+label-occupied-foreground = ${colors.foreground}
+label-occupied-background = ${colors.background}
+label-occupied-underline = ${colors.blue}
 
 ; Available tokens:
 ;   %name%
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-urgent = %icon% %name%
-label-urgent-foreground = #000000
-label-urgent-background = #bd2c40
-label-urgent-underline = #9b0a20
+label-urgent = "%name% "
+label-urgent-foreground = ${colors.background}
+label-urgent-background = ${colors.foreground}
+label-urgent-underline = ${colors.red}
 
 ; Available tokens:
 ;   %name%
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-empty = %icon% %name%
-label-empty-foreground = #55
+label-empty = "%name% "
+label-empty-foreground = ${colors.foreground}
 
 
 [module/xwindow]
@@ -169,8 +139,8 @@ type = internal/xwindow
 label = %title: %
 label-maxlen = 30
 #format-background = #808000
-format-background = #555555
-format-foreground = #FFFFFF
+format-background = ${colors.background-alt}
+format-foreground = ${colors.foreground}
 format-padding = 2
 
 [module/xkeyboard]
@@ -178,7 +148,7 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.foreground}
 format-prefix-underline = ${colors.secondary}
 
 label-layout = %layout%
@@ -199,7 +169,7 @@ mount-2 = /home
 
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
+label-unmounted-foreground = ${colors.foreground}
 
 [module/mpd]
 type = internal/mpd
@@ -254,7 +224,7 @@ bar-fill-font = 0
 bar-fill-foreground = #9f78e1
 bar-empty = ─
 bar-empty-font = 0
-bar-empty-foreground = ${colors.foreground-alt}
+bar-empty-foreground = ${colors.foreground}
 
 [module/backlight-acpi]
 inherit = module/xbacklight
@@ -266,47 +236,47 @@ type = internal/cpu
 interval = 2
 format = <label> <ramp-coreload>
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+format-prefix-foreground = ${colors.foreground}
+format-underline = ${colors.red}
 label = %percentage%%
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 0
-ramp-coreload-0-foreground = #aaff77
+ramp-coreload-0-foreground = ${colors.green}
 ramp-coreload-1 = ▂
 ramp-coreload-1-font = 0
-ramp-coreload-1-foreground = #aaff77
+ramp-coreload-1-foreground = ${colors.green}
 ramp-coreload-2 = ▃
 ramp-coreload-2-font = 0
-ramp-coreload-2-foreground = #aaff77
+ramp-coreload-2-foreground = ${colors.green}
 ramp-coreload-3 = ▄
 ramp-coreload-3-font = 0
-ramp-coreload-3-foreground = #aaff77
+ramp-coreload-3-foreground = ${colors.green}
 ramp-coreload-4 = ▅
 ramp-coreload-4-font = 0
-ramp-coreload-4-foreground = #fba922
+ramp-coreload-4-foreground = ${colors.yellow}
 ramp-coreload-5 = ▆
 ramp-coreload-5-font = 0
-ramp-coreload-5-foreground = #fba922
+ramp-coreload-5-foreground = ${colors.yellow}
 ramp-coreload-6 = ▇
 ramp-coreload-6-font = 0
-ramp-coreload-6-foreground = #ff5555
+ramp-coreload-6-foreground = ${colors.red}
 ramp-coreload-7 = █
 ramp-coreload-7-font = 0
-ramp-coreload-7-foreground = #ff5555
+ramp-coreload-7-foreground = ${colors.red}
 
 [module/memory]
 type = internal/memory
 interval = 2
 format = <label> <bar-used>
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+format-prefix-foreground = ${colors.foreground}
+format-underline = ${colors.cyan}
 label = %percentage_used%%
 bar-used-width = 8
-bar-used-foreground-0 = #aaff77
-bar-used-foreground-1 = #aaff77
-bar-used-foreground-2 = #fba922
-bar-used-foreground-3 = #ff5555
+bar-used-foreground-0 = ${colors.green}
+bar-used-foreground-1 = ${colors.green}
+bar-used-foreground-2 = ${colors.yellow}
+bar-used-foreground-3 = ${colors.red}
 bar-used-indicator = |
 bar-used-indicator-font = 0
 bar-used-indicator-foreground = #ff
@@ -314,7 +284,7 @@ bar-used-fill = ─
 bar-used-fill-font = 0
 bar-used-empty = ─
 bar-used-empty-font = 0
-bar-used-empty-foreground = #444444
+bar-used-empty-foreground = ${colors.background-alt}
 
 [module/ip-wired]
 type = internal/network
@@ -356,7 +326,7 @@ interval = 2.0
 ; ;   <label-connected> (default)
 ; ;   <ramp-signal>
 format-connected = <label-connected>
-format-connected-underline = #9f78e1
+format-connected-underline = ${colors.magenta}
 ;
 ; ; Available tags:
 ; ;   <label-disconnected> (default)
@@ -387,7 +357,7 @@ label-connected-foreground = #eefafafa
 #format-disconnected = <label-disconnected>
 format-disconnected-underline = ${self.format-connected-underline}
 label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.foreground-alt}
+label-disconnected-foreground = ${colors.foreground}
 
 ;
 ; ; Available tokens:
@@ -421,30 +391,30 @@ type = internal/network
 interface = eth0
 interval = 3.0
 
-format-connected-underline = #55aa55
+format-connected-underline = ${colors.magenta}
 format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
+format-connected-prefix-foreground = ${colors.foreground}
 label-connected = %local_ip%
 
 ;format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+;label-disconnected-foreground = ${colors.foreground}
 
 [module/date]
 type = internal/date
 interval = 5
 
-date =
+date = "%d/%m/%Y"
 date-alt = " %Y-%m-%d"
 
 time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-prefix-foreground = ${colors.foreground}
+format-underline = ${colors.blue}
 
 label = %date% %time%
 
@@ -456,7 +426,7 @@ label-volume = VOL
 label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
+format-muted-foreground = ${colors.foreground}
 label-muted = sound muted
 
 bar-volume-width = 10
@@ -474,7 +444,7 @@ bar-volume-fill = ─
 bar-volume-fill-font = 0
 bar-volume-empty = ─
 bar-volume-empty-font = 0
-bar-volume-empty-foreground = ${colors.foreground-alt}
+bar-volume-empty-foreground = ${colors.foreground}
 
 [module/battery]
 type = internal/battery
@@ -483,24 +453,24 @@ adapter = AC
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+format-charging-underline = ${colors.yellow}
 
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-prefix-foreground = ${colors.foreground}
 format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-foreground = ${colors.foreground}
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 750
 
 [module/temperature]
@@ -509,7 +479,7 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #f50a4d
+format-underline = ${colors.red}
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
@@ -520,7 +490,7 @@ label-warn-foreground = ${colors.secondary}
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
+ramp-foreground = ${colors.foreground}
 
 [module/powermenu]
 type = custom/menu
@@ -532,7 +502,7 @@ label-open-foreground = ${colors.secondary}
 label-close =  cancel
 label-close-foreground = ${colors.secondary}
 label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
+label-separator-foreground = ${colors.foreground}
 
 menu-0-0 = reboot
 menu-0-0-exec = reboot
