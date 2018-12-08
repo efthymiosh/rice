@@ -27,7 +27,16 @@ setxkbmap us
 kill_wait compton
 kill_wait polybar
 
-compton -c -C -r 5 -l -8 -t -8 -m 0.95 -G -D 15 --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc --opacity-rule 95:'name *= ""' &
+compton --shadow \
+    --shadow-radius=5 \
+    --shadow-offset-x=-8 \
+    --shadow-offset-y=-8 \
+    --no-dnd-shadow \
+    --fade-delta=15 \
+    --backend glx \
+    --paint-on-overlay \
+    --glx-no-stencil \
+    --vsync opengl-swc
 
 nitrogen --restore
 
