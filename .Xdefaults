@@ -12,12 +12,7 @@ Xft.lcdfilter:  lcddefault
 #define TERMSEXY_GRAY
 
 ! CURSOR COLOR !
-! lightgreen
-! #define def_cursorColor #74A370
-! purple
-! #define def_cursorColor #59639e
-! teal
-#define def_cursorColor #81c8c5
+#define def_cursorColor #5f819d
 
 
 

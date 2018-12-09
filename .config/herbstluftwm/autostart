@@ -11,7 +11,7 @@
 # purple
 #color_accent='#59639e'
 # teal
-color_accent='#de935f'
+color_accent='#cc6666'
 color_bg='#262626'
 color_urgent='#c07a25'
 dmenu_accent="$color_accent"
@@ -61,8 +61,8 @@ herbstclient keybind $Mod-Shift-c close
 herbstclient keybind $Mod-Return spawn alacritty
 
 # Launcher
-herbstclient keybind $Mod-d spawn dmenu_run -fn "Deja Vu Sans Mono-10:book:pixelsize=13:antialias=true:hinting=true" -nb "$color_bg" -nf "$dmenu_accent" -sb "$dmenu_accent" -sf "$color_bg"
-herbstclient keybind XF86Search spawn dmenu_run -fn "Deja Vu Sans Mono-10:book:pixelsize=13:antialias=true:hinting=true" -nb "$color_bg" -nf "$dmenu_accent" -sb "$dmenu_accent" -sf "$color_bg"
+herbstclient keybind $Mod-d spawn rofi -show run -font "Fira Code 10"
+herbstclient keybind XF86Search spawn rofi -show run -font "Fira Code 10"
 
 # Screenshot
 herbstclient keybind Print spawn scrot 
