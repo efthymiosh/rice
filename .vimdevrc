@@ -186,6 +186,12 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 "Fugitive settings {{{
 set diffopt+=vertical
 " }}}
+"
+"Vim-Racer settings {{{
+au FileType rust nmap gd <Plug>(rust-def)
+au FileType rust nmap gx <Plug>(rust-doc)
+" }}}
+
 " function! StartUp()
 "         NERDTree
 " endfunction
