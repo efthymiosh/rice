@@ -21,7 +21,7 @@ hardstatus alwayslastline '%{= Kd}[%{D}%H%{= Kd}]%{Kd}[%= %{= Kd}%?%-w%?%{r}>%{d
 caption string "%{= Wr} %3n %{Wd}%t"
 
 # vertical bar
-sorendition "YW"
+sorendition "rW"
 
 # Scrollback buffer, in lines (default= 100 ?)
 defscrollback 5000
