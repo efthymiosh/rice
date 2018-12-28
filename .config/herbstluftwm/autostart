@@ -38,7 +38,7 @@ compton --shadow \
     --glx-no-stencil \
     --vsync opengl-swc &
 
-nitrogen --restore
+nitrogen --restore &
 
 herbstclient emit_hook reload
 
