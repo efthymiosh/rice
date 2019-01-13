@@ -12,7 +12,7 @@
 #color_accent='#59639e'
 # teal
 color_accent='#cc6666'
-color_bg='#262626'
+color_bg='#202020'
 color_urgent='#c07a25'
 dmenu_accent="$color_accent"
 
@@ -43,7 +43,7 @@ nitrogen --restore &
 herbstclient emit_hook reload
 
 # set keyboard repeat-key-when-pressed delay to 350ms, repeat to 30 keystrokes per second.
-xset r rate 350 30
+xset r rate 350 33
 #disable screen blanking on idle
 xset s off
 

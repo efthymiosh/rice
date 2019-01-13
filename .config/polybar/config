@@ -8,7 +8,7 @@
 ;=====================================================
 
 [colors]
-background = #262626
+background = #202020
 background-alt = #3f3f3f
 foreground = #c5c8c6
 primary = #5e8d87
