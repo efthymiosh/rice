@@ -15,34 +15,19 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" Syntastic: syntax check plugin
-Plugin 'vim-syntastic/syntastic'
-
-" Ale: syntax check plugin
-" Plugin 'w0rp/ale'
-
 " NerdTree: alternative file explorer
 Plugin 'scrooloose/nerdtree'
 
 " UltiSnips: Snippets (tab-completing specified keywords 
 Plugin 'SirVer/ultisnips'
 
-" Ctrl-P: Fuzzy searching
+" CtrlP: Fuzzy searching
 Plugin 'kien/ctrlp.vim'
 
 " Fugitive:
 Plugin 'tpope/vim-fugitive'
 
-" Neocomplete:
-Plugin 'Shougo/neocomplete'
-
-" ClangCompletion:
-Plugin 'justmao945/vim-clang'
-
-" NodejsComplete:
-Plugin 'myhere/vim-nodejs-complete'
-
-" vim-terraform:
+" vim-terraform Syntax:
 Plugin 'hashivim/vim-terraform'
 
 " Jinja2 Syntax:
@@ -51,8 +36,11 @@ Plugin 'Glench/Vim-Jinja2-Syntax'
 " Rust Syntax:
 Plugin 'rust-lang/rust.vim'
 
-" Rust Autocomplete:
-Plugin 'racer-rust/vim-racer'
+" Async Language Server Protocol Plugin / deps
+Plugin 'prabirshrestha/async.vim'
+Plugin 'prabirshrestha/vim-lsp'
+Plugin 'prabirshrestha/asyncomplete.vim'
+Plugin 'prabirshrestha/asyncomplete-lsp.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -171,9 +159,30 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 set diffopt+=vertical
 " }}}
 "
-"Vim-Racer settings {{{
-au FileType rust nmap gd <Plug>(rust-def)
-au FileType rust nmap gx <Plug>(rust-doc)
+"vim-lsp settings {{{
+
+let g:asyncomplete_auto_popup = 0
+imap <c-n> <Plug>(asyncomplete_force_refresh)
+
+au FileType rust nmap gd <Plug>(lsp-definition)
+au FileType rust nmap gr <Plug>(lsp-references)
+
+if executable('rls')
+    au User lsp_setup call lsp#register_server({
+                \ 'name': 'rls',
+                \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
+                \ 'whitelist': ['rust'],
+                \ })
+endif
+
+if executable('yaml-language-server')
+    au User lsp_setup call lsp#register_server({
+                \ 'name': 'yaml-language-server',
+                \ 'cmd': {server_info->['node', '/usr/local/bin/yaml-language-server', '--stdio']},
+                \ 'whitelist': ['yaml'],
+                \ })
+endif
+
 " }}}
 
 " function! StartUp()
