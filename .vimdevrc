@@ -24,8 +24,11 @@ Plugin 'SirVer/ultisnips'
 " CtrlP: Fuzzy searching
 Plugin 'kien/ctrlp.vim'
 
-" Fugitive:
+" Fugitive: :G* git commands
 Plugin 'tpope/vim-fugitive'
+
+" GitGutter: Diff on gutter!
+Plugin 'airblade/vim-gitgutter'
 
 " vim-terraform Syntax:
 Plugin 'hashivim/vim-terraform'
