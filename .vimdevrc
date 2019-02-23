@@ -172,6 +172,7 @@ imap <c-n> <Plug>(asyncomplete_force_refresh)
 
 au FileType rust nmap gd <Plug>(lsp-definition)
 au FileType rust nmap gr <Plug>(lsp-references)
+au FileType rust set signcolumn=yes
 
 if executable('rls')
     au User lsp_setup call lsp#register_server({
