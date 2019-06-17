@@ -24,14 +24,14 @@ Plugin 'SirVer/ultisnips'
 " Fugitive: :G* git commands
 Plugin 'tpope/vim-fugitive'
 
-" vim-terraform Syntax:
-Plugin 'hashivim/vim-terraform'
-
 " Jinja2 Syntax:
 Plugin 'Glench/Vim-Jinja2-Syntax'
 
 " Rust Syntax:
 Plugin 'rust-lang/rust.vim'
+
+" HashiCorpLang Syntax:
+Plugin 'jvirtanen/vim-hcl'
 
 " Async Language Server Protocol Plugin / deps
 Plugin 'prabirshrestha/async.vim'
@@ -172,6 +172,7 @@ imap <c-n> <Plug>(asyncomplete_force_refresh)
 
 au FileType rust nmap gd <Plug>(lsp-definition)
 au FileType rust nmap gr <Plug>(lsp-references)
+au FileType rust nmap gc <Plug>(lsp-code-action)
 au FileType rust set signcolumn=yes
 
 if executable('rls')
