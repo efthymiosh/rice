@@ -1,3 +1,5 @@
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre/
+
 alias emacs='emacs -nw'
 alias git-log='git log --oneline --decorate --graph --all'
 alias trc='transmission-remote-cli'
@@ -12,3 +14,25 @@ alias ncmpcphome='ncmpcpp -c ~/.ncmpcpp/config_server'
 alias ls='ls --literal --color=auto'
 alias lk='ls --color=never'
 alias info='info --vi-keys'
+
+alias kubenyc='kubectl --kubeconfig ~/.kube/prod-nyc.admin.yml'
+alias kubewdc='kubectl --kubeconfig ~/.kube/prod-wdc.admin.yml'
+alias kubeber='kubectl --kubeconfig ~/.kube/prod-ber.dev.yml'
+alias kubeams='kubectl --kubeconfig ~/.kube/prod-ams.dev.yml'
+alias kubestage='kubectl --kubeconfig ~/.kube/staging.admin.yml'
+
+alias helmnyc='helm --kubeconfig ~/.kube/prod-nyc.admin.yml'
+alias helmwdc='helm --kubeconfig ~/.kube/prod-wdc.admin.yml'
+alias helmber='helm --kubeconfig ~/.kube/prod-ber.dev.yml'
+alias helmams='helm --kubeconfig ~/.kube/prod-ams.dev.yml'
+alias helmstage='helm --kubeconfig ~/.kube/staging.admin.yml'
+
+alias linkerdnyc='linkerd --kubeconfig ~/.kube/prod-nyc.admin.yml'
+alias linkerdwdc='linkerd --kubeconfig ~/.kube/prod-wdc.admin.yml'
+alias linkerdber='linkerd --kubeconfig ~/.kube/prod-ber.dev.yml'
+alias linkerdams='linkerd --kubeconfig ~/.kube/prod-ams.dev.yml'
+alias linkerdstage='linkerd --kubeconfig ~/.kube/staging.admin.yml'
+
+alias nomad='NOMAD_ADDR=http://dsp-consul-us-wdc-1.int.glispa.com:4646 nomad'
+alias consulwdc='CONSUL_HTTP_ADDR=http://dsp-consul-us-wdc-1.int.glispa.com:8500 consul'
+alias consulnyc='CONSUL_HTTP_ADDR=http://dsp-consul-us-nyc-1.int.glispa.com:8500 consul'
