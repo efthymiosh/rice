@@ -10,8 +10,10 @@
 #color_accent='#74A370'
 # purple
 #color_accent='#59639e'
-# teal
-color_accent='#cc6666'
+# pinkred
+# color_accent='#cc6666'
+# zeldablue
+color_accent='#8abeb7'
 color_bg='#202020'
 color_urgent='#c07a25'
 dmenu_accent="$color_accent"

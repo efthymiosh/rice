@@ -20,20 +20,20 @@
     cyan:    #8abeb7;
     white:   #c5c8c6;
 
-    accent: @red;
+    accent: @cyan;
 
     text-color:       @white;
     background-color: @background;
     lightbg:          @black;
 
-    selected-normal-foreground:  @foreground;
+    selected-normal-foreground:  @background;
     normal-foreground:           @foreground;
     alternate-normal-background: @background;
-    selected-urgent-foreground:  @foreground;
+    selected-urgent-foreground:  @background;
     urgent-foreground:           @foreground;
     alternate-urgent-background: @background;
     active-foreground:           @foreground;
-    selected-active-foreground:  @foreground;
+    selected-active-foreground:  @background;
     alternate-normal-foreground: @foreground;
     alternate-active-background: @darkyellow;
     bordercolor:                 @darkyellow;
@@ -146,7 +146,7 @@
 
 #prompt {
     spacing:    0;
-    text-color: @darkred;
+    text-color: @darkcyan;
 }
 
 #textbox-prompt-colon {
