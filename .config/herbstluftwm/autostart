@@ -13,7 +13,7 @@
 # pinkred
 # color_accent='#cc6666'
 # zeldablue
-color_accent='#8abeb7'
+color_accent='#81a2be'
 color_bg='#202020'
 color_urgent='#c07a25'
 dmenu_accent="$color_accent"

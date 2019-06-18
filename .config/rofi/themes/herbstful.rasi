@@ -20,7 +20,9 @@
     cyan:    #8abeb7;
     white:   #c5c8c6;
 
-    accent: @cyan;
+    accent: @blue;
+    accenttext: @background;
+    darkaccent: @darkblue;
 
     text-color:       @white;
     background-color: @background;
@@ -39,6 +41,7 @@
     bordercolor:                 @darkyellow;
     normal-background:           @background;
     selected-normal-background:  @accent;
+    selected-normal-foreground:  @accenttext;
     separatorcolor:              @yellow;
     spacing:                     2;
     urgent-background:           @red;
@@ -146,7 +149,7 @@
 
 #prompt {
     spacing:    0;
-    text-color: @darkcyan;
+    text-color: @darkaccent;
 }
 
 #textbox-prompt-colon {
