@@ -44,10 +44,12 @@ nitrogen --restore &
 
 herbstclient emit_hook reload
 
-# set keyboard repeat-key-when-pressed delay to 350ms, repeat to 30 keystrokes per second.
+# set keyboard repeat-key-when-pressed delay to 350ms, repeat to 33 keystrokes per second.
 xset r rate 350 33
 #disable screen blanking on idle
 xset s off
+#disable dpms
+xset -dpms
 
 # remove all existing keybindings
 herbstclient keyunbind --all
