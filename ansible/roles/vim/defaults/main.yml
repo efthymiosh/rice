@@ -1,0 +1,2 @@
+---
+home_folder: "/home/{{ ansible_ssh_user }}"

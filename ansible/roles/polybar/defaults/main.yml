@@ -1,0 +1,21 @@
+---
+polybar_version: "3.3.1"
+polybar_temp_dir: "/tmp"
+
+theme_background: 202020
+theme_background-alt: 3f3f3f
+theme_foreground: c5c8c6
+theme_primary: 5e8d87
+theme_secondary: f0c675
+theme_alert: a54242
+
+theme_black: 282a2e
+theme_red: a54242
+theme_green: 8c9440
+theme_yellow: de935f
+theme_blue: 5f819d
+theme_magenta: 85678f
+theme_cyan: 5e8d87
+theme_white: 707880
+
+theme_accent: e60053

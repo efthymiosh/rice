@@ -1,0 +1,422 @@
+[colors]
+background = #{{ theme_background }}
+background-alt = #{{ theme_background-alt }}
+foreground = #{{ theme_foreground }}
+primary = #{{ theme_primary }}
+secondary = #{{ theme_secondary }}
+alert = #{{ theme_alert }}
+
+black = #{{ theme_black }}
+red = #{{ theme_red }}
+green = #{{ theme_green }}
+yellow = #{{ theme_yellow }}
+blue = #{{ theme_blue }}
+magenta = #{{ theme_magenta }}
+cyan = #{{ theme_cyan }}
+white = #{{ theme_white }}
+
+accent = #{{ theme_accent }}
+
+[bar/my-awesome-polybar]
+monitor = ${env:MONITOR}
+enable-ipc = true
+
+width = 100%
+height = 20
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = ${colors.yellow}
+
+overline-size = 3
+overline-color = ${colors.accent}
+underline-size = 3
+underline-color = ${colors.accent}
+
+border-size = 4
+border-color = ${colors.background}
+
+padding-left = 1
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = Fira Code:size=10;0
+font-1 = Fira Code:size=10:fontformat=truetype;0
+
+modules-left = ewmh volume xwindow
+modules-center = xbacklight
+modules-right = memory cpu wlan eth battery temperature date
+
+tray-position = right
+tray-padding = 9
+tray-maxsize = 18
+
+[module/ewmh]
+type = internal/xworkspaces
+
+pin-workspaces = false
+
+enable-click = false
+
+enable-scroll = false
+
+format = <label-state>
+
+label-monitor = %name%
+
+label-active = "%name%"
+label-active-foreground = ${colors.foreground}
+label-active-background = ${colors.background}
+label-active-underline = ${colors.yellow}
+
+label-occupied = "%name%"
+label-occupied-foreground = ${colors.foreground}
+label-occupied-background = ${colors.background}
+label-occupied-underline = ${colors.blue}
+
+label-urgent = "%name%"
+label-urgent-foreground = ${colors.background}
+label-urgent-background = ${colors.foreground}
+label-urgent-underline = ${colors.red}
+
+label-empty = "%name%"
+label-empty-foreground = ${colors.foreground}
+
+label-active-padding = 1
+label-occupied-padding = 1
+label-urgent-padding = 1
+label-empty-padding = 1
+
+
+[module/xwindow]
+type = internal/xwindow
+label = %title: %
+label-maxlen = 128
+format-background = ${colors.background-alt}
+format-foreground = ${colors.foreground}
+format-padding = 2
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+format-prefix-underline = ${colors.secondary}
+
+label-layout = %layout%
+label-layout-underline = ${colors.secondary}
+
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-background = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+mount-1 = /boot
+mount-2 = /home
+
+label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground}
+
+[module/mpd]
+type = internal/mpd
+label-song = %artist% - %title%
+format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next> <icon-repeat> <icon-random> <label-time> <bar-progress>
+
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+icon-random = 
+icon-repeat = 
+
+toggle-on-foreground = #ff
+toggle-off-foreground = #55
+
+
+
+bar-progress-width = 45
+bar-progress-indicator = 
+bar-progress-indicator-foreground = #bb
+bar-progress-fill = ─
+bar-progress-fill-foreground = #00FF00
+bar-progress-fill-font = 0
+bar-progress-empty = ─
+bar-progress-empty-foreground = #44
+bar-progress-empty-font = 0
+
+
+label-song-maxlen = 50
+label-song-ellipsis = true
+
+[module/xbacklight]
+type = internal/xbacklight
+
+format = <label> <bar>
+label = BL
+
+bar-width = 10
+bar-indicator = |
+bar-indicator-foreground = #ff
+bar-indicator-font = 0
+bar-fill = ─
+bar-fill-font = 0
+bar-fill-foreground = #9f78e1
+bar-empty = ─
+bar-empty-font = 0
+bar-empty-foreground = ${colors.foreground}
+
+[module/backlight-acpi]
+inherit = module/xbacklight
+type = internal/backlight
+card = intel_backlight
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format = <label> <ramp-coreload>
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+format-underline = ${colors.red}
+label = %percentage:3%%
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 0
+ramp-coreload-0-foreground = ${colors.green}
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 0
+ramp-coreload-1-foreground = ${colors.green}
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 0
+ramp-coreload-2-foreground = ${colors.green}
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 0
+ramp-coreload-3-foreground = ${colors.green}
+ramp-coreload-4 = ▅
+ramp-coreload-4-font = 0
+ramp-coreload-4-foreground = ${colors.yellow}
+ramp-coreload-5 = ▆
+ramp-coreload-5-font = 0
+ramp-coreload-5-foreground = ${colors.yellow}
+ramp-coreload-6 = ▇
+ramp-coreload-6-font = 0
+ramp-coreload-6-foreground = ${colors.red}
+ramp-coreload-7 = █
+ramp-coreload-7-font = 0
+ramp-coreload-7-foreground = ${colors.red}
+
+[module/memory]
+type = internal/memory
+interval = 2
+format = <label> <bar-used>
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+format-underline = ${colors.cyan}
+label = %percentage_used:2%%
+bar-used-width = 8
+bar-used-foreground-0 = ${colors.green}
+bar-used-foreground-1 = ${colors.green}
+bar-used-foreground-2 = ${colors.yellow}
+bar-used-foreground-3 = ${colors.red}
+bar-used-indicator = |
+bar-used-indicator-font = 0
+bar-used-indicator-foreground = #ff
+bar-used-fill = ─
+bar-used-fill-font = 0
+bar-used-empty = ─
+bar-used-empty-font = 0
+bar-used-empty-foreground = ${colors.background-alt}
+
+[module/ip-wired]
+type = internal/network
+interface = enp1s0f1 
+format-connected = <label-connected>
+label-connected = LAN: %local_ip% 
+label-connected-foreground = #eefafafa
+
+[module/ip-wireless]
+type = internal/network
+interface = wlp2s0
+format-connected = <label-connected>
+label-connected = WIFI: %local_ip%
+label-connected-foreground = #eefafafa
+
+[module/wlan]
+type = internal/network
+interface = wlp58s0
+interval = 2.0
+
+format-connected = <label-connected>
+format-connected-underline = ${colors.magenta}
+format-disconnected = <label-disconnected>
+#format-packetloss = <animation-packetloss> <label-connected>
+label-connected = %essid% ⇃%downspeed:8% ↿%upspeed:8%
+label-connected-foreground = ${colors.foreground}
+#format-disconnected =
+#format-disconnected = <label-disconnected>
+format-disconnected-underline = ${self.format-connected-underline}
+label-disconnected = %ifname% disconnected
+label-disconnected-foreground = ${colors.background-alt}
+
+#label-packetloss = %essid%
+#label-packetloss-foreground = #eefafafa
+#ramp-signal-0 = 😱
+#ramp-signal-1 = 😠
+#ramp-signal-2 = 😒
+#ramp-signal-3 = 😊
+#ramp-signal-5 = 😈
+#animation-packetloss-0 = ⚠
+#animation-packetloss-0-foreground = #ffa64c
+#animation-packetloss-1 = 📶
+#animation-packetloss-1-foreground = #000000
+#animation-packetloss-framerate = 500
+
+
+[module/eth]
+type = internal/network
+interface = eth0
+interval = 3.0
+
+format-connected-underline = ${colors.magenta}
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground}
+label-connected = %local_ip%
+
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%d/%m/%Y"
+date-alt = " %Y-%m-%d"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format-prefix = 
+format-prefix-foreground = ${colors.foreground}
+format-underline = ${colors.blue}
+
+label = %date% %time%
+
+[module/volume]
+type = internal/volume
+
+format-volume = <label-volume> <bar-volume>
+label-volume = VOL
+label-volume-foreground = ${root.foreground}
+
+format-muted-prefix = " "
+format-muted-foreground = ${colors.foreground}
+label-muted = sound muted
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 0
+bar-volume-fill = ─
+bar-volume-fill-font = 0
+bar-volume-empty = ─
+bar-volume-empty-font = 0
+bar-volume-empty-foreground = ${colors.foreground}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-charging-underline = ${colors.yellow}
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-underline = ${self.format-charging-underline}
+
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.foreground}
+format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-foreground = ${colors.foreground}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = ${colors.foreground}
+animation-charging-framerate = 750
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <ramp> <label>
+format-underline = ${colors.red}
+format-warn = <ramp> <label-warn>
+format-warn-underline = ${self.format-underline}
+
+label = %temperature%
+label-warn = %temperature%
+label-warn-foreground = ${colors.secondary}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.foreground}
+
+[module/powermenu]
+type = custom/menu
+
+format-spacing = 1
+
+label-open = 
+label-open-foreground = ${colors.secondary}
+label-close =  cancel
+label-close-foreground = ${colors.secondary}
+label-separator = |
+label-separator-foreground = ${colors.foreground}
+
+menu-0-0 = reboot
+menu-0-0-exec = reboot
+menu-0-1 = power off
+menu-0-1-exec = poweroff
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = reboot
+
+menu-2-0 = power off
+menu-2-0-exec = poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
+
+[settings]
+screenchange-reload = false
+
+[global/wm]
+margin-top = 2
+margin-bottom = 2
+
+; vim:ft=dosini

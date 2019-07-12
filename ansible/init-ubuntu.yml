@@ -1,0 +1,71 @@
+- name: Configure ubuntu desktop
+  hosts: localhost
+  become: true
+
+  vars:
+    home_folder: "/home/{{ ansible_ssh_user }}"
+    rice_location: "{{ home_folder }}/cloned/rice"
+    alacritty_version: "0.3.3"
+    polybar_version: "3.3.1"
+
+  tasks:
+  - name: fetch and install alacritty
+    apt:
+      deb: "https://github.com/jwilm/alacritty/releases/download/v{{ alacritty_version }}/Alacritty-v{{ alacritty_version }}-ubuntu_18_04_amd64.deb"
+
+  - name: update apt package information
+    apt:
+      update_cache: yes
+
+  - name: remove .bashrc
+    file:
+      path: "{{ home_folder }}/.bashrc"
+      state: absent
+
+  - name: install snap packages
+    snap:
+      name: "ripgrep"
+      classic: true
+    
+  - name: install packages
+    apt:
+      name:
+      - "build-essential"
+      - "alpine"
+      - "dzen2"
+      - "dmenu"
+      - "herbstluftwm"
+      - "nitrogen"
+      - "dunst"
+      - "zathura"
+      - "compton"
+      - "rxvt-unicode"
+      - "sxiv"
+      - "tree"
+      - "rofi"
+      state: present
+      update_cache: no
+
+  - name: add configuration for terminal programs
+    become: false
+    file:
+      dest: "{{ home_folder }}/{{ item }}"
+      src:  "{{ rice_location }}/{{ item }}"
+      state: link
+    with_items:
+    - ".bashrc"
+    - ".bash_aliases"
+    - ".screenrc"
+    - ".inputrc"
+    - ".addressbook"
+    - ".pinerc"
+    - ".config/herbstluftwm"
+    - ".config/dunst"
+    - ".config/zathura"
+    - ".config/alacritty"
+    - ".config/polybar"
+    - ".config/rofi"
+
+  - name: build Xdefaults
+    become: false
+    shell: "cpp {{ rice_location }}/.Xdefaults -P > ~/.Xdefaults"

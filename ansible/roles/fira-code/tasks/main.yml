@@ -1,0 +1,17 @@
+---
+- name: ensure local fonts directory exists
+  become: false
+  file:
+    path: "{{ fonts_dir }}"
+    state: directory
+
+- name: fetch fira-code fonts
+  become: false
+  get_url:
+    url: "https://github.com/tonsky/FiraCode/blob/master/distr/ttf/FiraCode-{{ item }}.ttf?raw=true"
+    dest: "{{ home_folder }}/.local/share/fonts/FiraCode-{{ type }}.ttf"
+    force: true
+
+- name: refresh font cache
+  become: false
+  shell: "fc-cache -f"
