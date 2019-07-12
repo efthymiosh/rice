@@ -43,6 +43,8 @@
       - "sxiv"
       - "tree"
       - "rofi"
+      - "screen"
+      - "curl"
       state: present
       update_cache: no
 
