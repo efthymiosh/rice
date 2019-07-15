@@ -1,8 +1,0 @@
-ncmpcpp_directory = "~/.ncmpcpp" 
-mpd_host = "mothership.local" 
-mpd_port = "6600" 
-#mpd_music_dir = "~/Music" 
-playlist_display_mode = "columns" 
-search_engine_display_mode = "columns" 
-playlist_editor_display_mode = "columns" 
-header_visibility = "no" 

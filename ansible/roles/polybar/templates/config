@@ -1,10 +1,10 @@
 [colors]
 background = #{{ theme.background }}
-background-alt = #{{ theme.background_alt }}
+background-alt = #{{ theme.bright.black }}
 foreground = #{{ theme.foreground }}
-primary = #{{ theme.primary }}
-secondary = #{{ theme.secondary }}
-alert = #{{ theme.alert }}
+primary = #{{ theme.bright.cyan }}
+secondary = #{{ theme.bright.yellow }}
+alert = #{{ theme.bright.red }}
 
 black = #{{ theme.normal.black }}
 red = #{{ theme.normal.red }}

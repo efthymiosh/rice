@@ -6,12 +6,12 @@ home_folder: "/home/{{ ansible_ssh_user }}"
 
 theme:
   background: '202020'
-  background_alt: '3f3f3f'
   foreground: 'c5c8c6'
-  primary: '5e8d87'
-  secondary: 'f0c675'
-  alert: 'a54242'
-
+  bright:
+    black: '3f3f3f'
+    yellow: 'f0c675'
+    cyan: '5e8d87'
+    red: 'cc6666'
   normal:
     black: '282a2e'
     red: 'a54242'
@@ -21,5 +21,4 @@ theme:
     magenta: '85678f'
     cyan: '5e8d87'
     white: '707880'
-
   accent: 'e60053'

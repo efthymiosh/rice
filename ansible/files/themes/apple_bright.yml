@@ -1,0 +1,24 @@
+theme:
+  foreground: '1b0b10'
+  background: 'ccbbb0'
+  accent: '5f819d'
+  normal:
+    black: '1b0b10'
+    red: '82354f'
+    green: '803466'
+    yellow: '4f3480'
+    blue: '346580'
+    magenta: '348068'
+    cyan: '6e804d'
+    white: 'b3a49a'
+  bright:
+    black: '241016'
+    color9: 'b33e65'
+    green: 'b33e8c'
+    yellow: '673eb3'
+    blue: '3e8ab3'
+    magenta: '3eb38c'
+    cyan: '9ab36b'
+    white: 'ccbbb0'
+  accent_text: '202020'
+
