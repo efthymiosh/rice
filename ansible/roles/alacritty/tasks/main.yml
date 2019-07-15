@@ -1,0 +1,17 @@
+- name: fetch and install alacritty
+  apt:
+    deb: "https://github.com/jwilm/alacritty/releases/download/v{{ alacritty_version }}/Alacritty-v{{ alacritty_version }}-ubuntu_18_04_amd64.deb"
+
+- name: ensure alacritty config directory exists
+  become: false
+  file:
+    path: "{{ home_folder }}/.config/alacritty"
+    state: directory
+
+- name: template alacritty configuration
+  become: false
+  template:
+    src: "alacritty.j2.yml"
+    dest: "{{ home_folder }}/.config/alacritty/alacritty.yml"
+  tags:
+  - theme
