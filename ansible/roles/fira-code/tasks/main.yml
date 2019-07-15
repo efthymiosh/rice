@@ -9,8 +9,14 @@
   become: false
   get_url:
     url: "https://github.com/tonsky/FiraCode/blob/master/distr/ttf/FiraCode-{{ item }}.ttf?raw=true"
-    dest: "{{ home_folder }}/.local/share/fonts/FiraCode-{{ type }}.ttf"
+    dest: "{{ home_folder }}/.local/share/fonts/FiraCode-{{ item }}.ttf"
     force: true
+  with_items:
+  - Light
+  - Medium
+  - Regular
+  - Retina
+  - Bold
 
 - name: refresh font cache
   become: false

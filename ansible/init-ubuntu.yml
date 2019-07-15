@@ -5,22 +5,18 @@
   vars:
     home_folder: "/home/{{ ansible_ssh_user }}"
     rice_location: "{{ home_folder }}/cloned/rice"
-    alacritty_version: "0.3.3"
     polybar_version: "3.3.1"
 
+  roles:
+  - fira-code
+  - polybar
+  - vim
+  - role: alacritty
+    tags: alacritty
   tasks:
-  - name: fetch and install alacritty
-    apt:
-      deb: "https://github.com/jwilm/alacritty/releases/download/v{{ alacritty_version }}/Alacritty-v{{ alacritty_version }}-ubuntu_18_04_amd64.deb"
-
   - name: update apt package information
     apt:
       update_cache: yes
-
-  - name: remove .bashrc
-    file:
-      path: "{{ home_folder }}/.bashrc"
-      state: absent
 
   - name: install snap packages
     snap:
@@ -29,51 +25,38 @@
     
   - name: install packages
     apt:
-      name:
-      - "build-essential"
-      - "chromium-browser"
-      - "alpine"
-      - "dzen2"
-      - "dmenu"
-      - "herbstluftwm"
-      - "nitrogen"
-      - "dunst"
-      - "zathura"
-      - "compton"
-      - "rxvt-unicode"
-      - "sxiv"
-      - "tree"
-      - "rofi"
-      - "screen"
-      - "curl"
-      - "scrot"
-      - "maim"
-      - "xsel"
-      - "pavucontrol"
-      - "gimp"
+      name: [
+        "build-essential", "chromium-browser", "alpine", "dzen2",
+        "herbstluftwm", "nitrogen", "dunst", "zathura", "compton",
+        "rxvt-unicode", "sxiv", "tree", "rofi", "screen",
+        "curl", "scrot", "maim", "xsel", "pavucontrol", "gimp"
+      ]
       state: present
       update_cache: no
 
-  - name: add configuration for terminal programs
+  - name: set file configuration
     become: false
-    file:
+    copy:
       dest: "{{ home_folder }}/{{ item }}"
-      src:  "{{ rice_location }}/{{ item }}"
-      state: link
+      src:  "files/{{ item }}"
     with_items:
     - ".bashrc"
     - ".bash_aliases"
     - ".screenrc"
     - ".inputrc"
-    - ".addressbook"
     - ".pinerc"
-    - ".config/herbstluftwm"
-    - ".config/dunst"
-    - ".config/zathura"
-    - ".config/alacritty"
-    - ".config/polybar"
-    - ".config/rofi"
+
+  - name: set directory configuration
+    become: false
+    copy:
+      dest: "{{ home_folder }}/.config/"
+      src:  "files/.config/{{ item }}"
+    with_items:
+    - "herbstluftwm"
+    - "dunst"
+    - "zathura"
+    - "rofi"
 
   - name: build Xdefaults
     become: false
-    shell: "cpp {{ rice_location }}/.Xdefaults -P > ~/.Xdefaults"
+    shell: "cpp files/.Xdefaults -P > ~/.Xdefaults"

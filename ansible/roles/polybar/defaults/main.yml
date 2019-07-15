@@ -2,20 +2,24 @@
 polybar_version: "3.3.1"
 polybar_temp_dir: "/tmp"
 
-theme_background: 202020
-theme_background-alt: 3f3f3f
-theme_foreground: c5c8c6
-theme_primary: 5e8d87
-theme_secondary: f0c675
-theme_alert: a54242
+home_folder: "/home/{{ ansible_ssh_user }}"
 
-theme_black: 282a2e
-theme_red: a54242
-theme_green: 8c9440
-theme_yellow: de935f
-theme_blue: 5f819d
-theme_magenta: 85678f
-theme_cyan: 5e8d87
-theme_white: 707880
+theme:
+  background: '202020'
+  background_alt: '3f3f3f'
+  foreground: 'c5c8c6'
+  primary: '5e8d87'
+  secondary: 'f0c675'
+  alert: 'a54242'
 
-theme_accent: e60053
+  normal:
+    black: '282a2e'
+    red: 'a54242'
+    green: '8c9440'
+    yellow: 'de935f'
+    blue: '5f819d'
+    magenta: '85678f'
+    cyan: '5e8d87'
+    white: '707880'
+
+  accent: 'e60053'

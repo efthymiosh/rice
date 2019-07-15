@@ -1,21 +1,21 @@
 [colors]
-background = #{{ theme_background }}
-background-alt = #{{ theme_background-alt }}
-foreground = #{{ theme_foreground }}
-primary = #{{ theme_primary }}
-secondary = #{{ theme_secondary }}
-alert = #{{ theme_alert }}
+background = #{{ theme.background }}
+background-alt = #{{ theme.background_alt }}
+foreground = #{{ theme.foreground }}
+primary = #{{ theme.primary }}
+secondary = #{{ theme.secondary }}
+alert = #{{ theme.alert }}
 
-black = #{{ theme_black }}
-red = #{{ theme_red }}
-green = #{{ theme_green }}
-yellow = #{{ theme_yellow }}
-blue = #{{ theme_blue }}
-magenta = #{{ theme_magenta }}
-cyan = #{{ theme_cyan }}
-white = #{{ theme_white }}
+black = #{{ theme.normal.black }}
+red = #{{ theme.normal.red }}
+green = #{{ theme.normal.green }}
+yellow = #{{ theme.normal.yellow }}
+blue = #{{ theme.normal.blue }}
+magenta = #{{ theme.normal.magenta }}
+cyan = #{{ theme.normal.cyan }}
+white = #{{ theme.normal.white }}
 
-accent = #{{ theme_accent }}
+accent = #{{ theme.accent }}
 
 [bar/my-awesome-polybar]
 monitor = ${env:MONITOR}
