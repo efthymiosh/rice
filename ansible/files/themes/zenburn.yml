@@ -1,4 +1,6 @@
 theme:
+  background: '170f0d'
+  foreground: '746c48'
   normal:
     black: '1e2320'
     red: '705050'
@@ -10,7 +12,7 @@ theme:
     white: 'dcdccc'
   bright:
     black: '709080'
-    color9: 'dca3a3'
+    red: 'dca3a3'
     green: 'c3bf9f'
     yellow: 'f0dfaf'
     blue: '94bff3'

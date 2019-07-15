@@ -1,7 +1,6 @@
 theme:
   background: '1c1709'
   foreground: 'c2b9a1'
-  accent: '5f819d'
   normal:
     black: '1c1709'
     red: '8e4317'
@@ -13,11 +12,12 @@ theme:
     white: 'c2b9a1'
   bright:
     black: '4f4939'
-    color9: 'f07935'
+    red: 'f07935'
     green: 'd9d138'
     yellow: 'ffab26'
     blue: '8aa9ed'
     magenta: 'ff8cb8'
     cyan: '43bfe0'
     white: 'f2e8c9'
+  accent: '5f819d'
   accent_text: '202020'

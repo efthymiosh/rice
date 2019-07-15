@@ -12,7 +12,7 @@ theme:
     white: 'd0cfca'
   bright:
     black: '5d5d5d'
-    color9: 'ea615f'
+    red: 'ea615f'
     green: '7aab87'
     yellow: 'c9a26b'
     blue: '6890b5'
@@ -21,4 +21,3 @@ theme:
     white: 'f4f2ec'
   accent: '5f819d'
   accent_text: '202020'
-

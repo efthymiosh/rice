@@ -12,7 +12,7 @@ theme:
     white: 'dcdccd'
   bright:
     black: '709080'
-    color9: 'dca3a3'
+    red: 'dca3a3'
     green: '72d5a2'
     yellow: 'f0dfaf'
     blue: '94c0f3'
