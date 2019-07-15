@@ -11,8 +11,8 @@
   - fira-code
   - polybar
   - vim
-  - role: alacritty
-    tags: alacritty
+  - alacritty
+  - rofi
   tasks:
   - name: update apt package information
     apt:
@@ -28,7 +28,7 @@
       name: [
         "build-essential", "chromium-browser", "alpine", "dzen2",
         "herbstluftwm", "nitrogen", "dunst", "zathura", "compton",
-        "rxvt-unicode", "sxiv", "tree", "rofi", "screen",
+        "rxvt-unicode", "sxiv", "tree", "screen",
         "curl", "scrot", "maim", "xsel", "pavucontrol", "gimp"
       ]
       state: present
@@ -55,7 +55,6 @@
     - "herbstluftwm"
     - "dunst"
     - "zathura"
-    - "rofi"
 
   - name: build Xdefaults
     become: false

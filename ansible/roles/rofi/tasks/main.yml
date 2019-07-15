@@ -1,0 +1,21 @@
+- name: install packages
+  apt:
+    name: rofi
+    state: latest
+
+- name: ensure rofi config directory exists
+  become: false
+  file:
+    path: "{{ home_folder }}/.config/rofi"
+    state: directory
+
+- name: template rofi configuration
+  become: false
+  template:
+    src: "{{ item }}.j2"
+    dest: "{{ home_folder }}/.config/rofi/{{ item }}"
+  with_items:
+  - config
+  - theme.rasi
+  tags:
+  - theme
