@@ -1,6 +1,6 @@
 [colors]
 background = #{{ theme.background }}
-background-alt = #{{ theme.bright.black }}
+background-alt = #{{ theme.accent }}
 foreground = #{{ theme.foreground }}
 primary = #{{ theme.bright.cyan }}
 secondary = #{{ theme.bright.yellow }}
@@ -16,6 +16,7 @@ cyan = #{{ theme.normal.cyan }}
 white = #{{ theme.normal.white }}
 
 accent = #{{ theme.accent }}
+accent-text = #{{ theme.accent_text }}
 
 [bar/my-awesome-polybar]
 monitor = ${env:MONITOR}
@@ -97,7 +98,7 @@ label-empty-padding = 1
 type = internal/xwindow
 label = %title: %
 label-maxlen = 128
-format-background = ${colors.background-alt}
+format-underline = ${colors.accent}
 format-foreground = ${colors.foreground}
 format-padding = 2
 
