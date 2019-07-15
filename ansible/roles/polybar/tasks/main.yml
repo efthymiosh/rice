@@ -67,6 +67,8 @@
   template:
     src: "config"
     dest: "{{ home_folder }}/.config/polybar/config"
+  tags:
+  - theme
 
 - name: copy herbstluft-polybar-panel configuration
   become: false
