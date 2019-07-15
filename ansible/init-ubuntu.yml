@@ -31,6 +31,7 @@
     apt:
       name:
       - "build-essential"
+      - "chromium-browser"
       - "alpine"
       - "dzen2"
       - "dmenu"
@@ -45,6 +46,11 @@
       - "rofi"
       - "screen"
       - "curl"
+      - "scrot"
+      - "maim"
+      - "xsel"
+      - "pavucontrol"
+      - "gimp"
       state: present
       update_cache: no
 
