@@ -1,0 +1,12 @@
+- name: install packages
+  apt:
+    name: rxvt-unicode
+    state: latest
+
+- name: template Xdefaults
+  become: false
+  template:
+    src: "Xdefaults.j2"
+    dest: "{{ home_folder }}/.Xdefaults"
+  tags:
+  - theme
