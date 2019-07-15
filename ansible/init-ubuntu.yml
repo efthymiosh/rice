@@ -3,7 +3,7 @@
   become: true
 
   vars_files:
-  - "files/themes/ample_light.yml"
+  - "files/themes/dark/termsexy_gray.yml"
 
   vars:
     home_folder: "/home/{{ ansible_ssh_user }}"
