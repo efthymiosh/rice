@@ -13,6 +13,9 @@
   - vim
   - alacritty
   - rofi
+  - herbstluftwm
+  - xdefaults
+
   tasks:
   - name: update apt package information
     apt:
@@ -26,10 +29,8 @@
   - name: install packages
     apt:
       name: [
-        "build-essential", "chromium-browser", "alpine", "dzen2",
-        "herbstluftwm", "nitrogen", "dunst", "zathura", "compton",
-        "rxvt-unicode", "sxiv", "tree", "screen",
-        "curl", "scrot", "maim", "xsel", "pavucontrol", "gimp"
+        "build-essential", "chromium-browser", "alpine", "dunst",
+        "zathura", "tree", "screen", "curl", "pavucontrol", "gimp"
       ]
       state: present
       update_cache: no
@@ -52,10 +53,5 @@
       dest: "{{ home_folder }}/.config/"
       src:  "files/.config/{{ item }}"
     with_items:
-    - "herbstluftwm"
     - "dunst"
     - "zathura"
-
-  - name: build Xdefaults
-    become: false
-    shell: "cpp files/.Xdefaults -P > ~/.Xdefaults"

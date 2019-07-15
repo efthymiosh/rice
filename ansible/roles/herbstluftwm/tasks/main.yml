@@ -1,0 +1,29 @@
+- name: install desktop packages
+  apt:
+    name: [
+      "herbstluftwm", "dzen2", "nitrogen",
+      "sxiv", "compton", "scrot", "maim",
+      "xsel", "pavucontrol"
+    ]
+    state: latest
+
+- name: ensure herbstluftwm config directory exists
+  become: false
+  file:
+    path: "{{ home_folder }}/.config/herbstluftwm"
+    state: directory
+
+- name: template compton configuration
+  become: false
+  template:
+    src: "compton.j2.conf"
+    dest: "{{ home_folder }}/.compton.conf"
+
+- name: template herbstluftwm configuration
+  become: false
+  template:
+    src: "autostart.j2.sh"
+    dest: "{{ home_folder }}/.config/herbstluftwm/autostart"
+    mode: 0755
+  tags:
+  - theme
