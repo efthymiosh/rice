@@ -33,7 +33,8 @@
     apt:
       name: [
         "build-essential", "chromium-browser", "alpine", "dunst",
-        "zathura", "tree", "screen", "curl", "pavucontrol", "gimp"
+        "zathura", "tree", "screen", "curl", "pavucontrol", "gimp",
+        "jq"
       ]
       state: present
       update_cache: no
