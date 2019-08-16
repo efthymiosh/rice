@@ -241,7 +241,7 @@ bar-used-empty-foreground = ${colors.background-alt}
 
 [module/ip-wired]
 type = internal/network
-interface = enp1s0f1 
+interface = enp6s0
 format-connected = <label-connected>
 label-connected = LAN: %local_ip% 
 label-connected-foreground = #eefafafa
