@@ -1,3 +1,6 @@
+x_cursor_theme: "Bibata_Sky"
+x_cursor_size: "40"
+
 theme:
   background: '202020'
   foreground: 'c5c8c6'

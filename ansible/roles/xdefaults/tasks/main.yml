@@ -3,10 +3,15 @@
     name: rxvt-unicode
     state: latest
 
-- name: template Xdefaults
+- name: template {{ item.dest }}
   become: false
   template:
-    src: "Xdefaults.j2"
-    dest: "{{ home_folder }}/.Xdefaults"
+    src: "{{ item.template }}"
+    dest: "{{ home_folder }}/{{ item.dest }}"
+  with_items:
+  - template: "Xdefaults.j2"
+    dest: ".Xdefaults"
+  - template: "Xresources.j2"
+    dest: ".Xresources"
   tags:
   - theme
