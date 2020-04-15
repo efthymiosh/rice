@@ -17,7 +17,6 @@
     dest: "{{ home_folder }}/.{{ item }}"
   with_items:
   - "vimrc"
-  - "vimdevrc"
 
 - name: install vundle
   become: false
