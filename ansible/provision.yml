@@ -11,13 +11,20 @@
     polybar_version: "3.3.1"
 
   roles:
-  - fira-code
-  - polybar
-  - vim
-  - alacritty
-  - rofi
-  - herbstluftwm
-  - xdefaults
+  - role: fira-code
+    tags: fira-code
+  - role: polybar
+    tags: polybar
+  - role: vim
+    tags: vim
+  - role: alacritty
+    tags: alacritty
+  - role: rofi
+    tags: rofi
+  - role: herbstluftwm
+    tags: herbstluftwm
+  - role: xdefaults
+    tags: xdefaults
 
   tasks:
   - name: update apt package information
