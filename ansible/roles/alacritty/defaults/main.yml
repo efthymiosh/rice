@@ -1,4 +1,4 @@
-alacritty_version: "0.3.3"
+alacritty_version: "0.4.2"
 
 home_folder: "/home/{{ ansible_ssh_user }}"
 

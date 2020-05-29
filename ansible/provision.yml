@@ -8,40 +8,35 @@
   vars:
     home_folder: "/home/{{ ansible_ssh_user }}"
     rice_location: "{{ home_folder }}/cloned/rice"
-    polybar_version: "3.3.1"
+    polybar_version: "3.4.3"
 
   roles:
   - role: fira-code
     tags: fira-code
-  - role: polybar
-    tags: polybar
   - role: vim
     tags: vim
   - role: alacritty
     tags: alacritty
   - role: rofi
     tags: rofi
-  - role: herbstluftwm
-    tags: herbstluftwm
   - role: xdefaults
     tags: xdefaults
+  - role: herbstluftwm
+    tags: herbstluftwm
+  - role: polybar
+    tags: polybar
 
   tasks:
   - name: update apt package information
     apt:
       update_cache: yes
 
-  - name: install snap packages
-    snap:
-      name: "ripgrep"
-      classic: true
-    
   - name: install packages
     apt:
       name: [
         "build-essential", "chromium-browser", "alpine", "dunst",
         "zathura", "tree", "screen", "curl", "pavucontrol", "gimp",
-        "jq"
+        "jq", "ripgrep"
       ]
       state: present
       update_cache: no
