@@ -39,6 +39,7 @@ herbstclient keybind $Mod-Shift-q quit
 herbstclient keybind $Mod-Shift-r reload
 herbstclient keybind $Mod-Shift-c close
 herbstclient keybind $Mod-Return spawn alacritty
+herbstclient keybind $Mod-Alt-l spawn i3lock-fancy
 
 # Launcher
 herbstclient keybind $Mod-d spawn rofi -show run -font "Fira Code 10"

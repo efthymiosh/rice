@@ -3,7 +3,7 @@
     name: [
       "herbstluftwm", "dzen2", "nitrogen",
       "sxiv", "compton", "scrot", "maim",
-      "xsel", "pavucontrol"
+      "xsel", "pavucontrol", "i3lock-fancy"
     ]
     state: latest
 
