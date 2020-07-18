@@ -19,5 +19,5 @@ theme:
     magenta: 'b294bb'
     cyan:    '8abeb7'
     white:   'c5c8c6'
-  accent: '81a2be'
+  accent: 'b294bb'
   accent_text: '202020'

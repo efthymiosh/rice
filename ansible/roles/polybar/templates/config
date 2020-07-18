@@ -248,7 +248,7 @@ label-connected-foreground = #eefafafa
 
 [module/ip-wireless]
 type = internal/network
-interface = wlp2s0
+interface = wlp0s20f3
 format-connected = <label-connected>
 label-connected = WIFI: %local_ip%
 label-connected-foreground = #eefafafa
