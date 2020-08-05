@@ -1,6 +1,6 @@
 - name: fetch and install alacritty
   apt:
-    name: "alacritty={{ alacritty_version }}"
+    name: "alacritty={{ alacritty_version }}*"
 
 - name: ensure alacritty config directory exists
   become: false
