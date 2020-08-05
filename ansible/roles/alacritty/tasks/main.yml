@@ -1,6 +1,6 @@
 - name: fetch and install alacritty
   apt:
-    deb: "https://github.com/jwilm/alacritty/releases/download/v{{ alacritty_version }}/Alacritty-v{{ alacritty_version }}-ubuntu_18_04_amd64.deb"
+    deb: "alacritty={{ alacritty_version }}"
 
 - name: ensure alacritty config directory exists
   become: false

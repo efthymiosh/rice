@@ -10,6 +10,7 @@
     rice_location: "{{ home_folder }}/cloned/rice"
     polybar_version: "3.4.3"
     x_cursor_theme: "Bibata_Royal"
+    alacritty_version: "0.5.0"
 
   roles:
   - role: fira-code
