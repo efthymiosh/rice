@@ -153,7 +153,7 @@ herbstclient set smart_frame_surroundings 0
 herbstclient set mouse_recenter_gap 0
 herbstclient set default_frame_layout 2
 
-herbstclient attr theme.active.color $color_accent
+herbstclient attr theme.active.color $color_bg
 herbstclient attr theme.normal.color $color_bg
 herbstclient attr theme.urgent.color $color_urgent
 herbstclient attr theme.inner_width 1
