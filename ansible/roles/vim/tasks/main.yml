@@ -1,9 +1,4 @@
 ---
-- name: install ppa repository
-  become: true
-  apt_repository:
-    repo: "ppa:jonathonf/vim"
-
 - name: install package
   become: true
   apt:

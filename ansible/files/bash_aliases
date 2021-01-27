@@ -18,3 +18,4 @@ alias kubestage='kubectl --context staging'
 alias kubeshared='kubectl --context shared'
 
 alias myip='dig @resolver1.opendns.com myip.opendns.com +short'
+alias fixdns='sudo systemd-resolve -i wlp0s20f3 --set-dns=1.1.1.1'

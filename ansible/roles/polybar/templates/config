@@ -255,7 +255,7 @@ label-connected-foreground = #eefafafa
 
 [module/wlan]
 type = internal/network
-interface = wlp58s0
+interface = wlp0s20f3
 interval = 2.0
 
 format-connected = <label-connected>

@@ -60,7 +60,7 @@ if [ "$color_prompt" = yes ]; then
     HOSTNUM="$(hostname | tr a-z.\- 0-90-90-9)"
     HOSTNUM="$(expr $HOSTNUM / ${#HOSTNUM} + 5)"
     HOSTNUM=$(echo $(hostname | tr a-z.\- 0-90-90-9 | sed 's/[0-9]/&+/g')2 | bc)
-    COLORCODE="$(expr $HOSTNUM % 6 + 1)"
+    COLORCODE="$(expr $HOSTNUM % 7 + 1)"
     PS1="\${debian_chroot:+(\$debian_chroot)}\\[\\033[00;3${COLORCODE}m\\]\\u\\[\\033[00m\\]@\\h:\\w\\\$ "
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
@@ -108,6 +108,12 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# Enable GPG-agent for yubi-key
+
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -119,6 +125,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH="$PATH:~/scripts/"
+export PATH="$PATH:~/scripts/:~/.local/bin"
 
 complete -C /usr/local/bin/nomad nomad
