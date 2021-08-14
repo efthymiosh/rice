@@ -1,60 +1,15 @@
 ---
-- name: fetch polybar release
-  unarchive:
-    src: "https://github.com/jaagr/polybar/releases/download/{{ polybar_version }}/polybar-{{ polybar_version }}.tar"
-    dest: "{{ polybar_temp_dir }}"
-    remote_src: yes
-
-- name: ensure polybar directories exist
-  file:
-    path: "{{ polybar_temp_dir }}/polybar/build"
-    state: directory
-
-- name: install polybar build dependencies
+- name: install polybar package
   apt:
-    name: [
-        "cmake", "cmake-data", "libcairo2-dev", "libxcb1-dev", "libxcb-ewmh-dev", 
-        "libxcb-icccm4-dev", "libxcb-image0-dev", "libxcb-randr0-dev", "libxcb-util0-dev", 
-        "libxcb-xkb-dev", "pkg-config", "python3-xcbgen", "xcb-proto", "libxcb-xrm-dev",
-        "i3-wm", "libasound2-dev", "libmpdclient-dev", "libiw-dev", "libcurl4-openssl-dev", 
-        "libpulse-dev", "libxcb-composite0-dev", "xcb", "libxcb-ewmh2"
-    ]
+    name: [ "polybar={{ polybar_version }}*" ]
     state: present
+  ignore_errors: true
+  register: polybar_package_present
 
-- name: build and install polybar
-  shell: "cd {{ polybar_temp_dir }}/polybar/build && cmake .. && make -j{{ ansible_processor_vcpus }} && make install"
-
-- name: remove polybar sources
-  file:
-    path: "{{ polybar_temp_dir }}/polybar"
-    state: "absent"
-
-- name: install polybar run-dependencies
-  apt:
-    name:
-    - libmpdclient2
-    - libxcb-composite0
-    - libxcb1
-    - libxcb-ewmh2
-    - libxcb-icccm4
-    - libxcb-image0
-    - libxcb-randr0
-    - libxcb-util1
-    - libxcb-xkb1
-    - libasound2
-    - libcurl4
-    - libpulse0
-
-- name: remove polybar build dependencies
-  apt:
-    name: [
-        "cmake", "cmake-data", "libcairo2-dev", "libxcb1-dev", "libxcb-ewmh-dev", 
-        "libxcb-icccm4-dev", "libxcb-image0-dev", "libxcb-randr0-dev", "libxcb-util0-dev", 
-        "libxcb-xkb-dev", "libxcb-xrm-dev", 
-        "i3-wm", "libasound2-dev", "libmpdclient-dev", "libiw-dev", "libcurl4-openssl-dev", 
-        "libpulse-dev", "libxcb-composite0-dev"
-    ]
-    state: absent
+- name: fallback to source-install
+  include: fromsource.yml
+  when:
+  - polybar_package_present.failed
 
 - name: ensure polybar config directory exists
   become: false
