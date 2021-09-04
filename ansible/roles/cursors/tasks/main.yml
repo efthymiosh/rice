@@ -1,0 +1,13 @@
+---
+- name: ensure local icons directory exists
+  become: false
+  file:
+    path: "{{ cursors_dir }}"
+    state: directory
+
+- name: fetch and extract bibata archive
+  ansible.builtin.unarchive:
+    src: "https://github.com/ful1e5/Bibata_Cursor/releases/download/{{ bibata_version }}/Bibata.tar.gz"
+    dest: "{{ cursors_dir }}"
+    remote_src: true
+

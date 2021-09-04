@@ -1,0 +1,5 @@
+---
+home_folder: "/home/{{ ansible_env.SUDO_USER }}"
+cursors_dir: "{{ home_folder }}/.local/share/icons"
+
+bibata_version: "v1.1.2"
