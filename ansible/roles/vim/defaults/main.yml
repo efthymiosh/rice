@@ -1,2 +1,2 @@
 ---
-home_folder: "/home/{{ ansible_ssh_user }}"
+home_folder: "/home/{{ ansible_env.SUDO_USER }}"

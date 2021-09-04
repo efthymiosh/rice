@@ -2,7 +2,7 @@
 polybar_version: "3.3.1"
 polybar_temp_dir: "/tmp"
 
-home_folder: "/home/{{ ansible_ssh_user }}"
+home_folder: "/home/{{ ansible_env.SUDO_USER }}"
 
 theme:
   background: '202020'

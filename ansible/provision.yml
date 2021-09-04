@@ -6,11 +6,11 @@
   - "files/themes/dark/termsexy_gray.yml"
 
   vars:
-    home_folder: "/home/{{ ansible_ssh_user }}"
+    home_folder: "/home/{{ ansible_env.SUDO_USER }}"
     rice_location: "{{ home_folder }}/cloned/rice"
-    polybar_version: "3.4.3"
+    polybar_version: "3.5.4"
     x_cursor_theme: "Bibata_Royal"
-    alacritty_version: "0.8.0"
+    alacritty_version: "0.9.0"
 
   roles:
   - role: fira-code
