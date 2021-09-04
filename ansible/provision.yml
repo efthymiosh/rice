@@ -28,11 +28,12 @@
   - role: polybar
     tags: polybar
 
-  tasks:
+  pre_tasks:
   - name: update apt package information
     apt:
       update_cache: yes
 
+  tasks:
   - name: install packages
     apt:
       name: [
