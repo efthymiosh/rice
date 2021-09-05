@@ -21,9 +21,12 @@ accent-text = #{{ theme.accent_text }}
 [bar/my-awesome-polybar]
 monitor = ${env:MONITOR}
 enable-ipc = true
+override-redirect = true
 
-width = 100%
+width = 100%:-64
+offset-x = 32
 height = 20
+offset-y = 8
 fixed-center = true
 
 background = ${colors.background}
@@ -40,7 +43,7 @@ underline-color = ${colors.accent}
 border-size = 4
 border-color = ${colors.background}
 
-padding-left = 1
+padding-left = 2
 padding-right = 2
 
 module-margin-left = 1
