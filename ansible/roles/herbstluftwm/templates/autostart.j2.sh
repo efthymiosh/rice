@@ -12,16 +12,7 @@ function kill_wait {
 setxkbmap us
 kill_wait compton
 kill_wait polybar
-compton --shadow \
-    --shadow-radius=5 \
-    --shadow-offset-x=-8 \
-    --shadow-offset-y=-8 \
-    --no-dnd-shadow \
-    --fade-delta=15 \
-    --backend glx \
-    --paint-on-overlay \
-    --glx-no-stencil \
-    --vsync opengl-swc &
+compton &
 nitrogen --restore &
 
 herbstclient emit_hook reload
