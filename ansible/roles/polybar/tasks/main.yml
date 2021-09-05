@@ -11,6 +11,23 @@
   when:
   - polybar_package_present.failed
 
+- name: ensure Noto Color Emoji font is installed
+  apt:
+    name: "fonts-noto-color-emoji"
+    state: present
+
+- name: Set fact all network interfaces
+  set_fact:
+    ether_ifaces: "{{ ansible_facts.interfaces | map('extract', ansible_facts ) | selectattr('type', 'equalto', 'ether') | sort(attribute='device') }}"
+
+- name: Get wifi network interfaces
+  set_fact:
+    wifi_ifaces: "{{ ether_ifaces | selectattr('device', 'match', 'w.*') }}"
+
+- name: Set fact wired network interfaces
+  set_fact:
+    wired_ifaces: "{{ ether_ifaces | selectattr('device', 'match', 'e.*') }}"
+
 - name: ensure polybar config directory exists
   become: false
   file:

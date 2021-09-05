@@ -46,12 +46,12 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Fira Code:size=10;0
-font-1 = Fira Code:size=10:fontformat=truetype;0
+font-0 = Fira Code Retina:size=10;0
+font-1 = Noto Emoji:scale=11;0
 
-modules-left = ewmh volume xwindow
-modules-center = xbacklight
-modules-right = memory cpu wlan eth battery temperature date
+modules-left = ewmh volume
+modules-center = xwindow
+modules-right = memory cpu {% for iface in ether_ifaces %}{{ iface.device }} {% endfor %} battery temperature date
 
 tray-position = right
 tray-padding = 9
@@ -162,33 +162,11 @@ bar-progress-empty-font = 0
 label-song-maxlen = 50
 label-song-ellipsis = true
 
-[module/xbacklight]
-type = internal/xbacklight
-
-format = <label> <bar>
-label = BL
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #ff
-bar-indicator-font = 0
-bar-fill = ─
-bar-fill-font = 0
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 0
-bar-empty-foreground = ${colors.foreground}
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
-
 [module/cpu]
 type = internal/cpu
 interval = 2
 format = <label> <ramp-coreload>
-format-prefix = " "
+format-prefix = "💭"
 format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.red}
 label = %percentage:3%%
@@ -221,7 +199,7 @@ ramp-coreload-7-foreground = ${colors.red}
 type = internal/memory
 interval = 2
 format = <label> <bar-used>
-format-prefix = " "
+format-prefix = "🐏"
 format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.cyan}
 label = %percentage_used:2%%
@@ -239,60 +217,32 @@ bar-used-empty = ─
 bar-used-empty-font = 0
 bar-used-empty-foreground = ${colors.background-alt}
 
-[module/ip-wired]
+{% for iface in wifi_ifaces %}
+[module/{{ iface.device }}]
 type = internal/network
-interface = enp6s0
-format-connected = <label-connected>
-label-connected = LAN: %local_ip% 
-label-connected-foreground = #eefafafa
-
-[module/ip-wireless]
-type = internal/network
-interface = wlp0s20f3
-format-connected = <label-connected>
-label-connected = WIFI: %local_ip%
-label-connected-foreground = #eefafafa
-
-[module/wlan]
-type = internal/network
-interface = wlp0s20f3
+interface = {{ iface.device }}
 interval = 2.0
 
 format-connected = <label-connected>
 format-connected-underline = ${colors.magenta}
 format-disconnected = <label-disconnected>
-#format-packetloss = <animation-packetloss> <label-connected>
-label-connected = %essid% ⇃%downspeed:8% ↿%upspeed:8%
+label-connected = 📶 ⇩%downspeed:8% ⇧%upspeed:8%
 label-connected-foreground = ${colors.foreground}
-#format-disconnected =
-#format-disconnected = <label-disconnected>
 format-disconnected-underline = ${self.format-connected-underline}
 label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.background-alt}
+{% endfor %}
 
-#label-packetloss = %essid%
-#label-packetloss-foreground = #eefafafa
-#ramp-signal-0 = 😱
-#ramp-signal-1 = 😠
-#ramp-signal-2 = 😒
-#ramp-signal-3 = 😊
-#ramp-signal-5 = 😈
-#animation-packetloss-0 = ⚠
-#animation-packetloss-0-foreground = #ffa64c
-#animation-packetloss-1 = 📶
-#animation-packetloss-1-foreground = #000000
-#animation-packetloss-framerate = 500
-
-
-[module/eth]
+{% for iface in wired_ifaces %}
+[module/{{ iface.device }}]
 type = internal/network
-interface = eth0
+interface = {{ iface.device }}
 interval = 3.0
 
 format-connected-underline = ${colors.magenta}
-format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground}
-label-connected = %local_ip%
+label-connected = ⇩%downspeed:8% ⇧%upspeed:8%
+{% endfor %}
 
 
 [module/date]
@@ -305,7 +255,7 @@ date-alt = " %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
+format-prefix = 📅
 format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.blue}
 
@@ -345,26 +295,15 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-format-charging = <animation-charging> <label-charging>
 format-charging-underline = ${colors.yellow}
+label-charging = ⚡%percentage%%
 
-format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
+label-discharging = 🔋%percentage%%
 
-format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground}
 format-full-underline = ${self.format-charging-underline}
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground}
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground}
-animation-charging-framerate = 750
+label-full = 🔌%percentage%%
 
 [module/temperature]
 type = internal/temperature
@@ -378,13 +317,11 @@ format-underline = ${colors.red}
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
-label = %temperature%
-label-warn = %temperature%
+label =  %temperature-c%
+label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+ramp-0 = 🌡
 ramp-foreground = ${colors.foreground}
 
 [module/powermenu]
