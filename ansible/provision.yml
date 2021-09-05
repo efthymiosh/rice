@@ -9,6 +9,7 @@
     home_folder: "/home/{{ ansible_env.SUDO_USER }}"
     rice_location: "{{ home_folder }}/cloned/rice"
     polybar_version: "3.5.4"
+    polybar_thermal_zone: "6"
     x_cursor_theme: "Pop"
     x_cursor_size: "24"
     alacritty_version: "0.9.0"

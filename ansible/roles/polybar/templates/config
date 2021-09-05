@@ -52,7 +52,7 @@ module-margin-right = 1
 font-0 = Fira Code Retina:size=10;0
 font-1 = Noto Emoji:scale=11;0
 
-modules-left = ewmh volume
+modules-left = ewmh volume xkeyboard
 modules-center = xwindow
 modules-right = memory cpu {% for iface in ether_ifaces %}{{ iface.device }} {% endfor %} battery temperature date
 
@@ -103,21 +103,21 @@ label = %title: %
 label-maxlen = 128
 format-underline = ${colors.accent}
 format-foreground = ${colors.foreground}
-format-padding = 2
+format-padding = 0
 
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
+format-prefix = "✏"
 format-prefix-foreground = ${colors.foreground}
 format-prefix-underline = ${colors.secondary}
 
 label-layout = %layout%
 label-layout-underline = ${colors.secondary}
 
-label-indicator-padding = 2
-label-indicator-margin = 1
+label-indicator-padding = 0
+label-indicator-margin = 0
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
 
@@ -268,10 +268,10 @@ label = %date% %time%
 type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL
+label-volume = 🔊
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix = " "
+format-muted-prefix = "🔇"
 format-muted-foreground = ${colors.foreground}
 label-muted = sound muted
 
@@ -310,8 +310,7 @@ label-full = 🔌%percentage%%
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 0
-hwmon-path = {{ polybar_temperature_hwmon_path }}
+thermal-zone = {{ polybar_thermal_zone }}
 base-temperature = 20
 warn-temperature = 60
 
