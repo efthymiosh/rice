@@ -2,6 +2,8 @@
 polybar_version: "3.3.1"
 polybar_temp_dir: "/tmp"
 
+polybar_temperature_hwmon_path: "/sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input"
+
 home_folder: "/home/{{ ansible_env.SUDO_USER }}"
 
 theme:

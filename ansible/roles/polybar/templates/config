@@ -369,6 +369,8 @@ animation-charging-framerate = 750
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
+hwmon-path = {{ polybar_temperature_hwmon_path }}
+base-temperature = 20
 warn-temperature = 60
 
 format = <ramp> <label>
