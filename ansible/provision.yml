@@ -68,3 +68,32 @@
     with_items:
     - "dunst"
     - "zathura"
+
+  - name: completely disable power button
+    become: true
+    lineinfile:
+      path: "/etc/systemd/logind.conf"
+      regexp: '^#HandlePowerKey=poweroff'
+      line: 'HandlePowerKey=ignore'
+      owner: root
+      group: root
+      mode: '0644'
+    notify: restart systemd-logind
+
+  - name: completely disable suspend button
+    become: true
+    lineinfile:
+      path: "/etc/systemd/logind.conf"
+      regexp: '^#HandleSuspendKey=suspend'
+      line: 'HandleSuspendKey=ignore'
+      owner: root
+      group: root
+      mode: '0644'
+    notify: restart systemd-logind
+
+  handlers:
+  - name: restart systemd-logind
+    become: true
+    systemd:
+      name: systemd-logind
+      state: restarted
