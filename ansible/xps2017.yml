@@ -8,6 +8,7 @@
   vars:
     home_folder: "/home/{{ ansible_env.SUDO_USER }}"
     rice_location: "{{ home_folder }}/cloned/rice"
+    provision_hostname: "bloomy"
     polybar_version: "3.5.4"
     polybar_thermal_zone: "6"
     x_cursor_theme: "Pop"
@@ -68,6 +69,10 @@
     with_items:
     - "dunst"
     - "zathura"
+
+  - name: modify hostname
+    hostname:
+      name: "{{ provision_hostname }}"
 
   - name: completely disable power button
     become: true
