@@ -87,6 +87,8 @@ herbstclient keybind $Mod-Control-l       resize right +$resizestep
 herbstclient keybind $Mod-w            set_attr theme.active.color $color_accent
 herbstclient keybind $Mod-Shift-w      set_attr theme.active.color $color_bg
 
+herbstclient set_layout max
+herbstclient set default_frame_layout 2
 
 # tags
 tag_names=( 'main' 'work' 'lab' 'comms' )
@@ -142,7 +144,6 @@ herbstclient set window_gap 0
 herbstclient set smart_window_surroundings 0
 herbstclient set smart_frame_surroundings 0
 herbstclient set mouse_recenter_gap 0
-herbstclient set default_frame_layout 2
 
 herbstclient attr theme.active.color $color_bg
 herbstclient attr theme.normal.color $color_bg
