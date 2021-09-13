@@ -44,7 +44,7 @@
       name: [
         "build-essential", "chromium-browser", "alpine", "dunst",
         "zathura", "tree", "screen", "curl", "pavucontrol", "gimp",
-        "jq", "ripgrep", "lm-sensors", "htop"
+        "jq", "ripgrep", "lm-sensors", "htop", "perf-tools-unstable"
       ]
       state: present
       update_cache: no
