@@ -14,6 +14,8 @@
     x_cursor_theme: "Pop"
     x_cursor_size: "24"
     alacritty_version: "0.9.0"
+    bitwarden_app_version: "1.28.2"
+    bitwarden_cli_version: "1.18.0"
 
   roles:
   - role: fira-code
@@ -32,6 +34,8 @@
     tags: herbstluftwm
   - role: polybar
     tags: polybar
+  - role: bitwarden
+    tags: bitwarden
 
   pre_tasks:
   - name: update apt package information
