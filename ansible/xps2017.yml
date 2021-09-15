@@ -36,6 +36,8 @@
     tags: polybar
   - role: bitwarden
     tags: bitwarden
+  - role: 1password
+    tags: 1password
 
   pre_tasks:
   - name: update apt package information
