@@ -1,5 +1,5 @@
 - name: Fetch bitwarden desktop
-  get_url: 
+  get_url:
     url: "https://github.com/bitwarden/desktop/releases/download/v{{ bitwarden_app_version }}/Bitwarden-{{ bitwarden_app_version }}-amd64.deb"
     dest: "/tmp/bitwarden-v{{ bitwarden_app_version }}.deb"
     owner: root
@@ -33,7 +33,7 @@
 
 - name: Fetch bitwarden cli
   become: true
-  get_url: 
+  get_url:
     url: "https://github.com/bitwarden/cli/releases/download/v{{ bitwarden_cli_version }}/bw-linux-{{ bitwarden_cli_version }}.zip"
     dest: "/tmp/bwcli.zip"
     owner: root
