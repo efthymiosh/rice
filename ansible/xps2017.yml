@@ -50,7 +50,8 @@
       name: [
         "build-essential", "chromium-browser", "alpine", "dunst",
         "zathura", "tree", "screen", "curl", "pavucontrol", "gimp",
-        "jq", "ripgrep", "lm-sensors", "htop", "perf-tools-unstable"
+        "jq", "ripgrep", "lm-sensors", "htop", "perf-tools-unstable",
+        "pssh"
       ]
       state: present
       update_cache: no
@@ -99,8 +100,18 @@
       line: 'HandleSuspendKey=ignore'
       owner: root
       group: root
-      mode: '0644'
+      mode: 0644
     notify: restart systemd-logind
+
+  - name: link parallel-ssh to pssh
+    become: true
+    file:
+      path: "/usr/bin/pssh"
+      src: "/usr/bin/parallel-ssh"
+      state: "link"
+      owner: root
+      group: root
+      mode: 0755
 
   handlers:
   - name: restart systemd-logind
