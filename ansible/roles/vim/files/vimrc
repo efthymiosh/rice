@@ -232,6 +232,14 @@ if has("autocmd")
     " When done autocompleting, close any preview windows
     autocmd CompleteDone * pclose
 
+    " some ansible/jinja2 template overrides
+    autocmd BufNewFile,BufRead *.yaml.*        set filetype=yaml
+    autocmd BufNewFile,BufRead *.yml.*         set filetype=yaml
+    autocmd BufNewFile,BufRead *.json.*        set filetype=json
+    autocmd BufNewFile,BufRead *.properties.*  set filetype=jproperties
+    autocmd BufNewFile,BufRead *.service.*     set filetype=systemd
+    " When done autocompleting, close any preview windows
+    autocmd CompleteDone * pclose
 endif
 
 " Enable spell checking (z= in normal mode for suggestions)
