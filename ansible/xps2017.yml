@@ -16,6 +16,7 @@
     alacritty_version: "0.9.0"
     bitwarden_app_version: "1.28.2"
     bitwarden_cli_version: "1.18.0"
+    terraform_version: "1.0.7"
 
   roles:
   - role: fira-code
@@ -38,6 +39,8 @@
     tags: bitwarden
   - role: 1password
     tags: 1password
+  - role: terraform
+    tags: terraform
 
   pre_tasks:
   - name: update apt package information
