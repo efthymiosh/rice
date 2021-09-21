@@ -14,4 +14,7 @@ if [ -z "$LAPTOP" ] || [[ ! "${PLAYBOOKS}" =~ "$LAPTOP" ]]; then
 fi
 
 shift
-ansible-playbook --ask-become-pass ansible/${LAPTOP}.yml --diff "$@"
+
+cd "${SCRIPT_DIR}/ansible"
+
+ansible-playbook --ask-become-pass ${LAPTOP}.yml --diff "$@"
