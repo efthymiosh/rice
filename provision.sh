@@ -14,4 +14,4 @@ if [ -z "$LAPTOP" ] || [[ ! "${PLAYBOOKS}" =~ "$LAPTOP" ]]; then
 fi
 
 shift
-ansible-playbook --ask-become-pass ansible/${LAPTOP}.yml --diff $@
+ansible-playbook --ask-become-pass ansible/${LAPTOP}.yml --diff "$@"
