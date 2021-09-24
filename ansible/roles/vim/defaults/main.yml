@@ -1,2 +1,0 @@
----
-home_folder: "/home/{{ ansible_env.SUDO_USER }}"

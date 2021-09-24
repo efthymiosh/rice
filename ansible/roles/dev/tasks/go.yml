@@ -1,0 +1,6 @@
+- name: install golang and language server
+  apt:
+    package:
+    - "golang-go"
+    - "gopls"
+    state: "present"

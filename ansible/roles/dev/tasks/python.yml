@@ -1,0 +1,11 @@
+- name: install python & pip
+  become: true
+  apt:
+    package:
+    - "python3"
+    - "python3-pip"
+    state: "present"
+
+- name: install python lsp
+  pip:
+    name: "python-language-server[all]"

@@ -21,8 +21,8 @@
   roles:
   - role: fira-code
     tags: fira-code
-  - role: vim
-    tags: vim
+  - role: dev
+    tags: dev
   - role: alacritty
     tags: alacritty
   - role: rofi

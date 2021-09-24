@@ -1,0 +1,107 @@
+- name: ensure the JDK is installed
+  apt:
+    package: "openjdk-11-jdk"
+    state: present
+
+- name: verify whether gradle is installed
+  file:
+    path: "/opt/gradle-{{ gradle_version }}/bin/gradle"
+    state: "file"
+  ignore_errors: true
+  register: verify_gradle
+
+- name: fetch gradle {{ gradle_version }}
+  when: verify_gradle.failed
+  get_url:
+    url: "https://services.gradle.org/distributions/gradle-{{ gradle_version }}-bin.zip"
+    dest: "/tmp/gradle.zip"
+    owner: root
+    group: root
+    mode: 0644
+
+- name: extract gradle
+  when: verify_gradle.failed
+  unarchive:
+    src: "/tmp/gradle.zip"
+    dest: "/opt/"
+    owner: root
+    group: root
+
+- name: link gradle executable
+  file:
+    path: "/usr/local/bin/gradle"
+    state: "link"
+    src: "/opt/gradle-{{ gradle_version }}/bin/gradle"
+
+- name: verify whether groovy is installed
+  file:
+    path: "/opt/groovy-{{ groovy_version }}/bin/groovy"
+    state: "file"
+  ignore_errors: true
+  register: verify_groovy
+
+- name: fetch groovy
+  when: verify_groovy.failed
+  get_url:
+    url: "https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/apache-groovy-binary-{{ groovy_version }}.zip"
+    dest: "/tmp/groovy.zip"
+    owner: root
+    group: root
+    mode: 0644
+
+- name: extract groovy
+  when: verify_groovy.failed
+  unarchive:
+    src: "/tmp/groovy.zip"
+    dest: "/opt/"
+    owner: root
+    group: root
+
+- name: ensure rogue jar directory exists
+  file:
+    path: "/opt/jar"
+    state: "directory"
+    owner: root
+    group: root
+    mode: 0755
+
+- name: verify whether the groovy language server is present
+  file:
+    path: "/opt/jar/groovy-language-server-all.jar"
+    state: "file"
+    owner: root
+    group: root
+    mode: 0644
+  ignore_errors: true
+  register: verify_groovy_lsp
+
+- name: fetch the groovy language server
+  when: verify_groovy_lsp.failed
+  get_url:
+    url: "https://github.com/GroovyLanguageServer/groovy-language-server/archive/refs/heads/master.zip"
+    dest: "/tmp/groovy_lsp_sources.zip"
+    owner: root
+    group: root
+    mode: 0644
+
+- name: unarchive the groovy language server
+  become: true
+  when: verify_groovy_lsp.failed
+  unarchive:
+    src: "/tmp/groovy_lsp_sources.zip"
+    dest: "/tmp/"
+    owner: "{{ default_user }}"
+    group: "{{ default_user }}"
+
+- name: build the groovy language server
+  become: false
+  when: verify_groovy_lsp.failed
+  shell: |
+    cd /tmp/groovy-language-server-master/
+    ./gradlew build
+
+- name: install the groovy language server in opt jar
+  become: true
+  when: verify_groovy_lsp.failed
+  shell: |
+    mv /tmp/groovy-language-server-master/build/libs/groovy-language-server-master-all.jar /opt/jar/groovy-language-server-all.jar
