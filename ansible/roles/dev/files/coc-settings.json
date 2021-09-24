@@ -2,5 +2,6 @@
   "diagnostic.errorSign": "✘",
   "diagnostic.warningSign": "",
   "diagnostic.infoSign": "",
-  "diagnostic.highlighLimit": 0
+  "diagnostic.highlighLimit": 0,
+  "rust-analyzer.procMacro.enable": true
 }
