@@ -59,9 +59,10 @@ if &t_Co > 8
 endif
 
 " No annoying vim files in my folders (Enabling adds features, e.g. cross-session undos)
-set noswapfile 
+set noswapfile
 set noundofile
 set nobackup
+set nowritebackup
 
 " Tab key shows as 4 characters, tab key inserts spaces, auto indentation 4 spaces.
 set tabstop=4

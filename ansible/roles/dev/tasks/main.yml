@@ -11,6 +11,9 @@
     - "python3-pip"
     state: "present"
 
+- import_tasks: rust.yml
+- import_tasks: groovy.yml
+
 - name: install configuration for vim
   become: false
   copy:
@@ -34,6 +37,3 @@
 - name: install vim plugins via vim-plug
   shell: >
     vim +PlugInstall +qall
-
-- import_tasks: rust.yml
-- import_tasks: groovy.yml
