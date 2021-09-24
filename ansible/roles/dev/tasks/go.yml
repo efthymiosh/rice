@@ -1,5 +1,0 @@
-- name: install golang
-  apt:
-    package:
-    - "golang-go"
-    state: "present"

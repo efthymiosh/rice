@@ -1,7 +1,0 @@
-- name: install python & pip
-  become: true
-  apt:
-    package:
-    - "python3"
-    - "python3-pip"
-    state: "present"

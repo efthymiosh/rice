@@ -1,17 +1,21 @@
 ---
-- name: install package
+- name: install vim and lang packages
   become: true
   apt:
-    name: "vim-gtk3"
+    name:
+    - "vim-gtk3"
+    - "golang-go"
+    - "nodejs"
+    - "npm"
+    - "python3"
+    - "python3-pip"
     state: "present"
 
-- name: add configuration for terminal programs
+- name: install configuration for vim
   become: false
   copy:
-    src:  "{{ item }}"
-    dest: "{{ home_folder }}/.{{ item }}"
-  with_items:
-  - "vimrc"
+    src:  "vimrc"
+    dest: "{{ home_folder }}/.vimrc"
 
 - name: ensure the vim autoload directory exists
   become: false
@@ -26,11 +30,9 @@
     url: "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
     dest: "{{ home_folder }}/.vim/autoload/plug.vim"
 
-- name: install vim plugins
+- name: install vim plugins via vim-plug
   shell: >
     vim +PlugInstall +qall
 
 - import_tasks: rust.yml
-- import_tasks: go.yml
-- import_tasks: python.yml
 - import_tasks: groovy.yml
