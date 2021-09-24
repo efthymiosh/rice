@@ -20,14 +20,7 @@
     dest: "{{ home_folder }}/.vim/bundle/Vundle.vim"
     depth: 1
 
-- name: install rust & lsp
-  import_tasks: rust.yml
-
-- name: install go & lsp
-  import_tasks: go.yml
-
-- name: install python & lsp
-  import_tasks: python.yml
-
-- name: install java, groovy & groovy lsp
-  import_tasks: groovy.yml
+- import_tasks: rust.yml
+- import_tasks: go.yml
+- import_tasks: python.yml
+- import_tasks: groovy.yml

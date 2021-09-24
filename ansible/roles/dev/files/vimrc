@@ -31,12 +31,6 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'jvirtanen/vim-hcl'
 Plugin 'hashivim/vim-terraform'
 
-" Async Language Server Protocol Plugin / deps
-Plugin 'prabirshrestha/async.vim'
-Plugin 'prabirshrestha/vim-lsp'
-Plugin 'prabirshrestha/asyncomplete.vim'
-Plugin 'prabirshrestha/asyncomplete-lsp.vim'
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -60,77 +54,6 @@ nnoremap <c-h> :NERDTreeToggle<CR>
 set diffopt+=vertical
 " }}}
 "
-"vim-lsp settings {{{
-
-let g:asyncomplete_auto_popup = 0
-
-let g:lsp_signs_enabled = 1
-let g:lsp_diagnostics_echo_cursor = 1
-let g:lsp_signs_error = {'text': '✗:'}
-let g:lsp_signs_warning = {'text': '✗:'}
-let g:lsp_signs_information = {'text': 'ℹ:'}
-let g:lsp_signs_hint = {'text': 'ℹ:'}
-let g:lsp_textprop_enabled = 0
-
-
-imap <c-n> <Plug>(asyncomplete_force_refresh)
-
-au FileType rust,go,python,groovy nmap gd <Plug>(lsp-definition)
-au FileType rust,go,python,groovy nmap gr <Plug>(lsp-references)
-au FileType rust,go,python,groovy nmap gc <Plug>(lsp-code-action)
-au FileType rust,go,python,groovy set signcolumn=yes
-
-if executable('rust-analyzer')
-  au User lsp_setup call lsp#register_server({
-        \   'name': 'Rust Language Server',
-        \   'cmd': {server_info->['rust-analyzer']},
-        \   'whitelist': ['rust'],
-        \   'initialization_options': {
-        \     'cargo': {
-        \       'loadOutDirsFromCheck': v:true,
-        \     },
-        \     'procMacro': {
-        \       'enable': v:true,
-        \     },
-        \   },
-        \ })
-else
-    if executable('rls')
-        au User lsp_setup call lsp#register_server({
-                    \ 'name': 'rls',
-                    \ 'cmd': {server_info->['rls']},
-                    \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'Cargo.toml'))},
-                    \ 'whitelist': ['rust'],
-                    \ })
-    endif
-endif
-
-if executable('gopls')
-    au User lsp_setup call lsp#register_server({
-                \ 'name': 'gopls',
-                \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
-                \ 'whitelist': ['go'],
-                \ })
-endif
-
-if executable('pyls')
-   au User lsp_setup call lsp#register_server({
-               \ 'name': 'pyls',
-               \ 'cmd': {server_info->['pyls']},
-               \ 'whitelist': ['python'],
-               \ })
-endif
-
-if executable('java')
-  if filereadable('/opt/jar/groovy-language-server-all.jar')
-      au User lsp_setup call lsp#register_server({
-                  \ 'name': 'groovy-lsp',
-                  \ 'cmd': {server_info->['java', '-jar', '/opt/jar/groovy-language-server-all.jar']},
-                  \ 'whitelist': ['groovy'],
-                  \ })
-  endif
-endif
-" }}}
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
