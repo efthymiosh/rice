@@ -14,8 +14,9 @@
 - name: install configuration for vim
   become: false
   copy:
-    src:  "vimrc"
-    dest: "{{ home_folder }}/.vimrc"
+    src:  "{{ item }}"
+    dest: "{{ home_folder }}/.{{ item }}"
+  loop: [ "vimrc", "vimpluginrc" ]
 
 - name: ensure the vim autoload directory exists
   become: false

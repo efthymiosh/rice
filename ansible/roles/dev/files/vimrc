@@ -2,27 +2,7 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-call plug#begin('~/.vim/plugged')
-    " NerdTree: alternative file explorer
-    Plug 'scrooloose/nerdtree'
-    " Fugitive: :G* git commands
-    Plug 'tpope/vim-fugitive'
-    " Jinja2 Syntax:
-    Plug 'Glench/Vim-Jinja2-Syntax'
-    " Rust Syntax:
-    Plug 'rust-lang/rust.vim'
-    " HashiCorp Syntax:
-    Plug 'jvirtanen/vim-hcl'
-    Plug 'hashivim/vim-terraform'
-    " Cocnvim Completions:
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-call plug#end()
-
-" NerdTree settings
-nnoremap <c-h> :NERDTreeToggle<CR>
-
-" Fugitive settings
-set diffopt+=vertical
+source ~/.vimpluginrc
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
