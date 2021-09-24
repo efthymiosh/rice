@@ -128,3 +128,7 @@ fi
 export PATH="$PATH:~/scripts/:~/.local/bin"
 
 complete -C /usr/local/bin/nomad nomad
+
+if [ -f ~/.cargo/env ]; then
+    . "$HOME/.cargo/env"
+fi

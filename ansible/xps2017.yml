@@ -18,7 +18,14 @@
     bitwarden_cli_version: "1.18.0"
     terraform_version: "1.0.7"
 
+  pre_tasks:
+  - name: update apt package information
+    apt:
+      update_cache: yes
+
   roles:
+  - role: packages
+    tags: packages
   - role: fira-code
     tags: fira-code
   - role: dev
@@ -42,44 +49,7 @@
   - role: terraform
     tags: terraform
 
-  pre_tasks:
-  - name: update apt package information
-    apt:
-      update_cache: yes
-
   tasks:
-  - name: install packages
-    apt:
-      name: [
-        "build-essential", "chromium-browser", "alpine", "dunst",
-        "zathura", "tree", "screen", "curl", "pavucontrol", "gimp",
-        "jq", "ripgrep", "lm-sensors", "htop", "perf-tools-unstable",
-        "pssh"
-      ]
-      state: present
-      update_cache: no
-
-  - name: set file configuration
-    become: false
-    copy:
-      dest: "{{ home_folder }}/.{{ item }}"
-      src:  "files/{{ item }}"
-    with_items:
-    - "bashrc"
-    - "bash_aliases"
-    - "screenrc"
-    - "inputrc"
-    - "pinerc"
-
-  - name: set directory configuration
-    become: false
-    copy:
-      dest: "{{ home_folder }}/.config/"
-      src:  "files/config/{{ item }}"
-    with_items:
-    - "dunst"
-    - "zathura"
-
   - name: modify hostname
     hostname:
       name: "{{ provision_hostname }}"
@@ -105,16 +75,6 @@
       group: root
       mode: 0644
     notify: restart systemd-logind
-
-  - name: link parallel-ssh to pssh
-    become: true
-    file:
-      path: "/usr/bin/pssh"
-      src: "/usr/bin/parallel-ssh"
-      state: "link"
-      owner: root
-      group: root
-      mode: 0755
 
   handlers:
   - name: restart systemd-logind
