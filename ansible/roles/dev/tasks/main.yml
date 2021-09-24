@@ -21,6 +21,12 @@
     dest: "{{ home_folder }}/.{{ item }}"
   loop: [ "vimrc", "vimpluginrc" ]
 
+- name: install configuration for coc.nvim
+  become: false
+  copy:
+    src:  "coc-settings.json"
+    dest: "{{ home_folder }}/.vim/coc-settings.json"
+
 - name: ensure the vim autoload directory exists
   become: false
   file:
