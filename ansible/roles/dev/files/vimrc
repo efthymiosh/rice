@@ -52,7 +52,7 @@ endif " has("autocmd")
 set keymap=greek_utf-8 " keymaps: add greek, defaults
 set iminsert=0
 set imsearch=-1
-set foldmethod=syntax  " enable folds
+set foldmethod=manual  " enable folds
 "Force 8 colors for 88color/256color terminals. We are humans, not mantis shrimps.
 if &t_Co > 8
     set t_Co=8

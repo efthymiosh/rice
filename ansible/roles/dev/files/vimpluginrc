@@ -23,7 +23,6 @@ set diffopt+=vertical
 " coc.nvim settings
 let g:coc_global_extensions = [
     \ 'coc-json',
-    \ 'coc-git',
     \ 'coc-rust-analyzer',
     \ 'coc-java',
     \ 'coc-go',
