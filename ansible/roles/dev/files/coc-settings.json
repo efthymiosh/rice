@@ -1,5 +1,6 @@
 {
   "diagnostic.errorSign": "✘",
   "diagnostic.warningSign": "",
-  "diagnostic.infoSign": ""
+  "diagnostic.infoSign": "",
+  "diagnostic.highlighLimit": 0
 }
