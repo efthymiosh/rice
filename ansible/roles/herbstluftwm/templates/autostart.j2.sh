@@ -9,6 +9,8 @@ function kill_wait {
     while pgrep -x "$1" >/dev/null; do sleep 0.2; done
 }
 
+autorandr --change
+
 setxkbmap us
 kill_wait compton
 kill_wait polybar
