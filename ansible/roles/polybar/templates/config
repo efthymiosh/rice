@@ -48,7 +48,8 @@ width = 18%:+384
 offset-x = 2%
 fixed-center = true
 
-modules-left = ewmh volume xkeyboard xwindow
+modules-left = ewmh volume xkeyboard
+modules-center = xwindow
 
 [bar/rightie]
 inherit = bar/base
@@ -61,6 +62,12 @@ modules-right = memory cpu {% for iface in ether_ifaces %}{{ iface.device }} {% 
 tray-position = ${env:TRAY_POS}
 tray-padding = 9
 tray-maxsize = 18
+
+[bar/full]
+inherit = bar/base bar/leftie bar/rightie
+
+width = 96%
+offset-x = 2%
 
 [module/ewmh]
 type = internal/xworkspaces
