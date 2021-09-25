@@ -1,0 +1,23 @@
+theme:
+  foreground: 'dad9df'
+  background: '282f32'
+  normal:
+    black: '282f32'
+    red: 'ca1d2c'
+    green: 'edb7ab'
+    yellow: 'b7aa9a'
+    blue: '2e78c1'
+    magenta: 'c0226e'
+    cyan: '309185'
+    white: 'e9e2cd'
+  bright:
+    black: '092027'
+    red: 'd35f5a'
+    green: 'd35f5a'
+    yellow: 'a86571'
+    blue: '7c84c4'
+    magenta: '5b5db2'
+    cyan: '81908f'
+    white: 'fcf4de'
+  accent: 'd35f5a'
+  accent_text: '282f32'
