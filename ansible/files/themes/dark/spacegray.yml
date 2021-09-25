@@ -2,7 +2,7 @@ theme:
   foreground: 'b2b8c2'
   background: '20232c'
   normal:
-    black: '000000'
+    black: '10131c'
     red: 'af4b57'
     green: '87b279'
     yellow: 'e5c078'
@@ -11,7 +11,7 @@ theme:
     cyan: '84a6a4'
     white: 'b2b8c2'
   bright:
-    black: '000000'
+    black: '20232c'
     red: 'af4b57'
     green: '87b279'
     yellow: 'e5c078'
