@@ -44,12 +44,12 @@ font-1 = Noto Emoji:scale=10;0
 [bar/leftie]
 inherit = bar/base
 
-width = 18%:+384
+width = 38%
 offset-x = 2%
 fixed-center = true
 
 modules-left = ewmh volume xkeyboard
-modules-center = xwindow
+modules-right = xwindow
 
 [bar/rightie]
 inherit = bar/base
@@ -64,10 +64,12 @@ tray-padding = 9
 tray-maxsize = 18
 
 [bar/full]
-inherit = bar/base bar/leftie bar/rightie
+inherit = bar/base bar/rightie bar/leftie
 
 width = 96%
 offset-x = 2%
+
+modules-center = xwindow
 
 [module/ewmh]
 type = internal/xworkspaces
