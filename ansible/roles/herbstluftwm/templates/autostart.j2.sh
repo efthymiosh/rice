@@ -177,7 +177,7 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 # or simply:
 herbstclient detect_monitors
 
-panel_padding=28
+panel_padding=32
 for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
     herbstclient pad $monitor $panel_padding
 done
@@ -185,7 +185,4 @@ done
 # find the panel
 panel=~/.config/polybar/panel.sh
 
-for monitor in $(polybar -m | cut -d: -f1) ; do
-    # start it on each monitor
-    "$panel" $monitor &
-done
+"$panel" &
