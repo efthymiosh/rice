@@ -42,7 +42,7 @@ colors:
     background: '0x{{ theme.background }}'
     foreground: '0x{{ theme.foreground }}'
   cursor:
-    text: '0x{{ theme.background }}'
+    text: '0x{{ theme.accent_text }}'
     cursor: '0x{{ theme.accent }}'
   normal:
     black:   '0x{{ theme.normal.black }}'

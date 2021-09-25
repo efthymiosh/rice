@@ -19,14 +19,17 @@
 - name: Set fact all network interfaces
   set_fact:
     ether_ifaces: "{{ ansible_facts.interfaces | map('extract', ansible_facts ) | selectattr('type', 'equalto', 'ether') | sort(attribute='device') }}"
+  tags: theme
 
 - name: Get wifi network interfaces
   set_fact:
     wifi_ifaces: "{{ ether_ifaces | selectattr('device', 'match', 'w.*') }}"
+  tags: theme
 
 - name: Set fact wired network interfaces
   set_fact:
     wired_ifaces: "{{ ether_ifaces | selectattr('device', 'match', 'e.*') }}"
+  tags: theme
 
 - name: ensure polybar config directory exists
   become: false
