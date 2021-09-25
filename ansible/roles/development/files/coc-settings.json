@@ -3,5 +3,7 @@
   "diagnostic.warningSign": "",
   "diagnostic.infoSign": "",
   "diagnostic.highlighLimit": 0,
-  "rust-analyzer.procMacro.enable": true
+  "rust-analyzer.procMacro.enable": true,
+  "yaml.format.enable": true,
+  "yaml.schemaStore.enable": true
 }

@@ -12,14 +12,23 @@
     state: "present"
 
 - import_tasks: rust.yml
+  tags: language
 - import_tasks: groovy.yml
+  tags: language
 
 - name: install configuration for vim
   become: false
   copy:
     src:  "{{ item }}"
     dest: "{{ home_folder }}/.{{ item }}"
-  loop: [ "vimrc", "vimpluginrc" ]
+  loop: [ "vimrc", "vimpluginconfigrc" ]
+
+- name: install vim plugin list
+  become: false
+  copy:
+    src:  "vimpluginrc"
+    dest: "{{ home_folder }}/.vimpluginrc"
+  register: vim_plugins
 
 - name: install configuration for coc.nvim
   become: false
@@ -41,5 +50,6 @@
     dest: "{{ home_folder }}/.vim/autoload/plug.vim"
 
 - name: install vim plugins via vim-plug
+  when: vim_plugins.changed
   shell: >
     vim +PlugInstall +qall
