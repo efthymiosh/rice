@@ -28,8 +28,8 @@
     tags: packages
   - role: fira-code
     tags: fira-code
-  - role: dev
-    tags: dev
+  - role: development
+    tags: development
   - role: alacritty
     tags: alacritty
   - role: rofi
