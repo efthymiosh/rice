@@ -15,7 +15,7 @@
     src: "{{ item }}.j2"
     dest: "{{ home_folder }}/.config/rofi/{{ item }}"
   with_items:
-  - config
+  - config.rasi
   - theme.rasi
   tags:
   - theme

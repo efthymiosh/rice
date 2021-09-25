@@ -35,8 +35,9 @@ herbstclient keybind $Mod-Return spawn alacritty
 herbstclient keybind $Mod-Alt-l spawn i3lock-fancy
 
 # Launcher
-herbstclient keybind $Mod-d spawn rofi -show run -font "Fira Code 10"
-herbstclient keybind XF86Search spawn rofi -show run -font "Fira Code 10"
+herbstclient keybind $Mod-d spawn rofi -show run -font "Fira Code Retina 11"
+herbstclient keybind XF86Search spawn rofi -show drun -font "Fira Code Retina 11"
+herbstclient keybind $Mod-a spawn rofi -show drun -font "Fira Code Retina 11"
 
 # Screenshot
 herbstclient keybind Print spawn scrot 
