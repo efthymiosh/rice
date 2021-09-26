@@ -13,6 +13,7 @@ let g:coc_global_extensions = [
     \ 'coc-groovy',
     \ 'coc-sh',
     \ 'coc-yaml',
+    \ 'coc-toml',
 \]
 set updatetime=750
 set shortmess+=c

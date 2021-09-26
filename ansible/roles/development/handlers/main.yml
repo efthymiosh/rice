@@ -1,0 +1,9 @@
+- name: cleanup removed vim plugins via vim-plum
+  listen: update vim plugins
+  shell: >
+    vim '+PlugClean!' +qall > /dev/null
+
+- name: install vim plugins via vim-plug
+  listen: update vim plugins
+  shell: >
+    vim '+PlugInstall!' +qall > /dev/null
