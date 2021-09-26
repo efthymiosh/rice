@@ -1,4 +1,4 @@
-- name: install packages
+- name: install apt packages
   apt:
     name: [
       "build-essential", "chromium-browser", "alpine", "dunst",
@@ -8,6 +8,13 @@
     ]
     state: present
     update_cache: yes
+
+- name: install flatpak packages
+  become: false
+  flatpak:
+    name: "com.slack.Slack"
+    method: "user"
+    state: present
 
 - name: set file configuration
   become: false
