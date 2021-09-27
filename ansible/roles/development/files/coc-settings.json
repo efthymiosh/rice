@@ -8,5 +8,6 @@
   "coc.preferences.colorSupport": false,
   "rust-analyzer.procMacro.enable": true,
   "yaml.format.enable": true,
-  "yaml.schemaStore.enable": true
+  "yaml.schemaStore.enable": true,
+  "java.autobuild.enabled": false
 }
