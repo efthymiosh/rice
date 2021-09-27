@@ -16,7 +16,6 @@
     alacritty_version: "0.9.0"
     bitwarden_app_version: "1.28.2"
     bitwarden_cli_version: "1.18.0"
-    terraform_version: "1.0.7"
 
   pre_tasks:
   - name: update apt package information
@@ -46,8 +45,24 @@
     tags: bitwarden
   - role: 1password
     tags: 1password
-  - role: terraform
+  - role: binpackage
     tags: terraform
+    vars:
+      package_name: terraform
+      package_version: "1.0.7"
+      package_fetch_url: "https://releases.hashicorp.com/terraform/{{ package_version }}/terraform_{{ package_version }}_linux_amd64.zip"
+  - role: binpackage
+    tags: packer
+    vars:
+      package_name: packer
+      package_version: "1.7.5"
+      package_fetch_url: "https://releases.hashicorp.com/packer/{{ package_version }}/packer_{{ package_version }}_linux_amd64.zip"
+  - role: binpackage
+    tags: waypoint
+    vars:
+      package_name: waypoint
+      package_version: "0.5.2"
+      package_fetch_url: "https://releases.hashicorp.com/waypoint/{{ package_version }}/waypoint_{{ package_version }}_linux_amd64.zip"
 
   tasks:
   - name: modify hostname
