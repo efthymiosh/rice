@@ -73,6 +73,7 @@ herbstclient keybind $Mod-Shift-l     shift right
 # splitting frames
 # create an empty frame at the specified direction
 herbstclient keybind $Mod-u       split   bottom  0.5
+herbstclient keybind $Mod-Shift-u split   bottom  0.66
 herbstclient keybind $Mod-o       split   right   0.5
 herbstclient keybind $Mod-Shift-o split   right   0.67
 herbstclient keybind $Mod-Shift-i split   right   0.33
