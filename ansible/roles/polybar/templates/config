@@ -263,7 +263,7 @@ label-connected = ⇩%downspeed:8% ⇧%upspeed:8%
 type = internal/date
 interval = 5
 
-date = "%d/%m/%Y"
+date = "%d/%m"
 date-alt = " %Y-%m-%d"
 
 time = %H:%M
