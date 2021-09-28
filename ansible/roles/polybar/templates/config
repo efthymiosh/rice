@@ -184,6 +184,7 @@ format-prefix = "💭"
 format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.red}
 label = %percentage:3%%
+ramp-coreload-spacing = 0
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 0
 ramp-coreload-0-foreground = ${colors.green}
