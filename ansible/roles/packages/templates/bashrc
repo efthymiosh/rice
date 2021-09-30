@@ -58,7 +58,13 @@ fi
 
 if [ "$color_prompt" = yes ]; then
     COLORCODE="{{ packages_bash_user_color }}"
-    PS1="\${debian_chroot:+(\$debian_chroot)}\\[\\e[00;${COLORCODE}m\\]\\u\\[\\e[00m\\]@\\h:\\w\\\$ "
+
+    function git_branch {
+        local branch="$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
+        [ -z "$branch" ] || echo " $branch"
+    }
+
+    PS1="\${debian_chroot:+(\$debian_chroot)}\\[\\e[00;${COLORCODE}m\\]\\u\\[\\e[00m\\]@\\h:\\w\\[\\e[91m\\]\$(git_branch)\\[\\e[00m\\]\\\$ "
 
     export LESS_TERMCAP_mb=$'\e[1;34m'
     export LESS_TERMCAP_md=$'\e[1;34m'
@@ -100,11 +106,13 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+{% if packages_enable_gpg_agent %}
 # Enable GPG-agent for yubi-key
 
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
+{% endif %}
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
