@@ -126,8 +126,7 @@ herbstclient mousebind $Mod-Button3 resize
 
 # focus
 herbstclient keybind $Mod-BackSpace   cycle_monitor
-herbstclient keybind $Mod-c           cycle_all +1
-herbstclient keybind $Mod-Shift-c     cycle_all -1
+herbstclient keybind $Mod-c           cycle
 herbstclient keybind $Mod-i jumpto urgent
 
 # theme
