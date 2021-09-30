@@ -35,8 +35,10 @@ herbstclient keybind $Mod-Return spawn alacritty
 herbstclient keybind $Mod-Alt-l spawn i3lock-fancy
 
 # Launcher
-herbstclient keybind $Mod-d spawn rofi -show run
-herbstclient keybind $Mod-a spawn rofi -show drun
+herbstclient keybind $Mod-d   spawn rofi -show run
+herbstclient keybind $Mod-a   spawn rofi -show drun
+herbstclient keybind $Mod-w   spawn rofi -show window
+herbstclient keybind $Mod-Tab spawn rofi -show window
 herbstclient keybind XF86Search spawn rofi -show drun
 
 # Screenshot
@@ -88,9 +90,6 @@ herbstclient keybind $Mod-Control-j       resize down +$resizestep
 herbstclient keybind $Mod-Control-k       resize up +$resizestep
 herbstclient keybind $Mod-Control-l       resize right +$resizestep
 
-herbstclient keybind $Mod-w            set_attr theme.active.color $color_accent
-herbstclient keybind $Mod-Shift-w      set_attr theme.active.color $color_bg
-
 herbstclient set_layout max
 herbstclient set default_frame_layout 2
 
@@ -127,9 +126,8 @@ herbstclient mousebind $Mod-Button3 resize
 
 # focus
 herbstclient keybind $Mod-BackSpace   cycle_monitor
-herbstclient keybind $Mod-Tab         cycle_all +1
-herbstclient keybind $Mod-Shift-Tab   cycle_all -1
-herbstclient keybind $Mod-c cycle
+herbstclient keybind $Mod-c           cycle_all +1
+herbstclient keybind $Mod-Shift-c     cycle_all -1
 herbstclient keybind $Mod-i jumpto urgent
 
 # theme

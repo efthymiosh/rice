@@ -19,6 +19,7 @@
   template:
     src: "compton.j2.conf"
     dest: "{{ home_folder }}/.compton.conf"
+  notify: reload herbstluftwm
 
 - name: template herbstluftwm configuration
   become: false
@@ -26,5 +27,6 @@
     src: "autostart.j2.sh"
     dest: "{{ home_folder }}/.config/herbstluftwm/autostart"
     mode: 0755
+  notify: reload herbstluftwm
   tags:
   - theme
