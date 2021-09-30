@@ -57,15 +57,19 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    HOSTNUM="$(hostname | tr a-z.\- 0-90-90-9)"
-    HOSTNUM="$(expr $HOSTNUM / ${#HOSTNUM} + 5)"
-    HOSTNUM=$(echo $(hostname | tr a-z.\- 0-90-90-9 | sed 's/[0-9]/&+/g')2 | bc)
-    COLORCODE="$(expr $HOSTNUM % 7 + 1)"
-    PS1="\${debian_chroot:+(\$debian_chroot)}\\[\\033[00;3${COLORCODE}m\\]\\u\\[\\033[00m\\]@\\h:\\w\\\$ "
+    COLORCODE="{{ packages_bash_user_color }}"
+    PS1="\${debian_chroot:+(\$debian_chroot)}\\[\\e[00;${COLORCODE}m\\]\\u\\[\\e[00m\\]@\\h:\\w\\\$ "
+
+    export LESS_TERMCAP_mb=$'\e[1;34m'
+    export LESS_TERMCAP_md=$'\e[1;34m'
+    export LESS_TERMCAP_me=$'\e[0m'
+
+    export LESS_TERMCAP_us=$'\e[1;4;36m'
+    export LESS_TERMCAP_ue=$'\e[0m'
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
-unset color_prompt force_color_prompt
+unset COLORCODE color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -75,18 +79,6 @@ xterm*|rxvt*)
 *)
     ;;
 esac
-
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
 
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
@@ -126,8 +118,6 @@ if ! shopt -oq posix; then
 fi
 
 export PATH="$PATH:~/scripts/:~/.local/bin"
-
-complete -C /usr/local/bin/nomad nomad
 
 if [ -f ~/.cargo/env ]; then
     . "$HOME/.cargo/env"
