@@ -30,6 +30,13 @@
     dest: "{{ home_folder }}/.vimpluginrc"
   notify: update vim plugins
 
+- name: ensure vim config dir exists
+  become: false
+  file:
+    path: "{{ home_folder }}/.vim"
+    state: directory
+    mode: 0755
+
 - name: install configuration for coc.nvim
   become: false
   copy:
