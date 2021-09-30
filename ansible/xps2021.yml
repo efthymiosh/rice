@@ -1,0 +1,105 @@
+- name: Configure ubuntu desktop
+  hosts: localhost
+  become: true
+
+  vars_files:
+  - "files/themes/dark/spacegray.yml"
+
+  vars:
+    home_folder: "/home/{{ ansible_env.SUDO_USER }}"
+    rice_location: "{{ home_folder }}/cloned/rice"
+    provision_hostname: "tile"
+    polybar_version: "3.5.4"
+    polybar_thermal_zone: "6"
+    x_cursor_theme: "Bibata-Modern-Ice"
+    x_cursor_size: "32"
+    alacritty_version: "0.9.0"
+    bitwarden_app_version: "1.28.2"
+    bitwarden_cli_version: "1.18.0"
+
+  pre_tasks:
+  - name: update apt package information
+    apt:
+      update_cache: yes
+
+  roles:
+  - role: packages
+    tags: packages
+  - role: fira-code
+    tags: fira-code
+  - role: development
+    tags: development
+  - role: alacritty
+    tags: alacritty
+  - role: rofi
+    tags: rofi
+  - role: cursors
+    tags: cursors
+  - role: xdefaults
+    tags: xdefaults
+  - role: herbstluftwm
+    tags: herbstluftwm
+  - role: polybar
+    tags: polybar
+  - role: bitwarden
+    tags: bitwarden
+  - role: 1password
+    tags: 1password
+  - role: binpackage
+    tags: terraform
+    vars:
+      package_name: terraform
+      package_version: "1.0.7"
+      package_fetch_url: "https://releases.hashicorp.com/terraform/{{ package_version }}/terraform_{{ package_version }}_linux_amd64.zip"
+  - role: binpackage
+    tags: packer
+    vars:
+      package_name: packer
+      package_version: "1.7.5"
+      package_fetch_url: "https://releases.hashicorp.com/packer/{{ package_version }}/packer_{{ package_version }}_linux_amd64.zip"
+  - role: binpackage
+    tags: waypoint
+    vars:
+      package_name: waypoint
+      package_version: "0.5.2"
+      package_fetch_url: "https://releases.hashicorp.com/waypoint/{{ package_version }}/waypoint_{{ package_version }}_linux_amd64.zip"
+  - role: binpackage
+    tags: fluvio
+    vars:
+      package_name: fluvio
+      package_version: "0.9.8"
+      package_fetch_url: "https://github.com/infinyon/fluvio/releases/download/v{{ package_version }}/fluvio-x86_64-unknown-linux-musl.zip"
+
+  tasks:
+  - name: modify hostname
+    hostname:
+      name: "{{ provision_hostname }}"
+
+  - name: completely disable power button
+    become: true
+    lineinfile:
+      path: "/etc/systemd/logind.conf"
+      regexp: '^#HandlePowerKey=poweroff'
+      line: 'HandlePowerKey=ignore'
+      owner: root
+      group: root
+      mode: '0644'
+    notify: restart systemd-logind
+
+  - name: completely disable suspend button
+    become: true
+    lineinfile:
+      path: "/etc/systemd/logind.conf"
+      regexp: '^#HandleSuspendKey=suspend'
+      line: 'HandleSuspendKey=ignore'
+      owner: root
+      group: root
+      mode: 0644
+    notify: restart systemd-logind
+
+  handlers:
+  - name: restart systemd-logind
+    become: true
+    systemd:
+      name: systemd-logind
+      state: restarted
