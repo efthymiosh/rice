@@ -40,7 +40,7 @@
   become: true
   copy:
     remote_src: true
-    src: "/opt/{{ package_name }}/{{ package_name }}"
+    src: "/opt/{{ package_name }}/{{ package_exe_subpath_dir }}/{{ package_name }}"
     dest: "/opt/{{ package_name }}/{{ package_name }}-{{ package_version }}"
     owner: root
     group: root
