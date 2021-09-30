@@ -5,15 +5,18 @@ color_bg='#{{ theme.background }}'
 color_urgent='#{{ theme.bright.red }}'
 
 function kill_wait {
-    killall -q "$1"
-    while pgrep -x "$1" >/dev/null; do sleep 0.2; done
+    for program in "$@"; do
+        killall -q "$program"
+    done
+    for program in "@"; do
+        while pgrep -x "$program" >/dev/null; do sleep 0.1; done
+    done
 }
 
 autorandr --change
 
 setxkbmap us
-kill_wait compton
-kill_wait polybar
+kill_wait compton polybar
 compton &
 nitrogen --restore &
 
