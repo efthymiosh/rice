@@ -14,12 +14,11 @@
     path: "{{ home_folder }}/.config/herbstluftwm"
     state: directory
 
-- name: template compton configuration
+- name: template picom configuration
   become: false
   template:
-    src: "compton.j2.conf"
-    dest: "{{ home_folder }}/.compton.conf"
-  notify: reload herbstluftwm
+    src: "picom.j2.conf"
+    dest: "{{ home_folder }}/.config/picom.conf"
 
 - name: template herbstluftwm configuration
   become: false
