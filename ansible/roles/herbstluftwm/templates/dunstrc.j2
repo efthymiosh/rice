@@ -1,0 +1,54 @@
+[global]
+    alignment = left
+    allow_markup = yes
+    bounce_freq = 0
+    browser = /usr/bin/xdg-open
+    dmenu = /usr/bin/rofi -dmenu -p dunst:
+    follow = mouse
+    font = {{ dunst_font }}
+    format = "<b>%s</b>\n%b"
+    geometry = "480x10+40-0"
+    history_length = 80
+    horizontal_padding = 14
+    icon_folders = {{ dunst_icon_folders | join(':') }}
+    icon_position = left
+    icon_position=left
+    idle_threshold = 120
+    ignore_newline = no
+    indicate_hidden = yes
+    line_height = 0
+    max_icon_size=24
+    monitor = 0
+    padding = 12
+    separator_color = frame
+    separator_height = 2
+    show_age_threshold = 60
+    show_indicators = no
+    shrink = yes
+    sort = yes
+    startup_notification = false
+    sticky_history = yes
+    transparency = 10
+    word_wrap = yes
+    mouse_left_click = do_action, close_current
+    mouse_right_click = close_current
+[frame]
+    width = 0
+    color = "#{{ theme.background }}"
+[shortcuts]
+    close = ctrl+space
+    close_all = ctrl+shift+space
+    history = ctrl+grave
+    context = ctrl+shift+period
+[urgency_low]
+    background = "#{{ theme.background }}"
+    foreground = "#{{ theme.foreground }}"
+    timeout = 7
+[urgency_normal]
+    background = "#{{ theme.accent }}"
+    foreground = "#{{ theme.accent_text }}"
+    timeout = 7
+[urgency_critical]
+    background = "#{{ theme.normal.red }}"
+    foreground = "#{{ theme.bright.white }}"
+    timeout = 0

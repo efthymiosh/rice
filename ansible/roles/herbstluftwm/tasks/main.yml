@@ -30,3 +30,5 @@
   notify: reload herbstluftwm
   tags:
   - theme
+
+- import_tasks: notifications.yml

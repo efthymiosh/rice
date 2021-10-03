@@ -1,3 +1,10 @@
 - name: reload herbstluftwm
   shell: >
     herbstclient reload
+
+- name: restart dunst
+  become: false
+  systemd:
+    scope: user
+    name: dunst
+    state: restarted

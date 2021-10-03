@@ -44,7 +44,6 @@
     dest: "{{ home_folder }}/.config/"
     src:  "files/config/{{ item }}"
   with_items:
-  - "dunst"
   - "zathura"
 
 - name: link parallel-ssh to pssh

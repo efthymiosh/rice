@@ -17,6 +17,7 @@ kill_wait compton polybar
 
 autorandr --change
 
+
 setxkbmap us
 compton &
 nitrogen --restore &

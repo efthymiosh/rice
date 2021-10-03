@@ -1,4 +1,9 @@
 home_folder: "/home/{{ ansible_env.SUDO_USER }}"
+dunst_font: "Fira Code Retina 11"
+dunst_icon_folders:
+- "/usr/share/icons/HighContrast/256x256/status/"
+- "/usr/share/icons/HighContrast/256x256/apps/"
+- "/usr/share/icons/HighContrast/256x256/devices/"
 
 theme:
   background: '202020'

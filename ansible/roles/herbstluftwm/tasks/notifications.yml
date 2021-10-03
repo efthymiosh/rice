@@ -1,0 +1,13 @@
+- name: ensure dunst configuration directory exists
+  become: false
+  file:
+    path: "{{ home_folder }}/.config/dunst"
+    state: "directory"
+
+- name: set directory configuration
+  become: false
+  template:
+    src:  "dunstrc.j2"
+    dest: "{{ home_folder }}/.config/dunst/dunstrc"
+  notify:
+  - restart dunst
