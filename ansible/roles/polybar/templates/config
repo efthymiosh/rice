@@ -22,7 +22,7 @@ accent-text = #{{ theme.accent_text }}
 monitor = ${env:MONITOR}
 enable-ipc = true
 override-redirect = true
-height = 20
+height = 24
 offset-y = 8
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -32,7 +32,7 @@ overline-size = 3
 overline-color = ${colors.accent}
 underline-size = 3
 underline-color = ${colors.accent}
-border-size = 4
+border-size = 2
 border-color = ${colors.background}
 padding-left = 2
 padding-right = 2
@@ -276,11 +276,13 @@ label = %date% %time%
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
+format-volume-underline = ${colors.green}
 label-volume = 🔊
 label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = "🔇"
 format-muted-foreground = ${colors.foreground}
+format-muted-underline = ${colors.red}
 label-muted = sound muted
 
 bar-volume-width = 10
