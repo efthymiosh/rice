@@ -9,14 +9,15 @@ function kill_wait {
         killall -q "$program"
     done
     for program in "@"; do
-        while pgrep -x "$program" >/dev/null; do sleep 0.1; done
+        while pgrep -x "$program" >/dev/null; do sleep 0.01; done
     done
 }
+
+kill_wait compton polybar
 
 autorandr --change
 
 setxkbmap us
-kill_wait compton polybar
 compton &
 nitrogen --restore &
 
