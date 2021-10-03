@@ -1,10 +1,10 @@
 - name: install apt packages
   apt:
     name: [
-      "build-essential", "chromium-browser", "alpine", "dunst",
-      "zathura", "tree", "screen", "curl", "pavucontrol", "gimp",
-      "jq", "ripgrep", "lm-sensors", "htop", "perf-tools-unstable",
-      "pssh", "python3-openstackclient"
+      "build-essential", "chromium-browser", "dunst", "zathura",
+      "tree", "screen", "curl", "pavucontrol", "gimp", "jq",
+      "ripgrep", "lm-sensors", "htop", "perf-tools-unstable",
+      "pssh", "python3-openstackclient", "neofetch"
     ]
     state: present
     update_cache: yes
@@ -28,7 +28,6 @@
   - "bash_aliases"
   - "screenrc"
   - "inputrc"
-  - "pinerc"
 
 - name: template configuration
   become: false
