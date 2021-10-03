@@ -98,7 +98,7 @@ herbstclient set_layout max
 herbstclient set default_frame_layout 2
 
 # tags
-tag_names=( 'main' 'work' 'lab' 'comms' )
+tag_names=( '➕' '➖' '✖' '➗' )
 tag_keys=( {1..4} 0 )
 
 herbstclient rename default "${tag_names[0]}" || true
@@ -121,6 +121,8 @@ herbstclient keybind $Mod-Shift-space cycle_layout 1
 herbstclient keybind $Mod-s floating toggle
 herbstclient keybind $Mod-f fullscreen toggle
 herbstclient keybind $Mod-p pseudotile toggle
+herbstclient keybind $Mod-Shift-s set_attr clients.focus.floating toggle
+herbstclient keybind $Mod-Shift-m set_attr clients.focus.minimized true
 
 # mouse
 herbstclient mouseunbind --all
@@ -166,6 +168,7 @@ herbstclient attr theme.background_color $color_bg
 # rules
 herbstclient unrule -F
 herbstclient rule focus=on # normally focus new clients
+herbstclient rule floatplacement=center
 herbstclient rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on
 herbstclient rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 herbstclient rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
