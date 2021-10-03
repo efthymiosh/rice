@@ -11,7 +11,7 @@
     provision_hostname: "tile"
     polybar_version: "3.5.4"
     polybar_thermal_zone: "6"
-    x_cursor_theme: "Bibata-Modern-Ice"
+    x_cursor_theme: "Bibata-Modern-Classic"
     x_cursor_size: "32"
     alacritty_version: "0.9.0"
     bitwarden_app_version: "1.28.2"
