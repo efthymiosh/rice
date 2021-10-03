@@ -2,7 +2,7 @@
   apt:
     name: [
       "herbstluftwm", "dzen2", "nitrogen",
-      "sxiv", "compton", "scrot", "maim",
+      "sxiv", "picom", "scrot", "maim",
       "xsel", "pavucontrol", "i3lock-fancy",
       "autorandr"
     ]

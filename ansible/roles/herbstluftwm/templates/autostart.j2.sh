@@ -13,13 +13,13 @@ function kill_wait {
     done
 }
 
-kill_wait compton polybar
+kill_wait polybar picom
 
 autorandr --change
 
 
 setxkbmap us
-compton &
+picom --experimental-backends &
 nitrogen --restore &
 
 herbstclient emit_hook reload
