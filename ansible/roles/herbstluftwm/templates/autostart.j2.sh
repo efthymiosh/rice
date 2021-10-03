@@ -50,7 +50,7 @@ herbstclient keybind XF86Search spawn rofi -show drun
 herbstclient keybind Print spawn scrot 
 
 # Keyboard locale
-setxkbmap -option grp:win_space_toggle us,el
+setxkbmap us,el -option "" -option grp:alt_space_toggle
 
 # Sound
 herbstclient keybind XF86AudioRaiseVolume spawn amixer -D pulse sset Master 5%+
@@ -86,7 +86,7 @@ herbstclient keybind $Mod-Shift-o split   right   0.67
 herbstclient keybind $Mod-Shift-i split   right   0.33
 
 # let the current frame explode into subframes
-herbstclient keybind $Mod-Control-space split explode
+herbstclient keybind $Mod-space split explode
 
 # resizing frames
 resizestep=0.025
@@ -119,10 +119,10 @@ herbstclient keybind $Mod-comma  use_index -1 --skip-visible
 # layouting
 herbstclient keybind $Mod-r remove
 herbstclient keybind $Mod-Shift-space cycle_layout 1
-herbstclient keybind $Mod-s floating toggle
+herbstclient keybind $Mod-Shift-s floating toggle
 herbstclient keybind $Mod-f fullscreen toggle
 herbstclient keybind $Mod-p pseudotile toggle
-herbstclient keybind $Mod-Shift-s set_attr clients.focus.floating toggle
+herbstclient keybind $Mod-s set_attr clients.focus.floating toggle
 herbstclient keybind $Mod-Shift-m set_attr clients.focus.minimized true
 
 # mouse
