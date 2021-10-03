@@ -5,10 +5,10 @@ function spawn_polybar {
     WIDTH="$(echo $1 | sed 's/^.*:\ \([0-9]\+\)x.*$/\1/')"
 
     if [ "$WIDTH" -lt 2560 ]; then
-        polybar -q full &
+        polybar -rq full &
     else
-        polybar -q leftie &
-        polybar -q rightie &
+        polybar -rq leftie &
+        polybar -rq rightie &
     fi
 }
 

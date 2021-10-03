@@ -74,10 +74,9 @@ modules-center = xwindow
 [module/ewmh]
 type = internal/xworkspaces
 
-pin-workspaces = false
+pin-workspaces = true
 
 enable-click = false
-
 enable-scroll = false
 
 format = <label-state>
