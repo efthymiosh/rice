@@ -49,26 +49,37 @@
     tags: terraform
     vars:
       package_name: terraform
-      package_version: "1.0.7"
+      package_version: "1.0.8"
       package_fetch_url: "https://releases.hashicorp.com/terraform/{{ package_version }}/terraform_{{ package_version }}_linux_amd64.zip"
+      package_exe_subpath_dir: ""
   - role: binpackage
     tags: packer
     vars:
       package_name: packer
-      package_version: "1.7.5"
+      package_version: "1.7.6"
       package_fetch_url: "https://releases.hashicorp.com/packer/{{ package_version }}/packer_{{ package_version }}_linux_amd64.zip"
+      package_exe_subpath_dir: ""
   - role: binpackage
     tags: waypoint
     vars:
       package_name: waypoint
       package_version: "0.5.2"
       package_fetch_url: "https://releases.hashicorp.com/waypoint/{{ package_version }}/waypoint_{{ package_version }}_linux_amd64.zip"
+      package_exe_subpath_dir: ""
   - role: binpackage
     tags: fluvio
     vars:
       package_name: fluvio
-      package_version: "0.9.8"
+      package_version: "0.9.9"
       package_fetch_url: "https://github.com/infinyon/fluvio/releases/download/v{{ package_version }}/fluvio-x86_64-unknown-linux-musl.zip"
+      package_exe_subpath_dir: ""
+  - role: binpackage
+    tags: glab
+    vars:
+      package_name: glab
+      package_version: "1.21.1"
+      package_fetch_url: "https://github.com/profclems/glab/releases/download/v{{ package_version }}/glab_{{ package_version }}_Linux_x86_64.tar.gz"
+      package_exe_subpath_dir: "bin"
 
   tasks:
   - name: modify hostname
