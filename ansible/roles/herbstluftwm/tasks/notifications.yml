@@ -4,10 +4,11 @@
     path: "{{ home_folder }}/.config/dunst"
     state: "directory"
 
-- name: set directory configuration
+- name: set dunst configuration
   become: false
   template:
     src:  "dunstrc.j2"
     dest: "{{ home_folder }}/.config/dunst/dunstrc"
+  tags: theme
   notify:
   - restart dunst
