@@ -1,7 +1,7 @@
 ---
 - name: install polybar package
   apt:
-    name: [ "polybar={{ polybar_version }}*" ]
+    name: [ "polybar" ]
     state: present
   ignore_errors: true
   register: polybar_package_present

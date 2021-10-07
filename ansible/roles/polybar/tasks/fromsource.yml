@@ -1,7 +1,7 @@
 ---
 - name: fetch polybar release
   unarchive:
-    src: "https://github.com/jaagr/polybar/releases/download/{{ polybar_version }}/polybar-{{ polybar_version }}.tar"
+    src: "https://github.com/jaagr/polybar/releases/download/{{ polybar_fromsource_version }}/polybar-{{ polybar_fromsource_version }}.tar"
     dest: "{{ polybar_temp_dir }}"
     remote_src: yes
 

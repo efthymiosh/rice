@@ -1,8 +1,8 @@
 ---
-polybar_version: "3.3.1"
+polybar_fromsource_version: "3.5.4"
 polybar_temp_dir: "/tmp"
 
-polybar_thermal_zone: "0"
+polybar_thermal_zone: "6"
 
 home_folder: "/home/{{ ansible_env.SUDO_USER }}"
 
