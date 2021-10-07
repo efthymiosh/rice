@@ -1,6 +1,6 @@
 theme:
   foreground: 'ffffff'
-  background: '333333'
+  background: '222222'
   normal:
     black: '4d4d4d'
     red: 'ff2b2b'
@@ -11,7 +11,7 @@ theme:
     cyan: 'ffa0a0'
     white: 'f5deb3'
   bright:
-    black: '545454'
+    black: '454545'
     red: 'ff5555'
     green: '55ff55'
     yellow: 'ffff55'
