@@ -1,4 +1,0 @@
-package_name: "terraform"
-package_version: "1.0.7"
-package_fetch_url: "https://releases.hashicorp.com/terraform/{{ package_version }}/terraform_{{ package_version }}_linux_amd64.zip"
-package_exe_subpath_dir: ""

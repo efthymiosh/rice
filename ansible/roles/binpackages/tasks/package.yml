@@ -1,0 +1,59 @@
+- name: Ensure {{ item.name }} directory exists
+  become: true
+  file:
+    path: "/opt/{{ item.name }}/"
+    state: "directory"
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Verify current version is installed
+  become: true
+  file:
+    path: "/opt/{{ item.name }}/{{ item.name }}-{{ item.version }}"
+    state: "file"
+    owner: root
+    group: root
+    mode: 0755
+  ignore_errors: true
+  register: verify
+
+- name: Fetch {{ item.name }} archive
+  become: true
+  get_url:
+    url: "{{ item.fetch_url }}"
+    dest: "/tmp/{{ item.name }}.zip"
+    owner: root
+    group: root
+    mode: 0644
+  when: verify.failed
+
+- name: Unarchive {{ item.name }}
+  become: true
+  unarchive:
+    remote_src: true
+    src: "/tmp/{{ item.name }}.zip"
+    dest: "/opt/{{ item.name }}/"
+  when: verify.failed
+
+- name: Copy to versioned naming
+  become: true
+  copy:
+    remote_src: true
+    src: "/opt/{{ item.name }}/{{ item.subpath }}/{{ item.name }}"
+    dest: "/opt/{{ item.name }}/{{ item.name }}-{{ item.version }}"
+    owner: root
+    group: root
+    mode: 0755
+  when: verify.failed
+
+- name: Ensure extracted executable is absent
+  file:
+    path: "/opt/{{ item.name }}/{{ item.name }}"
+    state: "absent"
+
+- name: Link versioned executable to active
+  file:
+    path: "/usr/local/bin/{{ item.name }}"
+    src: "/opt/{{ item.name }}/{{ item.name }}-{{ item.version }}"
+    state: "link"

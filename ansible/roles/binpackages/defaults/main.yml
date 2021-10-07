@@ -1,0 +1,5 @@
+terraform_version: "1.0.8"
+packer_version: "1.7.6"
+waypoint_version: "0.5.2"
+fluvio_version: "0.9.9"
+glab_version: "1.21.1"
