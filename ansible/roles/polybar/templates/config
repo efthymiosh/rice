@@ -21,7 +21,7 @@ accent-text = #{{ theme.accent_text }}
 [bar/base]
 monitor = ${env:MONITOR}
 enable-ipc = true
-override-redirect = true
+override-redirect = false
 height = 24
 offset-y = 8
 background = ${colors.background}
