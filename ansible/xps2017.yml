@@ -7,7 +7,7 @@
 
   vars:
     home_folder: "/home/{{ ansible_env.SUDO_USER }}"
-    provision_hostname: "bloomy"
+    provision_hostname: "sand"
     x_cursor_theme: "Bibata-Modern-Ice"
     alacritty_font_size: 9
     bitwarden_app_version: "1.28.2"
