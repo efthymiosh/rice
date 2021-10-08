@@ -14,3 +14,13 @@
     creates: "{{ cursors_dir }}/Bibata-Original-Classic"
     owner: root
     group: root
+
+- name: fetch and extract bibata extra colors
+  become: true
+  unarchive:
+    remote_src: true
+    src: "https://github.com/ful1e5/Bibata_Extra_Cursor/releases/download/{{ bibata_extra_version }}/BibataExtra.tar.gz"
+    dest: "{{ cursors_dir }}"
+    creates: "{{ cursors_dir }}/Bibata-Modern-DarkRed"
+    owner: root
+    group: root
