@@ -15,3 +15,12 @@
     dest: ".Xresources"
   tags:
   - theme
+
+- name: template touchpad configuration
+  become: true
+  template:
+    src: "xorg_touchpad.conf.j2"
+    dest: "/etc/X11/xorg.conf.d/touchpad.conf"
+    owner: "root"
+    group: "root"
+    mode: 0644
