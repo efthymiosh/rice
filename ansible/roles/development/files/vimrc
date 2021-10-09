@@ -98,7 +98,7 @@ colorscheme slate
 set number
 set cursorline
 highlight LineNr       cterm=NONE ctermfg=7         ctermbg=8
-highlight Search       cterm=NONE ctermfg=7         ctermbg=5
+highlight Search       cterm=NONE ctermfg=8         ctermbg=5
 highlight MatchParen   cterm=NONE ctermfg=NONE      ctermbg=4
 highlight CursorLine   cterm=NONE                   ctermbg=NONE
 highlight CursorLineNr cterm=NONE ctermfg=8         ctermbg=3
