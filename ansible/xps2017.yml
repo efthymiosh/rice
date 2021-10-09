@@ -8,7 +8,7 @@
   vars:
     home_folder: "/home/{{ ansible_env.SUDO_USER }}"
     provision_hostname: "sand"
-    x_cursor_theme: "Bibata-Modern-Ice"
+    x_cursor_theme: "Bibata-Modern-Greenish"
     x_cursor_size: 40
     alacritty_font_size: 9
     bitwarden_app_version: "1.28.2"
