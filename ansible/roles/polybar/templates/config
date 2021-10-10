@@ -69,7 +69,7 @@ inherit = bar/base bar/rightie bar/leftie
 width = 96%
 offset-x = 2%
 
-modules-center = xwindow
+modules-center = xwindow_short
 
 [module/ewmh]
 type = internal/xworkspaces
@@ -111,6 +111,14 @@ label-empty-padding = 1
 type = internal/xwindow
 label = %title: %
 label-maxlen = 128
+format-underline = ${colors.accent}
+format-foreground = ${colors.foreground}
+format-padding = 0
+
+[module/xwindow_short]
+type = internal/xwindow
+label = %title: %
+label-maxlen = 50
 format-underline = ${colors.accent}
 format-foreground = ${colors.foreground}
 format-padding = 0
