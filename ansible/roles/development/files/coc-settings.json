@@ -1,7 +1,7 @@
 {
   "diagnostic.errorSign": "✘",
-  "diagnostic.warningSign": "",
-  "diagnostic.infoSign": "",
+  "diagnostic.warningSign": "❢",
+  "diagnostic.infoSign": "ℹ",
   "diagnostic.level": "information",
   "diagnostic.highlighLimit": 0,
   "diagnostic.checkCurrentLine": true,
