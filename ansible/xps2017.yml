@@ -50,6 +50,8 @@
     tags: 1password
   - role: binpackages
     tags: binpackages
+  - role: starship
+    tags: starship
 
   tasks:
   - name: modify hostname

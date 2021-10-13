@@ -1,11 +1,12 @@
 add_newline = false
-format = """$username$hostname:$directory $git_branch$git_status$character"""
+format = """$username$hostname:$directory$git_branch$git_status$character"""
 
 [directory]
 truncation_length = 3
 truncation_symbol = ".../"
 truncate_to_repo = false
-format = """[$path]($style)[$read_only]($read_only_style)"""
+format = """[$path]($style)"""
+style = "bold"
 
 [fill]
 symbol = " "
@@ -25,8 +26,8 @@ success_symbol = """\\$"""
 error_symbol = """[\\$](red)"""
 
 [git_branch]
-format = """[$symbol$branch]($style)"""
-style="purple"
+format = """ [$symbol$branch]($style)"""
+style="red"
 
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style))'

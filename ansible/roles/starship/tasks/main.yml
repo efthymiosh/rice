@@ -1,0 +1,17 @@
+- name: install starship
+  include_role:
+    name: binpackages
+  vars:
+    binpackages_items:
+    - name: starship
+      version: "{{ starship_version }}"
+      fetch_url: "https://github.com/starship/starship/releases/download/v{{ starship_version }}/starship-x86_64-unknown-linux-gnu.tar.gz"
+      subpath: ""
+
+- name: template starship configuration
+  become: false
+  template:
+    dest: "{{ home_folder }}/.config/{{ item }}"
+    src: "templates/{{ item }}.j2"
+  loop:
+  - "starship.toml"
