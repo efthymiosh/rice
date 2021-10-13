@@ -8,7 +8,7 @@
   vars:
     home_folder: "/home/{{ ansible_env.SUDO_USER }}"
     provision_hostname: "tile"
-    x_cursor_theme: "Bibata-Modern-Classic"
+    x_cursor_theme: "Bibata-Modern-Salmon"
     bitwarden_app_version: "1.28.2"
     bitwarden_cli_version: "1.18.0"
     terraform_version: "1.0.8"
