@@ -1,10 +1,11 @@
 add_newline = false
-format = """$fill$all $directory$character"""
+format = """$all$username$hostname:$directory$character"""
 
 [directory]
 truncation_length = 3
 truncation_symbol = ".../"
 truncate_to_repo = false
+format = """[$path]($style)[$read_only]($read_only_style)"""
 
 [fill]
 symbol = " "
@@ -13,12 +14,14 @@ symbol = " "
 style_user = "green"
 style_root = "red bold"
 format = """[$user]($style)[@](white)"""
-disabled = false
 show_always = true
 
 [hostname]
 ssh_only = false
-format = """$hostname """
-disabled = false
+format = """$hostname"""
+
+[character]
+success_symbol = """\\$"""
+error_symbol = """[\\$](red)"""
 
 # vim:ft=toml
