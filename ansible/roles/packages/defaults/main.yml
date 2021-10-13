@@ -1,2 +1,4 @@
 packages_bash_user_color: 32
 packages_enable_gpg_agent: false
+
+starship_version: "0.58.0"
