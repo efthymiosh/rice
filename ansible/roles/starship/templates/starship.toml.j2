@@ -2,11 +2,11 @@ add_newline = false
 format = """$username$hostname:$directory$git_branch$git_status$character"""
 
 [directory]
-truncation_length = 3
-truncation_symbol = ".../"
+truncation_length = 8
+truncation_symbol = ".."
 truncate_to_repo = false
 format = """[$path]($style)"""
-style = "bold"
+style = "cyan"
 
 [fill]
 symbol = " "
