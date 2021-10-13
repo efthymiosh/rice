@@ -3,3 +3,25 @@ packer_version: "1.7.6"
 waypoint_version: "0.5.2"
 fluvio_version: "0.9.9"
 glab_version: "1.21.1"
+
+binpackages_items:
+- name: terraform
+  version: "{{ terraform_version }}"
+  fetch_url: "https://releases.hashicorp.com/terraform/{{ terraform_version }}/terraform_{{ terraform_version }}_linux_amd64.zip"
+  subpath: ""
+- name: packer
+  version: "{{ packer_version }}"
+  fetch_url: "https://releases.hashicorp.com/packer/{{ packer_version }}/packer_{{ packer_version }}_linux_amd64.zip"
+  subpath: ""
+- name: waypoint
+  version: "{{ waypoint_version }}"
+  fetch_url: "https://releases.hashicorp.com/waypoint/{{ waypoint_version }}/waypoint_{{ waypoint_version }}_linux_amd64.zip"
+  subpath: ""
+- name: fluvio
+  version: "{{ fluvio_version }}"
+  fetch_url: "https://github.com/infinyon/fluvio/releases/download/v{{ fluvio_version }}/fluvio-x86_64-unknown-linux-musl.zip"
+  subpath: ""
+- name: glab
+  version: "{{ glab_version }}"
+  fetch_url: "https://github.com/profclems/glab/releases/download/v{{ glab_version }}/glab_{{ glab_version }}_Linux_x86_64.tar.gz"
+  subpath: "bin"
