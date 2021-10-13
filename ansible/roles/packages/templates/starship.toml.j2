@@ -1,5 +1,5 @@
 add_newline = false
-format = """$all$username$hostname:$directory$character"""
+format = """$username$hostname:$directory $git_branch$git_status$character"""
 
 [directory]
 truncation_length = 3
@@ -23,5 +23,12 @@ format = """$hostname"""
 [character]
 success_symbol = """\\$"""
 error_symbol = """[\\$](red)"""
+
+[git_branch]
+format = """[$symbol$branch]($style)"""
+style="purple"
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style))'
 
 # vim:ft=toml
