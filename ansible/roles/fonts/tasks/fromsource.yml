@@ -17,7 +17,5 @@
   - Regular
   - Retina
   - Bold
-
-- name: refresh font cache
-  become: false
-  shell: "fc-cache -f"
+  notify:
+  - refresh font cache
