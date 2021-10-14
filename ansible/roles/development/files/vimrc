@@ -90,6 +90,7 @@ if has("autocmd")
     autocmd BufNewFile,BufRead *.json.*        set filetype=json
     autocmd BufNewFile,BufRead *.properties.*  set filetype=jproperties
     autocmd BufNewFile,BufRead *.service.*     set filetype=systemd
+    autocmd BufNewFile,BufRead *.conf.*        set filetype=conf
 endif
 
 " Configure Theming
