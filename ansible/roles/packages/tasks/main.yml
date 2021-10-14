@@ -36,14 +36,9 @@
     src: "templates/{{ item }}.j2"
   loop:
   - "bashrc"
-
-- name: set directory configuration
-  become: false
-  copy:
-    dest: "{{ home_folder }}/.config/"
-    src:  "files/config/{{ item }}"
-  with_items:
-  - "zathura"
+  - "config/zathura/zathurarc"
+  tags:
+  - theme
 
 - name: link parallel-ssh to pssh
   become: true

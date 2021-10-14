@@ -1,0 +1,44 @@
+## Shortcuts ##
+
+map <C-f> navigate next
+map <C-b> navigate previous
+map <C-i> zoom in
+map <C-o> zoom out
+map <C-c> recolor toggle
+
+## Appearance ##
+set font                        "fira code 12"
+set default-bg                  "#{{ theme.background }}"
+set default-fg                  "#{{ theme.foreground }}"
+
+set statusbar-bg                "#{{ theme.bright.black }}"
+set statusbar-fg                "#{{ theme.normal.white }}"
+
+set inputbar-bg                 "#{{ theme.background }}" # currently not used
+set inputbar-fg                 "#{{ theme.foreground }}"
+
+set notification-error-bg       "#{{ theme.normal.red }}"
+set notification-error-fg       "#{{ theme.normal.white }}"
+
+set notification-warning-bg     "#{{ theme.normal.yellow }}"
+set notification-warning-fg     "#{{ theme.normal.black }}"
+
+set highlight-color             "#{{ theme.accent }}"
+set highlight-active-color      "#{{ theme.accent_text }}"
+
+set completion-highlight-bg     "#{{ theme.accent }}"
+set completion-highlight-fg     "#{{ theme.accent_text }}"
+
+set completion-bg               "#{{ theme.bright.black }}"
+set completion-fg               "#{{ theme.normal.white }}"
+
+set notification-bg             "#{{ theme.accent }}"
+set notification-fg             "#{{ theme.accent_text }}"
+
+set recolor-lightcolor          "#{{ theme.background }}"
+set recolor-darkcolor           "#{{ theme.foreground }}"
+set recolor                     "false"
+
+# setting recolor-keep true will keep any color your pdf has.
+# if it is false, it'll just be black and white
+set recolor-keephue             "true"
