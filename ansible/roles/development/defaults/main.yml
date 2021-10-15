@@ -4,3 +4,4 @@ default_user: "{{ ansible_env.SUDO_USER }}"
 force_install_rust_analyzer: false
 gradle_version: "7.2"
 groovy_version: "3.0.9"
+terraform_ls_version: "0.23.0"

@@ -1,13 +1,25 @@
 {
-  "diagnostic.errorSign": "✘",
-  "diagnostic.warningSign": "❢",
-  "diagnostic.infoSign": "ℹ",
-  "diagnostic.level": "information",
-  "diagnostic.highlighLimit": 0,
-  "diagnostic.checkCurrentLine": true,
-  "coc.preferences.colorSupport": false,
-  "rust-analyzer.procMacro.enable": true,
-  "yaml.format.enable": true,
-  "yaml.schemaStore.enable": true,
-  "java.autobuild.enabled": false
+    "diagnostic.errorSign": "✘",
+    "diagnostic.warningSign": "❢",
+    "diagnostic.infoSign": "ℹ",
+    "diagnostic.level": "information",
+    "diagnostic.highlighLimit": 0,
+    "diagnostic.checkCurrentLine": true,
+    "coc.preferences.colorSupport": false,
+    "rust-analyzer.procMacro.enable": true,
+    "yaml.format.enable": true,
+    "yaml.schemaStore.enable": true,
+    "java.autobuild.enabled": false,
+    "languageserver": {
+        "terraform": {
+            "command": "terraform-ls",
+            "args": ["serve"],
+            "filetypes": [
+                "terraform",
+                "tf"
+            ],
+            "initializationOptions": {},
+            "settings": {}
+        }
+    }
 }

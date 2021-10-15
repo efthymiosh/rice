@@ -1,0 +1,9 @@
+- name: install terraform-ls
+  include_role:
+    name: binpackages
+  vars:
+    binpackages_items:
+    - name: "terraform-ls"
+      version: "{{ terraform_ls_version }}"
+      fetch_url: "https://github.com/hashicorp/terraform-ls/releases/download/v{{ terraform_ls_version }}/terraform-ls_{{ terraform_ls_version }}_linux_amd64.zip"
+      subpath: ""

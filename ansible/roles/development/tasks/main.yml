@@ -44,6 +44,9 @@
     src:  "coc-settings.json"
     dest: "{{ home_folder }}/.vim/coc-settings.json"
 
+- name: install non coc-managed lsps
+  include_tasks: lsp_external.yml
+
 - name: ensure the vim autoload directory exists
   become: false
   file:
