@@ -32,8 +32,8 @@
     tags: fonts
   - role: development
     tags: development
-  - role: alacritty
-    tags: alacritty
+  - role: terminal
+    tags: terminal
   - role: rofi
     tags: rofi
   - role: cursors

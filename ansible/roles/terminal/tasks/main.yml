@@ -1,0 +1,37 @@
+- name: fetch and install terminal packages
+  apt:
+    name: [ "alacritty", "screen", "tmux" ]
+
+- name: ensure alacritty config directory exists
+  become: false
+  file:
+    path: "{{ home_folder }}/.config/alacritty"
+    state: directory
+
+- name: template alacritty configuration
+  become: false
+  template:
+    src: "alacritty.j2.yml"
+    dest: "{{ home_folder }}/.config/alacritty/alacritty.yml"
+  tags:
+  - theme
+
+- name: set terminal file configuration
+  become: false
+  copy:
+    dest: "{{ home_folder }}/.{{ item }}"
+    src:  "files/{{ item }}"
+  loop:
+  - "bash_aliases"
+  - "screenrc"
+  - "inputrc"
+
+- name: template terminal configuration
+  become: false
+  template:
+    dest: "{{ home_folder }}/.{{ item }}"
+    src: "templates/{{ item }}.j2"
+  loop: 
+  - "bashrc"
+  - "tmux.conf"
+  tags: theme

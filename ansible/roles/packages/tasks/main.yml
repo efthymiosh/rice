@@ -2,7 +2,7 @@
   apt:
     name: [
       "build-essential", "chromium-browser", "dunst", "zathura",
-      "tree", "screen", "curl", "pavucontrol", "gimp", "jq",
+      "tree", "curl", "pavucontrol", "gimp", "jq",
       "ripgrep", "lm-sensors", "htop", "perf-tools-unstable",
       "pssh", "python3-openstackclient", "neofetch"
     ]
@@ -19,26 +19,13 @@
   - "com.slack.Slack"
   - "us.zoom.Zoom"
 
-- name: set file configuration
-  become: false
-  copy:
-    dest: "{{ home_folder }}/.{{ item }}"
-    src:  "files/{{ item }}"
-  loop:
-  - "bash_aliases"
-  - "screenrc"
-  - "inputrc"
-
 - name: template configuration
   become: false
   template:
     dest: "{{ home_folder }}/.{{ item }}"
     src: "templates/{{ item }}.j2"
-  loop:
-  - "bashrc"
-  - "config/zathura/zathurarc"
-  tags:
-  - theme
+  loop: [ "config/zathura/zathurarc" ]
+  tags: theme
 
 - name: link parallel-ssh to pssh
   become: true
