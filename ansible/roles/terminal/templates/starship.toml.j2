@@ -1,5 +1,10 @@
 add_newline = false
+{% if default_shell == "zsh" %}
+format = """$username$hostname:$directory$character"""
+right_format = """$git_branch$git_status $all"""
+{% else %}
 format = """$username$hostname:$directory$git_branch$git_status$character"""
+{% endif %}
 
 [directory]
 truncation_length = 8

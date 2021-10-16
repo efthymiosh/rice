@@ -4,6 +4,7 @@ SAVEHIST=10000
 setopt autocd beep nomatch
 unsetopt extendedglob notify
 bindkey -v
+bindkey "^R" history-incremental-pattern-search-backward
 
 zstyle :compinstall filename '/home/ehadjimichael/.zshrc'
 autoload -Uz compinit

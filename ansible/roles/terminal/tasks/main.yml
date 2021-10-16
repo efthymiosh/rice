@@ -29,8 +29,8 @@
   - "tmux.conf"
   tags: theme
 
-- name: ensure user default terminal
+- name: ensure user default shell is set
   become: true
   user:
     name: "{{ default_user }}"
-    shell: "/bin/zsh"
+    shell: "/bin/{{ default_shell }}"
