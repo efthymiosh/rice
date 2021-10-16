@@ -1,3 +1,5 @@
+starship_version: "0.58.0"
+
 alacritty_font_size: 11
 packages_bash_user_color: 32
 packages_enable_gpg_agent: false

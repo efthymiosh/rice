@@ -1,0 +1,16 @@
+- name: fetch and install alacritty
+  apt:
+    name: [ "alacritty" ]
+
+- name: ensure alacritty config directory exists
+  become: false
+  file:
+    path: "{{ home_folder }}/.config/alacritty"
+    state: directory
+
+- name: template alacritty configuration
+  become: false
+  template:
+    src: "alacritty.j2.yml"
+    dest: "{{ home_folder }}/.config/alacritty/alacritty.yml"
+  tags: theme

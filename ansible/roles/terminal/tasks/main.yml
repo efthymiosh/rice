@@ -1,20 +1,12 @@
+- import_tasks: alacritty.yml
+  tags: alacritty
+
+- import_tasks: starship.yml
+  tags: starship
+
 - name: fetch and install terminal packages
   apt:
-    name: [ "alacritty", "screen", "tmux", "zsh" ]
-
-- name: ensure alacritty config directory exists
-  become: false
-  file:
-    path: "{{ home_folder }}/.config/alacritty"
-    state: directory
-
-- name: template alacritty configuration
-  become: false
-  template:
-    src: "alacritty.j2.yml"
-    dest: "{{ home_folder }}/.config/alacritty/alacritty.yml"
-  tags:
-  - theme
+    name: [ "screen", "tmux", "zsh" ]
 
 - name: set terminal file configuration
   become: false
