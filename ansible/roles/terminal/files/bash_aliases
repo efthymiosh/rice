@@ -6,6 +6,7 @@ alias diff='diff --color=auto'
 alias rg='rg --hidden --max-columns 200'
 alias less='less -R'
 alias ls='ls --literal --color=auto'
+alias ll='ls --literal --color=auto -l'
 alias info='info --vi-keys'
 
 alias myip='dig @resolver1.opendns.com myip.opendns.com +short'

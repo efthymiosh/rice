@@ -1,6 +1,6 @@
 - name: fetch and install terminal packages
   apt:
-    name: [ "alacritty", "screen", "tmux" ]
+    name: [ "alacritty", "screen", "tmux", "zsh" ]
 
 - name: ensure alacritty config directory exists
   become: false
@@ -25,6 +25,7 @@
   - "bash_aliases"
   - "screenrc"
   - "inputrc"
+  - "zshrc"
 
 - name: template terminal configuration
   become: false

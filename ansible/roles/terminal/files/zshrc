@@ -1,0 +1,16 @@
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+setopt autocd beep nomatch
+unsetopt extendedglob notify
+bindkey -v
+
+zstyle :compinstall filename '/home/ehadjimichael/.zshrc'
+autoload -Uz compinit
+compinit
+
+if [ -f ~/.bash_aliases ]; then
+    source ~/.bash_aliases
+fi
+
+eval "$(starship init zsh)"
