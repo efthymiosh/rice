@@ -4,6 +4,7 @@ alacritty_font_size: 11
 packages_bash_user_color: 32
 packages_enable_gpg_agent: false
 
+default_user: "{{ ansible_env.SUDO_USER }}"
 home_folder: "/home/{{ ansible_env.SUDO_USER }}"
 
 theme:

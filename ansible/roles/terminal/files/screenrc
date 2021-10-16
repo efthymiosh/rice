@@ -79,8 +79,8 @@ bindkey ^[^J focus down
 
 #SIMPLE
 
-screen -t "secondary" 1 /bin/bash
-screen -t "primary" 0 /bin/bash
+screen -t "secondary" 1 $SHELL
+screen -t "primary" 0 $SHELL
 
 #BASIC (vimdev)
 #screen -t "shell" 1 bash

@@ -1,6 +1,5 @@
 ---
 home_folder: "/home/{{ ansible_env.SUDO_USER }}"
-default_user: "{{ ansible_env.SUDO_USER }}"
 force_install_rust_analyzer: false
 gradle_version: "7.2"
 groovy_version: "3.0.9"
