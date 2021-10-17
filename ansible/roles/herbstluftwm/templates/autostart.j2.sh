@@ -37,7 +37,7 @@ herbstclient keyunbind --all
 herbstclient keybind $Mod-Shift-q quit
 herbstclient keybind $Mod-Shift-r reload
 herbstclient keybind $Mod-Shift-c close
-herbstclient keybind $Mod-Return spawn alacritty
+herbstclient keybind $Mod-Return spawn alacritty -e {{ default_shell }} -c 'screen -r || screen'
 herbstclient keybind $Mod-Alt-l spawn i3lock-fancy
 
 herbstclient keybind $Mod-d   spawn rofi -show run
