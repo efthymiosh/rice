@@ -1,7 +1,8 @@
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
-setopt autocd beep nomatch
+
+setopt autocd beep nomatch share_history
 unsetopt extendedglob notify
 bindkey -v
 bindkey "^R" history-incremental-pattern-search-backward
