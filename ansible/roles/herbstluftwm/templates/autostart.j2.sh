@@ -15,23 +15,24 @@ function kill_wait {
 
 kill_wait polybar picom
 
+herbstclient emit_hook reload
 autorandr --change
 
-
-setxkbmap us
 nitrogen --restore &
 picom &
 
-herbstclient emit_hook reload
-
+( # X config
+setxkbmap us
 xset r rate 350 33
 xset s off
 xset -dpms
+setxkbmap us,el -option "" -option grp:alt_space_toggle
+) &
 
-herbstclient keyunbind --all
 
-# Keybindings
+# keybinds
 Mod=Mod4 # super key
+herbstclient keyunbind --all
 
 herbstclient keybind $Mod-Shift-q quit
 herbstclient keybind $Mod-Shift-r reload
@@ -39,20 +40,14 @@ herbstclient keybind $Mod-Shift-c close
 herbstclient keybind $Mod-Return spawn alacritty
 herbstclient keybind $Mod-Alt-l spawn i3lock-fancy
 
-# Launcher
 herbstclient keybind $Mod-d   spawn rofi -show run
 herbstclient keybind $Mod-a   spawn rofi -show drun
 herbstclient keybind $Mod-w   spawn rofi -show window
 herbstclient keybind $Mod-Tab spawn rofi -show window
 herbstclient keybind XF86Search spawn rofi -show drun
 
-# Screenshot
 herbstclient keybind Print spawn scrot 
 
-# Keyboard locale
-setxkbmap us,el -option "" -option grp:alt_space_toggle
-
-# Sound
 herbstclient keybind XF86AudioRaiseVolume spawn amixer -D pulse sset Master 5%+
 herbstclient keybind XF86AudioLowerVolume spawn amixer -D pulse sset Master 5%-
 herbstclient keybind XF86AudioMute spawn amixer -D pulse sset Master 1+ toggle
@@ -61,8 +56,8 @@ herbstclient keybind $Mod-equal spawn amixer -D pulse sset Master 5%+
 herbstclient keybind $Mod-minus spawn amixer -D pulse sset Master 5%-
 
 # Brightness
-herbstclient keybind XF86MonBrightnessUp spawn xbacklight -inc 10
-herbstclient keybind XF86MonBrightnessDown spawn xbacklight -dec 10
+herbstclient keybind XF86MonBrightnessUp spawn brightnessctl s +10%
+herbstclient keybind XF86MonBrightnessDown spawn brightnessctl s 10%-
 
 # basic movement
 # focusing clients
@@ -94,6 +89,7 @@ herbstclient keybind $Mod-Control-h       resize left +$resizestep
 herbstclient keybind $Mod-Control-j       resize down +$resizestep
 herbstclient keybind $Mod-Control-k       resize up +$resizestep
 herbstclient keybind $Mod-Control-l       resize right +$resizestep
+
 
 herbstclient set_layout max
 herbstclient set default_frame_layout 2

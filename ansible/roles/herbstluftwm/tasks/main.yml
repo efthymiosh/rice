@@ -4,9 +4,15 @@
       "herbstluftwm", "dzen2", "nitrogen",
       "sxiv", "picom", "scrot", "maim",
       "xsel", "pavucontrol", "i3lock-fancy",
-      "autorandr"
+      "autorandr", "brightnessctl"
     ]
     state: latest
+
+- name: ensure the user is in the video group
+  user:
+    name: "{{ default_user }}"
+    append: true
+    groups: [ "video" ]
 
 - name: ensure herbstluftwm config directory exists
   become: false
