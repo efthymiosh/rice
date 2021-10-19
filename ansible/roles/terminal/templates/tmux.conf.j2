@@ -9,6 +9,7 @@ set -g default-terminal "screen-256color"
 set -s escape-time 0
 set -g base-index 0
 setw -g pane-base-index 0
+bind a set-window-option synchronize-panes\; display-message "synchronize-panes is now #{?pane_synchronized,on,off}"
 
 setw -g mode-keys vi
 bind -T copy-mode-vi Escape send-keys -X copy-selection-and-cancel
@@ -46,7 +47,7 @@ set-option -g update-environment 'DISPLAY SSH_ASKPASS SSH_AUTH_SOCK SSH_AGENT_PI
 # statusbar
 set -g status-style 'bg=colour8 fg=colour7'
 set -g status-left ' #S ' # sesion name
-set -g status-right '#(id -un)@#(hostname)'
+set -g status-right '#(hostname)'
 set -g status-right-length 20
 set -g status-left-length 20
 
