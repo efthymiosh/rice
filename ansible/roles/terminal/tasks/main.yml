@@ -18,6 +18,7 @@
   - "screenrc"
   - "inputrc"
   - "zshrc"
+  - "ssh-agent.zsh"
 
 - name: template terminal configuration
   become: false
