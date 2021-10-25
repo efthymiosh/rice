@@ -7,6 +7,8 @@
     "diagnostic.checkCurrentLine": true,
     "coc.preferences.colorSupport": false,
     "rust-analyzer.procMacro.enable": true,
+    "rust-analyzer.cargo.runBuildScripts": true,
+    "rust-analyzer.cargo.useRustcWrapperForBuildScripts": true,
     "yaml.format.enable": true,
     "yaml.schemaStore.enable": true,
     "java.autobuild.enabled": false,
