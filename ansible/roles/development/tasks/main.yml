@@ -9,6 +9,7 @@
     - "npm"
     - "python3"
     - "python3-pip"
+    - "python3-jedi" #coc.nvim coc-python requirement
     - "julia"
     state: "present"
 
