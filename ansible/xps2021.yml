@@ -9,14 +9,14 @@
     home_folder: "/home/{{ ansible_env.SUDO_USER }}"
     provision_hostname: "tile"
     x_cursor_theme: "Bibata-Modern-Salmon"
-    bitwarden_app_version: "1.28.2"
-    bitwarden_cli_version: "1.18.0"
-    terraform_version: "1.0.8"
-    packer_version: "1.7.6"
-    waypoint_version: "0.5.2"
-    fluvio_version: "0.9.9"
+    bitwarden_app_version: "1.29.1"
+    bitwarden_cli_version: "1.19.1"
+    terraform_version: "1.0.11"
+    packer_version: "1.7.8"
+    waypoint_version: "0.6.2"
+    fluvio_version: "0.9.12"
     glab_version: "1.21.1"
-    starship_version: "0.58.0"
+    starship_version: "1.0.0"
 
   pre_tasks:
   - name: update apt package information
