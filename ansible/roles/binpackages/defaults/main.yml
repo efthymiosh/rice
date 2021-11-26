@@ -3,6 +3,8 @@ packer_version: "1.7.6"
 waypoint_version: "0.5.2"
 fluvio_version: "0.9.9"
 glab_version: "1.21.1"
+consul_version: "1.10.4"
+nomad_version: "1.2.2"
 
 binpackages_items:
 - name: terraform
@@ -25,3 +27,11 @@ binpackages_items:
   version: "{{ glab_version }}"
   fetch_url: "https://github.com/profclems/glab/releases/download/v{{ glab_version }}/glab_{{ glab_version }}_Linux_x86_64.tar.gz"
   subpath: "bin"
+- name: consul
+  version: "{{ consul_version }}"
+  fetch_url: "https://releases.hashicorp.com/consul/{{ consul_version }}/consul_{{ consul_version }}_linux_amd64.zip"
+  subpath: ""
+- name: nomad
+  version: "{{ nomad_version }}"
+  fetch_url: "https://releases.hashicorp.com/nomad/{{ nomad_version }}/nomad_{{ nomad_version }}_linux_amd64.zip"
+  subpath: ""
