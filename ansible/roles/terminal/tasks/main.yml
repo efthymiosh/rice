@@ -6,7 +6,12 @@
 
 - name: fetch and install terminal packages
   apt:
-    name: [ "screen", "tmux", "zsh" ]
+    name:
+    - "screen"
+    - "tmux"
+    - "zsh"
+    - "fzf"
+    - "zoxide"
 
 - name: set terminal file configuration
   become: false
