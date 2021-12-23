@@ -17,4 +17,4 @@ shift
 
 cd "${SCRIPT_DIR}/ansible"
 
-ansible-playbook --ask-become-pass ${LAPTOP}.yml --diff "$@"
+ansible-playbook ${LAPTOP}.yml --diff "$@"

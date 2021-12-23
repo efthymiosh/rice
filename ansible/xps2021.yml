@@ -19,6 +19,7 @@
     starship_version: "1.0.0"
     consul_version: "1.10.4"
     nomad_version: "1.2.2"
+    zellij_version: "0.23.0"
 
   pre_tasks:
   - name: update apt package information
