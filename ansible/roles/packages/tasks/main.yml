@@ -18,6 +18,7 @@
   loop:
   - "com.slack.Slack"
   - "us.zoom.Zoom"
+  - "com.spotify.Client"
 
 - name: template configuration
   become: false

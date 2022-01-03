@@ -17,4 +17,5 @@ shift
 
 cd "${SCRIPT_DIR}/ansible"
 
+sudo echo "success"
 ansible-playbook ${LAPTOP}.yml --diff "$@"
