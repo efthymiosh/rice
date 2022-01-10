@@ -82,6 +82,7 @@ set hidden " Allow for buffer switching without being forced to save
 if has("autocmd")
     " Support Format-Flowed when composing mail.
     autocmd FileType mail setlocal fo+=aw tw=72
+    autocmd FileType markdown setlocal tw=100
     " When done autocompleting, close any preview windows
     autocmd CompleteDone * pclose
     " some ansible/jinja2 template overrides
