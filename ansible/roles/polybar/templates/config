@@ -54,22 +54,29 @@ modules-right = xwindow
 [bar/rightie]
 inherit = bar/base
 
-width = 896
-offset-x = 98%:-896
+width = 1088
+offset-x = "98%:-1088"
 fixed-center = true
 
-modules-right = memory cpu {% for iface in ether_ifaces %}{{ iface.device }} {% endfor %} battery temperature date
+modules-left = memory cpu {% for iface in ether_ifaces %}{{ iface.device }} {% endfor %}
+
+modules-right = battery temperature date
 tray-position = ${env:TRAY_POS}
 tray-padding = 9
 tray-maxsize = 18
 
 [bar/full]
-inherit = bar/base bar/rightie bar/leftie
+inherit = bar/base
+
+modules-left = ewmh volume xkeyboard
+modules-center = xwindow_short
+modules-right = memory cpu {% for iface in ether_ifaces %}{{ iface.device }} {% endfor %} battery temperature date
+tray-position = ${env:TRAY_POS}
+tray-padding = 9
+tray-maxsize = 18
 
 width = 96%
 offset-x = 2%
-
-modules-center = xwindow_short
 
 [module/ewmh]
 type = internal/xworkspaces
