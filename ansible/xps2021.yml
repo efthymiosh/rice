@@ -14,7 +14,7 @@
     terraform_version: "1.1.7"
     packer_version: "1.8.0"
     waypoint_version: "0.7.2"
-    fluvio_version: "0.9.12"
+    fluvio_version: "0.9.21"
     glab_version: "1.22.0"
     starship_version: "1.4.2"
     consul_version: "1.11.4"
