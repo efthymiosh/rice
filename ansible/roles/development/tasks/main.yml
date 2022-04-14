@@ -48,6 +48,9 @@
 - name: install non coc-managed lsps
   include_tasks: lsp_external.yml
 
+- name: enhance git experience
+  include_tasks: git.yml
+
 - name: ensure the vim autoload directory exists
   become: false
   file:
