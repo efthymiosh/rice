@@ -17,6 +17,10 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 autoload edit-command-line; zle -N edit-command-line
+autoload -U +X bashcompinit && bashcompinit
+
+complete -o nospace -C /opt/consul/consul consul
+complete -o nospace -C /opt/nomad/nomad nomad
 
 bindkey -M vicmd v edit-command-line
 

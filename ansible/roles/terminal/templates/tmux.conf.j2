@@ -12,8 +12,10 @@ setw -g pane-base-index 0
 bind a set-window-option synchronize-panes\; display-message "synchronize-panes is now #{?pane_synchronized,on,off}"
 
 setw -g mode-keys vi
+bind -T copy-mode-vi Space  send-keys -X begin-selection
 bind -T copy-mode-vi Escape send-keys -X copy-selection-and-cancel
-bind -T copy-mode-vi i      send-keys -X cancel
+bind -T copy-mode-vi c      send-keys -X rectangle-toggle
+bind ] paste-buffer
 
 bind C-c new-window
 bind C-n next-window
