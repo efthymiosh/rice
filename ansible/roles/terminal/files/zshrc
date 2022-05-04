@@ -16,6 +16,10 @@ if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
 
+if [ -f ~/.env ]; then
+    source ~/.env
+fi
+
 autoload edit-command-line; zle -N edit-command-line
 autoload -U +X bashcompinit && bashcompinit
 
