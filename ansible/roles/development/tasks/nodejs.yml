@@ -1,0 +1,20 @@
+- name: install nodejs GPG key
+  apt_key:
+    url: "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
+    keyring:  "{{ nodejs_keyring_file_path }}"
+
+- name: add nodejs repository
+  template:
+    src: "nodejs.list.j2"
+    dest: "/etc/apt/sources.list.d/nodejs.list"
+    owner: root
+    group: root
+    mode: 0644
+
+- name: install nodejs and npm
+  apt:
+    name:
+    - "nodejs"
+    - "npm"
+    state: "latest"
+    update_cache: true

@@ -1,0 +1,2 @@
+deb [signed-by={{ nodejs_keyring_file_path }}] https://deb.nodesource.com/node_16.x {{ ansible_facts['lsb']['codename'] }} main
+deb-src [signed-by={{ nodejs_keyring_file_path }}] https://deb.nodesource.com/node_16.x {{ ansible_facts['lsb']['codename'] }} main
