@@ -11,10 +11,9 @@
     group: root
     mode: 0644
 
-- name: install nodejs and npm
+- name: install nodejs
   apt:
     name:
     - "nodejs"
-    - "npm"
     state: "latest"
     update_cache: true
