@@ -19,7 +19,7 @@ herbstclient emit_hook reload
 autorandr --change
 
 nitrogen --restore &
-picom &
+picom --experimental-backends &
 
 ( # X config
 setxkbmap us
