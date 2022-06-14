@@ -30,3 +30,5 @@ bindkey -M vicmd v edit-command-line
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+
+complete -C /usr/local/bin/nomad nomad

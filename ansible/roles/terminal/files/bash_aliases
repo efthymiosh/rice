@@ -13,3 +13,7 @@ alias myip='dig @resolver1.opendns.com myip.opendns.com +short'
 alias fixdns='sudo systemd-resolve -i wlp0s20f3 --set-dns=1.1.1.1'
 
 alias pssh='parallel-ssh'
+
+function git-clean {
+    git branch --merged | grep -ve '*' -e 'master' -e 'main' | xargs git branch -d
+}
