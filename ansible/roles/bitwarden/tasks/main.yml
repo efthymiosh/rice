@@ -1,6 +1,6 @@
 - name: Fetch bitwarden desktop
   get_url:
-    url: "https://github.com/bitwarden/desktop/releases/download/v{{ bitwarden_app_version }}/Bitwarden-{{ bitwarden_app_version }}-amd64.deb"
+    url: "https://github.com/bitwarden/clients/releases/download/desktop-v{{ bitwarden_app_version }}/Bitwarden-{{ bitwarden_app_version }}-amd64.deb"
     dest: "/tmp/bitwarden-v{{ bitwarden_app_version }}.deb"
     owner: root
     group: root

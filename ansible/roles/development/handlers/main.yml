@@ -7,3 +7,8 @@
   listen: update vim plugins
   shell: >
     vim '+PlugInstall!' +qall > /dev/null
+
+- name: lunarvim install plugins
+  become: false
+  shell: >
+    "{{ home_folder }}/.local/bin/lvim" --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'

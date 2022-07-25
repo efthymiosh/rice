@@ -11,6 +11,8 @@
     - "julia"
     state: "present"
 
+- import_tasks: neovim.yml
+  tags: neovim
 - import_tasks: rust.yml
   tags: language
 - import_tasks: groovy.yml
