@@ -1,14 +1,24 @@
 - name: cleanup removed vim plugins via vim-plum
   listen: update vim plugins
+  become: false
   shell: >
     vim '+PlugClean!' +qall > /dev/null
 
 - name: install vim plugins via vim-plug
   listen: update vim plugins
+  become: false
   shell: >
     vim '+PlugInstall!' +qall > /dev/null
 
+- name: run the lunarvim makefile install-bin
+  listen: lunarvim install
+  become: false
+  make:
+    target: install-bin
+    chdir: "{{ home_folder }}/.local/share/lunarvim/lvim"
+
 - name: lunarvim install plugins
+  listen: lunarvim install
   become: false
   shell: >
     "{{ home_folder }}/.local/bin/lvim" --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'

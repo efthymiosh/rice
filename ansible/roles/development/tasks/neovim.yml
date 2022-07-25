@@ -41,14 +41,8 @@
     dest: "{{ home_folder }}/.local/share/lunarvim/lvim"
     update: false
     depth: 1
-
-- name: run the lunarvim makefile install-bin
-  become: false
-  make:
-    target: install-bin
-    chdir: "{{ home_folder }}/.local/share/lunarvim/lvim"
   notify:
-  - lunarvim install plugins
+  - lunarvim install
 
 - name: template lunarvim configuration
   become: false

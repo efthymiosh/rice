@@ -29,7 +29,18 @@
   - refresh font cache
 
 - name: fetch nerd fonts
+  become: false
   get_url:
     url: "https://github.com/ryanoasis/nerd-fonts/releases/download/v{{ nerd_fonts_version }}/{{ item }}.zip"
-    dest: "/tmp/{{ item }}.zip"
-  loop: []
+    dest: "{{ home_folder }}/.cache/{{ item }}.zip"
+  loop: "{{ nerd_fonts_list | list }}"
+
+- name: extract nerd fonts
+  become: false
+  unarchive:
+    remote_src: true
+    src: "{{ home_folder }}/.cache/{{ item }}.zip"
+    dest: "{{ fonts_dir }}"
+  loop: "{{ nerd_fonts_list | list }}"
+  notify:
+  - refresh font cache
