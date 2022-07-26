@@ -9,6 +9,8 @@
     home_folder: "/home/{{ ansible_env.SUDO_USER }}"
     provision_hostname: "tile"
     x_cursor_theme: "Bibata-Modern-GrayBlue"
+    global_font: "Fira Code Nerd Font"
+
     bitwarden_app_version: "2022.6.1"
     bitwarden_cli_version: "1.22.1"
     terraform_version: "1.2.4"

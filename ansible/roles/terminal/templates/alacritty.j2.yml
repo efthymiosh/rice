@@ -16,13 +16,13 @@ scrolling:
 
 font:
   normal:
-    family: Fira Code Nerd Font
+    family: {{ global_font }}
     style: Regular
   bold:
-    family: Fira Code Nerd Font
+    family: {{ global_font }}
     style: Bold
   italic:
-    family: Fira Code Nerd Font
+    family: {{ global_font }}
     style: Light
   size: {{ alacritty_font_size }}
   offset:
