@@ -24,7 +24,7 @@
   - "neovim"
   - "tree-sitter-cli"
 
-- name: create lunarvim config directories
+- name: create neovim/lunarvim config directories
   become: false
   file:
     path: "{{ item }}"
@@ -33,6 +33,7 @@
   loop:
   - "{{ home_folder }}/.local/share/lunarvim/lvim"
   - "{{ home_folder }}/.config/lvim"
+  - "{{ home_folder }}/.config/nvim"
   - "{{ home_folder }}/.cache/lvim"
 
 - name: ensure lunarvim is cloned
@@ -49,4 +50,11 @@
   template:
     src: "lunarvim-config.lua"
     dest: "{{ home_folder }}/.config/lvim/config.lua"
+    mode: 0640
+
+- name: template neovim configuration
+  become: false
+  template:
+    src: "init.vim"
+    dest: "{{ home_folder }}/.config/nvim/init.vim"
     mode: 0640

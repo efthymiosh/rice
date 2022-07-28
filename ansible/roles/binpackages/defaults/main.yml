@@ -8,6 +8,8 @@ nomad_version: "1.2.2"
 consul_template_version: "0.27.2"
 zellij_version: "0.23.0"
 hugo_version: "0.92.1"
+levant_version: "0.3.1"
+octosql_version: "0.9.1"
 
 binpackages_items:
 - name: terraform
@@ -49,4 +51,12 @@ binpackages_items:
 - name: hugo
   version: "{{ hugo_version }}"
   fetch_url: "https://github.com/gohugoio/hugo/releases/download/v{{ hugo_version }}/hugo_extended_{{ hugo_version }}_Linux-64bit.tar.gz"
+  subpath: ""
+- name: levant
+  version: "{{ levant_version }}"
+  fetch_url: "https://releases.hashicorp.com/levant/{{ levant_version }}/levant_{{ levant_version }}_linux_amd64.zip"
+  subpath: ""
+- name: octosql
+  version: "{{ octosql_version }}"
+  fetch_url: "https://github.com/cube2222/octosql/releases/download/v{{ octosql_version }}/octosql_{{ octosql_version }}_linux_amd64.tar.gz"
   subpath: ""
