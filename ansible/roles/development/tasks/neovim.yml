@@ -37,6 +37,7 @@
   - "{{ home_folder }}/.cache/lvim"
 
 - name: ensure lunarvim is cloned
+  become: false
   git:
     repo: "https://github.com/LunarVim/LunarVim.git"
     dest: "{{ home_folder }}/.local/share/lunarvim/lvim"
@@ -50,11 +51,4 @@
   template:
     src: "lunarvim-config.lua"
     dest: "{{ home_folder }}/.config/lvim/config.lua"
-    mode: 0640
-
-- name: template neovim configuration
-  become: false
-  template:
-    src: "init.vim"
-    dest: "{{ home_folder }}/.config/nvim/init.vim"
     mode: 0640
