@@ -1,7 +1,9 @@
 configuration {
     modi: "window,run,drun";
+    case-sensitive: false;
     font: "{{ global_font }} 12";
     terminal: "rofi-sensible-terminal";
+    normalize-match: true;
     width: 50;
     lines: 15;
     columns: 1;
@@ -10,12 +12,17 @@ configuration {
     show-icons: true;
     drun-match-fields: "name,generic,exec,categories";
     drun-show-actions: false;
-    drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
     cycle: true;
     sidebar-mode: true;
     combi-modi: "window,drun";
     dpi: 96;
     max-history-size: 100;
     combi-hide-mode-prefix: false;
+    display-drun:               "";
+    display-run:                "";
+    display-filebrowser:        "";
+    display-window:             "";
+	drun-display-format:        "{name}";
+	window-format:              "{w} · {c} · {t}";
 }
 @theme "theme.rasi"
