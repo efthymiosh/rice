@@ -23,12 +23,10 @@ fi
 autoload edit-command-line; zle -N edit-command-line
 autoload -U +X bashcompinit && bashcompinit
 
-complete -o nospace -C /opt/consul/consul consul
-complete -o nospace -C /opt/nomad/nomad nomad
-
 bindkey -M vicmd v edit-command-line
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
 complete -C /usr/local/bin/nomad nomad
+complete -C /usr/local/bin/consul consul
