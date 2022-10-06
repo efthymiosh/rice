@@ -9,7 +9,7 @@ consul_template_version: "0.27.2"
 zellij_version: "0.23.0"
 hugo_version: "0.92.1"
 levant_version: "0.3.1"
-octosql_version: "0.9.1"
+octosql_version: "0.9.4"
 dagger_version: "0.2.35"
 
 binpackages_items:
