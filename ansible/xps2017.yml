@@ -4,25 +4,13 @@
 
   vars_files:
   - "vars/themes/dark/desert.yml"
+  - "vars/common.yml"
 
   vars:
-    home_folder: "/home/{{ ansible_env.SUDO_USER }}"
     provision_hostname: "sand"
     x_cursor_theme: "Bibata-Modern-Greenish"
     x_cursor_size: 40
-    global_font: "Fira Code Nerd Font"
     alacritty_font_size: 9
-    bitwarden_app_version: "2022.6.1"
-    bitwarden_cli_version: "1.22.1"
-    terraform_version: "1.2.9"
-    packer_version: "1.8.2"
-    waypoint_version: "0.9.0"
-    fluvio_version: "0.9.30"
-    glab_version: "1.22.0"
-    starship_version: "1.9.1"
-    consul_version: "1.12.2"
-    nomad_version: "1.3.3"
-    zellij_version: "0.23.0"
 
   pre_tasks:
   - name: update apt package information
