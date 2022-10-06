@@ -3,7 +3,7 @@
   become: true
 
   vars_files:
-  - "files/themes/dark/desert.yml"
+  - "vars/themes/dark/desert.yml"
 
   vars:
     home_folder: "/home/{{ ansible_env.SUDO_USER }}"
