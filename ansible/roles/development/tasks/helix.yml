@@ -1,0 +1,53 @@
+- name: ensure helix directory is present
+  become: true
+  file:
+    path: "/opt/helix/helix-{{ helix_version }}"
+    state: "directory"
+    owner: root
+    group: root
+    mode: 0755
+  register: helix_present
+
+- name: ensure helix config directory is present
+  become: false
+  file:
+    path: "{{ home_folder }}/.config/helix"
+    state: "directory"
+
+- name: download and install helix
+# when: helix_present.changed
+  block:
+  - name: fetch helix
+    get_url:
+      url: "https://github.com/helix-editor/helix/releases/download/{{ helix_version }}/helix-{{ helix_version }}-x86_64-linux.tar.xz"
+      dest: "/tmp/helix.tar.xz"
+      force: false
+      owner: root
+      group: root
+      mode: 0755
+
+  - name: extract helix
+    become: true
+    unarchive:
+      remote_src: true
+      src: "/tmp/helix.tar.xz"
+      dest: "/opt/helix/helix-{{ helix_version }}"
+      owner: root
+      group: root
+      extra_opts: ["--strip-components=1"]
+
+  - name: add helix to path
+    become: true
+    file:
+      path: "/usr/local/bin/hx"
+      state: "link"
+      src: "/opt/helix/helix-{{ helix_version }}/hx"
+      owner: root
+      group: root
+
+  - name: link runtime directory to local configuration
+    become: false
+    file:
+      path: "{{ home_folder }}/.config/helix/runtime"
+      state: "link"
+      src: "/opt/helix/helix-{{ helix_version }}"

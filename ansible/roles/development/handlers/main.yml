@@ -9,16 +9,3 @@
   become: false
   shell: >
     vim '+PlugInstall!' +qall > /dev/null
-
-- name: run the lunarvim makefile install-bin
-  listen: lunarvim install
-  become: false
-  make:
-    target: install-bin
-    chdir: "{{ home_folder }}/.local/share/lunarvim/lvim"
-
-- name: lunarvim install plugins
-  listen: lunarvim install
-  become: false
-  shell: >
-    "{{ home_folder }}/.local/bin/lvim" --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
