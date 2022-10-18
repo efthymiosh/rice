@@ -40,7 +40,7 @@
   become: true
   copy:
     remote_src: true
-    src: "/opt/{{ item.name }}/{{ item.subpath }}/{{ item.name }}"
+    src: "/opt/{{ item.name }}/{{ item.subpath | default('') }}/{{ item.executable_name | default(item.name) }}"
     dest: "/opt/{{ item.name }}/{{ item.name }}-{{ item.version }}"
     owner: root
     group: root
@@ -49,7 +49,7 @@
 
 - name: Ensure extracted executable is absent
   file:
-    path: "/opt/{{ item.name }}/{{ item.name }}"
+    path: "/opt/{{ item.name }}/{{ item.subpath | default('') }}/{{ item.executable_name | default(item.name) }}"
     state: "absent"
 
 - name: Link versioned executable to active
