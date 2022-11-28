@@ -9,8 +9,8 @@
   vars:
     provision_hostname: "sand"
     x_cursor_theme: "Bibata-Modern-Greenish"
-    x_cursor_size: 40
-    alacritty_font_size: 9
+#   x_cursor_size: 40
+#   alacritty_font_size: 9
 
   pre_tasks:
   - name: update apt package information
