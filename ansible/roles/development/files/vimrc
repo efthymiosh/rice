@@ -104,7 +104,7 @@ highlight Search       cterm=NONE ctermfg=8         ctermbg=5
 highlight MatchParen   cterm=NONE ctermfg=NONE      ctermbg=4
 highlight CursorLine   cterm=NONE                   ctermbg=NONE
 highlight CursorLineNr cterm=NONE ctermfg=8         ctermbg=3
-highlight Pmenu                   ctermfg=0         ctermbg=4
+highlight Pmenu                   ctermfg=0         ctermbg=7
 highlight VertSplit    cterm=NONE ctermfg=7         ctermbg=8
 
 set path=.,/usr/include,**,,
