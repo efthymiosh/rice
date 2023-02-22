@@ -2,7 +2,7 @@ terraform_version: "1.0.8"
 packer_version: "1.7.6"
 waypoint_version: "0.5.2"
 fluvio_version: "0.9.9"
-glab_version: "1.21.1"
+glab_version: "1.25.3"
 consul_version: "1.10.4"
 nomad_version: "1.2.2"
 consul_template_version: "0.27.2"
@@ -28,7 +28,7 @@ binpackages_items:
   fetch_url: "https://github.com/infinyon/fluvio/releases/download/v{{ fluvio_version }}/fluvio-x86_64-unknown-linux-musl.zip"
 - name: glab
   version: "{{ glab_version }}"
-  fetch_url: "https://github.com/profclems/glab/releases/download/v{{ glab_version }}/glab_{{ glab_version }}_Linux_x86_64.tar.gz"
+  fetch_url: "https://gitlab.com/gitlab-org/cli/-/releases/v{{ glab_version }}/downloads/glab_{{ glab_version }}_Linux_x86_64.tar.gz"
   subpath: "bin"
 - name: consul
   version: "{{ consul_version }}"
