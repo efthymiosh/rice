@@ -12,6 +12,7 @@ levant_version: "0.3.1"
 octosql_version: "0.9.4"
 dagger_version: "0.2.35"
 logcli_version: "2.6.1"
+tfsec_version: "1.28.1"
 
 binpackages_items:
 - name: terraform
@@ -58,3 +59,6 @@ binpackages_items:
   version: "{{ logcli_version }}"
   fetch_url: "https://github.com/grafana/loki/releases/download/v{{ logcli_version }}/logcli-linux-amd64.zip"
   executable_name: logcli-linux-amd64
+- name: tfsec
+  version: "{{ tfsec_version }}"
+  fetch_url: "https://github.com/aquasecurity/tfsec/releases/download/v{{ tfsec_version }}/tfsec_1.28.1_linux_amd64.tar.gz"
