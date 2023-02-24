@@ -2,7 +2,8 @@
 
 if ! which ansible > /dev/null; then
     sudo apt update
-    sudo apt install -y ansible
+    sudo apt install -y python3-pip
+    python3 -m pip install --user ansible
 fi
 
 LAPTOP=$1
@@ -17,5 +18,4 @@ shift
 
 cd "${SCRIPT_DIR}/ansible"
 
-sudo echo "success"
-ansible-playbook ${LAPTOP}.yml --diff "$@"
+ansible-playbook --ask-become-pass ${LAPTOP}.yml --diff "$@"
