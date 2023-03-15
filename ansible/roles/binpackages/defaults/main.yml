@@ -13,6 +13,7 @@ octosql_version: "0.9.4"
 dagger_version: "0.2.35"
 logcli_version: "2.6.1"
 tfsec_version: "1.28.1"
+kubectl_version: "1.26.0"
 
 binpackages_items:
 - name: terraform
@@ -62,3 +63,7 @@ binpackages_items:
 - name: tfsec
   version: "{{ tfsec_version }}"
   fetch_url: "https://github.com/aquasecurity/tfsec/releases/download/v{{ tfsec_version }}/tfsec_1.28.1_linux_amd64.tar.gz"
+- name: kubectl
+  version: "{{ kubectl_version }}"
+  fetch_url: "https://dl.k8s.io/release/v1.26.0/bin/linux/amd64/kubectl"
+  archive: false

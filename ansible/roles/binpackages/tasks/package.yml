@@ -18,23 +18,46 @@
   ignore_errors: true
   register: verify
 
-- name: Fetch {{ item.name }} archive
-  become: true
-  get_url:
-    url: "{{ item.fetch_url }}"
-    dest: "/tmp/{{ item.name }}.zip"
-    owner: root
-    group: root
-    mode: 0644
-  when: verify.failed
+- name: Prepare when archive
+  when: verify.failed and (item.archive is not defined or item.archive)
+  block:
+  - name: Fetch {{ item.name }} archive
+    become: true
+    get_url:
+      url: "{{ item.fetch_url }}"
+      dest: "/tmp/{{ item.name }}.zip"
+      owner: root
+      group: root
+      mode: 0644
 
-- name: Unarchive {{ item.name }}
-  become: true
-  unarchive:
-    remote_src: true
-    src: "/tmp/{{ item.name }}.zip"
-    dest: "/opt/{{ item.name }}/"
-  when: verify.failed
+  - name: Unarchive {{ item.name }}
+    become: true
+    unarchive:
+      remote_src: true
+      src: "/tmp/{{ item.name }}.zip"
+      dest: "/opt/{{ item.name }}/"
+
+- name: Prepare when plain executable
+  when: verify.failed and (item.archive is defined and not item.archive)
+  block:
+  - name: Ensure directory exists
+    become: true
+    file:
+      path: "/opt/{{ item.name }}"
+      state: directory
+      owner: root
+      group: root
+      mode: 0755
+
+  - name: Fetch {{ item.name }} executable
+    become: true
+    get_url:
+      url: "{{ item.fetch_url }}"
+      dest: "/opt/{{ item.name }}/{{ item.name }}"
+      owner: root
+      group: root
+      mode: 0644
+
 
 - name: Copy to versioned naming
   become: true
