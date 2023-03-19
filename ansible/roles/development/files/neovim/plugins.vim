@@ -8,6 +8,9 @@ call plug#begin()
     Plug 'MunifTanjim/nui.nvim'
     Plug 'nvim-neo-tree/neo-tree.nvim'
 
+    " Symbols Outline: LSP-powered symbols bar
+    Plug 'simrat39/symbols-outline.nvim'
+
     " Treesitter: syntax parsing
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 

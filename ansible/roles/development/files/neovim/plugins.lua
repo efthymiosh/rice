@@ -47,3 +47,4 @@ require("telescope").setup{
 }
 
 require("gitsigns").setup()
+require("symbols-outline").setup()

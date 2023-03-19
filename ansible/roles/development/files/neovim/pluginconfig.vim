@@ -4,6 +4,9 @@ lua require('plugins')
 " Neotree settings
 nnoremap <c-h> :Neotree toggle action=focus<CR>
 
+" Symbol Outline settings
+nnoremap <c-l> :SymbolsOutline<CR>
+
 " Fugitive settings
 set diffopt+=vertical
 
