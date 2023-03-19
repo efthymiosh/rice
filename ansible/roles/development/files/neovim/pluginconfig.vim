@@ -97,3 +97,14 @@ highlight VertSplit    cterm=NONE ctermfg=7    ctermbg=NONE
 " Selected Line
 highlight CursorLine   cterm=NONE              ctermbg=NONE
 highlight CursorLineNr cterm=bold ctermfg=7    ctermbg=NONE
+
+" Telescope
+hi link TelescopeBorder LineNr
+hi link TelescopeNormal LineNr
+hi link TelescopeMatching Constant
+hi link TelescopePromptNormal CursorLine
+hi link TelescopePromptPrefix Type
+hi link TelescopeResultsDiffAdd GitGutterAdd
+hi link TelescopeResultsDiffChange GitGutterChange
+hi link TelescopeResultsDiffDelete GitGutterDelete
+hi link TelescopeResultsDiffUntracked Title

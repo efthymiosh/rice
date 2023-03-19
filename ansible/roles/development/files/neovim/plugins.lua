@@ -34,3 +34,14 @@ require("nvim-treesitter.configs").setup({
     additional_vim_regex_highlighting = false,
   },
 })
+
+local ts_actions = require("telescope.actions")
+require("telescope").setup{
+  defaults = {
+    mappings = {
+      i = {
+        ["<esc>"] = ts_actions.close
+      },
+    },
+  }
+}
