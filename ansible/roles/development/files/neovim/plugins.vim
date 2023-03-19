@@ -13,6 +13,8 @@ call plug#begin()
 
     " Fugitive: :G* git commands
     Plug 'tpope/vim-fugitive'
+    " Gitsigns
+    Plug 'lewis6991/gitsigns.nvim'
 
     " Jinja2 Syntax:
     Plug 'Glench/Vim-Jinja2-Syntax'

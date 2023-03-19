@@ -45,3 +45,5 @@ require("telescope").setup{
     },
   }
 }
+
+require("gitsigns").setup()

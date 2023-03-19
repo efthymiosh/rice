@@ -27,7 +27,6 @@ let g:coc_global_extensions = [
 \]
 set updatetime=750
 set shortmess+=c
-set signcolumn=number
 " Use <c-space> to trigger completion.
 if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()
@@ -85,6 +84,8 @@ colorscheme dim
 
 set number
 set cursorline
+set signcolumn=yes:1
+
 highlight Normal       cterm=NONE ctermfg=NONE ctermbg=NONE
 highlight Search       cterm=NONE ctermfg=8    ctermbg=5
 highlight MatchParen   cterm=NONE ctermfg=NONE ctermbg=4
@@ -98,13 +99,16 @@ highlight VertSplit    cterm=NONE ctermfg=7    ctermbg=NONE
 highlight CursorLine   cterm=NONE              ctermbg=NONE
 highlight CursorLineNr cterm=bold ctermfg=7    ctermbg=NONE
 
+" Sign Column
+highlight SignColumn   cterm=NONE ctermfg=NONE ctermbg=NONE
+highlight DiffAdd      cterm=NONE ctermfg=2    ctermbg=NONE
+highlight DiffChange   cterm=NONE ctermfg=8    ctermbg=NONE
+highlight DiffDelete   cterm=NONE ctermfg=1    ctermbg=NONE
+highlight DiffText     cterm=NONE ctermfg=NONE ctermbg=NONE
+
 " Telescope
 hi link TelescopeBorder LineNr
 hi link TelescopeNormal LineNr
 hi link TelescopeMatching Constant
 hi link TelescopePromptNormal CursorLine
 hi link TelescopePromptPrefix Type
-hi link TelescopeResultsDiffAdd GitGutterAdd
-hi link TelescopeResultsDiffChange GitGutterChange
-hi link TelescopeResultsDiffDelete GitGutterDelete
-hi link TelescopeResultsDiffUntracked Title
