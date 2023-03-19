@@ -1,4 +1,5 @@
 set guicursor=n-v-c-i:block
+syntax on
 
 if !empty(glob("~/.local/share/nvim/site/autoload/plug.vim"))
     execute 'source ' . stdpath("config") . "/plugins.vim"

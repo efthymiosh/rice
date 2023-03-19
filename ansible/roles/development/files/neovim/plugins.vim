@@ -12,7 +12,6 @@ call plug#begin()
     Plug 'simrat39/symbols-outline.nvim'
 
     " Treesitter: syntax parsing
-    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
     " Fugitive: :G* git commands
     Plug 'tpope/vim-fugitive'
@@ -26,9 +25,9 @@ call plug#begin()
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 
 "   " Syntaxes:
-"   Plug 'rust-lang/rust.vim'
-"   Plug 'hashivim/vim-hashicorp-tools'
-"   Plug 'cespare/vim-toml', { 'branch': 'main' }
+    Plug 'rust-lang/rust.vim'
+    Plug 'hashivim/vim-hashicorp-tools'
+    Plug 'cespare/vim-toml', { 'branch': 'main' }
 
     " Cocnvim Completions:
     Plug 'neoclide/coc.nvim', {'branch': 'release'}

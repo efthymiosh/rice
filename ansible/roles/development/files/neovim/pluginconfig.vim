@@ -115,3 +115,12 @@ hi link TelescopeNormal LineNr
 hi link TelescopeMatching Constant
 hi link TelescopePromptNormal CursorLine
 hi link TelescopePromptPrefix Type
+
+" Highlight
+hi Function   cterm=NONE ctermfg=3 ctermbg=NONE
+hi Identifier cterm=NONE ctermfg=2 ctermbg=NONE
+hi String     cterm=NONE ctermfg=6 ctermbg=NONE
+hi Constant   cterm=NONE ctermfg=3 ctermbg=NONE
+hi Statement  cterm=bold ctermfg=4 ctermbg=NONE
+hi PreProc    cterm=bold ctermfg=1 ctermbg=NONE
+hi Special    cterm=NONE ctermfg=3 ctermbg=NONE
