@@ -65,5 +65,5 @@ binpackages_items:
   fetch_url: "https://github.com/aquasecurity/tfsec/releases/download/v{{ tfsec_version }}/tfsec_1.28.1_linux_amd64.tar.gz"
 - name: kubectl
   version: "{{ kubectl_version }}"
-  fetch_url: "https://dl.k8s.io/release/v1.26.0/bin/linux/amd64/kubectl"
+  fetch_url: "https://dl.k8s.io/release/v{{ kubectl_version }}/bin/linux/amd64/kubectl"
   archive: false
