@@ -1,4 +1,9 @@
 ---
+- name: install vim
+  apt:
+    name:
+    - "vim-gtk3"
+
 - name: install configuration for vim
   become: false
   copy:
