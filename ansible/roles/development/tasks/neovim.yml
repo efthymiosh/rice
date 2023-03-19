@@ -47,3 +47,8 @@
   - coc-settings.json
   - plugins.vim
   - pluginconfig.vim
+
+- name: set neovim as the default editor
+  alternatives:
+    name: editor
+    path: "/usr/bin/nvim"
