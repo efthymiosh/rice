@@ -1,0 +1,49 @@
+---
+- name: fetch neovim deb
+  get_url:
+    url: "https://github.com/neovim/neovim/releases/download/v{{ neovim_version }}/nvim-linux64.deb"
+    dest: "/tmp/nvim.deb"
+    owner: root
+    group: root
+    mode: 0644
+  register: neovim_deb
+
+- name: install neovim deb
+  apt:
+    deb: /tmp/nvim.deb
+
+- name: ensure dirs are present
+  become: false
+  file:
+    path: "{{ item }}"
+    state: directory
+  loop:
+  - "{{ neovim_autoload_dir }}"
+  - "{{ home_folder }}/.config/nvim/lua"
+
+- name: install vim-plug
+  become: false
+  get_url:
+    url: "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+    dest: "{{ neovim_autoload_dir }}/plug.vim"
+
+- name: configure neovim
+  become: false
+  copy:
+    src:  "neovim/{{ item.src }}"
+    dest: "{{ home_folder }}/.config/nvim/{{ item.dst }}"
+  loop:
+  - src: init.vim
+    dst: init.vim
+  - src: plugins.lua
+    dst: lua/plugins.lua
+
+- name: install plugins configuration
+  become: false
+  copy:
+    src:  "neovim/{{ item }}"
+    dest: "{{ home_folder }}/.config/nvim/{{ item }}"
+  loop:
+  - coc-settings.json
+  - plugins.vim
+  - pluginconfig.vim

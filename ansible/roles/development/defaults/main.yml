@@ -7,3 +7,6 @@ terraform_ls_version: "0.23.0"
 git_delta_version: "0.12.1"
 nodejs_keyring_file_path: "/usr/share/keyrings/nodejs-keyring.gpg"
 helix_version: "22.08.1"
+neovim_version: "0.8.3"
+
+neovim_autoload_dir: "{{ home_folder }}/.local/share/nvim/site/autoload"
