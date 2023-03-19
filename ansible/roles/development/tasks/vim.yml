@@ -1,0 +1,40 @@
+---
+- name: install configuration for vim
+  become: false
+  copy:
+    src:  "vim/{{ item }}"
+    dest: "{{ home_folder }}/.{{ item }}"
+  loop: [ "vimrc", "vimpluginconfigrc" ]
+
+- name: install vim plugin list
+  become: false
+  copy:
+    src:  "vim/vimpluginrc"
+    dest: "{{ home_folder }}/.vimpluginrc"
+  notify: update vim plugins
+
+- name: ensure vim config dir exists
+  become: false
+  file:
+    path: "{{ home_folder }}/.vim"
+    state: directory
+    mode: 0755
+
+- name: install configuration for coc.nvim
+  become: false
+  copy:
+    src:  "vim/coc-settings.json"
+    dest: "{{ home_folder }}/.vim/coc-settings.json"
+
+- name: ensure the vim autoload directory exists
+  become: false
+  file:
+    path: "{{ home_folder }}/.vim/autoload"
+    state: "directory"
+    mode: 0755
+
+- name: install vim-plug
+  become: false
+  get_url:
+    url: "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+    dest: "{{ home_folder }}/.vim/autoload/plug.vim"
