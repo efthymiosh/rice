@@ -1,4 +1,7 @@
 call plug#begin()
+    " Terminal colors plugin
+    Plug 'jeffkreeftmeijer/vim-dim'
+
     " Neotree: tree-style file explorer
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-tree/nvim-web-devicons'
@@ -14,10 +17,13 @@ call plug#begin()
     " Jinja2 Syntax:
     Plug 'Glench/Vim-Jinja2-Syntax'
 
-    " Syntaxes:
-    Plug 'rust-lang/rust.vim'
-    Plug 'hashivim/vim-hashicorp-tools'
-    Plug 'cespare/vim-toml', { 'branch': 'main' }
+    " Telescope: Fuzzy searching
+    Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+
+"   " Syntaxes:
+"   Plug 'rust-lang/rust.vim'
+"   Plug 'hashivim/vim-hashicorp-tools'
+"   Plug 'cespare/vim-toml', { 'branch': 'main' }
 
     " Cocnvim Completions:
     Plug 'neoclide/coc.nvim', {'branch': 'release'}

@@ -1,11 +1,17 @@
 " load lua-based configuration
 lua require('plugins')
 
-" NerdTree settings
+" Neotree settings
 nnoremap <c-h> :Neotree toggle action=focus<CR>
 
 " Fugitive settings
 set diffopt+=vertical
+
+" Telescope settings
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " coc.nvim settings
 let g:coc_global_extensions = [
@@ -73,4 +79,21 @@ if has('nvim-0.4.0') || has('patch-8.2.0750')
   vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
 
-autocmd BufNewFile,BufRead *.hcl set filetype=terraform
+
+" Theme configuration
+colorscheme dim
+
+set number
+set cursorline
+highlight Normal       cterm=NONE ctermfg=NONE ctermbg=NONE
+highlight Search       cterm=NONE ctermfg=8    ctermbg=5
+highlight MatchParen   cterm=NONE ctermfg=NONE ctermbg=4
+highlight Pmenu                   ctermfg=0    ctermbg=7
+
+" Ruler
+highlight LineNr       cterm=NONE ctermfg=7    ctermbg=NONE
+highlight VertSplit    cterm=NONE ctermfg=7    ctermbg=NONE
+
+" Selected Line
+highlight CursorLine   cterm=NONE              ctermbg=NONE
+highlight CursorLineNr cterm=bold ctermfg=7    ctermbg=NONE
