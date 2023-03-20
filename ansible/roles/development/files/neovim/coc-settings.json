@@ -5,6 +5,7 @@
     "diagnostic.level": "information",
     "diagnostic.highlighLimit": 0,
     "diagnostic.checkCurrentLine": true,
+    "inlayHint.enable": false,
     "coc.preferences.colorSupport": false,
     "coc.preferences.useQuickfixForLocations": true,
     "rust-analyzer.procMacro.enable": true,

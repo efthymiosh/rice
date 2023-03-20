@@ -129,6 +129,7 @@ hi link NeoTreeGitUntracked DiffChange
 " Coc
 hi CocUnderline cterm=NONE ctermfg=NONE ctermbg=8
 hi CocHighlightText cterm=NONE ctermfg=NONE ctermbg=8
+hi CocUnusedHighlight cterm=NONE ctermfg=NONE ctermbg=8
 
 " Highlight
 hi Function   cterm=NONE ctermfg=3 ctermbg=NONE
