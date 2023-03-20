@@ -33,7 +33,12 @@ require("telescope").setup{
     }
 }
 
-require("gitsigns").setup()
+require("gitsigns").setup({
+    signs = {
+        untracked = { text = '│' },
+    }
+})
+
 require("symbols-outline").setup()
 
 require("nvim-treesitter.configs").setup({
