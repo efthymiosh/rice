@@ -20,6 +20,7 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 let g:coc_global_extensions = [
     \ 'coc-json',
     \ 'coc-rust-analyzer',
+    \ 'coc-lua',
     \ 'coc-java',
     \ 'coc-go',
     \ 'coc-groovy',

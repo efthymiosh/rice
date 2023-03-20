@@ -1,11 +1,12 @@
 call plug#begin()
+    Plug 'nvim-lua/plenary.nvim' " Neotree, CodeGPT, Telescope
+    Plug 'MunifTanjim/nui.nvim' " Neotree, CodeGPT
+    Plug 'nvim-tree/nvim-web-devicons' " Neotree
+
     " Terminal colors plugin
     Plug 'jeffkreeftmeijer/vim-dim'
 
     " Neotree: tree-style file explorer
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-tree/nvim-web-devicons'
-    Plug 'MunifTanjim/nui.nvim'
     Plug 'nvim-neo-tree/neo-tree.nvim'
 
     " Symbols Outline: LSP-powered symbols bar
@@ -15,7 +16,8 @@ call plug#begin()
 
     " Fugitive: :G* git commands
     Plug 'tpope/vim-fugitive'
-    " Gitsigns
+
+    " Gitsigns: Ruler marks for git changes
     Plug 'lewis6991/gitsigns.nvim'
 
     " Jinja2 Syntax:
@@ -29,6 +31,9 @@ call plug#begin()
     Plug 'hashivim/vim-hashicorp-tools'
     Plug 'cespare/vim-toml', { 'branch': 'main' }
 
-    " Cocnvim Completions:
+    " Cocnvim: Completions
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+    " CodeGPT: Code-oriented ChatGPT (req api key set as OPENAI_API_KEY)
+    Plug 'dpayne/CodeGPT.nvim'
 call plug#end()
