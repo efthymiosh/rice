@@ -24,7 +24,7 @@ call plug#begin()
     Plug 'Glench/Vim-Jinja2-Syntax'
 
     " Telescope: Fuzzy searching
-    Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+    Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 
 "   " Syntaxes:
     Plug 'rust-lang/rust.vim'
