@@ -13,6 +13,7 @@ call plug#begin()
     Plug 'simrat39/symbols-outline.nvim'
 
     " Treesitter: syntax parsing
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
     " Fugitive: :G* git commands
     Plug 'tpope/vim-fugitive'

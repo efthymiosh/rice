@@ -126,6 +126,9 @@ hi link NeoTreeGitIgnored DiffText
 hi link NeoTreeGitModified DiffChange
 hi link NeoTreeGitUntracked DiffChange
 
+" Coc
+hi CocUnderline cterm=NONE ctermfg=NONE ctermbg=8
+hi CocHighlightText cterm=NONE ctermfg=NONE ctermbg=8
 
 " Highlight
 hi Function   cterm=NONE ctermfg=3 ctermbg=NONE
@@ -135,3 +138,5 @@ hi Constant   cterm=NONE ctermfg=3 ctermbg=NONE
 hi Statement  cterm=bold ctermfg=4 ctermbg=NONE
 hi PreProc    cterm=bold ctermfg=1 ctermbg=NONE
 hi Special    cterm=NONE ctermfg=3 ctermbg=NONE
+hi @field     cterm=NONE ctermfg=NONE ctermbg=NONE
+hi @variable  cterm=NONE ctermfg=NONE ctermbg=NONE
