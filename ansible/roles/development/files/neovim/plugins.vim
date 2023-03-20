@@ -26,7 +26,7 @@ call plug#begin()
     " Telescope: Fuzzy searching
     Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 
-"   " Syntaxes:
+    " Syntaxes:
     Plug 'rust-lang/rust.vim'
     Plug 'hashivim/vim-hashicorp-tools'
     Plug 'cespare/vim-toml', { 'branch': 'main' }

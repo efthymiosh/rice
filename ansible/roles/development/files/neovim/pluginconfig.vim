@@ -106,7 +106,7 @@ highlight CursorLineNr cterm=bold ctermfg=7    ctermbg=NONE
 " Sign Column
 highlight SignColumn   cterm=NONE ctermfg=NONE ctermbg=NONE
 highlight DiffAdd      cterm=NONE ctermfg=2    ctermbg=NONE
-highlight DiffChange   cterm=NONE ctermfg=8    ctermbg=NONE
+highlight DiffChange   cterm=NONE ctermfg=3    ctermbg=NONE
 highlight DiffDelete   cterm=NONE ctermfg=1    ctermbg=NONE
 highlight DiffText     cterm=NONE ctermfg=NONE ctermbg=NONE
 
@@ -116,6 +116,16 @@ hi link TelescopeNormal LineNr
 hi link TelescopeMatching Constant
 hi link TelescopePromptNormal CursorLine
 hi link TelescopePromptPrefix Type
+
+" Neotree
+hi NeoTreeIndentMarker cterm=NONE ctermfg=8 ctermbg=NONE
+hi link NeoTreeGitAdded DiffAdd
+hi link NeoTreeGitConflict DiffDelete
+hi link NeoTreeGitDeleted DiffDelete
+hi link NeoTreeGitIgnored DiffText
+hi link NeoTreeGitModified DiffChange
+hi link NeoTreeGitUntracked DiffChange
+
 
 " Highlight
 hi Function   cterm=NONE ctermfg=3 ctermbg=NONE
