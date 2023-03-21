@@ -1,3 +1,7 @@
+require("nvim-web-devicons").setup({
+    default = true,
+})
+
 require("neo-tree").setup({
     enable_diagnostics = false,
     enable_git_status = true,
@@ -16,14 +20,20 @@ require("neo-tree").setup({
             }
         },
     },
+    filesystem = {
+        use_libuv_file_watcher = true,
+    },
     window = {
         position = "left",
         width = "31",
+    },
+    buffers = {
+        follow_current_file = true
     }
 })
 
 local ts_actions = require("telescope.actions")
-require("telescope").setup{
+require("telescope").setup({
     defaults = {
         mappings = {
             i = {
@@ -31,7 +41,7 @@ require("telescope").setup{
             },
         },
     }
-}
+})
 
 require("gitsigns").setup({
     signs = {
