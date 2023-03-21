@@ -53,9 +53,6 @@ require("symbols-outline").setup()
 
 require("nvim-treesitter.configs").setup({
   ensure_installed = "all",
-  ignore_install = {
-      "terraform",
-  },
 
   sync_install = false,
 
@@ -66,7 +63,6 @@ require("nvim-treesitter.configs").setup({
   highlight = {
     enable = true,
     disable = {
-        "terraform",
         "yaml",
     },
 
