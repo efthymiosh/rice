@@ -14,6 +14,7 @@ dagger_version: "0.2.35"
 logcli_version: "2.6.1"
 tfsec_version: "1.28.1"
 kubectl_version: "1.26.0"
+promql_cli_version: "0.3.0"
 
 binpackages_items:
 - name: terraform
@@ -67,3 +68,6 @@ binpackages_items:
   version: "{{ kubectl_version }}"
   fetch_url: "https://dl.k8s.io/release/v{{ kubectl_version }}/bin/linux/amd64/kubectl"
   archive: false
+- name: promql
+  version: "{{ promql_cli_version }}"
+  fetch_url: "https://github.com/nalbury/promql-cli/releases/download/v{{ promql_cli_version }}/promql-v{{ promql_cli_version }}-linux-amd64.tar.gz"
