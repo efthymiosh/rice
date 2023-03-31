@@ -21,12 +21,6 @@
   - "{{ neovim_autoload_dir }}"
   - "{{ home_folder }}/.config/nvim/lua"
 
-- name: install vim-plug
-  become: false
-  get_url:
-    url: "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-    dest: "{{ neovim_autoload_dir }}/plug.vim"
-
 - name: configure neovim
   become: false
   copy:
@@ -37,6 +31,8 @@
     dst: init.vim
   - src: plugins.lua
     dst: lua/plugins.lua
+  - src: lsp_configs.lua
+    dst: lua/lsp_configs.lua
 
 - name: install plugins configuration
   become: false
@@ -44,8 +40,6 @@
     src:  "neovim/{{ item }}"
     dest: "{{ home_folder }}/.config/nvim/{{ item }}"
   loop:
-  - coc-settings.json
-  - plugins.vim
   - pluginconfig.vim
 
 - name: set neovim as the default editor

@@ -1,18 +1,16 @@
 set guicursor=n-v-c-i:block
 syntax on
 
-if !empty(glob("~/.local/share/nvim/site/autoload/plug.vim"))
-    execute 'source ' . stdpath("config") . "/plugins.vim"
-    execute 'source ' . stdpath("config") . "/pluginconfig.vim"
-endif
+lua require('plugins')
+execute 'source ' . stdpath("config") . "/pluginconfig.vim"
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-set history=200 " lines of command line history to keep
-set ruler       " show the cursor position all the time
-set showcmd     " display incomplete commands
-set incsearch   " do incremental searching
+set history=2000 " lines of command line history to keep
+set ruler        " show the cursor position all the time
+set showcmd      " display incomplete commands
+set incsearch    " do incremental searching
 
 set keymap=greek_utf-8 " keymaps: add greek, defaults
 set iminsert=0
