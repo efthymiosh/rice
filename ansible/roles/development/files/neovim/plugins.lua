@@ -10,6 +10,9 @@ require("neo-tree").setup({
             trailing_slash = false,
             use_git_status_colors = false,
         },
+        icon = {
+            folder_empty = "🗀"
+        },
         git_status = {
             symbols = {
                 untracked = "",
