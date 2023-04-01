@@ -17,12 +17,5 @@
 - import_tasks: nodejs.yml
   tags: language
 
-- name: install vim
-  import_tasks: vim.yml
 - import_tasks: helix.yml
-  tags: helix
-- name: install neovim
-  import_tasks: neovim.yml
-
-- name: install non coc-managed lsps
-  include_tasks: lsp_external.yml
+- import_tasks: neovim.yml
