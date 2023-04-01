@@ -1,5 +1,6 @@
 " Neotree settings
 nnoremap <c-h> <cmd>Neotree toggle action=focus<CR>
+nnoremap <c-g> <cmd>Neotree toggle reveal action=focus<CR>
 
 " Symbol Outline settings
 nnoremap <c-l> <cmd>SymbolsOutline<CR>
