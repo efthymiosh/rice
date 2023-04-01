@@ -58,7 +58,7 @@ require("incline").setup()
 require("symbols-outline").setup()
 
 vim.g.linefly_options = {
-  separator_symbol = "⎪",
+  separator_symbol = "",
   progress_symbol = "↓",
   active_tab_symbol = "▪",
   git_branch_symbol = "",

@@ -71,8 +71,9 @@ hi @variable  cterm=NONE ctermfg=NONE ctermbg=NONE
 hi @property  cterm=NONE ctermfg=NONE ctermbg=NONE
 
 set noshowmode
-lua vim.api.nvim_set_hl(0, "LineflyNormal", { link = "StatusLineNC" })
-lua vim.api.nvim_set_hl(0, "LineflyInsert", { link = "WildMenu" })
-lua vim.api.nvim_set_hl(0, "LineflyVisual", { link = "Search" })
-lua vim.api.nvim_set_hl(0, "LineflyCommand", { link = "WildMenu" })
+hi StatusLine cterm=NONE
+lua vim.api.nvim_set_hl(0, "LineflyNormal", { link = "Search" })
+lua vim.api.nvim_set_hl(0, "LineflyInsert", { link = "Search" })
+lua vim.api.nvim_set_hl(0, "LineflyVisual", { link = "WildMenu" })
+lua vim.api.nvim_set_hl(0, "LineflyCommand", { link = "Search" })
 lua vim.api.nvim_set_hl(0, "LineflyReplace", { link = "ErrorMsg" })
