@@ -34,6 +34,45 @@ require("mason-lspconfig").setup({
     automatic_installation = true,
 })
 
+local lsp = require('lsp-zero').preset({})
+local cmp = require('cmp')
+
+lsp.on_attach(function(client, bufnr)
+local opts = {buffer = bufnr}
+  lsp.default_keymaps(opts)
+  vim.keymap.set('n', '<leader>ac', vim.lsp.buf.code_action, opts)
+end)
+
+cmp.setup({
+    window = {
+    --  completion = cmp.config.window.bordered(),
+    --  documentation = cmp.config.window.bordered(),
+    },
+    sources = cmp.config.sources({
+        {name = 'path'},
+        {name = 'nvim_lsp'},
+        {name = 'buffer', keyword_length = 3},
+    }),
+    mapping = {
+        ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+        ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    },
+    completion = {
+        autocomplete = false,
+    },
+    formatting = {
+        fields = {'abbr', 'kind', 'menu'},
+        format = require('lspkind').cmp_format({
+            mode = 'symbol', -- show only symbol annotations
+            maxwidth = 50, -- prevent the popup from showing more than provided characters
+            ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead
+        })
+    }
+})
+lsp.setup()
+
 -- Configurations: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local lspconfig = require('lspconfig')
 lspconfig.yamlls.setup({
@@ -56,33 +95,6 @@ lspconfig.lua_ls.setup({
         }
     }
 })
-
-local lsp = require('lsp-zero').preset({})
-local cmp = require('cmp')
-
-lsp.on_attach(function(client, bufnr)
-local opts = {buffer = bufnr}
-  lsp.default_keymaps(opts)
-  vim.keymap.set('n', '<leader>ac', vim.lsp.buf.code_action, opts)
-end)
-
-cmp.setup({
-  sources = cmp.config.sources({
-    {name = 'path'},
-    {name = 'nvim_lsp'},
-    {name = 'buffer', keyword_length = 3},
-  }),
-  mapping = {
-    ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-    ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
-  },
-  completion = {
-      autocomplete = false,
-  },
-})
-lsp.setup()
 
 -- treesitter
 require("nvim-treesitter.configs").setup({
