@@ -14,12 +14,12 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Theme configuration
-colorscheme dim
 
 set number
 set cursorline
 set signcolumn=yes:1
 set pumheight=10
+set laststatus=3 " global status line
 
 highlight Normal       cterm=NONE ctermfg=NONE ctermbg=NONE
 highlight Search       cterm=NONE ctermfg=8    ctermbg=7
@@ -69,3 +69,10 @@ hi Special    cterm=NONE ctermfg=3 ctermbg=NONE
 hi @field     cterm=NONE ctermfg=NONE ctermbg=NONE
 hi @variable  cterm=NONE ctermfg=NONE ctermbg=NONE
 hi @property  cterm=NONE ctermfg=NONE ctermbg=NONE
+
+set noshowmode
+lua vim.api.nvim_set_hl(0, "LineflyNormal", { link = "StatusLineNC" })
+lua vim.api.nvim_set_hl(0, "LineflyInsert", { link = "WildMenu" })
+lua vim.api.nvim_set_hl(0, "LineflyVisual", { link = "Search" })
+lua vim.api.nvim_set_hl(0, "LineflyCommand", { link = "WildMenu" })
+lua vim.api.nvim_set_hl(0, "LineflyReplace", { link = "ErrorMsg" })

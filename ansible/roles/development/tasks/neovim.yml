@@ -12,7 +12,7 @@
   apt:
     deb: /tmp/nvim.deb
 
-- name: ensure dirs are present
+- name: ensure neovim dirs are present
   become: false
   file:
     path: "{{ item }}"
@@ -21,26 +21,24 @@
   - "{{ neovim_autoload_dir }}"
   - "{{ home_folder }}/.config/nvim/lua"
 
-- name: configure neovim
-  become: false
-  copy:
-    src:  "neovim/{{ item.src }}"
-    dest: "{{ home_folder }}/.config/nvim/{{ item.dst }}"
-  loop:
-  - src: init.vim
-    dst: init.vim
-  - src: plugins.lua
-    dst: lua/plugins.lua
-  - src: lsp_configs.lua
-    dst: lua/lsp_configs.lua
-
-- name: install plugins configuration
+- name: install vimscript configuration
   become: false
   copy:
     src:  "neovim/{{ item }}"
     dest: "{{ home_folder }}/.config/nvim/{{ item }}"
   loop:
-  - pluginconfig.vim
+  - init.vim
+  - theme.vim
+
+- name: install lua configuration
+  become: false
+  copy:
+    src:  "neovim/{{ item }}"
+    dest: "{{ home_folder }}/.config/nvim/lua/{{ item }}"
+  loop:
+  - plugins.lua
+  - uiux.lua
+  - lsp_configs.lua
 
 - name: set neovim as the default editor
   alternatives:

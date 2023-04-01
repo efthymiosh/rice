@@ -2,7 +2,7 @@ set guicursor=n-v-c-i:block
 syntax on
 
 lua require('plugins')
-execute 'source ' . stdpath("config") . "/pluginconfig.vim"
+execute 'source ' . stdpath("config") . "/theme.vim"
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
