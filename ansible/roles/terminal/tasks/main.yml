@@ -5,7 +5,7 @@
   tags: starship
 
 - name: fetch and install terminal packages
-  apt:
+  package:
     name:
     - "screen"
     - "tmux"

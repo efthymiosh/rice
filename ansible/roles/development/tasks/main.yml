@@ -1,7 +1,7 @@
 ---
 - name: install lang packages
   become: true
-  apt:
+  package:
     name:
     - "golang-go"
     - "python3"

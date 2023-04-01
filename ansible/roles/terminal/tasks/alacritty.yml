@@ -1,5 +1,5 @@
 - name: fetch and install alacritty
-  apt:
+  package:
     name: [ "alacritty" ]
 
 - name: ensure alacritty config directory exists

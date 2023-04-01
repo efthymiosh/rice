@@ -6,7 +6,7 @@
     state: directory
 
 - name: install fira code package
-  apt:
+  package:
     name: "fonts-firacode"
     state: present
   ignore_errors: true

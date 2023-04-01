@@ -1,5 +1,5 @@
 - name: ensure the JDK is installed
-  apt:
+  package:
     package: "openjdk-11-jdk"
     state: present
 

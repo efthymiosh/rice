@@ -1,6 +1,6 @@
 ---
 - name: install polybar package
-  apt:
+  package:
     name: [ "polybar" ]
     state: present
   ignore_errors: true
@@ -12,7 +12,7 @@
   - polybar_package_present.failed
 
 - name: ensure Noto Color Emoji font is installed
-  apt:
+  package:
     name: "fonts-noto-color-emoji"
     state: present
 

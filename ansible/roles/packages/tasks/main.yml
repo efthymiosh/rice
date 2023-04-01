@@ -1,5 +1,5 @@
 - name: install apt packages
-  apt:
+  package:
     name: [
       "build-essential", "chromium-browser", "dunst", "zathura",
       "tree", "curl", "pavucontrol", "gimp", "jq",

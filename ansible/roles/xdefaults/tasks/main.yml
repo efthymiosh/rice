@@ -1,5 +1,5 @@
 - name: install packages
-  apt:
+  package:
     name: rxvt-unicode
     state: latest
 

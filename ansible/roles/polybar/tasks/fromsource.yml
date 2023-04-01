@@ -11,7 +11,7 @@
     state: directory
 
 - name: install polybar build dependencies
-  apt:
+  package:
     name: [
         "cmake", "cmake-data", "libcairo2-dev", "libxcb1-dev", "libxcb-ewmh-dev",
         "libxcb-icccm4-dev", "libxcb-image0-dev", "libxcb-randr0-dev", "libxcb-util0-dev",
@@ -30,7 +30,7 @@
     state: "absent"
 
 - name: install polybar run-dependencies
-  apt:
+  package:
     name:
     - libmpdclient2
     - libxcb-composite0
@@ -46,7 +46,7 @@
     - libpulse0
 
 - name: remove polybar build dependencies
-  apt:
+  package:
     name: [
         "cmake", "cmake-data", "libcairo2-dev", "libxcb1-dev", "libxcb-ewmh-dev",
         "libxcb-icccm4-dev", "libxcb-image0-dev", "libxcb-randr0-dev", "libxcb-util0-dev",

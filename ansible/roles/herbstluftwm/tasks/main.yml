@@ -1,5 +1,5 @@
 - name: install desktop packages
-  apt:
+  package:
     name: [
       "herbstluftwm", "dzen2", "nitrogen",
       "sxiv", "picom", "scrot", "maim",
