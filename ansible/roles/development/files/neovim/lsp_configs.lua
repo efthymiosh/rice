@@ -41,6 +41,7 @@ lsp.on_attach(function(client, bufnr)
 local opts = {buffer = bufnr}
   lsp.default_keymaps(opts)
   vim.keymap.set('n', '<leader>ac', vim.lsp.buf.code_action, opts)
+  vim.keymap.set('n', '<C-space>', vim.diagnostic.open_float, opts)
 end)
 
 cmp.setup({
