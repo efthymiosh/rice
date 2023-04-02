@@ -20,22 +20,12 @@
   roles:
   - role: packages
     tags: packages
-  - role: fonts
-    tags: fonts
   - role: development
     tags: development
   - role: terminal
     tags: terminal
-  - role: rofi
-    tags: rofi
-  - role: cursors
-    tags: cursors
-  - role: xdefaults
-    tags: xdefaults
-  - role: herbstluftwm
-    tags: herbstluftwm
-  - role: polybar
-    tags: polybar
+  - role: desktop_linux
+    tags: desktop
 
   tasks:
   - name: modify hostname

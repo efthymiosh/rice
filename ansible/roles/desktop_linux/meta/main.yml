@@ -1,0 +1,13 @@
+dependencies:
+- role: cursors
+  tags: cursors
+- role: fonts
+  tags: fonts
+- role: herbstluftwm
+  tags: herbstluftwm
+- role: polybar
+  tags: polybar
+- role: rofi
+  tags: rofi
+- role: xdefaults
+  tags: xdefaults
