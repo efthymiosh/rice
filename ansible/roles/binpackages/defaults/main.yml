@@ -16,8 +16,12 @@ tfsec_version: "1.28.1"
 kubectl_version: "1.26.0"
 promql_cli_version: "0.3.0"
 onepassword_cli_version: "2.14.0"
+bitwarden_cli_version: "2023.3.0"
 
 binpackages_items:
+- name: bw
+  version: "{{ bitwarden_cli_version }}"
+  fetch_url: "https://github.com/bitwarden/clients/releases/download/cli-v{{ bitwarden_cli_version }}/bw-linux-{{ bitwarden_cli_version }}.zip"
 - name: terraform
   version: "{{ terraform_version }}"
   fetch_url: "https://releases.hashicorp.com/terraform/{{ terraform_version }}/terraform_{{ terraform_version }}_linux_amd64.zip"
