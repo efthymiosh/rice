@@ -1,5 +1,4 @@
-packages_bash_user_color: 32
-packages_enable_gpg_agent: false
+bitwarden_app_version: "2023.3.1"
 
 theme:
   background: '202020'

@@ -36,8 +36,6 @@
     tags: herbstluftwm
   - role: polybar
     tags: polybar
-  - role: bitwarden
-    tags: bitwarden
   - role: binpackages
     tags: binpackages
 

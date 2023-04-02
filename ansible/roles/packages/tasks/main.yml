@@ -9,6 +9,14 @@
     state: present
     update_cache: yes
 
+- name: template configuration
+  become: false
+  template:
+    dest: "{{ home_folder }}/.{{ item }}"
+    src: "templates/{{ item }}.j2"
+  loop: [ "config/zathura/zathurarc" ]
+  tags: theme
+
 - name: install flatpak packages
   become: false
   flatpak:
@@ -20,10 +28,15 @@
   - "us.zoom.Zoom"
   - "com.spotify.Client"
 
-- name: template configuration
-  become: false
-  template:
-    dest: "{{ home_folder }}/.{{ item }}"
-    src: "templates/{{ item }}.j2"
-  loop: [ "config/zathura/zathurarc" ]
-  tags: theme
+- name: Fetch bitwarden desktop
+  get_url:
+    url: "https://github.com/bitwarden/clients/releases/download/desktop-v{{ bitwarden_app_version }}/Bitwarden-{{ bitwarden_app_version }}-amd64.deb"
+    dest: "/tmp/bitwarden-v{{ bitwarden_app_version }}.deb"
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Install bitwarden desktop
+  become: true
+  apt:
+    deb: "/tmp/bitwarden-v{{ bitwarden_app_version }}.deb"

@@ -1,6 +1,6 @@
 home_folder: "/home/{{ ansible_env.SUDO_USER }}"
 global_font: "Fira Code Nerd Font"
-bitwarden_app_version: "2023.1.1"
+bitwarden_app_version: "2023.3.1"
 bitwarden_cli_version: "2023.3.0"
 terraform_version: "1.4.2"
 packer_version: "1.8.6"
