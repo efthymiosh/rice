@@ -1,2 +1,0 @@
-- include_tasks: package.yml
-  loop: "{{ binpackages_items | list }}"

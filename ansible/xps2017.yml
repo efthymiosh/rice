@@ -36,8 +36,6 @@
     tags: herbstluftwm
   - role: polybar
     tags: polybar
-  - role: binpackages
-    tags: binpackages
 
   tasks:
   - name: modify hostname

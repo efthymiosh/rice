@@ -1,25 +1,83 @@
+terraform_version: "1.0.8"
+packer_version: "1.7.6"
+waypoint_version: "0.5.2"
+fluvio_version: "0.9.9"
+glab_version: "1.25.3"
+consul_version: "1.10.4"
+nomad_version: "1.2.2"
+consul_template_version: "0.27.2"
+zellij_version: "0.23.0"
+hugo_version: "0.92.1"
+levant_version: "0.3.1"
+octosql_version: "0.9.4"
+dagger_version: "0.2.35"
+logcli_version: "2.6.1"
+tfsec_version: "1.28.1"
+kubectl_version: "1.26.0"
+promql_cli_version: "0.3.0"
+onepassword_cli_version: "2.14.0"
 bitwarden_app_version: "2023.3.1"
+bitwarden_cli_version: "2023.3.0"
 
-theme:
-  background: '202020'
-  foreground: 'c5c8c6'
-  normal:
-    black:   '282a2e'
-    red:     'a54242'
-    green:   '8c9440'
-    yellow:  'de935f'
-    blue:    '5f819d'
-    magenta: '85678f'
-    cyan:    '5e8d87'
-    white:   '707880'
-  bright:
-    black:   '373b41'
-    red:     'cc6666'
-    green:   'b5bd68'
-    yellow:  'f0c675'
-    blue:    '81a2be'
-    magenta: 'b294bb'
-    cyan:    '8abeb7'
-    white:   'c5c8c6'
-  accent: '81a2be'
-  accent_text: '202020'
+binpackages_items:
+- name: bw
+  version: "{{ bitwarden_cli_version }}"
+  fetch_url: "https://github.com/bitwarden/clients/releases/download/cli-v{{ bitwarden_cli_version }}/bw-linux-{{ bitwarden_cli_version }}.zip"
+- name: terraform
+  version: "{{ terraform_version }}"
+  fetch_url: "https://releases.hashicorp.com/terraform/{{ terraform_version }}/terraform_{{ terraform_version }}_linux_amd64.zip"
+- name: packer
+  version: "{{ packer_version }}"
+  fetch_url: "https://releases.hashicorp.com/packer/{{ packer_version }}/packer_{{ packer_version }}_linux_amd64.zip"
+- name: waypoint
+  version: "{{ waypoint_version }}"
+  fetch_url: "https://releases.hashicorp.com/waypoint/{{ waypoint_version }}/waypoint_{{ waypoint_version }}_linux_amd64.zip"
+- name: fluvio
+  version: "{{ fluvio_version }}"
+  fetch_url: "https://github.com/infinyon/fluvio/releases/download/v{{ fluvio_version }}/fluvio-x86_64-unknown-linux-musl.zip"
+- name: glab
+  version: "{{ glab_version }}"
+  fetch_url: "https://gitlab.com/gitlab-org/cli/-/releases/v{{ glab_version }}/downloads/glab_{{ glab_version }}_Linux_x86_64.tar.gz"
+  subpath: "bin"
+- name: consul
+  version: "{{ consul_version }}"
+  fetch_url: "https://releases.hashicorp.com/consul/{{ consul_version }}/consul_{{ consul_version }}_linux_amd64.zip"
+- name: nomad
+  version: "{{ nomad_version }}"
+  fetch_url: "https://releases.hashicorp.com/nomad/{{ nomad_version }}/nomad_{{ nomad_version }}_linux_amd64.zip"
+- name: consul-template
+  version: "{{ consul_template_version }}"
+  fetch_url: "https://releases.hashicorp.com/consul-template/{{ consul_template_version }}/consul-template_{{ consul_template_version }}_linux_amd64.zip"
+- name: zellij
+  version: "{{ zellij_version }}"
+  fetch_url: "https://github.com/zellij-org/zellij/releases/download/v{{ zellij_version }}/zellij-x86_64-unknown-linux-musl.tar.gz"
+- name: hugo
+  version: "{{ hugo_version }}"
+  fetch_url: "https://github.com/gohugoio/hugo/releases/download/v{{ hugo_version }}/hugo_extended_{{ hugo_version }}_Linux-64bit.tar.gz"
+- name: levant
+  version: "{{ levant_version }}"
+  fetch_url: "https://releases.hashicorp.com/levant/{{ levant_version }}/levant_{{ levant_version }}_linux_amd64.zip"
+- name: octosql
+  version: "{{ octosql_version }}"
+  fetch_url: "https://github.com/cube2222/octosql/releases/download/v{{ octosql_version }}/octosql_{{ octosql_version }}_linux_amd64.tar.gz"
+- name: dagger
+  version: "{{ dagger_version }}"
+  fetch_url: "https://github.com/dagger/dagger/releases/download/v{{ dagger_version }}/dagger_v{{ dagger_version }}_linux_amd64.tar.gz"
+- name: logcli
+  version: "{{ logcli_version }}"
+  fetch_url: "https://github.com/grafana/loki/releases/download/v{{ logcli_version }}/logcli-linux-amd64.zip"
+  executable_name: logcli-linux-amd64
+- name: tfsec
+  version: "{{ tfsec_version }}"
+  fetch_url: "https://github.com/aquasecurity/tfsec/releases/download/v{{ tfsec_version }}/tfsec_1.28.1_linux_amd64.tar.gz"
+- name: kubectl
+  version: "{{ kubectl_version }}"
+  fetch_url: "https://dl.k8s.io/release/v{{ kubectl_version }}/bin/linux/amd64/kubectl"
+  archive: false
+- name: promql
+  version: "{{ promql_cli_version }}"
+  fetch_url: "https://github.com/nalbury/promql-cli/releases/download/v{{ promql_cli_version }}/promql-v{{ promql_cli_version }}-linux-amd64.tar.gz"
+- name: 1pass
+  version: "{{ onepassword_cli_version }}"
+  fetch_url: "https://cache.agilebits.com/dist/1P/op2/pkg/v{{ onepassword_cli_version }}/op_linux_amd64_v{{ onepassword_cli_version }}.zip"
+  executable_name: op
