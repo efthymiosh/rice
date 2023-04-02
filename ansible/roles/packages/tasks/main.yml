@@ -4,7 +4,7 @@
       "build-essential", "chromium-browser", "dunst", "zathura",
       "tree", "curl", "pavucontrol", "gimp", "jq",
       "ripgrep", "lm-sensors", "htop", "perf-tools-unstable",
-      "pssh", "python3-openstackclient", "neofetch"
+      "python3-openstackclient", "neofetch"
     ]
     state: present
     update_cache: yes
@@ -27,13 +27,3 @@
     src: "templates/{{ item }}.j2"
   loop: [ "config/zathura/zathurarc" ]
   tags: theme
-
-- name: link parallel-ssh to pssh
-  become: true
-  file:
-    path: "/usr/bin/pssh"
-    src: "/usr/bin/parallel-ssh"
-    state: "link"
-    owner: root
-    group: root
-    mode: 0755
