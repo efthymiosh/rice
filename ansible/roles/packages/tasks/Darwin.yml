@@ -1,9 +1,14 @@
-- homebrew_tap:
+- name: install taps
+  become: false
+  homebrew_tap:
     name: "{{ item }}"
   loop:
   - 1password/tap
   - hashicorp/tap
-- homebrew:
+
+- name: install packages
+  become: false
+  homebrew:
     name:
     - "hashicorp/tap/terraform"
     - "hashicorp/tap/packer"
