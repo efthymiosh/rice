@@ -36,8 +36,6 @@
     tags: polybar
   - role: bitwarden
     tags: bitwarden
-  - role: 1password
-    tags: 1password
   - role: binpackages
     tags: binpackages
 

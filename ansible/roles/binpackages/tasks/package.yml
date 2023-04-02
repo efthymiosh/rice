@@ -24,6 +24,7 @@
   - name: Fetch {{ item.name }} archive
     become: true
     get_url:
+      force: true
       url: "{{ item.fetch_url }}"
       dest: "/tmp/{{ item.name }}.zip"
       owner: root
