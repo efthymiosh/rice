@@ -1,0 +1,19 @@
+- name: Configure macos desktop
+  hosts: localhost
+  become: true
+
+  vars_files:
+  - "vars/themes/dark/tokyonight_night.yml"
+  - "vars/common.yml"
+
+  vars:
+    provision_hostname: "fof"
+
+  roles:
+  - role: packages
+    tags: packages
+
+  tasks:
+  - name: modify hostname
+    hostname:
+      name: "{{ provision_hostname }}"
