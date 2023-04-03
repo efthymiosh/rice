@@ -35,7 +35,6 @@ require("mason-lspconfig").setup({
 })
 
 local lsp = require('lsp-zero').preset({})
-local cmp = require('cmp')
 
 lsp.on_attach(function(client, bufnr)
 local opts = {buffer = bufnr}
@@ -43,44 +42,6 @@ local opts = {buffer = bufnr}
   vim.keymap.set('n', '<leader>ac', vim.lsp.buf.code_action, opts)
   vim.keymap.set('n', '<C-space>', vim.diagnostic.open_float, opts)
 end)
-
-cmp.setup({
-    window = {
-    --  completion = cmp.config.window.bordered(),
-    --  documentation = cmp.config.window.bordered(),
-    },
-    sources = cmp.config.sources({
-        {name = 'path'},
-        {name = 'nvim_lsp'},
-        {
-            name = 'buffer',
-            keyword_length = 3,
-            option = {
-                get_bufnrs = function()
-                    return vim.api.nvim_list_bufs()
-                end
-            }
-        },
-    }),
-    mapping = {
-        ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-        ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    },
-    completion = {
-        autocomplete = false,
-    },
-    formatting = {
-        fields = {'abbr', 'kind', 'menu'},
-        format = require('lspkind').cmp_format({
-            mode = 'symbol', -- show only symbol annotations
-            maxwidth = 50, -- prevent the popup from showing more than provided characters
-            ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead
-        })
-    }
-})
-lsp.setup()
 
 -- Configurations: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local lspconfig = require('lspconfig')
@@ -102,6 +63,58 @@ lspconfig.lua_ls.setup({
                 globals = {'vim'}
             }
         }
+    }
+})
+
+lsp.setup()
+
+local cmp = require('cmp')
+local select_opts = { behavior = cmp.SelectBehavior.Insert }
+cmp.setup({
+    window = {
+        --  completion = cmp.config.window.bordered(),
+        --  documentation = cmp.config.window.bordered(),
+    },
+    sources = cmp.config.sources({
+        {name = 'path'},
+        {name = 'nvim_lsp'},
+        {
+            name = 'buffer',
+            keyword_length = 3,
+            option = {
+                get_bufnrs = function()
+                    return vim.api.nvim_list_bufs()
+                end
+            }
+        },
+    }),
+    mapping = {
+        ["<C-n>"] = cmp.mapping.select_next_item(select_opts),
+        ["<C-p>"] = cmp.mapping.select_prev_item(select_opts),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    },
+    completion = {
+        autocomplete = false,
+    },
+    formatting = {
+        fields = {'kind', 'abbr', 'menu'},
+        format = require('lspkind').cmp_format({
+            mode = 'symbol', -- show only symbol annotations
+            maxwidth = 50, -- prevent the popup from showing more than provided characters
+            ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead
+            before = function(entry, item)
+                local menu_icon = {
+                    nvim_lsp = 'λ',
+                    luasnip = '⋗',
+                    buffer = 'Ω',
+                    path = '🖫',
+                    nvim_lua = 'Π',
+                }
+                item.menu = menu_icon[entry.source.name]
+                return item
+            end,
+        })
     }
 })
 
