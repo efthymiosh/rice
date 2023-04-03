@@ -52,7 +52,15 @@ cmp.setup({
     sources = cmp.config.sources({
         {name = 'path'},
         {name = 'nvim_lsp'},
-        {name = 'buffer', keyword_length = 3},
+        {
+            name = 'buffer',
+            keyword_length = 3,
+            option = {
+                get_bufnrs = function()
+                    return vim.api.nvim_list_bufs()
+                end
+            }
+        },
     }),
     mapping = {
         ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
