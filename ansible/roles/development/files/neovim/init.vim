@@ -22,9 +22,9 @@ set noundofile
 set nobackup
 set nowritebackup
 
-" Tab key shows as 4 characters, tab key inserts spaces, auto indentation 4 spaces.
+" Tab key shows as 4 characters, tab key inserts spaces, auto indentation 2 spaces.
 set tabstop=4
-set shiftwidth=4
+set shiftwidth=2
 set expandtab
 
 " Set smart search (case sensitive only when capital letters in search phrase)

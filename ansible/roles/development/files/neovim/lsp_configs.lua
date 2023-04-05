@@ -1,46 +1,46 @@
 require("mason").setup({
-    ui = {
-        icons = {
-            package_installed = "✓",
-            package_pending = "➜",
-            package_uninstalled = "✗"
-        }
+  ui = {
+    icons = {
+      package_installed = "✓",
+      package_pending = "➜",
+      package_uninstalled = "✗"
     }
+  }
 })
 require("mason-lspconfig").setup({
-    ensure_installed = {
-        "ansiblels",
-        "bashls",
-        "clangd",
-        "cssls",
-        "dockerls",
-        "gopls",
-        "gradle_ls",
-        "groovyls",
-        "jdtls",
-        "jsonls",
-        "tsserver",
-        "julials",
-        "kotlin_language_server",
-        "lua_ls",
-        "marksman",
-        "rnix",
-        "pyright",
-        "rust_analyzer",
-        "taplo",
-        "terraformls",
-        "yamlls",
-    },
-    automatic_installation = true,
+  ensure_installed = {
+    "ansiblels",
+    "bashls",
+    "clangd",
+    "cssls",
+    "dockerls",
+    "gopls",
+    "gradle_ls",
+    "groovyls",
+    "jdtls",
+    "jsonls",
+    "tsserver",
+    "julials",
+    "kotlin_language_server",
+    "lua_ls",
+    "marksman",
+    "rnix",
+    "pyright",
+    "rust_analyzer",
+    "taplo",
+    "terraformls",
+    "yamlls",
+  },
+  automatic_installation = true,
 })
 
 local lsp = require('lsp-zero').preset({
-    name = 'minimal',
-    manage_nvim_cmp = false,
+  name = 'minimal',
+  manage_nvim_cmp = false,
 })
 
 lsp.on_attach(function(client, bufnr)
-local opts = {buffer = bufnr}
+  local opts = {buffer = bufnr}
   lsp.default_keymaps(opts)
   vim.keymap.set('n', '<leader>ac', vim.lsp.buf.code_action, opts)
   vim.keymap.set('n', '<C-space>', vim.diagnostic.open_float, opts)
@@ -49,24 +49,24 @@ end)
 -- Configurations: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local lspconfig = require('lspconfig')
 lspconfig.yamlls.setup({
-    settings = {
-        yaml = {
-            schemaStore = {
-                url = "https://www.schemastore.org/api/json/catalog.json",
-                enable = true,
-            },
-            keyOrdering = false,
-        }
+  settings = {
+    yaml = {
+      schemaStore = {
+        url = "https://www.schemastore.org/api/json/catalog.json",
+        enable = true,
+      },
+      keyOrdering = false,
     }
+  }
 })
 lspconfig.lua_ls.setup({
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = {'vim'}
-            }
-        }
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = {'vim'}
+      }
     }
+  }
 })
 
 lsp.setup()
@@ -74,51 +74,51 @@ lsp.setup()
 local cmp = require('cmp')
 local select_opts = { behavior = cmp.SelectBehavior.Insert }
 cmp.setup({
-    window = {
-        --  completion = cmp.config.window.bordered(),
-        --  documentation = cmp.config.window.bordered(),
+  window = {
+    --  completion = cmp.config.window.bordered(),
+    --  documentation = cmp.config.window.bordered(),
+  },
+  sources = cmp.config.sources({
+    {name = 'path'},
+    {name = 'nvim_lsp'},
+    {
+      name = 'buffer',
+      keyword_length = 3,
+      option = {
+        get_bufnrs = function()
+          return vim.api.nvim_list_bufs()
+        end
+      }
     },
-    sources = cmp.config.sources({
-        {name = 'path'},
-        {name = 'nvim_lsp'},
-        {
-            name = 'buffer',
-            keyword_length = 3,
-            option = {
-                get_bufnrs = function()
-                    return vim.api.nvim_list_bufs()
-                end
-            }
-        },
-    }),
-    mapping = cmp.config.mapping({
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
-        ["<C-n>"] = cmp.mapping.select_next_item(select_opts),
-        ["<C-p>"] = cmp.mapping.select_prev_item(select_opts),
-    }),
-    completion = {
-        autocomplete = true,
-    },
-    formatting = {
-        fields = {'kind', 'abbr', 'menu'},
-        format = require('lspkind').cmp_format({
-            mode = 'symbol', -- show only symbol annotations
-            maxwidth = 50, -- prevent the popup from showing more than provided characters
-            ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead
-            before = function(entry, item)
-                local menu_icon = {
-                    nvim_lsp = 'λ',
-                    luasnip = '⋗',
-                    buffer = 'Ω',
-                    path = '🖫',
-                    nvim_lua = 'Π',
-                }
-                item.menu = menu_icon[entry.source.name]
-                return item
-            end,
-        })
-    }
+  }),
+  mapping = cmp.config.mapping({
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ["<C-n>"] = cmp.mapping.select_next_item(select_opts),
+    ["<C-p>"] = cmp.mapping.select_prev_item(select_opts),
+  }),
+  completion = {
+    autocomplete = true,
+  },
+  formatting = {
+    fields = {'kind', 'abbr', 'menu'},
+    format = require('lspkind').cmp_format({
+      mode = 'symbol', -- show only symbol annotations
+      maxwidth = 50, -- prevent the popup from showing more than provided characters
+      ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead
+      before = function(entry, item)
+        local menu_icon = {
+          nvim_lsp = 'λ',
+          luasnip = '⋗',
+          buffer = 'Ω',
+          path = '🖫',
+          nvim_lua = 'Π',
+        }
+        item.menu = menu_icon[entry.source.name]
+        return item
+      end,
+    })
+  }
 })
 
 -- treesitter
@@ -134,7 +134,7 @@ require("nvim-treesitter.configs").setup({
   highlight = {
     enable = true,
     disable = {
-        "yaml",
+      "yaml",
     },
 
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
@@ -143,7 +143,10 @@ require("nvim-treesitter.configs").setup({
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
+  indent = {
+    enable = true
+  }
 })
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
-  vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { underline = false })
+vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { underline = false })
