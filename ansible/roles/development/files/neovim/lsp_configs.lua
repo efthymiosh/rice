@@ -34,7 +34,10 @@ require("mason-lspconfig").setup({
     automatic_installation = true,
 })
 
-local lsp = require('lsp-zero').preset({})
+local lsp = require('lsp-zero').preset({
+    name = 'minimal',
+    manage_nvim_cmp = false,
+})
 
 lsp.on_attach(function(client, bufnr)
 local opts = {buffer = bufnr}
