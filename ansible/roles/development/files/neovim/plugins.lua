@@ -79,7 +79,7 @@ require("lazy").setup({
             'hrsh7th/cmp-path',
             'hrsh7th/cmp-buffer',
             'hrsh7th/cmp-nvim-lsp',
-            'L3MON4D3/LuaSnip',
+            { 'L3MON4D3/LuaSnip', tag = "v1.2.1" },
             'onsails/lspkind.nvim',
         },
     },
