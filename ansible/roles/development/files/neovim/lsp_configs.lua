@@ -68,6 +68,15 @@ lspconfig.lua_ls.setup({
     }
   }
 })
+lspconfig.pyright.setup({
+  settings = {
+    python = {
+      analysis = {
+        typeCheckingMode = "off"
+      }
+    }
+  }
+})
 
 lsp.setup()
 
@@ -149,6 +158,16 @@ require("nvim-treesitter.configs").setup({
       "yaml",
     },
   }
+})
+require("illuminate").configure({
+  providers = {
+    "lsp",
+    "treesitter",
+    "regex",
+  },
+  under_cursor = false,
+  delay = 100,
+  min_count_to_highlight = 1,
 })
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] =

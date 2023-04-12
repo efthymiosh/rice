@@ -71,6 +71,10 @@ hi @field     cterm=NONE ctermfg=NONE ctermbg=NONE
 hi @variable  cterm=NONE ctermfg=NONE ctermbg=NONE
 hi @property  cterm=NONE ctermfg=NONE ctermbg=NONE
 
+hi IlluminatedWordText  cterm=NONE ctermfg=NONE ctermbg=8
+hi IlluminatedWordRead  cterm=NONE ctermfg=NONE ctermbg=8
+hi IlluminatedWordWrite cterm=NONE ctermfg=NONE ctermbg=8
+
 set noshowmode
 hi StatusLine cterm=NONE
 lua vim.api.nvim_set_hl(0, "LineflyNormal", { link = "Search" })

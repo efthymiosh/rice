@@ -90,6 +90,9 @@ require("lazy").setup({
             'MunifTanjim/nui.nvim',
         }
     },
+    { -- vim-illuminate: Highlight other uses of word under cursor
+        'RRethy/vim-illuminate',
+    },
 })
 
 -- Set colorscheme before anything else
