@@ -14,6 +14,9 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+" Trouble settings
+nnoremap <c-k> <cmd>TroubleToggle<CR>
+
 " Theme configuration
 
 set number

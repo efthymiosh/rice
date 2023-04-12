@@ -93,6 +93,12 @@ require("lazy").setup({
     { -- vim-illuminate: Highlight other uses of word under cursor
         'RRethy/vim-illuminate',
     },
+    { -- trouble.nvim: Improve diagnostics
+        'folke/trouble.nvim',
+        dependencies = {
+            'nvim-tree/nvim-web-devicons',
+        }
+    },
 })
 
 -- Set colorscheme before anything else
