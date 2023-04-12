@@ -90,9 +90,6 @@ require("lazy").setup({
             'MunifTanjim/nui.nvim',
         }
     },
-    { -- neoscroll: Smooth scrolling
-        'karb94/neoscroll.nvim',
-    },
 })
 
 -- Set colorscheme before anything else
