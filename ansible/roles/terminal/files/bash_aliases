@@ -20,5 +20,5 @@ function git-clean {
 }
 
 function ssl-read-cert {
-    openssl s_client -showcerts -connect $1
+    openssl s_client -showcerts -connect ${1}:${2:-443} | less
 }
