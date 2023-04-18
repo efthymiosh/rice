@@ -1,6 +1,6 @@
 - name: install starship
   include_role:
-    name: binpackages
+    name: packages/binpackages
   vars:
     binpackages_items:
     - name: starship

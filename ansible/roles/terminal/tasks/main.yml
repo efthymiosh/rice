@@ -13,7 +13,7 @@
 
 - name: install zoxide,fzf
   include_role:
-    name: binpackages
+    name: packages/binpackages
   vars:
     binpackages_items:
     - name: zoxide

@@ -1,6 +1,6 @@
 " Neotree settings
 nnoremap <c-h> <cmd>Neotree toggle action=focus<CR>
-nnoremap <c-j> <cmd>Neotree reveal action=focus<CR>
+nnoremap <c-k> <cmd>Neotree reveal action=focus<CR>
 
 " Symbol Outline settings
 nnoremap <c-l> <cmd>SymbolsOutline<CR>
@@ -15,7 +15,7 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Trouble settings
-nnoremap <c-k> <cmd>TroubleToggle<CR>
+nnoremap <c-j> <cmd>TroubleToggle<CR>
 
 " Theme configuration
 

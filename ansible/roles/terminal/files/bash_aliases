@@ -18,3 +18,7 @@ alias pssh='parallel-ssh'
 function git-clean {
     git branch --merged | grep -ve '*' -e '^[ ]*master$' -e '^[ ]main*' | xargs git branch -d
 }
+
+function ssl-read-cert {
+    openssl s_client -showcerts -connect $1
+}

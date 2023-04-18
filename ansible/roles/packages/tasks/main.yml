@@ -9,8 +9,8 @@
     state: present
     update_cache: yes
 
-- include_tasks: package.yml
-  loop: "{{ binpackages_items | list }}"
+- include_role:
+    name: packages/binpackages
 
 - name: template configuration
   become: false
