@@ -5,7 +5,12 @@
     - "golang"
     - "python"
     - "julia"
-    - "rustup-init"
     - "node"
     - "neovim"
     state: "present"
+
+- name: install rustup-init package
+  package:
+    name:
+    - "rustup-init"
+  register: rust_fetch
