@@ -5,7 +5,7 @@
   when: rust_fetch.changed
   become: false
   shell: >
-      /opt/rustup-init
+      rustup-init
       --default-toolchain stable
       --default-host {{ alt_arch }}-{{ vendor }}-{{ system}}{{ iflinux_gnu }}
       --profile default
