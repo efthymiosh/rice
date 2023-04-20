@@ -28,6 +28,7 @@
   - lsp_configs.lua
 
 - name: set neovim as the default editor
+  when: system != "darwin"
   alternatives:
     name: editor
     path: "/usr/bin/nvim"
