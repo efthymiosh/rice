@@ -7,6 +7,7 @@
     - "julia"
     - "node"
     - "neovim"
+    - "groovy"
     state: "present"
 
 - name: install rustup-init package
