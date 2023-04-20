@@ -9,6 +9,7 @@
   vars:
     provision_hostname: "sand"
     x_cursor_theme: "Bibata-Modern-Greenish"
+    global_font: "Fira Code Nerd Font"
 #   x_cursor_size: 40
 #   alacritty_font_size: 9
 

@@ -9,6 +9,7 @@
   vars:
     provision_hostname: "tile"
     x_cursor_theme: "Bibata-Modern-GrayBlue"
+    global_font: "Fira Code Nerd Font"
 
   pre_tasks:
   - name: update apt package information

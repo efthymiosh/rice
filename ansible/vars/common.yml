@@ -7,7 +7,6 @@ iflinux_gnu: "{% if system == 'linux' %}-gnu{% endif %}"
 home_folder: "{% if system == 'darwin' %}/Users/{% else %}/home/{% endif %}{{ ansible_env.SUDO_USER }}"
 root_group: "{% if system == 'darwin' %}wheel{% else %}root{% endif %}"
 
-global_font: "Fira Code Nerd Font"
 bitwarden_app_version: "2023.3.1"
 bitwarden_cli_version: "2023.3.0"
 terraform_version: "1.4.5"
