@@ -1,21 +1,20 @@
 ---
-- name: install lang packages
-  become: true
-  package:
-    name:
-    - "golang-go"
-    - "python3"
-    - "python3-pip"
-    - "python3-jedi" #coc.nvim coc-python requirement
-    - "julia"
-    state: "present"
+- include_tasks: "{{ ansible_os_family }}.yml"
 
-- import_tasks: rust.yml
-  tags: language
-- import_tasks: groovy.yml
-  tags: language
-- import_tasks: nodejs.yml
-  tags: language
+- name: install rust
+  when: rust_fetch.changed
+  become: false
+  shell: >
+      /opt/rustup-init
+      --default-toolchain stable
+      --default-host {{ alt_arch }}-{{ vendor }}-{{ system}}{{ iflinux_gnu }}
+      --profile default
+      -y
 
-- import_tasks: helix.yml
-- import_tasks: neovim.yml
+- name: add rust components
+  when: rust_fetch.changed
+  become: false
+  shell: |
+    {{ home_folder }}/.cargo/bin/rustup component add rust-src
+
+- include_tasks: neovim.yml

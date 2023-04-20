@@ -1,0 +1,11 @@
+---
+- name: install dev packages
+  package:
+    name:
+    - "golang"
+    - "python"
+    - "julia"
+    - "rustup-init"
+    - "node"
+    - "neovim"
+    state: "present"
