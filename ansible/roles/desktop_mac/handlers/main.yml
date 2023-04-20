@@ -1,0 +1,7 @@
+- name: restart sketchybar
+  become: false
+  shell: "/opt/homebrew/bin/brew services restart sketchybar"
+
+- name: restart yabai
+  become: false
+  shell: "/opt/homebrew/bin/brew services restart yabai"

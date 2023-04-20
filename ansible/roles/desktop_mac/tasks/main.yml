@@ -1,0 +1,70 @@
+- name: add yabai tap
+  become: false
+  homebrew_tap:
+    name: "{{ item }}"
+  loop:
+  - "koekeishiya/formulae"
+  - "FelixKratz/formulae"
+
+- name: install packages
+  become: false
+  homebrew:
+    name:
+    - "koekeishiya/formulae/yabai"
+    - "koekeishiya/formulae/skhd"
+    - "FelixKratz/formulae/sketchybar"
+
+- name: ensure sketchybar configuration directory exists
+  become: false
+  file:
+    path: "{{ home_folder }}/.config/{{ item }}"
+    state: "directory"
+  loop:
+  - sketchybar
+  - sketchybar/plugins
+
+- name: template sketchybar
+  become: false
+  template:
+    src: "sketchybar/{{ item }}.j2"
+    dest: "{{ home_folder }}/.config/sketchybar/{{ item }}"
+  loop:
+  - sketchybarrc
+  notify: restart sketchybar
+
+- name: configure sketchybar files
+  become: false
+  copy:
+    remote_src: false
+    src: "sketchybar/{{ item }}"
+    dest: "{{ home_folder }}/.config/sketchybar/{{ item }}"
+    mode: 0700
+  loop:
+  - plugins/battery.sh
+  - plugins/clock.sh
+  - plugins/front_app.sh
+  - plugins/space.sh
+  - plugins/volume.sh
+  - plugins/wifi.sh
+  notify: restart sketchybar
+
+- name: configure skhd
+  become: false
+  template:
+    src: "skhdrc.j2"
+    dest: "{{ home_folder }}/.skhdrc"
+
+- name: configure yabai
+  become: false
+  template:
+    src: "yabairc.j2"
+    dest: "{{ home_folder }}/.yabairc"
+  notify: restart yabai
+
+- name: enable and start {{ item }}
+  become: false
+  shell: "/opt/homebrew/bin/brew services start {{ item }}"
+  loop:
+  - yabai
+  - skhd
+  - sketchybar

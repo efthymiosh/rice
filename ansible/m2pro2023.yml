@@ -20,6 +20,8 @@
     tags: terminal
   - role: development
     tags: development
+  - role: desktop_mac
+    tags: desktop
 
   tasks:
   - name: modify hostname
