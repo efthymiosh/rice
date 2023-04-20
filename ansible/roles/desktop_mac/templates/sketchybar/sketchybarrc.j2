@@ -12,13 +12,12 @@ PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar height=32        \
+sketchybar --bar height={{ macos_bar_height }} \
                  blur_radius=30   \
                  position=top     \
                  sticky=off       \
                  padding_left=10  \
                  padding_right=10 \
-                 notch_width=400  \
                  color=0xef{{ theme.background }}
 
 ##### Changing Defaults #####
