@@ -72,11 +72,13 @@
   when: verify.failed
 
 - name: Ensure extracted executable is absent
+  become: true
   file:
     path: "/opt/{{ item.name }}/{{ item.subpath | default('') }}/{{ item.executable_name | default(item.name) }}"
     state: "absent"
 
 - name: Link versioned executable to active
+  become: true
   file:
     path: "/usr/local/bin/{{ item.name }}"
     src: "/opt/{{ item.name }}/{{ item.name }}-{{ item.version }}"

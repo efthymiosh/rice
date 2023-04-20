@@ -29,6 +29,7 @@
     - "neofetch"
     - "ripgrep"
     - "htop"
+    - "gnu-tar"
 
 - name: install cask packages
   become: false
