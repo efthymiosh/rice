@@ -1,4 +1,11 @@
-home_folder: "/home/{{ ansible_env.SUDO_USER }}"
+real_arch: "{% if ansible_architecture == 'x86_64' %}amd64{% else %}arm64{% endif %}"
+alt_arch: "{% if ansible_architecture == 'x86_64' %}x86_64{% else %}aarch64{% endif %}"
+system: "{{ ansible_system | lower }}"
+vendor: "{% if system == 'darwin' %}apple{% else %}unknown{% endif %}"
+iflinux_musl: "{% if system == 'linux' %}-musl{% endif %}"
+iflinux_gnu: "{% if system == 'linux' %}-gnu{% endif %}"
+home_folder: "{% if system == 'darwin' %}/Users/{% else %}/home/{% endif %}{{ ansible_env.SUDO_USER }}"
+
 global_font: "Fira Code Nerd Font"
 bitwarden_app_version: "2023.3.1"
 bitwarden_cli_version: "2023.3.0"

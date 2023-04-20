@@ -1,0 +1,39 @@
+- name: install taps
+  become: false
+  homebrew_tap:
+    name: "{{ item }}"
+  loop:
+  - 1password/tap
+  - hashicorp/tap
+
+- name: install packages
+  become: false
+  homebrew:
+    name:
+    - "hashicorp/tap/terraform"
+    - "hashicorp/tap/packer"
+    - "hashicorp/tap/waypoint"
+    - "hashicorp/tap/consul"
+    - "hashicorp/tap/nomad"
+    - "glab"
+    - "consul-template"
+    - "hugo"
+    - "levant"
+    - "octosql"
+    - "dagger"
+    - "logcli"
+    - "tfsec"
+    - "kubectl"
+    - "1password"
+    - "tree"
+    - "jq"
+    - "neofetch"
+    - "ripgrep"
+    - "htop"
+
+- name: install non-brew items
+  include_tasks: package.yml
+  loop:
+  - name: fluvio
+    version: "{{ fluvio_version }}"
+    fetch_url: "https://github.com/infinyon/fluvio/releases/download/v{{ fluvio_version }}/fluvio-{{ alt_arch }}-apple-darwin.zip"
