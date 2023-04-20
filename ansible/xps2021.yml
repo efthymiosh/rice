@@ -37,7 +37,7 @@
       regexp: '^#HandlePowerKey=poweroff'
       line: 'HandlePowerKey=ignore'
       owner: root
-      group: root
+      group: "{{ root_group }}"
       mode: '0644'
     notify: restart systemd-logind
 
@@ -48,7 +48,7 @@
       regexp: '^#HandleSuspendKey=suspend'
       line: 'HandleSuspendKey=ignore'
       owner: root
-      group: root
+      group: "{{ root_group }}"
       mode: 0644
     notify: restart systemd-logind
 

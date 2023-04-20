@@ -5,7 +5,7 @@
     dest: "/opt/rustup-init"
     force: false
     owner: root
-    group: root
+    group: "{{ root_group }}"
     mode: 0755
   register: vim_rust_fetch
 

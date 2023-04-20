@@ -8,7 +8,7 @@
     src: "nodejs.list.j2"
     dest: "/etc/apt/sources.list.d/nodejs.list"
     owner: root
-    group: root
+    group: "{{ root_group }}"
     mode: 0644
 
 - name: install nodejs

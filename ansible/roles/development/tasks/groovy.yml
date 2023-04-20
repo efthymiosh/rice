@@ -16,7 +16,7 @@
     url: "https://services.gradle.org/distributions/gradle-{{ gradle_version }}-bin.zip"
     dest: "/tmp/gradle.zip"
     owner: root
-    group: root
+    group: "{{ root_group }}"
     mode: 0644
 
 - name: extract gradle
@@ -25,7 +25,7 @@
     src: "/tmp/gradle.zip"
     dest: "/opt/"
     owner: root
-    group: root
+    group: "{{ root_group }}"
 
 - name: link gradle executable
   file:
@@ -46,7 +46,7 @@
     url: "https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/apache-groovy-binary-{{ groovy_version }}.zip"
     dest: "/tmp/groovy.zip"
     owner: root
-    group: root
+    group: "{{ root_group }}"
     mode: 0644
 
 - name: extract groovy
@@ -55,4 +55,4 @@
     src: "/tmp/groovy.zip"
     dest: "/opt/"
     owner: root
-    group: root
+    group: "{{ root_group }}"

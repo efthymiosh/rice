@@ -36,7 +36,7 @@
     url: "https://github.com/bitwarden/clients/releases/download/desktop-v{{ bitwarden_app_version }}/Bitwarden-{{ bitwarden_app_version }}-amd64.deb"
     dest: "/tmp/bitwarden-v{{ bitwarden_app_version }}.deb"
     owner: root
-    group: root
+    group: "{{ root_group }}"
     mode: 0644
 
 - name: Install bitwarden desktop

@@ -4,7 +4,7 @@
     path: "/opt/{{ item.name }}/"
     state: "directory"
     owner: root
-    group: root
+    group: "{{ root_group }}"
     mode: 0755
 
 - name: Verify current version is installed
@@ -13,7 +13,7 @@
     path: "/opt/{{ item.name }}/{{ item.name }}-{{ item.version }}"
     state: "file"
     owner: root
-    group: root
+    group: "{{ root_group }}"
     mode: 0755
   ignore_errors: true
   register: verify
@@ -28,7 +28,7 @@
       url: "{{ item.fetch_url }}"
       dest: "/tmp/{{ item.name }}.zip"
       owner: root
-      group: root
+      group: "{{ root_group }}"
       mode: 0644
 
   - name: Unarchive {{ item.name }}
@@ -47,7 +47,7 @@
       path: "/opt/{{ item.name }}"
       state: directory
       owner: root
-      group: root
+      group: "{{ root_group }}"
       mode: 0755
 
   - name: Fetch {{ item.name }} executable
@@ -56,7 +56,7 @@
       url: "{{ item.fetch_url }}"
       dest: "/opt/{{ item.name }}/{{ item.name }}"
       owner: root
-      group: root
+      group: "{{ root_group }}"
       mode: 0644
 
 
@@ -67,7 +67,7 @@
     src: "/opt/{{ item.name }}/{{ item.subpath | default('') }}/{{ item.executable_name | default(item.name) }}"
     dest: "/opt/{{ item.name }}/{{ item.name }}-{{ item.version }}"
     owner: root
-    group: root
+    group: "{{ root_group }}"
     mode: 0755
   when: verify.failed
 

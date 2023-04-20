@@ -4,7 +4,7 @@
     path: "/opt/helix/helix-{{ helix_version }}"
     state: "directory"
     owner: root
-    group: root
+    group: "{{ root_group }}"
     mode: 0755
   register: helix_present
 
@@ -23,7 +23,7 @@
       dest: "/tmp/helix.tar.xz"
       force: false
       owner: root
-      group: root
+      group: "{{ root_group }}"
       mode: 0755
 
   - name: extract helix
@@ -33,7 +33,7 @@
       src: "/tmp/helix.tar.xz"
       dest: "/opt/helix/helix-{{ helix_version }}"
       owner: root
-      group: root
+      group: "{{ root_group }}"
       extra_opts: ["--strip-components=1"]
 
   - name: add helix to path
@@ -43,7 +43,7 @@
       state: "link"
       src: "/opt/helix/helix-{{ helix_version }}/hx"
       owner: root
-      group: root
+      group: "{{ root_group }}"
 
   - name: link runtime directory to local configuration
     become: false

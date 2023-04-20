@@ -4,7 +4,7 @@
     url: "https://github.com/neovim/neovim/releases/download/v{{ neovim_version }}/nvim-linux64.deb"
     dest: "/tmp/nvim.deb"
     owner: root
-    group: root
+    group: "{{ root_group }}"
     mode: 0644
   register: neovim_deb
 
