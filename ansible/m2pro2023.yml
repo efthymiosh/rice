@@ -1,6 +1,6 @@
 - name: Configure macos desktop
   hosts: localhost
-  become: true
+  become: false
 
   vars_files:
   - "vars/themes/dark/tokyonight_night.yml"
@@ -15,5 +15,6 @@
 
   tasks:
   - name: modify hostname
+    become: true
     hostname:
       name: "{{ provision_hostname }}"
