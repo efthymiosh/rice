@@ -37,8 +37,10 @@
     - "1password"
 
 - name: install non-brew items
-  include_tasks: package.yml
-  loop:
-  - name: fluvio
-    version: "{{ fluvio_version }}"
-    fetch_url: "https://github.com/infinyon/fluvio/releases/download/v{{ fluvio_version }}/fluvio-{{ alt_arch }}-apple-darwin.zip"
+  include_role:
+    name: packages/binpackages
+  vars:
+    binpackages_items:
+    - name: fluvio
+      version: "{{ fluvio_version }}"
+      fetch_url: "https://github.com/infinyon/fluvio/releases/download/v{{ fluvio_version }}/fluvio-{{ alt_arch }}-apple-darwin.zip"
