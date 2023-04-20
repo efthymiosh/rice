@@ -7,7 +7,6 @@
 - name: fetch and install terminal packages
   package:
     name:
-    - "screen"
     - "tmux"
     - "zsh"
 
@@ -18,10 +17,10 @@
     binpackages_items:
     - name: zoxide
       version: "{{ zoxide_version }}"
-      fetch_url: "https://github.com/ajeetdsouza/zoxide/releases/download/v{{ zoxide_version }}/zoxide-{{ zoxide_version }}-x86_64-unknown-linux-musl.tar.gz"
+      fetch_url: "https://github.com/ajeetdsouza/zoxide/releases/download/v{{ zoxide_version }}/zoxide-{{ zoxide_version }}-{{ alt_arch }}-{{ vendor }}-{{ system }}{{ iflinux_musl }}.tar.gz"
     - name: fzf
       version: "{{ fzf_version }}"
-      fetch_url: "https://github.com/junegunn/fzf/releases/download/{{ fzf_version }}/fzf-{{ fzf_version }}-linux_amd64.tar.gz"
+      fetch_url: "https://github.com/junegunn/fzf/releases/download/{{ fzf_version }}/fzf-{{ fzf_version }}-{{ system }}_{{ real_arch }}.tar.gz"
 
 
 - name: set terminal file configuration
@@ -31,9 +30,7 @@
     src:  "files/{{ item }}"
   loop:
   - "bash_aliases"
-  - "screenrc"
   - "inputrc"
-  - "zshrc"
   - "ssh-agent.zsh"
 
 - name: template terminal configuration
@@ -42,7 +39,7 @@
     dest: "{{ home_folder }}/.{{ item }}"
     src: "templates/{{ item }}.j2"
   loop: 
-  - "bashrc"
+  - "zshrc"
   - "tmux.conf"
   tags: theme
 

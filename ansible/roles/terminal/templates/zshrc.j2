@@ -2,7 +2,7 @@ HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 
-source ~/.ssh-agent.zsh
+#source ~/.ssh-agent.zsh
 setopt autocd beep nomatch share_history
 unsetopt extendedglob notify
 bindkey -v
@@ -20,6 +20,10 @@ if [ -f ~/.env ]; then
     source ~/.env
 fi
 
+if [ -f ~/.cargo/env ]; then
+    source ~/.cargo/env
+fi
+
 autoload edit-command-line; zle -N edit-command-line
 autoload -U +X bashcompinit && bashcompinit
 
@@ -27,6 +31,10 @@ bindkey -M vicmd v edit-command-line
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+{% if system == "darwin" -%}
+eval "$(/opt/homebrew/bin/brew shellenv)"
+PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+{%- endif %}
 
 complete -C /usr/local/bin/nomad nomad
 complete -C /usr/local/bin/consul consul
