@@ -24,12 +24,17 @@
     - "logcli"
     - "tfsec"
     - "kubectl"
-    - "1password"
     - "tree"
     - "jq"
     - "neofetch"
     - "ripgrep"
     - "htop"
+
+- name: install cask packages
+  become: false
+  homebrew_cask:
+    name:
+    - "1password"
 
 - name: install non-brew items
   include_tasks: package.yml
