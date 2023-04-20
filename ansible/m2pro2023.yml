@@ -17,6 +17,8 @@
     tags: fonts
   - role: terminal
     tags: terminal
+  - role: development
+    tags: development
 
   tasks:
   - name: modify hostname
