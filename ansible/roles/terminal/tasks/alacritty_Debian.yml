@@ -1,0 +1,3 @@
+- name: fetch and install alacritty
+  package:
+    name: [ "alacritty" ]

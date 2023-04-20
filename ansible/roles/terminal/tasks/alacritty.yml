@@ -1,6 +1,4 @@
-- name: fetch and install alacritty
-  package:
-    name: [ "alacritty" ]
+- include_tasks: "alacritty_{{ ansible_os_family }}.yml"
 
 - name: ensure alacritty config directory exists
   become: false
