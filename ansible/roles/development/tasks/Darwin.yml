@@ -1,5 +1,6 @@
 ---
 - name: install dev packages
+  become: "{{ package_manager_become }}"
   package:
     name:
     - "golang"
@@ -11,6 +12,7 @@
     state: "present"
 
 - name: install rustup-init package
+  become: "{{ package_manager_become }}"
   package:
     name:
     - "rustup-init"

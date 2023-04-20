@@ -5,6 +5,7 @@ vendor: "{% if system == 'darwin' %}apple{% else %}unknown{% endif %}"
 iflinux_musl: "{% if system == 'linux' %}-musl{% endif %}"
 iflinux_gnu: "{% if system == 'linux' %}-gnu{% endif %}"
 home_folder: "{% if system == 'darwin' %}/Users/{% else %}/home/{% endif %}{{ ansible_env.SUDO_USER }}"
+package_manager_become: "{{ (system != 'darwin') | bool }}"
 root_group: "{% if system == 'darwin' %}wheel{% else %}root{% endif %}"
 
 bitwarden_app_version: "2023.3.1"

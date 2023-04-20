@@ -1,6 +1,6 @@
 - name: Configure macos desktop
   hosts: localhost
-  become: false
+  become: true
 
   vars_files:
   - "vars/themes/dark/tokyonight_night.yml"
@@ -9,6 +9,7 @@
   vars:
     provision_hostname: "patticha"
     global_font: "FiraCode Nerd Font"
+    alacritty_font_size: 16
 
   roles:
   - role: packages

@@ -5,6 +5,7 @@
   tags: starship
 
 - name: fetch and install terminal packages
+  become: "{{ package_manager_become }}"
   package:
     name:
     - "tmux"

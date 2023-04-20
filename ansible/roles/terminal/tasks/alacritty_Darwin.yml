@@ -1,3 +1,4 @@
 - name: fetch and install alacritty
+  become: "{{ package_manager_become }}"
   homebrew_cask:
     name: [ "alacritty" ]
