@@ -20,7 +20,7 @@
       fetch_url: "https://github.com/ajeetdsouza/zoxide/releases/download/v{{ zoxide_version }}/zoxide-{{ zoxide_version }}-{{ alt_arch }}-{{ vendor }}-{{ system }}{{ iflinux_musl }}.tar.gz"
     - name: fzf
       version: "{{ fzf_version }}"
-      fetch_url: "https://github.com/junegunn/fzf/releases/download/{{ fzf_version }}/fzf-{{ fzf_version }}-{{ system }}_{{ real_arch }}.tar.gz"
+      fetch_url: "https://github.com/junegunn/fzf/releases/download/{{ fzf_version }}/fzf-{{ fzf_version }}-{{ system }}_{{ real_arch }}.{% if system == 'darwin' %}zip{% else %}tar.gz"
 
 
 - name: set terminal file configuration
