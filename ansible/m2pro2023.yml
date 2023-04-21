@@ -7,7 +7,7 @@
   - "vars/common.yml"
 
   vars:
-    provision_hostname: "patticha"
+    provision_hostname: "pattiha"
     global_font: "FiraCode Nerd Font"
     alacritty_font_size: 16
 
