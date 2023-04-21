@@ -2063,35 +2063,6 @@
                                 "type": "basic"
                             }
                         ]
-                    },
-                    {
-                        "description": "L (Alt+Cmd) [Lock Screen]",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "option"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "power",
-                                        "modifiers": [
-                                            "control",
-                                            "shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
                     }
                 ]
             },
