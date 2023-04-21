@@ -17,6 +17,9 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 " Trouble settings
 nnoremap <c-j> <cmd>TroubleToggle<CR>
 
+" LSP rename
+nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<cr>
+
 " Theme configuration
 
 set number
