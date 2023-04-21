@@ -14,7 +14,13 @@
     - "koekeishiya/formulae/skhd"
     - "FelixKratz/formulae/sketchybar"
 
-- name: ensure sketchybar configuration directory exists
+- name: install casks
+  become: false
+  homebrew_cask:
+    name:
+    - "karabiner-elements"
+
+- name: ensure configuration directories exist
   become: false
   file:
     path: "{{ home_folder }}/.config/{{ item }}"
@@ -22,6 +28,7 @@
   loop:
   - sketchybar
   - sketchybar/plugins
+  - karabiner
 
 - name: template sketchybar
   become: false
@@ -47,6 +54,13 @@
   - plugins/volume.sh
   - plugins/wifi.sh
   notify: restart sketchybar
+
+- name: set karabiner remappings
+  become: false
+  copy:
+    remote_src: false
+    src: "karabiner/karabiner.json"
+    dest: "{{ home_folder }}/.config/karabiner/karabiner.json"
 
 - name: configure skhd
   become: false
