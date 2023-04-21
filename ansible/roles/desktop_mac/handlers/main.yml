@@ -2,6 +2,10 @@
   become: false
   shell: "/opt/homebrew/bin/brew services restart sketchybar"
 
+- name: restart skhd
+  become: false
+  shell: "/opt/homebrew/bin/brew services restart skhd"
+
 - name: restart yabai
   become: false
   shell: "/opt/homebrew/bin/brew services restart yabai"

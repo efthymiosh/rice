@@ -13,6 +13,7 @@
     - "koekeishiya/formulae/yabai"
     - "koekeishiya/formulae/skhd"
     - "FelixKratz/formulae/sketchybar"
+  notify: restart skhd
 
 - name: install casks
   become: false
@@ -74,11 +75,3 @@
     src: "yabairc.j2"
     dest: "{{ home_folder }}/.yabairc"
   notify: restart yabai
-
-- name: enable and start {{ item }}
-  become: false
-  shell: "/opt/homebrew/bin/brew services start {{ item }}"
-  loop:
-  - yabai
-  - skhd
-  - sketchybar

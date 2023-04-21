@@ -77,16 +77,16 @@
 # ############################################################### #
 
 # focus window
-cmd - h : yabai -m window --focus west || yabai -m display --focus west
-cmd - l : yabai -m window --focus east || yabai -m display --focus east
+cmd - h : yabai -m window --focus west  || yabai -m display --focus west
+cmd - l : yabai -m window --focus east  || yabai -m display --focus east
 cmd - k : yabai -m window --focus north || yabai -m display --focus north
 cmd - j : yabai -m window --focus south || yabai -m display --focus south
 
 # move managed window
-shift + cmd - h : yabai -m window --warp west || yabai -m window --display west
-shift + cmd - l : yabai -m window --warp east || yabai -m window --display east
-shift + cmd - k : yabai -m window --warp north || yabai -m window --display north
-shift + cmd - j : yabai -m window --warp south || yabai -m window --display south
+shift + cmd - h : yabai -m window --warp west || (yabai -m window --display west && yabai -m display --focus west)
+shift + cmd - l : yabai -m window --warp east || (yabai -m window --display east && yabai -m display --focus east)
+shift + cmd - k : yabai -m window --warp north || (yabai -m window --display north && yabai -m display --focus north)
+shift + cmd - j : yabai -m window --warp south || (yabai -m window --display south && yabai -m display --focus south)
 
 # swap managed window
 # shift + alt - h : yabai -m window --swap north
