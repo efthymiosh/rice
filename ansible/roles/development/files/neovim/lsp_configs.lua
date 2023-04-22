@@ -126,7 +126,12 @@ cmp.setup({
         return item
       end,
     })
-  }
+  },
+  snippet = {
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body)
+    end,
+  },
 })
 
 -- treesitter
