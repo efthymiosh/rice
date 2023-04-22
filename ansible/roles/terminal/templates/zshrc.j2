@@ -36,5 +36,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 {%- endif %}
 
+export EDITOR=nvim
+export VISUAL=nvim
+
 complete -C /usr/local/bin/nomad nomad
 complete -C /usr/local/bin/consul consul
