@@ -30,7 +30,7 @@ font:
     style: Light
   size: {{ alacritty_font_size }}
   offset:
-    x: 0
+    x: {% if system == "darwin" %}0{% else %}-1{% endif +%}
     y: 0
   glyph_offset:
     x: 0
