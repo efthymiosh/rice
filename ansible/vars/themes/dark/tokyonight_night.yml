@@ -19,5 +19,5 @@ theme:
     magenta: 'bb9af7'
     cyan:    '7dcfff'
     white:   'c0caf5'
-  accent: 'ad5e24'
-  accent_text: '1a1b26'
+  accent: '7dcfff'
+  accent_text: '090b16'
