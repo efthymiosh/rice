@@ -6,10 +6,26 @@
     - "golang"
     - "python"
     - "julia"
-    - "node"
+    - "nvm"
     - "neovim"
     - "groovy"
     state: "present"
+
+- name: create nvm directory
+  become: false
+  file:
+    path: "{{ home_folder }}/.nvm"
+    state: "directory"
+
+- name: load nvm on shell spawn
+  become: false
+  lineinfile:
+    path: "{{ home_folder }}/.env"
+    create: true
+    regexp: "export NVM_DIR"
+    line: |
+      export NVM_DIR=~/.nvm
+      source $(brew --prefix nvm)/nvm.sh
 
 - name: install rustup-init package
   become: "{{ package_manager_become }}"
