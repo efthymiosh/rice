@@ -102,13 +102,9 @@ cmp.setup({
   }),
   mapping = cmp.config.mapping({
     ['<C-Space>'] = cmp.mapping.complete(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
     ["<C-n>"] = cmp.mapping.select_next_item(select_opts),
     ["<C-p>"] = cmp.mapping.select_prev_item(select_opts),
   }),
-  completion = {
-    autocomplete = false,
-  },
   formatting = {
     fields = {'kind', 'abbr', 'menu'},
     format = require('lspkind').cmp_format({
