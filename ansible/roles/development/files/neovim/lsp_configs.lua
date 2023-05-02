@@ -89,6 +89,7 @@ cmp.setup({
   sources = cmp.config.sources({
     {name = 'path'},
     {name = 'nvim_lsp'},
+    {name = 'nvim_lua'},
     {
       name = 'buffer',
       keyword_length = 3,
@@ -106,7 +107,7 @@ cmp.setup({
     ["<C-p>"] = cmp.mapping.select_prev_item(select_opts),
   }),
   completion = {
-    autocomplete = true,
+    autocomplete = false,
   },
   formatting = {
     fields = {'kind', 'abbr', 'menu'},
