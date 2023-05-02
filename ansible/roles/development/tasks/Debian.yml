@@ -27,15 +27,22 @@
 
 - include_tasks: helix.yml
 
-- name: fetch neovim deb
-  get_url:
-    url: "https://github.com/neovim/neovim/releases/download/v{{ neovim_version }}/nvim-linux64.deb"
-    dest: "/tmp/nvim.deb"
-    owner: root
-    group: "{{ root_group }}"
-    mode: 0644
+- name: install neovim bob package manager
+  include_role:
+    name: packages/binpackages
+  vars:
+    binpackages_items:
+    - name: bob
+      version: "{{ neovim_bob_version }}"
+      fetch_url: "https://github.com/MordechaiHadad/bob/releases/download/v{{ neovim_bob_version }}/bob-linux-x86_64.zip"
 
-- name: install neovim deb
-  apt:
-    deb: /tmp/nvim.deb
+- name: install neovim via bob
+  shell: >
+    bob install {{ neovim_version }} && bob use {{ neovim_version }}
 
+- name: link nvim to path
+  become: true
+  file:
+    path: "/usr/bin/nvim"
+    src: "{{ home_folder }}/.local/share/bob/nvim-bin/nvim"
+    state: "link"
