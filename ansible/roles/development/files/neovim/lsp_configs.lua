@@ -102,6 +102,7 @@ cmp.setup({
   }),
   mapping = cmp.config.mapping({
     ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
     ["<C-n>"] = cmp.mapping.select_next_item(select_opts),
     ["<C-p>"] = cmp.mapping.select_prev_item(select_opts),
   }),
