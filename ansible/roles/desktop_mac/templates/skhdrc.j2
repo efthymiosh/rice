@@ -139,10 +139,11 @@ cmd - return : open -na /Applications/Alacritty.app --args -e zsh -c 'tmux attac
 
 # toggle window zoom
 # alt - d : yabai -m window --toggle zoom-parent
-# alt - f : yabai -m window --toggle zoom-fullscreen
+cmd - f : yabai -m window --toggle zoom-fullscreen
 
 # toggle window split type
 # alt - e : yabai -m window --toggle split
 
 # toggle sticky(+float), topmost, picture-in-picture
 # alt - p : yabai -m window --toggle sticky --toggle topmost --toggle pip
+cmd - s : yabai -m window --toggle float
