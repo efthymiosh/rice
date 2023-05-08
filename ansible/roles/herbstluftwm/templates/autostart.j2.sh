@@ -44,11 +44,9 @@ herbstclient keybind $Mod-Return spawn alacritty -e {{ default_shell }} -c 'tmux
 {% endif %}
 herbstclient keybind $Mod-Alt-l spawn i3lock-fancy
 
-herbstclient keybind $Mod-d   spawn rofi -show run
-herbstclient keybind $Mod-a   spawn rofi -show drun
-herbstclient keybind $Mod-w   spawn rofi -show window
-herbstclient keybind $Mod-Tab spawn rofi -show window -kb-row-tab Super+Tab -kb-accept-entry '!Super+Tab'
-herbstclient keybind XF86Search spawn rofi -show drun
+herbstclient keybind XF86Search spawn rofi -modi combi -show combi
+herbstclient keybind $Mod-d     spawn rofi -modi combi -show combi
+herbstclient keybind $Mod-Tab   spawn rofi -modi window -show window -kb-row-down 'Super+Tab' -kb-accept-entry '!Super+Tab'
 
 herbstclient keybind Print spawn scrot 
 
