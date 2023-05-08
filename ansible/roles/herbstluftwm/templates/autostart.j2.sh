@@ -47,7 +47,7 @@ herbstclient keybind $Mod-Alt-l spawn i3lock-fancy
 herbstclient keybind $Mod-d   spawn rofi -show run
 herbstclient keybind $Mod-a   spawn rofi -show drun
 herbstclient keybind $Mod-w   spawn rofi -show window
-herbstclient keybind $Mod-Tab spawn rofi -show window -kb-row-tab Super+Tab
+herbstclient keybind $Mod-Tab spawn rofi -show window -kb-row-tab Super+Tab -kb-accept-entry '!Super+Tab'
 herbstclient keybind XF86Search spawn rofi -show drun
 
 herbstclient keybind Print spawn scrot 
