@@ -92,7 +92,10 @@ shift + cmd - j : yabai -m window --warp south || (yabai -m window --display sou
 # shift + alt - h : yabai -m window --swap north
 
 # balance size of windows
-shift + cmd - space : yabai -m space --balance
+cmd - space : yabai -m space --balance
+
+# toggle window split type
+shift + cmd - space : yabai -m window --toggle split
 
 # close window
 shift + cmd - c : yabai -m window --close
@@ -140,9 +143,6 @@ cmd - return : open -na /Applications/Alacritty.app --args -e zsh -c 'tmux attac
 # toggle window zoom
 # alt - d : yabai -m window --toggle zoom-parent
 cmd - f : yabai -m window --toggle zoom-fullscreen
-
-# toggle window split type
-# alt - e : yabai -m window --toggle split
 
 # toggle sticky(+float), topmost, picture-in-picture
 # alt - p : yabai -m window --toggle sticky --toggle topmost --toggle pip
