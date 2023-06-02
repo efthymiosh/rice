@@ -5,29 +5,6 @@
     path: "{{ fonts_dir }}"
     state: directory
 
-- name: install fira code package
-  package:
-    name: "fonts-firacode"
-    state: present
-  ignore_errors: true
-  register: firacode_package_present
-
-- name: fetch fira-code fonts
-  when: firacode_package_present.failed
-  become: false
-  get_url:
-    url: "https://github.com/tonsky/FiraCode/blob/master/distr/ttf/FiraCode-{{ item }}.ttf?raw=true"
-    dest: "{{ fonts_dir }}/FiraCode-{{ item }}.ttf"
-    force: true
-  with_items:
-  - Light
-  - Medium
-  - Regular
-  - Retina
-  - Bold
-  notify:
-  - refresh font cache
-
 - name: fetch nerd fonts
   become: false
   get_url:
