@@ -58,7 +58,6 @@ require("gitsigns").setup({
     }
 })
 
-require("incline").setup()
 require("symbols-outline").setup()
 
 vim.g.linefly_options = {

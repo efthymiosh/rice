@@ -30,9 +30,6 @@ require("lazy").setup({
         }
     },
     {
-        'b0o/incline.nvim'
-    },
-    {
         'mfussenegger/nvim-dap',
     },
     { -- Symbols Outline: LSP-powered symbols bar
