@@ -22,7 +22,7 @@ accent-text = #{{ theme.accent_text }}
 monitor = ${env:MONITOR}
 enable-ipc = true
 override-redirect = false
-height = 24
+height = 32
 offset-y = 8
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -38,8 +38,8 @@ padding-left = 2
 padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
-font-0 = {{ global_font }}:size=11;0
-font-1 = Noto Emoji:scale=10;0
+font-0 = {{ global_font }}:size=13;0
+font-1 = Noto Emoji:scale=9;0
 
 [bar/leftie]
 inherit = bar/base
