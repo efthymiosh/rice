@@ -38,7 +38,7 @@ padding-left = 2
 padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
-font-0 = {{ global_font }}:size=13;0
+font-0 = {{ global_font }}:size=15;0
 font-1 = Noto Emoji:scale=9;0
 
 [bar/leftie]
@@ -54,8 +54,8 @@ modules-right = xwindow
 [bar/rightie]
 inherit = bar/base
 
-width = 1088
-offset-x = "98%:-1088"
+width = 33%
+offset-x = 65%
 fixed-center = true
 
 modules-left = memory cpu {% for iface in ether_ifaces %}{{ iface.device }} {% endfor %}
