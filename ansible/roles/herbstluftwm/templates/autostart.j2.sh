@@ -36,11 +36,7 @@ herbstclient keyunbind --all
 herbstclient keybind $Mod-Shift-q quit
 herbstclient keybind $Mod-Shift-r reload
 herbstclient keybind $Mod-Shift-c close
-{% if default_multiplexer_screen %}
-herbstclient keybind $Mod-Return spawn alacritty -e {{ default_shell }} -c 'screen -r || screen'
-{% else %}
 herbstclient keybind $Mod-Return spawn alacritty -e {{ default_shell }} -c 'tmux attach || tmux'
-{% endif %}
 herbstclient keybind $Mod-Alt-l spawn i3lock-fancy
 
 herbstclient keybind XF86Search spawn rofi -modi combi -show combi
