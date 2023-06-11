@@ -2,7 +2,7 @@
   package:
     name: [
       "herbstluftwm", "dzen2", "nitrogen",
-      "sxiv", "picom", "scrot", "maim",
+      "sxiv", "picom", "maim",
       "xsel", "pavucontrol", "i3lock-fancy",
       "autorandr", "brightnessctl"
     ]
