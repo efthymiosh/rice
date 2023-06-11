@@ -16,7 +16,6 @@ function kill_wait {
 kill_wait polybar picom
 
 herbstclient emit_hook reload
-autorandr --change
 
 nitrogen --restore &
 picom --experimental-backends &

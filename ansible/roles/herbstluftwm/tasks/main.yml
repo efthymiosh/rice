@@ -36,4 +36,18 @@
   tags:
   - theme
 
+- name: ensure autorandr hook dir is present
+  become: false
+  file:
+    path: "{{ home_folder }}/.config/autorandr/postswitch.d"
+    state: "directory"
+    mode: 0750
+
+- name: install autorandr hook
+  become: false
+  template:
+    src: "autorandr_notify.j2.sh"
+    dest: "{{ home_folder }}/.config/autorandr/postswitch.d/notify.sh"
+    mode: 0750
+
 - import_tasks: notifications.yml
