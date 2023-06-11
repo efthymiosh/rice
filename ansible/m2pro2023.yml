@@ -9,7 +9,7 @@
   vars:
     provision_hostname: "pattiha"
     global_font: "FiraCode Nerd Font"
-    alacritty_font_size: 16
+    alacritty_font_size: 17
 
   roles:
   - role: packages
