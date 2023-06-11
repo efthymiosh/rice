@@ -16,6 +16,7 @@
     - "hashicorp/tap/consul"
     - "hashicorp/tap/nomad"
     - "glab"
+    - "gh"
     - "consul-template"
     - "hugo"
     - "levant"
