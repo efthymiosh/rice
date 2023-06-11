@@ -125,7 +125,7 @@ format-padding = 0
 [module/xwindow_short]
 type = internal/xwindow
 label = %title: %
-label-maxlen = 50
+label-maxlen = 22
 format-underline = ${colors.accent}
 format-foreground = ${colors.foreground}
 format-padding = 0
