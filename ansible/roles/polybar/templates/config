@@ -81,7 +81,7 @@ offset-x = 2%
 [module/ewmh]
 type = internal/xworkspaces
 
-pin-workspaces = true
+pin-workspaces = false
 
 enable-click = false
 enable-scroll = false
@@ -93,12 +93,12 @@ label-monitor = %name%
 label-active = "%name%"
 label-active-foreground = ${colors.foreground}
 label-active-background = ${colors.background}
-label-active-underline = ${colors.yellow}
+label-active-underline = ${colors.accent}
 
 label-occupied = "%name%"
 label-occupied-foreground = ${colors.foreground}
 label-occupied-background = ${colors.background}
-label-occupied-underline = ${colors.blue}
+label-occupied-underline = ${colors.foreground}
 
 label-urgent = "%name%"
 label-urgent-foreground = ${colors.background}

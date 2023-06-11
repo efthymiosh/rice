@@ -14,6 +14,7 @@ function kill_wait {
 }
 
 kill_wait polybar picom
+autorandr --change --default vertical
 
 herbstclient emit_hook reload
 
@@ -93,7 +94,7 @@ herbstclient set_layout max
 herbstclient set default_frame_layout 2
 
 # tags
-tag_names=( '➕' '➖' '✖' '➗' )
+tag_names=( '💻' '💼' '📷' '👥' )
 tag_keys=( {1..4} 0 )
 
 herbstclient rename default "${tag_names[0]}" || true
