@@ -31,6 +31,9 @@ require("neo-tree").setup({
     },
     filesystem = {
         use_libuv_file_watcher = true,
+        filtered_items = {
+          hide_gitignored = false,
+        }
     },
     window = {
         position = "left",
