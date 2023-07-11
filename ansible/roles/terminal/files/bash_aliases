@@ -19,6 +19,10 @@ function git-clean {
     git branch --merged | grep -ve '*' -e '^[ ]*master$' -e '^[ ]main*' | xargs git branch -d
 }
 
-function ssl-read-cert {
-    openssl s_client -showcerts -connect ${1}:${2:-443} | less
+function ssl-show-remote-cert {
+    openssl s_client -showcerts -connect ${1}:${2:-443}
+}
+
+function ssl-show-local-cert {
+    openssl x509 -noout -text -in "$1"
 }
