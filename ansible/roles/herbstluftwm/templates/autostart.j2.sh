@@ -23,7 +23,7 @@ picom --experimental-backends &
 
 ( # X config
 setxkbmap us
-xset r rate 350 33
+xset r rate 250 35
 xset s off
 xset -dpms
 setxkbmap us,el -option "" -option grp:alt_space_toggle
