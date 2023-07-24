@@ -1,7 +1,3 @@
-- name: restart sketchybar
-  become: false
-  shell: "/opt/homebrew/bin/brew services restart sketchybar"
-
 - name: restart skhd
   become: false
   shell: "/opt/homebrew/bin/brew services restart skhd"

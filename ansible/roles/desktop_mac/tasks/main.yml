@@ -12,7 +12,6 @@
     name:
     - "koekeishiya/formulae/yabai"
     - "koekeishiya/formulae/skhd"
-    - "FelixKratz/formulae/sketchybar"
   notify: restart skhd
 
 - name: install casks
@@ -27,34 +26,7 @@
     path: "{{ home_folder }}/.config/{{ item }}"
     state: "directory"
   loop:
-  - sketchybar
-  - sketchybar/plugins
   - karabiner
-
-- name: template sketchybar
-  become: false
-  template:
-    src: "sketchybar/{{ item }}.j2"
-    dest: "{{ home_folder }}/.config/sketchybar/{{ item }}"
-  loop:
-  - sketchybarrc
-  notify: restart sketchybar
-
-- name: configure sketchybar files
-  become: false
-  copy:
-    remote_src: false
-    src: "sketchybar/{{ item }}"
-    dest: "{{ home_folder }}/.config/sketchybar/{{ item }}"
-    mode: 0700
-  loop:
-  - plugins/battery.sh
-  - plugins/clock.sh
-  - plugins/front_app.sh
-  - plugins/space.sh
-  - plugins/volume.sh
-  - plugins/wifi.sh
-  notify: restart sketchybar
 
 - name: set karabiner remappings
   become: false
