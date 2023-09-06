@@ -68,6 +68,7 @@ vim.g.linefly_options = {
   progress_symbol = "↓",
   active_tab_symbol = "▪",
   git_branch_symbol = "",
+  ellipsis_symbol = '…',
   error_symbol = signs.Error,
   warning_symbol = signs.Warn,
   information_symbol = signs.Info,
