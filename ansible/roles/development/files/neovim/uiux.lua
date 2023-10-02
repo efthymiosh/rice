@@ -1,4 +1,4 @@
-local signs = { Error = "✘", Warn = "❢", Hint = "", Info = "ℹ" }
+local signs = { Error = "✘", Warn = "", Hint = "󰌶", Info = "" }
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
@@ -17,7 +17,7 @@ require("neo-tree").setup({
             use_git_status_colors = false,
         },
         icon = {
-            folder_empty = "🗀"
+            folder_empty = ""
         },
         git_status = {
             symbols = {
@@ -61,7 +61,38 @@ require("gitsigns").setup({
     }
 })
 
-require("symbols-outline").setup()
+require("symbols-outline").setup({
+  symbols = {
+    File = { icon = "", hl = "@text.uri" },
+    Module = { icon = "󰆧", hl = "@namespace" },
+    Namespace = { icon = "󰅪", hl = "@namespace" },
+    Package = { icon = "󰏗", hl = "@namespace" },
+    Class = { icon = "𝓒", hl = "@type" },
+    Method = { icon = "ƒ", hl = "@method" },
+    Property = { icon = "", hl = "@method" },
+    Field = { icon = "󰆨", hl = "@field" },
+    Constructor = { icon = "", hl = "@constructor" },
+    Enum = { icon = "ℰ", hl = "@type" },
+    Interface = { icon = "󰜰", hl = "@type" },
+    Function = { icon = "", hl = "@function" },
+    Variable = { icon = "", hl = "@constant" },
+    Constant = { icon = "", hl = "@constant" },
+    String = { icon = "𝓐", hl = "@string" },
+    Number = { icon = "#", hl = "@number" },
+    Boolean = { icon = "⊨", hl = "@boolean" },
+    Array = { icon = "󰅪", hl = "@constant" },
+    Object = { icon = "⦿", hl = "@type" },
+    Key = { icon = "", hl = "@type" },
+    Null = { icon = "NULL", hl = "@type" },
+    Event = { icon = "", hl = "@type" },
+    Operator = { icon = "+", hl = "@operator" },
+    Operator = { icon = "+", hl = "@operator" },
+    TypeParameter = { icon = "𝙏", hl = "@parameter" },
+    TypeParameter = { icon = "𝙏", hl = "@parameter" },
+    Component = { icon = "󰅴", hl = "@function" },
+    Fragment = { icon = "󰅴", hl = "@constant" },
+  },
+})
 
 vim.g.linefly_options = {
   separator_symbol = "",
