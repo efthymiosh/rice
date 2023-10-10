@@ -3,7 +3,7 @@
   become: true
 
   vars_files:
-  - "vars/themes/dark/tokyonight_night.yml"
+  - "vars/themes/dark/tokyonight_midnight.yml"
   - "vars/common.yml"
 
   vars:
