@@ -1,6 +1,6 @@
 theme:
   background: '1c1c1c'
-  foreground: 'c0caf5'
+  foreground: 'd0daf5'
   normal:
     black:   '212121'
     red:     'f7768e'
@@ -9,7 +9,7 @@ theme:
     blue:    '7aa2f7'
     magenta: 'bb9af7'
     cyan:    '7dcfff'
-    white:   'a9b1d6'
+    white:   'b9c1d6'
   bright:
     black:   '313131'
     red:     'f7768e'
@@ -18,6 +18,6 @@ theme:
     blue:    '7aa2f7'
     magenta: 'bb9af7'
     cyan:    '7dcfff'
-    white:   'c0caf5'
+    white:   'd0dae5'
   accent: '5f8957'
   accent_text: '090b16'
