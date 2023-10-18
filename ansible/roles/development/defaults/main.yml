@@ -3,7 +3,6 @@ home_folder: "/home/{{ ansible_env.SUDO_USER }}"
 force_install_rust_analyzer: false
 gradle_version: "7.2"
 groovy_version: "3.0.9"
-terraform_ls_version: "0.23.0"
 git_delta_version: "0.12.1"
 nodejs_keyring_file_path: "/usr/share/keyrings/nodejs-keyring.gpg"
 helix_version: "22.08.1"

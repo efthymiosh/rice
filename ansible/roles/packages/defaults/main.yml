@@ -69,7 +69,7 @@ binpackages_items:
   executable_name: logcli-linux-amd64
 - name: tfsec
   version: "{{ tfsec_version }}"
-  fetch_url: "https://github.com/aquasecurity/tfsec/releases/download/v{{ tfsec_version }}/tfsec_1.28.1_linux_amd64.tar.gz"
+  fetch_url: "https://github.com/aquasecurity/tfsec/releases/download/v{{ tfsec_version }}/tfsec_{{ tfsec_version }}_linux_amd64.tar.gz"
 - name: kubectl
   version: "{{ kubectl_version }}"
   fetch_url: "https://dl.k8s.io/release/v{{ kubectl_version }}/bin/linux/amd64/kubectl"
