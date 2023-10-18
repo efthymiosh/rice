@@ -153,8 +153,8 @@ herbstclient attr theme.normal.color $color_bg
 herbstclient attr theme.urgent.color $color_urgent
 herbstclient attr theme.inner_width 1
 herbstclient attr theme.inner_color $color_bg
-herbstclient attr theme.border_width 4
-herbstclient attr theme.floating.border_width 4
+herbstclient attr theme.border_width 0
+herbstclient attr theme.floating.border_width 0
 herbstclient attr theme.floating.outer_width 1
 herbstclient attr theme.floating.outer_color $color_bg
 herbstclient attr theme.active.inner_color $color_bg
