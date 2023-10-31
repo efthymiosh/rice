@@ -34,7 +34,10 @@ set smartcase
 if has("autocmd")
     " Support Format-Flowed when composing mail.
     autocmd FileType mail setlocal fo+=aw tw=100
+    " Markdown configuration
     autocmd FileType markdown setlocal tw=100
+    " Golang configuration
+    autocmd FileType go setlocal shiftwidth=4 noexpandtab
     " When done autocompleting, close any preview windows
     autocmd CompleteDone * pclose
     " some ansible/jinja2 template overrides

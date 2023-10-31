@@ -86,8 +86,6 @@ require("symbols-outline").setup({
     Null = { icon = "NULL", hl = "@type" },
     Event = { icon = "", hl = "@type" },
     Operator = { icon = "+", hl = "@operator" },
-    Operator = { icon = "+", hl = "@operator" },
-    TypeParameter = { icon = "𝙏", hl = "@parameter" },
     TypeParameter = { icon = "𝙏", hl = "@parameter" },
     Component = { icon = "󰅴", hl = "@function" },
     Fragment = { icon = "󰅴", hl = "@constant" },
