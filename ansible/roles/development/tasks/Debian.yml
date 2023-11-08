@@ -1,4 +1,11 @@
 ---
+- name: add required apt repositories
+  apt_repository:
+    repo: "{{ item }}"
+    state: present
+  loop:
+  - "ppa:longsleep/golang-backports"
+
 - name: install lang packages
   package:
     name:
