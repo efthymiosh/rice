@@ -44,8 +44,8 @@ herbstclient keybind XF86Search spawn rofi -modi combi -show combi
 herbstclient keybind $Mod-d     spawn rofi -modi combi -show combi
 herbstclient keybind $Mod-Tab   spawn rofi -modi window -show window -kb-row-down 'Super+Tab' -kb-accept-entry '!Super+Tab'
 
-herbstclient keybind Print spawn bash -c 'maim -s | tee ~/screen-$(date +%Y%b%d.%H:%M:%S).png | xclip -t image/png -selection clipboard -i'
-herbstclient keybind $Mod-p spawn bash -c 'maim -s | xclip -t image/png -selection clipboard -i'
+herbstclient keybind $Mod-Print spawn bash -c 'maim -s | tee ~/screen-$(date +%Y%b%d.%H:%M:%S).png | xclip -t image/png -selection clipboard -i'
+herbstclient keybind Print spawn bash -c 'maim -s | xclip -t image/png -selection clipboard -i'
 
 herbstclient keybind XF86AudioRaiseVolume spawn amixer -D pulse sset Master 5%+
 herbstclient keybind XF86AudioLowerVolume spawn amixer -D pulse sset Master 5%-
