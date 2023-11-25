@@ -10,7 +10,6 @@ zellij_version: "0.23.0"
 hugo_version: "0.92.1"
 levant_version: "0.3.1"
 octosql_version: "0.9.4"
-dagger_version: "0.2.35"
 logcli_version: "2.6.1"
 tfsec_version: "1.28.1"
 kubectl_version: "1.26.0"
@@ -60,9 +59,6 @@ binpackages_items:
 - name: octosql
   version: "{{ octosql_version }}"
   fetch_url: "https://github.com/cube2222/octosql/releases/download/v{{ octosql_version }}/octosql_{{ octosql_version }}_linux_amd64.tar.gz"
-- name: dagger
-  version: "{{ dagger_version }}"
-  fetch_url: "https://github.com/dagger/dagger/releases/download/v{{ dagger_version }}/dagger_v{{ dagger_version }}_linux_amd64.tar.gz"
 - name: logcli
   version: "{{ logcli_version }}"
   fetch_url: "https://github.com/grafana/loki/releases/download/v{{ logcli_version }}/logcli-linux-amd64.zip"
