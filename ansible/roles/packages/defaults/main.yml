@@ -17,6 +17,7 @@ promql_cli_version: "0.3.0"
 onepassword_cli_version: "2.14.0"
 bitwarden_app_version: "2023.3.1"
 bitwarden_cli_version: "2023.3.0"
+cfssl_version: "1.6.4"
 
 binpackages_items:
 - name: bw
@@ -77,3 +78,11 @@ binpackages_items:
   version: "{{ onepassword_cli_version }}"
   fetch_url: "https://cache.agilebits.com/dist/1P/op2/pkg/v{{ onepassword_cli_version }}/op_linux_amd64_v{{ onepassword_cli_version }}.zip"
   executable_name: op
+- name: cfssl
+  version: "{{ cfssl_version }}"
+  fetch_url: "https://github.com/cloudflare/cfssl/releases/download/v{{ cfssl_version }}/cfssl_{{ cfssl_version }}_linux_amd64"
+  archive: false
+- name: cfssljson
+  version: "{{ cfssl_version }}"
+  fetch_url: "https://github.com/cloudflare/cfssl/releases/download/v{{ cfssl_version }}/cfssljson_{{ cfssl_version }}_linux_amd64"
+  archive: false
