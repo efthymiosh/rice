@@ -5,6 +5,7 @@ fluvio_version: "0.9.9"
 glab_version: "1.25.3"
 consul_version: "1.10.4"
 nomad_version: "1.2.2"
+nomad_version: "1.15.2"
 consul_template_version: "0.27.2"
 zellij_version: "0.23.0"
 hugo_version: "0.92.1"
@@ -45,6 +46,9 @@ binpackages_items:
 - name: nomad
   version: "{{ nomad_version }}"
   fetch_url: "https://releases.hashicorp.com/nomad/{{ nomad_version }}/nomad_{{ nomad_version }}_linux_amd64.zip"
+- name: vault
+  version: "{{ vault_version }}"
+  fetch_url: "https://releases.hashicorp.com/vault/{{ vault_version }}/vault_{{ vault_version }}_linux_amd64.zip"
 - name: consul-template
   version: "{{ consul_template_version }}"
   fetch_url: "https://releases.hashicorp.com/consul-template/{{ consul_template_version }}/consul-template_{{ consul_template_version }}_linux_amd64.zip"
