@@ -27,7 +27,7 @@ set laststatus=3 " global status line
 
 highlight Normal       cterm=NONE ctermfg=NONE ctermbg=NONE
 highlight Search       cterm=NONE ctermfg=8    ctermbg=7
-highlight MatchParen   cterm=NONE ctermfg=NONE ctermbg=4
+highlight MatchParen   cterm=NONE ctermfg=NONE ctermbg=8
 highlight Pmenu                   ctermfg=NONE ctermbg=8
 
 " Ruler
