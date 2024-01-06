@@ -55,8 +55,8 @@ herbstclient keybind $Mod-equal spawn amixer -D pulse sset Master 5%+
 herbstclient keybind $Mod-minus spawn amixer -D pulse sset Master 5%-
 
 # Brightness
-herbstclient keybind XF86MonBrightnessUp spawn brightnessctl s +5%
-herbstclient keybind XF86MonBrightnessDown spawn brightnessctl s 5%-
+herbstclient keybind XF86MonBrightnessUp spawn brightnessctl -e s +5%
+herbstclient keybind XF86MonBrightnessDown spawn brightnessctl -e s 5%-
 
 # basic movement
 # focusing clients
