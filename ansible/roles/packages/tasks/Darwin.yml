@@ -22,7 +22,7 @@
     - "levant"
     - "octosql"
     - "logcli"
-    - "tfsec"
+    - "trivy"
     - "kubectl"
     - "tree"
     - "jq"
