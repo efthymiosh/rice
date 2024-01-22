@@ -12,3 +12,10 @@
     src: "alacritty.j2.yml"
     dest: "{{ home_folder }}/.config/alacritty/alacritty.yml"
   tags: theme
+
+- name: "template alacritty configuration (>= 0.13)"
+  become: false
+  template:
+    src: "alacritty.j2.toml"
+    dest: "{{ home_folder }}/.config/alacritty/alacritty.toml"
+  tags: theme
