@@ -15,7 +15,6 @@ require("mason-lspconfig").setup({
     "cssls",
     "dockerls",
     "gopls",
-    "gradle_ls",
     "jdtls",
     "jsonls",
     "tsserver",
