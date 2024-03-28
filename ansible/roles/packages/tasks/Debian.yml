@@ -28,7 +28,6 @@
     state: present
   loop:
   - "com.slack.Slack"
-  - "us.zoom.Zoom"
   - "com.spotify.Client"
 
 - name: Fetch bitwarden desktop
