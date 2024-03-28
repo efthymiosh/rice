@@ -5,7 +5,11 @@ SAVEHIST=10000
 #source ~/.ssh-agent.zsh
 setopt autocd beep nomatch share_history
 unsetopt extendedglob notify
+
+# vi mode
 bindkey -v
+export KEYTIMEOUT=1 # reduce lag when entering normal mode from 0.4 seconds to 0.1 seconds
+
 bindkey "^R" history-incremental-pattern-search-backward
 
 zstyle :compinstall filename '/home/ehadjimichael/.zshrc'
@@ -41,3 +45,5 @@ export VISUAL=nvim
 
 complete -C /usr/local/bin/nomad nomad
 complete -C /usr/local/bin/consul consul
+
+# vi:ft=sh
