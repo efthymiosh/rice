@@ -61,6 +61,18 @@ hi link NeoTreeGitIgnored DiffText
 hi link NeoTreeGitModified DiffChange
 hi link NeoTreeGitUntracked DiffChange
 
+" Markdown
+hi link @markup.heading Title
+hi link @markup.link Title
+hi link @markup.link.url @string.special
+hi link @markup.list Delimiter
+hi @markup.strong cterm=bold ctermfg=NONE ctermbg=NONE
+hi link @comment.error Todo
+hi link @comment.note Todo
+hi link @comment.todo Todo
+hi link @comment.warning Todo
+hi link @type.qualifier Statement
+
 " Highlight
 hi Function   cterm=NONE ctermfg=3 ctermbg=NONE
 hi Identifier cterm=NONE ctermfg=1 ctermbg=NONE
