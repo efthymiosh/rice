@@ -41,6 +41,7 @@
     binpackages_items:
     - name: bob
       version: "{{ neovim_bob_version }}"
+      subpath: "bob-linux-x86_64"
       fetch_url: "https://github.com/MordechaiHadad/bob/releases/download/v{{ neovim_bob_version }}/bob-linux-x86_64.zip"
 
 - name: install neovim via bob
