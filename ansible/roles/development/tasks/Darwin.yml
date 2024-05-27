@@ -5,7 +5,6 @@
     name:
     - "golang"
     - "python"
-    - "julia"
     - "nvm"
     - "neovim"
     - "groovy"
