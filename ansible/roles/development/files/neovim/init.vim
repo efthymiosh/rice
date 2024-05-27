@@ -1,4 +1,5 @@
 set guicursor=n-v-c-i:block
+set notermguicolors
 syntax on
 
 lua require('plugins')
