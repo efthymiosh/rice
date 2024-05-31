@@ -12,9 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { -- Terminal colors plugin
-        'jeffkreeftmeijer/vim-dim',
-    },
     { -- Neotree: tree-style file explorer
         'nvim-neo-tree/neo-tree.nvim',
         dependencies = {
@@ -105,9 +102,6 @@ require("lazy").setup({
         }
     },
 })
-
--- Set colorscheme before anything else
-vim.cmd [[colorscheme dim]]
 
 require("nvim-web-devicons").setup({
     default = true,
