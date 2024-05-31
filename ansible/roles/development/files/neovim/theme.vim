@@ -83,10 +83,6 @@ hi Visual         ctermfg=NONE ctermbg=NONE cterm=inverse
 " hi search matches in black, with a yellow background
 hi Search         ctermfg=0    ctermbg=11
 
-" Dim line numbers, comments, color columns, the status line, splits and sign
-" columns.
-hi LineNr       ctermfg=8
-hi CursorLineNr ctermfg=7
 hi Comment      ctermfg=8
 hi ColorColumn  ctermfg=7    ctermbg=8
 hi Folded       ctermfg=7    ctermbg=8
@@ -95,6 +91,7 @@ hi Pmenu        ctermfg=NONE ctermbg=8
 hi PmenuSel     ctermfg=8    ctermbg=15   cterm=NONE
 hi PmenuThumb   ctermfg=8    ctermbg=8    cterm=NONE
 hi PmenuSbar    ctermbg=7
+hi NormalFloat  ctermbg=8
 hi SpellCap     ctermfg=7    ctermbg=8
 hi StatusLine   ctermfg=15   ctermbg=8    cterm=NONE
 hi StatusLineNC ctermfg=7    ctermbg=8    cterm=NONE
