@@ -85,35 +85,21 @@ hi Search         ctermfg=0    ctermbg=11
 
 " Dim line numbers, comments, color columns, the status line, splits and sign
 " columns.
-if &background == "light"
-  hi LineNr       ctermfg=7
-  hi CursorLineNr ctermfg=8
-  hi Comment      ctermfg=7
-  hi ColorColumn  ctermfg=8    ctermbg=7
-  hi Folded       ctermfg=8    ctermbg=7
-  hi FoldColumn   ctermfg=8    ctermbg=7
-  hi Pmenu        ctermfg=0    ctermbg=7
-  hi PmenuSel     ctermfg=7    ctermbg=0
-  hi SpellCap     ctermfg=8    ctermbg=7
-  hi StatusLine   ctermfg=0    ctermbg=7    cterm=bold
-  hi StatusLineNC ctermfg=8    ctermbg=7    cterm=NONE
-  hi VertSplit    ctermfg=8    ctermbg=7    cterm=NONE
-  hi SignColumn                ctermbg=7
-else
-  hi LineNr       ctermfg=8
-  hi CursorLineNr ctermfg=7
-  hi Comment      ctermfg=8
-  hi ColorColumn  ctermfg=7    ctermbg=8
-  hi Folded       ctermfg=7    ctermbg=8
-  hi FoldColumn   ctermfg=7    ctermbg=8
-  hi Pmenu        ctermfg=15   ctermbg=8
-  hi PmenuSel     ctermfg=8    ctermbg=15
-  hi SpellCap     ctermfg=7    ctermbg=8
-  hi StatusLine   ctermfg=15   ctermbg=8    cterm=bold
-  hi StatusLineNC ctermfg=7    ctermbg=8    cterm=NONE
-  hi VertSplit    ctermfg=7    ctermbg=8    cterm=NONE
-  hi SignColumn                ctermbg=8
-endif
+hi LineNr       ctermfg=8
+hi CursorLineNr ctermfg=7
+hi Comment      ctermfg=8
+hi ColorColumn  ctermfg=7    ctermbg=8
+hi Folded       ctermfg=7    ctermbg=8
+hi FoldColumn   ctermfg=7    ctermbg=8
+hi Pmenu        ctermfg=NONE ctermbg=8
+hi PmenuSel     ctermfg=8    ctermbg=15   cterm=NONE
+hi PmenuThumb   ctermfg=8    ctermbg=8    cterm=NONE
+hi PmenuSbar    ctermbg=7
+hi SpellCap     ctermfg=7    ctermbg=8
+hi StatusLine   ctermfg=15   ctermbg=8    cterm=NONE
+hi StatusLineNC ctermfg=7    ctermbg=8    cterm=NONE
+hi VertSplit    ctermfg=7    ctermbg=8    cterm=NONE
+hi SignColumn                ctermbg=8
 
 hi link DimFzfFg     Normal
 hi link DimFzfBg     Normal
@@ -140,7 +126,6 @@ let g:fzf_colors = { 'fg':      ['fg', 'DimFzfFg'],
 hi Normal       cterm=NONE ctermfg=NONE ctermbg=NONE
 hi Search       cterm=NONE ctermfg=8    ctermbg=7
 hi MatchParen   cterm=NONE ctermfg=NONE ctermbg=8
-hi Pmenu                   ctermfg=NONE ctermbg=8
 
 " Ruler
 hi LineNr       cterm=NONE ctermfg=7    ctermbg=NONE

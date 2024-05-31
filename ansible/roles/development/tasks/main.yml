@@ -17,4 +17,4 @@
   shell: |
     {{ home_folder }}/.cargo/bin/rustup component add rust-src
 
-- include_tasks: neovim.yml
+- import_tasks: neovim.yml
