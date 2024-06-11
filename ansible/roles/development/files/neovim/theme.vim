@@ -95,7 +95,6 @@ hi NormalFloat  ctermbg=0
 hi SpellCap     ctermfg=7    ctermbg=8
 hi StatusLine   ctermfg=15   ctermbg=8    cterm=NONE
 hi StatusLineNC ctermfg=7    ctermbg=8    cterm=NONE
-hi VertSplit    ctermfg=7    ctermbg=8    cterm=NONE
 hi SignColumn                ctermbg=8
 
 hi link DimFzfFg     Normal
@@ -127,6 +126,7 @@ hi MatchParen   cterm=NONE ctermfg=NONE ctermbg=8
 " Ruler
 hi LineNr       cterm=NONE ctermfg=7    ctermbg=NONE
 hi VertSplit    cterm=NONE ctermfg=7    ctermbg=NONE
+hi WinSeparator cterm=NONE ctermfg=8    ctermbg=NONE
 
 " Selected Line
 hi CursorLine   cterm=NONE              ctermbg=NONE
@@ -147,7 +147,8 @@ hi link TelescopePromptNormal CursorLine
 hi link TelescopePromptPrefix Type
 
 " Neotree
-hi NeoTreeIndentMarker cterm=NONE ctermfg=8 ctermbg=NONE
+hi NeoTreeIndentMarker cterm=NONE ctermfg=0 ctermbg=NONE
+hi NeoTreeCursorLine cterm=NONE ctermbg=0
 hi link NeoTreeGitAdded DiffAdd
 hi link NeoTreeGitConflict DiffDelete
 hi link NeoTreeGitDeleted DiffDelete
