@@ -124,7 +124,7 @@ hi Search       cterm=NONE ctermfg=8    ctermbg=7
 hi MatchParen   cterm=NONE ctermfg=NONE ctermbg=8
 
 " Ruler
-hi LineNr       cterm=NONE ctermfg=7    ctermbg=NONE
+hi LineNr       cterm=bold ctermfg=8    ctermbg=NONE
 hi VertSplit    cterm=NONE ctermfg=7    ctermbg=NONE
 hi WinSeparator cterm=NONE ctermfg=8    ctermbg=NONE
 
@@ -140,8 +140,8 @@ hi DiffDelete   cterm=NONE ctermfg=1    ctermbg=NONE
 hi DiffText     cterm=NONE ctermfg=NONE ctermbg=NONE
 
 " Telescope
-hi link TelescopeBorder LineNr
-hi link TelescopeNormal LineNr
+hi link TelescopeBorder VertSplit
+hi link TelescopeNormal VertSplit
 hi link TelescopeMatching Constant
 hi link TelescopePromptNormal CursorLine
 hi link TelescopePromptPrefix Type
