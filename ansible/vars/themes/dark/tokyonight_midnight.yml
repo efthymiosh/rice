@@ -2,7 +2,7 @@ theme:
   background: '1c1c1c'
   foreground: 'd0daf5'
   normal:
-    black:   '252525'
+    black:   '313131'
     red:     'f7768e'
     green:   '9ece6a'
     yellow:  'e0af68'

@@ -56,6 +56,7 @@ hi TabLine        cterm=underline ctermfg=0 ctermbg=7
 hi TabLineSel     cterm=bold
 hi TabLineFill    cterm=reverse
 hi CursorColumn   ctermbg=7
+hi CursorLine     cterm=underline
 hi MatchParen     ctermbg=14
 hi Constant       ctermfg=1
 hi Special        ctermfg=5
@@ -123,13 +124,13 @@ hi Search       cterm=NONE ctermfg=8    ctermbg=7
 hi MatchParen   cterm=NONE ctermfg=NONE ctermbg=8
 
 " Ruler
-hi LineNr       cterm=bold ctermfg=8    ctermbg=NONE
-hi WinSeparator cterm=NONE ctermfg=8    ctermbg=NONE
+hi LineNr       cterm=NONE ctermfg=7    ctermbg=NONE
 hi VertSplit    cterm=NONE ctermfg=7    ctermbg=NONE
+hi WinSeparator cterm=NONE ctermfg=8    ctermbg=NONE
 
 " Selected Line
-hi CursorLine   cterm=NONE ctermbg=0
-hi CursorLineNr cterm=NONE ctermfg=7    ctermbg=0
+hi CursorLine   cterm=NONE              ctermbg=NONE
+hi CursorLineNr cterm=bold ctermfg=7    ctermbg=NONE
 
 " Sign Column
 hi SignColumn   cterm=NONE ctermfg=NONE ctermbg=NONE
@@ -140,10 +141,9 @@ hi DiffText     cterm=NONE ctermfg=NONE ctermbg=NONE
 
 " Telescope
 hi link TelescopeBorder LineNr
-hi TelescopeNormal cterm=NONE ctermfg=7
-hi TelescopePromptNormal cterm=NONE ctermfg=7
-hi link TelescopeSelection CursorLine
+hi link TelescopeNormal LineNr
 hi link TelescopeMatching Constant
+hi link TelescopePromptNormal CursorLine
 hi link TelescopePromptPrefix Type
 
 " Neotree
