@@ -24,7 +24,7 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Trouble settings
-nnoremap <c-j> <cmd>TroubleToggle<CR>
+nnoremap <c-j> <cmd>Trouble diagnostics toggle focus=false win.position=bottom<CR>
 
 " Theme configuration
 
