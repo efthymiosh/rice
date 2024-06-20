@@ -7,7 +7,7 @@
   register: polybar_package_present
 
 - name: fallback to source-install
-  include: fromsource.yml
+  import_tasks: fromsource.yml
   when:
   - polybar_package_present.failed
 

@@ -8,7 +8,7 @@
 
   vars:
     provision_hostname: "tile"
-    x_cursor_theme: "Bibata-Modern-Cyber"
+    x_cursor_theme: "Bibata-Modern-Catpuccin-Mocha"
     global_font: "Fira Code Nerd Font"
     alacritty_font_size: 10
 
