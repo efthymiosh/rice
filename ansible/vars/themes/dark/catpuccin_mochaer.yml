@@ -3,7 +3,7 @@ theme:
   background: '181825'
   normal:
     black: "1e1e2e"
-    red: "f38ba8"
+    red: "eba0ac"
     green: "a6e3a1"
     yellow: "f9e2af"
     blue: "89b4fa"
@@ -12,7 +12,7 @@ theme:
     white: "bac2de"
   bright:
     black: "484b60"
-    red: "eba0ac"
+    red: "f38ba8"
     green: "a6e3a1"
     yellow: "fab387"
     blue: "89dceb"
