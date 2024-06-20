@@ -3,8 +3,8 @@
   become: true
 
   vars_files:
-  - "vars/themes/dark/tokyonight_midnight.yml"
-  - "vars/common.yml"
+  - "./vars/themes/dark/catpuccin_mochaer.yml"
+  - "./vars/common.yml"
 
   vars:
     provision_hostname: "tile"
