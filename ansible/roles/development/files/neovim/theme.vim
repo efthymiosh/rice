@@ -91,7 +91,7 @@ hi Pmenu        ctermfg=8    ctermbg=7
 hi PmenuSel     ctermfg=0    ctermbg=7    cterm=NONE
 hi PmenuThumb   ctermfg=0    ctermbg=0    cterm=NONE
 hi PmenuSbar    ctermbg=8
-hi NormalFloat  ctermbg=0
+hi NormalFloat  ctermbg=8
 hi SpellCap     ctermfg=7    ctermbg=8
 hi StatusLine   ctermfg=15   ctermbg=8    cterm=NONE
 hi StatusLineNC ctermfg=7    ctermbg=8    cterm=NONE
