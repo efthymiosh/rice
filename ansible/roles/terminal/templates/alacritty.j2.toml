@@ -65,7 +65,7 @@ style = "Regular"
 
 [font.offset]
 x = {% if system == "darwin" %}0{% else %}-1{% endif +%}
-y = 0
+y = {% if system == "darwin" %}0{% else %}-2{% endif +%}
 
 [[hints.enabled]]
 command = "{% if system != 'darwin' %}xdg-{% endif %}open"
