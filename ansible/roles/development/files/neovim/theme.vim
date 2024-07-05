@@ -38,7 +38,7 @@ hi SpecialKey     ctermfg=4
 hi TermCursor     cterm=reverse
 hi NonText        ctermfg=12
 hi Directory      ctermfg=4
-hi ErrorMsg       ctermfg=15 ctermbg=1
+hi ErrorMsg       ctermfg=0 ctermbg=9
 hi IncSearch      cterm=reverse
 hi MoreMsg        ctermfg=2
 hi ModeMsg        cterm=bold
