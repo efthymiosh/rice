@@ -8,7 +8,7 @@ consul_template_version: "0.27.2"
 zellij_version: "0.23.0"
 hugo_version: "0.92.1"
 levant_version: "0.3.1"
-octosql_version: "0.9.4"
+duckdb_version: "1.0.0"
 logcli_version: "2.6.1"
 kubectl_version: "1.26.0"
 promql_cli_version: "0.3.0"
@@ -55,9 +55,9 @@ binpackages_items:
 - name: levant
   version: "{{ levant_version }}"
   fetch_url: "https://releases.hashicorp.com/levant/{{ levant_version }}/levant_{{ levant_version }}_linux_amd64.zip"
-- name: octosql
-  version: "{{ octosql_version }}"
-  fetch_url: "https://github.com/cube2222/octosql/releases/download/v{{ octosql_version }}/octosql_{{ octosql_version }}_linux_amd64.tar.gz"
+- name: duckdb
+  version: "{{ duckdb_version }}"
+  fetch_url: "https://github.com/duckdb/duckdb/releases/download/v{{ duckdb_version }}/duckdb_cli-linux-amd64.zip"
 - name: logcli
   version: "{{ logcli_version }}"
   fetch_url: "https://github.com/grafana/loki/releases/download/v{{ logcli_version }}/logcli-linux-amd64.zip"

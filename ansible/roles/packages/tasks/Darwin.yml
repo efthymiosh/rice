@@ -15,7 +15,7 @@
     - "glab"
     - "gh"
     - "hugo"
-    - "octosql"
+    - "duckdb"
     - "logcli"
     - "trivy"
     - "kubectl"
