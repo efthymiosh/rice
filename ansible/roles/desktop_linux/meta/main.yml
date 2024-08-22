@@ -3,10 +3,12 @@ dependencies:
   tags: cursors
 - role: fonts
   tags: fonts
-- role: herbstluftwm
-  tags: herbstluftwm
+- role: picom
+  tags: picom
 - role: polybar
   tags: polybar
+- role: herbstluftwm
+  tags: herbstluftwm
 - role: rofi
   tags: rofi
 - role: xdefaults

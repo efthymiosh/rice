@@ -1,0 +1,49 @@
+---
+- name: Verify current picom version installed
+  become: true
+  file:
+    path: "{{ picom_install_dir }}/bin/picom"
+    state: "file"
+    owner: root
+    group: "{{ root_group }}"
+    mode: 0755
+  ignore_errors: true
+  register: picom_verify_installation
+
+- name: install picom from source
+  when: picom_verify_installation.failed
+  block:
+  - name: fetch picom release
+    unarchive:
+      src: "https://github.com/yshui/picom/archive/refs/tags/v{{ picom_fromsource_version }}.tar.gz"
+      dest: "{{ picom_temp_dir }}"
+      remote_src: yes
+
+  - name: install picom build dependencies
+    package:
+      name: "{{ picom_dep_packages }}"
+      state: present
+
+  - name: build and install picom
+    become: true
+    shell: >
+      cd {{ picom_temp_dir }}/picom-{{ picom_fromsource_version }} &&
+      meson setup --buildtype=release build &&
+      meson configure -Dprefix={{ picom_install_dir }} build &&
+      ninja -C build install
+
+  - name: link picom
+    file:
+      path: "/usr/local/bin/picom"
+      state: "link"
+      src: "{{ picom_install_dir }}/bin/picom"
+
+  - name: remove picom sources
+    file:
+      path: "{{ picom_temp_dir }}/picom-{{ picom_fromsource_version }}"
+      state: "absent"
+
+  - name: remove picom build dependencies
+    package:
+      name: "{{ picom_dep_packages }}"
+      state: absent
