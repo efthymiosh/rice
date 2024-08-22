@@ -19,7 +19,7 @@ autorandr --change --default vertical
 herbstclient emit_hook reload
 
 nitrogen --restore &
-picom --experimental-backends &
+picom &
 
 ( # X config
 setxkbmap us
