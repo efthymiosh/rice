@@ -33,8 +33,10 @@ set ignorecase
 set smartcase
 
 " Set a shorthand for base64-decoding/encoding selected text
-:vnoremap <leader>64e y:let @"=system('base64', @")<cr>gvP
-:vnoremap <leader>64d y:let @"=system('base64 --decode', @")<cr>gvP
+:vnoremap <leader>b64e y:let @"=system('base64', @")<cr>gvP
+:vnoremap <leader>b64d y:let @"=system('base64 --decode', @")<cr>gvP
+:nnoremap <leader>b64e yy:let @"=system('base64 -w0', @")<cr>Vpk
+:nnoremap <leader>b64d yy:let @"=system('base64 -d', @")<cr>Vpk
 
 if has("autocmd")
     " Support Format-Flowed when composing mail.
