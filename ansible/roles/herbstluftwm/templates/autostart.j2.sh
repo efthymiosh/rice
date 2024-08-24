@@ -37,12 +37,12 @@ herbstclient keyunbind --all
 herbstclient keybind $Mod-Shift-q quit
 herbstclient keybind $Mod-Shift-r reload
 herbstclient keybind $Mod-Shift-c close
-herbstclient keybind $Mod-Return spawn alacritty -e {{ default_shell }} -c 'tmux attach || tmux'
+herbstclient keybind $Mod-Return spawn alacritty -e {{ default_shell }} -c '[ "$(tmux list-sessions  | grep -v attached | wc -l)" -ne "0" ] && tmux attach-session || tmux new-session -t0'
 herbstclient keybind $Mod-Alt-l spawn i3lock-fancy
 
 herbstclient keybind XF86Search spawn rofi -modi combi -show combi
 herbstclient keybind $Mod-d     spawn rofi -modi combi -show combi
-herbstclient keybind $Mod-Tab   spawn rofi -modi window -show window -kb-row-down 'Super+Tab' -kb-accept-entry '!Super+Tab'
+herbstclient keybind $Mod-Tab   spawn rofi -modi window -show window -kb-row-down 'Super-Tab' -kb-accept-entry '!Super+Tab,Return'
 
 herbstclient keybind $Mod-Print spawn bash -c 'maim -s | tee ~/screen-$(date +%Y%b%d.%H:%M:%S).png | xclip -t image/png -selection clipboard -i'
 herbstclient keybind Print spawn bash -c 'maim -s | xclip -t image/png -selection clipboard -i'
@@ -78,6 +78,7 @@ herbstclient keybind $Mod-Shift-u split   bottom  0.66
 herbstclient keybind $Mod-o       split   right   0.5
 herbstclient keybind $Mod-Shift-o split   right   0.67
 herbstclient keybind $Mod-Shift-i split   right   0.33
+herbstclient keybind $Mod-r remove
 
 # let the current frame explode into subframes
 herbstclient keybind $Mod-space split explode
@@ -112,13 +113,12 @@ herbstclient keybind $Mod-period use_index +1 --skip-visible
 herbstclient keybind $Mod-comma  use_index -1 --skip-visible
 
 # layouting
-herbstclient keybind $Mod-r remove
+herbstclient keybind $Mod-f fullscreen toggle
+herbstclient keybind $Mod-s set_attr clients.focus.floating toggle
+herbstclient keybind $Mod-m set_attr clients.focus.minimized true
 herbstclient keybind $Mod-Shift-space cycle_layout 1
 herbstclient keybind $Mod-Shift-s floating toggle
-herbstclient keybind $Mod-f fullscreen toggle
 herbstclient keybind $Mod-Shift-p pseudotile toggle
-herbstclient keybind $Mod-s set_attr clients.focus.floating toggle
-herbstclient keybind $Mod-Shift-m set_attr clients.focus.minimized true
 
 # mouse
 herbstclient mouseunbind --all
@@ -127,9 +127,7 @@ herbstclient mousebind $Mod-Button2 zoom
 herbstclient mousebind $Mod-Button3 resize
 
 # focus
-herbstclient keybind $Mod-BackSpace   cycle_monitor
 herbstclient keybind $Mod-c           cycle
-herbstclient keybind $Mod-i jumpto urgent
 
 # theme
 herbstclient attr theme.tiling.reset 1
@@ -165,19 +163,18 @@ herbstclient attr theme.background_color $color_bg
 herbstclient unrule -F
 herbstclient rule focus=on # normally focus new clients
 herbstclient rule floatplacement=center
+herbstclient rule class~'zoom.*' floating=on
+herbstclient rule class~'gcr-prompter' pseudotile=on
 herbstclient rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on
 herbstclient rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 herbstclient rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
-herbstclient rule class~'zoom.*' floating=on
 
 # unlock, just to be sure
 herbstclient unlock
 
 herbstclient set tree_style '╾│ ├└╼─┐'
 
-# do multi monitor setup here, e.g.:
-# herbstclient set_monitors 1280x1024+0+0 1280x1024+1280+0
-# or simply:
+# multi monitor setup
 herbstclient detect_monitors
 
 # find the panel
