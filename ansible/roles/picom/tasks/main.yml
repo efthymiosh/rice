@@ -24,6 +24,11 @@
       name: "{{ picom_dep_packages }}"
       state: present
 
+  - name: install picom run dependencies
+    package:
+      name: "{{ picom_rundep_packages }}"
+      state: present
+
   - name: build and install picom
     become: true
     shell: >

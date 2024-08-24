@@ -3,6 +3,9 @@ picom_temp_dir: "/tmp"
 
 picom_install_dir: "/opt/picom-{{ picom_fromsource_version }}"
 
+picom_rundep_packages:
+- "libxcb-damage0"
+
 picom_dep_packages:
 - "meson"
 - "cmake"
