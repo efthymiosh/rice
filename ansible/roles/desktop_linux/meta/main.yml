@@ -11,5 +11,5 @@ dependencies:
   tags: herbstluftwm
 - role: rofi
   tags: rofi
-- role: xdefaults
-  tags: xdefaults
+- role: xorg
+  tags: xorg

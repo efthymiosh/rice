@@ -21,14 +21,6 @@ herbstclient emit_hook reload
 nitrogen --restore &
 picom &
 
-( # X config
-setxkbmap us
-xset r rate 250 35
-xset s off
-xset -dpms
-setxkbmap us,el -option "" -option grp:alt_space_toggle
-) &
-
 
 # keybinds
 Mod=Mod4 # super key
