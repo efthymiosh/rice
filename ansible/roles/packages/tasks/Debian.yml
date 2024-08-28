@@ -1,7 +1,7 @@
 - name: install apt packages
   package:
     name: [
-      "build-essential", "chromium-browser", "dunst", "zathura",
+      "build-essential", "dunst", "zathura",
       "tree", "curl", "pavucontrol", "gimp", "jq",
       "ripgrep", "lm-sensors", "htop", "perf-tools-unstable",
       "python3-openstackclient", "neofetch"
