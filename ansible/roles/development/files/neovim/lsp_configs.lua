@@ -72,7 +72,9 @@ lspconfig.pyright.setup({
   settings = {
     python = {
       analysis = {
-        typeCheckingMode = "off"
+        -- ["off", "basic", "standard", "strict"]
+        typeCheckingMode = "standard"
+
       }
     }
   }
