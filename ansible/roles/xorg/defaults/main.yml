@@ -1,7 +1,7 @@
 x_cursor_theme: "Bibata_Sky"
 x_cursor_size: "32"
 x_keyboard_repeat_delay_ms: 250
-x_keyboard_repeat_interval_ms: 35
+x_keyboard_repeat_interval_ms: 28
 
 theme:
   background: '202020'
