@@ -17,7 +17,7 @@ require("mason-lspconfig").setup({
     "gopls",
     "jdtls",
     "jsonls",
-    "tsserver",
+    "ts_ls",
     "julials",
     "kotlin_language_server",
     "lua_ls",
