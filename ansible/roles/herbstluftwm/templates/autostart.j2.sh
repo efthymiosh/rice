@@ -30,7 +30,7 @@ herbstclient keybind $Mod-Shift-q quit
 herbstclient keybind $Mod-Shift-r reload
 herbstclient keybind $Mod-Shift-c close
 herbstclient keybind $Mod-Return spawn alacritty -e {{ default_shell }} -c '[ "$(tmux list-sessions  | grep -v attached | wc -l)" -ne "0" ] && tmux attach-session || tmux new-session -t0'
-herbstclient keybind $Mod-Alt-l spawn i3lock-fancy
+herbstclient keybind $Mod-Alt-l spawn i3lock-fancy -f FiraMono-Nerd-Font-Mono-Regular
 
 herbstclient keybind XF86Search spawn rofi -modi combi -show combi
 herbstclient keybind $Mod-d     spawn rofi -modi combi -show combi
