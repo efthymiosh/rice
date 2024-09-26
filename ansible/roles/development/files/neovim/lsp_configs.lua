@@ -23,7 +23,8 @@ require("mason-lspconfig").setup({
     "lua_ls",
     "marksman",
     "rnix",
-    "pyright",
+    "basedpyright",
+    "ruff_lsp",
     "rust_analyzer",
     "taplo",
     "terraformls",
@@ -68,16 +69,22 @@ lspconfig.lua_ls.setup({
     }
   }
 })
-lspconfig.pyright.setup({
+lspconfig.basedpyright.setup({
   settings = {
-    python = {
+    basedpyright = {
       analysis = {
-        -- ["off", "basic", "standard", "strict"]
+        -- ["off", "basic", "standard", "strict", "all"]
         typeCheckingMode = "standard"
-
       }
     }
   }
+})
+local ruff_on_attach = function(client, bufnr)
+    -- Disable hover in favor of basedpyright
+    client.server_capabilities.hoverProvider = false
+end
+lspconfig.ruff_lsp.setup({
+  on_attach = ruff_on_attach,
 })
 
 lsp.setup()
