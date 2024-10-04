@@ -71,11 +71,15 @@ lspconfig.lua_ls.setup({
 })
 lspconfig.basedpyright.setup({
   settings = {
+    -- some of these defaults are completely replaced by any project-level configuration
     basedpyright = {
       analysis = {
         -- ["off", "basic", "standard", "strict", "all"]
-        typeCheckingMode = "standard"
+        typeCheckingMode = "standard",
       }
+    },
+    python = {
+      pythonPath = ".venv/bin/python"
     }
   }
 })
