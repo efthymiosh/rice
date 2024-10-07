@@ -11,6 +11,7 @@ levant_version: "0.3.1"
 duckdb_version: "1.0.0"
 logcli_version: "2.6.1"
 kubectl_version: "1.26.0"
+talosctl_version: "1.8.0"
 promql_cli_version: "0.3.0"
 onepassword_cli_version: "2.14.0"
 bitwarden_app_version: "2023.3.1"
@@ -65,6 +66,10 @@ binpackages_items:
 - name: kubectl
   version: "{{ kubectl_version }}"
   fetch_url: "https://dl.k8s.io/release/v{{ kubectl_version }}/bin/linux/amd64/kubectl"
+  archive: false
+- name: talosctl
+  version: "{{ talosctl_version }}"
+  fetch_url: "https://github.com/siderolabs/talos/releases/download/v{{ talosctl_version }}/talosctl-linux-amd64"
   archive: false
 - name: promql
   version: "{{ promql_cli_version }}"
