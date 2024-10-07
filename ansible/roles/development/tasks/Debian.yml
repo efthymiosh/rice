@@ -15,6 +15,16 @@
     - "julia"
     state: "present"
 
+- name: install uv python package manager
+  include_role:
+    name: packages/binpackages
+  vars:
+    binpackages_items:
+    - name: uv
+      version: "{{ python_uv_version }}"
+      fetch_url: "https://github.com/astral-sh/uv/releases/download/{{ python_uv_version }}/uv-x86_64-unknown-linux-gnu.tar.gz"
+      subpath: "uv-x86_64-unknown-linux-gnu"
+
 - name: fetch rustup-init
   become: true
   get_url:

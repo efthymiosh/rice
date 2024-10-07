@@ -4,6 +4,7 @@ force_install_rust_analyzer: false
 gradle_version: "7.2"
 groovy_version: "3.0.9"
 git_delta_version: "0.12.1"
+python_uv_version: "0.4.18"
 nodejs_keyring_file_path: "/usr/share/keyrings/nodejs-keyring.gpg"
 helix_version: "22.08.1"
 neovim_version: "0.9.0"

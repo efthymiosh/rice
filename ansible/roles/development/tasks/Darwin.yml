@@ -9,6 +9,7 @@
     - "neovim"
     - "groovy"
     - "pipx"
+    - "uv"
     state: "present"
 
 - name: create nvm directory
