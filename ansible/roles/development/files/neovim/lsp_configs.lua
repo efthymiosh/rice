@@ -24,7 +24,7 @@ require("mason-lspconfig").setup({
     "marksman",
     "rnix",
     "basedpyright",
-    "ruff_lsp",
+    "ruff",
     "rust_analyzer",
     "taplo",
     "terraformls",
@@ -39,7 +39,7 @@ local lsp = require('lsp-zero').preset({
 })
 
 lsp.on_attach(function(client, bufnr)
-  local opts = {buffer = bufnr}
+  local opts = { buffer = bufnr }
   lsp.default_keymaps(opts)
   vim.keymap.set('n', '<leader>ac', vim.lsp.buf.code_action, opts)
   vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
@@ -64,7 +64,7 @@ lspconfig.lua_ls.setup({
   settings = {
     Lua = {
       diagnostics = {
-        globals = {'vim'}
+        globals = { 'vim' }
       }
     }
   }
@@ -76,7 +76,8 @@ lspconfig.basedpyright.setup({
       analysis = {
         -- ["off", "basic", "standard", "strict", "all"]
         typeCheckingMode = "standard",
-      }
+      },
+      disableOrganizeImports = true,
     },
     python = {
       pythonPath = ".venv/bin/python"
@@ -84,11 +85,18 @@ lspconfig.basedpyright.setup({
   }
 })
 local ruff_on_attach = function(client, bufnr)
-    -- Disable hover in favor of basedpyright
-    client.server_capabilities.hoverProvider = false
+  -- Disable hover in favor of basedpyright
+  client.server_capabilities.hoverProvider = false
 end
-lspconfig.ruff_lsp.setup({
+lspconfig.ruff.setup({
   on_attach = ruff_on_attach,
+  init_options = {
+    settings = {
+      configurationPreference = "filesystemFirst",
+
+      lineLength = 120,
+    }
+  }
 })
 
 lsp.setup()
@@ -101,9 +109,9 @@ cmp.setup({
     --  documentation = cmp.config.window.bordered(),
   },
   sources = cmp.config.sources({
-    {name = 'path'},
-    {name = 'nvim_lsp'},
-    {name = 'nvim_lua'},
+    { name = 'path' },
+    { name = 'nvim_lsp' },
+    { name = 'nvim_lua' },
     {
       name = 'buffer',
       keyword_length = 3,
@@ -121,7 +129,7 @@ cmp.setup({
     ["<C-p>"] = cmp.mapping.select_prev_item(select_opts),
   }),
   formatting = {
-    fields = {'kind', 'abbr', 'menu'},
+    fields = { 'kind', 'abbr', 'menu' },
     format = require('lspkind').cmp_format({
 
       mode = 'symbol', -- show only symbol annotations
@@ -191,4 +199,4 @@ require("trouble").setup({
 })
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
-vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { underline = false })
+    vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { underline = false })

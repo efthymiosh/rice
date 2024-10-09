@@ -182,6 +182,13 @@ hi @field     cterm=NONE ctermfg=NONE ctermbg=NONE
 hi @variable  cterm=NONE ctermfg=NONE ctermbg=NONE
 hi @property  cterm=NONE ctermfg=NONE ctermbg=NONE
 
+" DiagnosticsOverride
+hi DiagnosticUnderlineError  cterm=NONE
+hi DiagnosticUnderlineWarn  cterm=NONE
+hi DiagnosticUnderlineInfo  cterm=NONE
+hi DiagnosticUnderlineHint  cterm=NONE
+hi DiagnosticUnderlineOk  cterm=NONE
+
 hi IlluminatedWordText  cterm=NONE ctermfg=NONE ctermbg=8
 hi IlluminatedWordRead  cterm=NONE ctermfg=NONE ctermbg=8
 hi IlluminatedWordWrite cterm=NONE ctermfg=NONE ctermbg=8
