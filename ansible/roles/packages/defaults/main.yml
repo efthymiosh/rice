@@ -17,6 +17,7 @@ onepassword_cli_version: "2.14.0"
 bitwarden_app_version: "2023.3.1"
 bitwarden_cli_version: "2023.3.0"
 cfssl_version: "1.6.4"
+grype_version: "0.82.0"
 
 binpackages_items:
 - name: bw
@@ -86,3 +87,6 @@ binpackages_items:
   version: "{{ cfssl_version }}"
   fetch_url: "https://github.com/cloudflare/cfssl/releases/download/v{{ cfssl_version }}/cfssljson_{{ cfssl_version }}_linux_amd64"
   archive: false
+- name: grype
+  version: "{{ grype_version }}"
+  fetch_url: "https://github.com/anchore/grype/releases/download/v{{ grype_version }}/grype_{{ grype_version }}_linux_amd64.tar.gz"
