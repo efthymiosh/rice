@@ -1,20 +1,10 @@
 {
-    "global": {
-        "ask_for_confirmation_before_quitting": true,
-        "check_for_updates_on_startup": true,
-        "show_in_menu_bar": true,
-        "show_profile_name_in_menu_bar": false,
-        "unsafe_ui": false
-    },
     "profiles": [
         {
             "complex_modifications": {
                 "parameters": {
-                    "basic.simultaneous_threshold_milliseconds": 50,
                     "basic.to_delayed_action_delay_milliseconds": 300,
-                    "basic.to_if_alone_timeout_milliseconds": 1000,
-                    "basic.to_if_held_down_threshold_milliseconds": 300,
-                    "mouse_motion_to_scroll.speed": 100
+                    "basic.to_if_held_down_threshold_milliseconds": 300
                 },
                 "rules": [
                     {
@@ -35,29 +25,21 @@
                                             "^com\\.citrix\\.XenAppViewer$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "insert",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "c",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -87,29 +69,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "insert",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "c",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -134,29 +108,21 @@
                                             "^com\\.citrix\\.XenAppViewer$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "insert",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "shift"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["shift"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "v",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -186,29 +152,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "insert",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "shift"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["shift"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "v",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -238,26 +196,18 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "home",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
+                                    "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -287,29 +237,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "home",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "up_arrow",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -339,30 +281,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "home",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "shift"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["shift"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "command",
-                                            "shift"
-                                        ]
+                                        "modifiers": ["command", "shift"]
                                     }
                                 ],
                                 "type": "basic"
@@ -392,31 +325,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "home",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control",
-                                            "shift"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control", "shift"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "up_arrow",
-                                        "modifiers": [
-                                            "command",
-                                            "shift"
-                                        ]
+                                        "modifiers": ["command", "shift"]
                                     }
                                 ],
                                 "type": "basic"
@@ -446,26 +369,18 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "end",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
+                                    "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -495,29 +410,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "end",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "down_arrow",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -547,30 +454,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "end",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "shift"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["shift"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "command",
-                                            "shift"
-                                        ]
+                                        "modifiers": ["command", "shift"]
                                     }
                                 ],
                                 "type": "basic"
@@ -600,31 +498,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "end",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control",
-                                            "shift"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control", "shift"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "down_arrow",
-                                        "modifiers": [
-                                            "command",
-                                            "shift"
-                                        ]
+                                        "modifiers": ["command", "shift"]
                                     }
                                 ],
                                 "type": "basic"
@@ -654,29 +542,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "left_arrow",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "option"
-                                        ]
+                                        "modifiers": ["option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -706,31 +586,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "left_arrow",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control",
-                                            "shift"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control", "shift"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "option",
-                                            "shift"
-                                        ]
+                                        "modifiers": ["option", "shift"]
                                     }
                                 ],
                                 "type": "basic"
@@ -760,29 +630,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "right_arrow",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "option"
-                                        ]
+                                        "modifiers": ["option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -812,31 +674,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "right_arrow",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control",
-                                            "shift"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control", "shift"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "option",
-                                            "shift"
-                                        ]
+                                        "modifiers": ["option", "shift"]
                                     }
                                 ],
                                 "type": "basic"
@@ -866,29 +718,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "delete_or_backspace",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "delete_or_backspace",
-                                        "modifiers": [
-                                            "option"
-                                        ]
+                                        "modifiers": ["option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -918,29 +762,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "delete_forward",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "delete_forward",
-                                        "modifiers": [
-                                            "option"
-                                        ]
+                                        "modifiers": ["option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -970,29 +806,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "a",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "a",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1022,29 +850,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "b",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "b",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1074,29 +894,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "c",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "left_control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["left_control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "c",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1122,21 +934,14 @@
                                 "from": {
                                     "key_code": "c",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control",
-                                            "shift"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control", "shift"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "c",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1166,29 +971,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "f",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "f",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1218,29 +1015,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "i",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "i",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1270,29 +1059,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "n",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "n",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1322,29 +1103,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "o",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "o",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1374,29 +1147,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "p",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "p",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1426,29 +1191,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "r",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "r",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1478,29 +1235,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "s",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "s",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1530,29 +1279,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "t",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "t",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1582,29 +1323,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "u",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "u",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1634,29 +1367,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "v",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "v",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1682,21 +1407,14 @@
                                 "from": {
                                     "key_code": "v",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control",
-                                            "shift"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control", "shift"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "v",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1726,29 +1444,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "w",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "w",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1778,29 +1488,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "x",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "x",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1830,29 +1532,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "y",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "y",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1882,29 +1576,21 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "z",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "z",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1929,29 +1615,21 @@
                                             "^com\\.citrix\\.XenAppViewer$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
-                                        "file_paths": [
-                                            "Chrome Remote Desktop\\.app"
-                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "slash",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "slash",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1960,224 +1638,11 @@
                     }
                 ]
             },
-            "devices": [
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 0,
-                        "vendor_id": 0
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": true,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": false,
-                        "is_pointing_device": true,
-                        "product_id": 0,
-                        "vendor_id": 0
-                    },
-                    "ignore": true,
-                    "manipulate_caps_lock_led": false,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": true,
-                        "product_id": 45091,
-                        "vendor_id": 1133
-                    },
-                    "ignore": true,
-                    "manipulate_caps_lock_led": true,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 6460,
-                        "vendor_id": 2821
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": true,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": false,
-                        "is_pointing_device": true,
-                        "product_id": 6460,
-                        "vendor_id": 2821
-                    },
-                    "ignore": true,
-                    "manipulate_caps_lock_led": false,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 1031,
-                        "vendor_id": 4176
-                    },
-                    "ignore": true,
-                    "manipulate_caps_lock_led": true,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                }
-            ],
-            "fn_function_keys": [
-                {
-                    "from": {
-                        "key_code": "f1"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "display_brightness_decrement"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f2"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "display_brightness_increment"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f3"
-                    },
-                    "to": [
-                        {
-                            "apple_vendor_keyboard_key_code": "mission_control"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f4"
-                    },
-                    "to": [
-                        {
-                            "apple_vendor_keyboard_key_code": "spotlight"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f5"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "dictation"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f6"
-                    },
-                    "to": [
-                        {
-                            "key_code": "f6"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f7"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "rewind"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f8"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "play_or_pause"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f9"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "fast_forward"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f10"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "mute"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f11"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "volume_decrement"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f12"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "volume_increment"
-                        }
-                    ]
-                }
-            ],
             "name": "Default profile",
-            "parameters": {
-                "delay_milliseconds_before_open_device": 1000
-            },
             "selected": true,
-            "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "country_code": 0,
-                "indicate_sticky_modifier_keys_state": true,
-                "mouse_key_xy_scale": 100
+                "keyboard_type_v2": "ansi"
             }
         }
     ]
