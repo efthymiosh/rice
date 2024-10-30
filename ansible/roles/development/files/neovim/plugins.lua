@@ -101,6 +101,14 @@ require("lazy").setup({
             'nvim-tree/nvim-web-devicons',
         }
     },
+    {
+        'j-hui/fidget.nvim',
+        opts = {
+            notification = {
+                override_vim_notify = true,
+            }
+        },
+    },
 })
 
 require("nvim-web-devicons").setup({
