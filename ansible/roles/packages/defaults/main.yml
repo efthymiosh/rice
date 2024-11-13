@@ -18,6 +18,7 @@ bitwarden_app_version: "2023.3.1"
 bitwarden_cli_version: "2023.3.0"
 cfssl_version: "1.6.4"
 grype_version: "0.82.0"
+kubelogin_version: "1.31.0"
 
 binpackages_items:
 - name: bw
@@ -72,6 +73,9 @@ binpackages_items:
   version: "{{ talosctl_version }}"
   fetch_url: "https://github.com/siderolabs/talos/releases/download/v{{ talosctl_version }}/talosctl-linux-amd64"
   archive: false
+- name: kubelogin
+  version: "{{ kubelogin_version }}"
+  fetch_url: "https://github.com/int128/kubelogin/releases/download/v{{ kubelogin_version }}/kubelogin_linux_amd64.zip"
 - name: promql
   version: "{{ promql_cli_version }}"
   fetch_url: "https://github.com/nalbury/promql-cli/releases/download/v{{ promql_cli_version }}/promql-v{{ promql_cli_version }}-linux-amd64.tar.gz"
