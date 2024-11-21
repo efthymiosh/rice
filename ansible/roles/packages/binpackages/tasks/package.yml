@@ -80,6 +80,6 @@
 - name: Link versioned executable to active
   become: true
   file:
-    path: "/usr/local/bin/{{ item.name }}"
+    path: "/usr/local/bin/{{ item.link_name | default(item.name) }}"
     src: "/opt/{{ item.name }}/{{ item.name }}-{{ item.version }}"
     state: "link"

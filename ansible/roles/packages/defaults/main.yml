@@ -76,6 +76,7 @@ binpackages_items:
 - name: kubelogin
   version: "{{ kubelogin_version }}"
   fetch_url: "https://github.com/int128/kubelogin/releases/download/v{{ kubelogin_version }}/kubelogin_linux_amd64.zip"
+  link_name: kubectl-oidc_login
 - name: promql
   version: "{{ promql_cli_version }}"
   fetch_url: "https://github.com/nalbury/promql-cli/releases/download/v{{ promql_cli_version }}/promql-v{{ promql_cli_version }}-linux-amd64.tar.gz"
