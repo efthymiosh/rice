@@ -78,20 +78,6 @@ require("lazy").setup({
             'onsails/lspkind.nvim',
         },
     },
-    { -- CodeGPT: Code-oriented ChatGPT (req api key set as OPENAI_API_KEY)
-        'dpayne/CodeGPT.nvim',
-        dependencies = {
-            'nvim-lua/plenary.nvim',
-            'MunifTanjim/nui.nvim',
-        },
-        config = function()
-          require("codegpt.config")
-          for _, key in ipairs({'tests', 'completions', 'code_edit', 'doc', 'opt'}) do
-            vim.g["codegpt_commands"] = {}
-            vim.g["codegpt_commands"][key] = { model = "gpt-3.5-turbo" }
-          end
-        end
-    },
     { -- vim-illuminate: Highlight other uses of word under cursor
         'RRethy/vim-illuminate',
     },
