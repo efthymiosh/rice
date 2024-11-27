@@ -10,7 +10,7 @@ root_group: "{% if system == 'darwin' %}wheel{% else %}root{% endif %}"
 
 bitwarden_app_version: "2024.11.1"
 bitwarden_cli_version: "2024.11.0"
-terraform_version: "1.9.8"
+terraform_version: "1.10.0"
 packer_version: "1.11.2"
 fluvio_version: "0.12.0"
 glab_version: "1.46.1"
