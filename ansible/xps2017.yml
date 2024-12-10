@@ -10,6 +10,7 @@
     provision_hostname: "sand"
     x_cursor_theme: "Bibata-Modern-Greenish"
     global_font: "Fira Code Nerd Font"
+    xorg_screen_blank_time_minutes: 4
 #   x_cursor_size: 40
 #   alacritty_font_size: 9
 
