@@ -40,7 +40,9 @@ require("neo-tree").setup({
         width = "31",
     },
     buffers = {
-        follow_current_file = true
+        follow_current_file = {
+          enabled = true
+        }
     }
 })
 
