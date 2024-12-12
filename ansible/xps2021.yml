@@ -32,13 +32,7 @@
     hostname:
       name: "{{ provision_hostname }}"
 
-  # The Asus ROG Falchion sends power and suspend button presses to the pc
-  # whenever it itself suspends, causing chaos.
-  # source: https://gist.github.com/jnettlet/afb20a048b8720f3b4eb8506d8b05643
   - name: work around rog falchion sending power and suspend signals
-    copy:
-      src: "./files/99-asus-falchion.hwdb"
-      dest: "/etc/udev/hwdb.d/99-asus-falchion.hwdb"
-      owner: root
-      group: root
-      mode: '0644'
+    file:
+      path: "/etc/udev/hwdb.d/99-asus-falchion.hwdb"
+      state: absent
