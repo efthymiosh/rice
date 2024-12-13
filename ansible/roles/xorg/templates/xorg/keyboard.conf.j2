@@ -5,13 +5,3 @@ Section "InputClass"
     Option "XkbLayout" "us,el"
     Option "XkbOptions" "grp:alt_space_toggle"
 EndSection
-
-  # The Asus ROG Falchion sends power and suspend button presses to the pc
-  # whenever it itself suspends, causing chaos.
-  # source: https://askubuntu.com/questions/1351203/how-do-i-stop-my-rog-falchion-wireless-keyboard-from-rebooting-ubuntu
-Section "InputClass"
-    Identifier         "disable asus falchion sys control"
-    MatchIsKeyboard    "on"
-    MatchProduct       "ASUSTeK ROG FALCHION System Control"
-    Option             "Ignore" "on"
-EndSection
