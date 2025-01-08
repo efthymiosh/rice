@@ -1,0 +1,17 @@
+- name: fetch and install hyprland
+  package:
+    name:
+    - "hyprland"
+    - "waybar"
+
+- name: ensure the hyprland configuration directory exists
+  file:
+    path: "{{ home_folder }}/.config/hypr"
+    state: directory
+
+- name: template hyprland configuration
+  template:
+    src: "hyprland.conf"
+    dest: "{{ home_folder }}/.config/hypr/hyprland.conf"
+  tags:
+  - theme
