@@ -1,8 +1,27 @@
-- import_tasks: alacritty.yml
-  tags: alacritty
+- include_tasks: "{{ ansible_os_family }}.yml"
 
-- import_tasks: starship.yml
-  tags: starship
+- name: ensure alacritty config directory exists
+  become: false
+  file:
+    path: "{{ home_folder }}/.config/alacritty"
+    state: directory
+
+- name: template {{ item.name }} configuration
+  become: false
+  template:
+    src: "templates/{{ item.src }}"
+    dest: "{{ home_folder }}/.config/{{ item.dest }}"
+  loop:
+  - name: starship
+    src: "starship.toml.j2"
+    dest: "starship.toml"
+  - name: "alacritty  >= 0.13"
+    src: "alacritty.j2.toml"
+    dest: "alacritty/alacritty.toml"
+  - name: "alacritty  < 0.13"
+    src: "alacritty.j2.yml"
+    dest: "alacritty/alacritty.yml"
+  tags: theme
 
 - name: fetch and install terminal packages
   become: "{{ package_manager_become }}"
@@ -10,19 +29,6 @@
     name:
     - "tmux"
     - "zsh"
-
-- name: install zoxide,fzf
-  include_role:
-    name: packages/binpackages
-  vars:
-    binpackages_items:
-    - name: zoxide
-      version: "{{ zoxide_version }}"
-      fetch_url: "https://github.com/ajeetdsouza/zoxide/releases/download/v{{ zoxide_version }}/zoxide-{{ zoxide_version }}-{{ alt_arch }}-{{ vendor }}-{{ system }}{{ iflinux_musl }}.tar.gz"
-    - name: fzf
-      version: "{{ fzf_version }}"
-      fetch_url: "https://github.com/junegunn/fzf/releases/download/v{{ fzf_version }}/fzf-{{ fzf_version }}-{{ system }}_{{ real_arch }}.tar.gz"
-
 
 - name: set terminal file configuration
   become: false
