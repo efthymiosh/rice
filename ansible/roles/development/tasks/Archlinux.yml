@@ -1,0 +1,27 @@
+- name: install lang packages
+  package:
+    name:
+    - "go"
+    - "python"
+    - "python-pip"
+    - "uv"
+    - "php"
+    - "jdk-11-openjdk"
+    - "jdk-21-openjdk"
+    - "groovy"
+    - "nodejs"
+    - "npm"
+    - "helix"
+    - "neovim"
+    state: "present"
+
+- name: fetch rustup-init
+  become: true
+  get_url:
+    url: "https://static.rust-lang.org/rustup/dist/x86_64-unknown-linux-gnu/rustup-init"
+    dest: "/usr/bin/rustup-init"
+    force: false
+    owner: root
+    group: "{{ root_group }}"
+    mode: 0755
+  register: rust_fetch

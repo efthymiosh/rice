@@ -1,0 +1,10 @@
+---
+- name: install packages
+  package:
+    name:
+    - "ttf-firacode-nerd"
+    - "otf-firamono-nerd"
+    - "ttf-mononoki-nerd"
+    - "ttf-space-mono-nerd"
+    state: present
+    update_cache: yes

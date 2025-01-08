@@ -1,0 +1,10 @@
+- name: install terminal packages
+  package:
+    name:
+    - "alacritty"
+    - "zoxide"
+    - "fzf"
+    - "starship"
+    state: present
+    update_cache: yes
+
