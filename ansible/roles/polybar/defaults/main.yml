@@ -1,7 +1,7 @@
 ---
 polybar_fromsource_version: "3.5.4"
 polybar_temp_dir: "/tmp"
-
+polybar_noto_color_emoji_font_package: "{% if ansible_os_family == 'Debian' %}fonts-noto-color-emoji{% else %}noto-fonts-emoji{% endif %}"
 polybar_thermal_zone: "6"
 
 home_folder: "/home/{{ ansible_env.SUDO_USER }}"

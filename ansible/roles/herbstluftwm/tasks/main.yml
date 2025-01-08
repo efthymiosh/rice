@@ -3,7 +3,7 @@
     name: [
       "herbstluftwm", "dzen2", "nitrogen",
       "sxiv", "maim",
-      "xsel", "pavucontrol", "i3lock-fancy",
+      "xsel", "pavucontrol", "{{ hlwm_lock }}",
       "autorandr", "brightnessctl"
     ]
     state: latest

@@ -28,7 +28,7 @@
   - lsp_configs.lua
 
 - name: set neovim as the default editor
-  when: system != "darwin"
+  when: ansible_os_family == "Debian"
   alternatives:
     name: editor
     path: "/usr/bin/nvim"

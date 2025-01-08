@@ -13,7 +13,7 @@
 
 - name: ensure Noto Color Emoji font is installed
   package:
-    name: "fonts-noto-color-emoji"
+    name: "{{ polybar_noto_color_emoji_font_package }}"
     state: present
 
 - name: Set fact all network interfaces

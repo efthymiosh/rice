@@ -2,6 +2,7 @@ home_folder: "/home/{{ ansible_env.SUDO_USER }}"
 default_shell: "zsh"
 default_multiplexer_screen: false
 dunst_font: "{{ global_font }} 12"
+hlwm_lock: "i3lock-fancy"
 dunst_icon_folders:
 - "/usr/share/icons/HighContrast/256x256/status/"
 - "/usr/share/icons/HighContrast/256x256/apps/"

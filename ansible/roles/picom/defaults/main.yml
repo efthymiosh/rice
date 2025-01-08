@@ -1,4 +1,5 @@
 picom_fromsource_version: "12-rc2"
+picom_install_from_source: true
 picom_temp_dir: "/tmp"
 
 picom_install_dir: "/opt/picom-{{ picom_fromsource_version }}"
