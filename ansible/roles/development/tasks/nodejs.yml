@@ -1,6 +1,0 @@
-- name: install nodejs
-  package:
-    name:
-    - "nodejs"
-    state: "latest"
-    update_cache: true

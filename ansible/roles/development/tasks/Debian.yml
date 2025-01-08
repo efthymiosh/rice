@@ -16,6 +16,8 @@
     - "php-zip"
     - "php-curl"
     - "php-xml"
+    - "nodejs"
+    - "npm"
     state: "present"
 
 - name: install uv python package manager
@@ -40,9 +42,6 @@
   register: rust_fetch
 
 - include_tasks: groovy.yml
-  tags: language
-
-- include_tasks: nodejs.yml
   tags: language
 
 - include_tasks: helix.yml
