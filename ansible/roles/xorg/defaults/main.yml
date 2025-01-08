@@ -3,6 +3,7 @@ x_cursor_size: "32"
 x_keyboard_repeat_delay_ms: 250
 x_keyboard_repeat_interval_ms: 28
 xorg_screen_blank_time_minutes: 0 #off
+xorg_layout: "us,{% if ansible_os_family == 'Debian' %}el{% else %}gr{% endif %}"
 
 theme:
   background: '202020'

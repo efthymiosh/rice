@@ -2,6 +2,6 @@ Section "InputClass"
     Identifier "system-keyboard"
     MatchIsKeyboard "on"
     Option "AutoRepeat" "{{ x_keyboard_repeat_delay_ms }} {{ x_keyboard_repeat_interval_ms }}"
-    Option "XkbLayout" "us,el"
+    Option "XkbLayout" "{{ xorg_layout }}"
     Option "XkbOptions" "grp:alt_space_toggle"
 EndSection
