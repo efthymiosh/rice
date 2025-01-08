@@ -1,0 +1,38 @@
+- name: Configure ubuntu desktop
+  hosts: localhost
+  become: true
+
+  vars_files:
+  - "./vars/themes/dark/catpuccin_mochaer.yml"
+  - "./vars/common.yml"
+
+  vars:
+    provision_hostname: "frisbee"
+    x_cursor_theme: "Bibata-Modern-Catpuccin-Mocha"
+    global_font: "Fira Code Nerd Font"
+    alacritty_font_size: 10.5
+
+  pre_tasks:
+  - name: update apt package information
+    apt:
+      update_cache: yes
+
+  roles:
+  - role: packages
+    tags: packages
+  - role: development
+    tags: development
+  - role: terminal
+    tags: terminal
+  - role: desktop_linux
+    tags: desktop
+
+  tasks:
+  - name: modify hostname
+    hostname:
+      name: "{{ provision_hostname }}"
+
+  - name: work around rog falchion sending power and suspend signals
+    file:
+      path: "/etc/udev/hwdb.d/99-asus-falchion.hwdb"
+      state: absent

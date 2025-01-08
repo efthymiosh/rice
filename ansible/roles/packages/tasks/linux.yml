@@ -1,0 +1,28 @@
+- name: create directories
+  file:
+    path: "{{ home_folder }}/.config/zathura"
+    state: directory
+
+- name: template configuration
+  become: false
+  template:
+    dest: "{{ home_folder }}/{{ item }}"
+    src: "templates/{{ item }}.j2"
+  loop: [ ".config/zathura/zathurarc" ]
+  tags: theme
+
+- name: add flatpak repo
+  flatpak_remote:
+    name: "flathub"
+    method: "user"
+    flatpakrepo_url: "https://flathub.org/repo/flathub.flatpakrepo"
+  
+- name: install flatpak packages
+  become: false
+  flatpak:
+    name: "{{ item }}"
+    method: "user"
+    state: present
+  loop:
+  - "com.slack.Slack"
+  - "com.spotify.Client"
