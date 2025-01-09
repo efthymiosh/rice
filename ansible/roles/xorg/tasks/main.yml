@@ -3,6 +3,9 @@
     name: rxvt-unicode
     state: latest
 
+- name: gather package facts
+  package_facts: {}
+
 - name: template {{ item.dest }}
   become: false
   template:

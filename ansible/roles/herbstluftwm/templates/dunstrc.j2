@@ -7,7 +7,15 @@
     follow = mouse
     font = {{ dunst_font }}
     format = "<b>%s</b>\n%b"
+{% if ansible_facts.packages.dunst[0].version is version_compare('1.7', 'ge') %}
+    width = (200, 480)
+    height = (10,200)
+    offset = 40
+    origin = bottom-left
+    frame_width = 0
+{% else %}
     geometry = "480x10+40-0"
+{% endif %}"
     history_length = 80
     horizontal_padding = 14
     icon_folders = {{ dunst_icon_folders | join(':') }}
