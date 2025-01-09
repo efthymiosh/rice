@@ -1,0 +1,4 @@
+- name: reinstall kernels
+  become: true
+  command:
+    cmd: reinstall-kernels

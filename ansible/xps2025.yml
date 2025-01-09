@@ -23,6 +23,8 @@
     tags: terminal
   - role: desktop_linux
     tags: desktop
+  - role: plymouth
+    tags: plymouth
 
   tasks:
   - name: modify hostname

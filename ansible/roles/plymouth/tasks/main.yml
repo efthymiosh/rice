@@ -1,0 +1,12 @@
+- name: install plymouth
+  package:
+    name: ["plymouth"]
+
+- name: set quiet splash boot options
+  lineinfile:
+    path: "/etc/kernel/cmdline"
+    backrefs: true
+    regexp: "^(quiet splash )?(.*)$"
+    line: quiet splash \2
+  notify:
+  - reinstall kernels
