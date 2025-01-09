@@ -10,7 +10,7 @@
     provision_hostname: "frisby"
     x_cursor_theme: "Bibata-Modern-Catpuccin-Mocha"
     global_font: "Fira Code Nerd Font"
-    alacritty_font_size: 10.5
+    alacritty_font_size: 15
     picom_install_from_source: false
     hlwm_lock: i3lock
 
