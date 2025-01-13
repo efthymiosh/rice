@@ -60,23 +60,31 @@ fixed-center = true
 
 modules-left = memory cpu {% for iface in ether_ifaces %}{{ iface.device }} {% endfor %}
 
-modules-right = battery temperature date
+modules-right = battery temperature date{% if polybar_supports_tray_module %} tray{% else +%}
 tray-position = ${env:TRAY_POS}
 tray-padding = 9
 tray-maxsize = 18
+{% endif +%}
 
 [bar/full]
 inherit = bar/base
 
 modules-left = ewmh volume xkeyboard
 modules-center = xwindow_short
-modules-right = memory cpu {% for iface in ether_ifaces %}{{ iface.device }} {% endfor %} battery temperature date
+modules-right = memory cpu {% for iface in ether_ifaces %}{{ iface.device }} {% endfor %} battery temperature date{% if not polybar_supports_tray_module +%}
 tray-position = ${env:TRAY_POS}
 tray-padding = 9
 tray-maxsize = 18
+{% endif %}
 
 width = 96%
 offset-x = 2%
+
+{% if polybar_supports_tray_module %}
+[module/tray]
+type = internal/tray
+tray-spacing = 8px
+{% endif +%}
 
 [module/ewmh]
 type = internal/xworkspaces

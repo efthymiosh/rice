@@ -6,6 +6,9 @@
   ignore_errors: true
   register: polybar_package_present
 
+- name: gather package facts
+  package_facts: {}
+
 - name: fallback to source-install
   import_tasks: fromsource.yml
   when:
