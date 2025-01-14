@@ -14,7 +14,7 @@
       fetch_url: "https://github.com/starship/starship/releases/download/v{{ starship_version }}/starship-{{ alt_arch }}-{{ vendor }}-{{system}}{{ iflinux_gnu }}.tar.gz"
 
 
-- name: fetch and install alacritty
+- name: fetch and install terminal emulators
   become: "{{ package_manager_become }}"
   homebrew_cask:
-    name: [ "alacritty" ]
+    name: [ "alacritty", "ghostty" ]

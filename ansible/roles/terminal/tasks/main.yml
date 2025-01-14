@@ -1,10 +1,13 @@
 - include_tasks: "{{ ansible_os_family }}.yml"
 
-- name: ensure alacritty config directory exists
+- name: ensure config directories exist
   become: false
   file:
-    path: "{{ home_folder }}/.config/alacritty"
+    path: "{{ home_folder }}/.config/{{ item }}"
     state: directory
+  loop:
+  - alacritty
+  - ghostty
 
 - name: template {{ item.name }} configuration
   become: false
@@ -21,6 +24,9 @@
   - name: "alacritty  < 0.13"
     src: "alacritty.j2.yml"
     dest: "alacritty/alacritty.yml"
+  - name: "ghostty"
+    src: "ghostty/config.j2"
+    dest: "ghostty/config"
   tags: theme
 
 - name: fetch and install terminal packages

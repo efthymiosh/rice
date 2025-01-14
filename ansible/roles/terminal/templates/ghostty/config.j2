@@ -1,0 +1,44 @@
+title = "Ghostty"
+
+font-family = {{ global_font }}
+font-size = {{ alacritty_font_size }}
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+adjust-cell-width = -1
+
+background = {{ theme.background }}
+foreground = {{ theme.foreground }}
+selection-invert-fg-bg = true
+bold-is-bright = true
+
+palette = 0=#{{ theme.normal.black }}
+palette = 1=#{{ theme.normal.red }}
+palette = 2=#{{ theme.normal.green }}
+palette = 3=#{{ theme.normal.yellow }}
+palette = 4=#{{ theme.normal.blue }}
+palette = 5=#{{ theme.normal.magenta }}
+palette = 6=#{{ theme.normal.cyan }}
+palette = 7=#{{ theme.normal.white }}
+palette = 8=#{{ theme.bright.black }}
+palette = 9=#{{ theme.bright.red }}
+palette = 10=#{{ theme.bright.green }}
+palette = 11=#{{ theme.bright.yellow }}
+palette = 12=#{{ theme.bright.blue }}
+palette = 13=#{{ theme.bright.magenta }}
+palette = 14=#{{ theme.bright.cyan }}
+palette = 15=#{{ theme.bright.white }}
+
+cursor-text  = {{ theme.accent_text }}
+cursor-color = {{ theme.accent }}
+
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
+
+window-decoration = false
+window-padding-x = 0
+window-padding-y = 0
+
+gtk-single-instance = false
+confirm-close-surface = false

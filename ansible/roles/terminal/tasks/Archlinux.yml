@@ -2,6 +2,7 @@
   package:
     name:
     - "alacritty"
+    - "ghostty"
     - "zoxide"
     - "fzf"
     - "starship"
