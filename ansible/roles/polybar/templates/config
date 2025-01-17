@@ -71,7 +71,7 @@ inherit = bar/base
 
 modules-left = ewmh volume xkeyboard
 modules-center = xwindow_short
-modules-right = memory cpu {% for iface in ether_ifaces %}{{ iface.device }} {% endfor %} battery temperature date{% if not polybar_supports_tray_module +%}
+modules-right = memory cpu battery temperature date{% if not polybar_supports_tray_module +%}
 tray-position = ${env:TRAY_POS}
 tray-padding = 9
 tray-maxsize = 18
