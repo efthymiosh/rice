@@ -8,7 +8,7 @@
 
   vars:
     provision_hostname: "frisby"
-    x_cursor_theme: "Bibata-Modern-Catpuccin-Mocha"
+    x_cursor_theme: "Bibata-Modern-Catpuccin-Mocha-Rosewater-Inverse"
     global_font: "Fira Code Nerd Font"
     alacritty_font_size: 15
     picom_install_from_source: false
