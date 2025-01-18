@@ -1,0 +1,2 @@
+niri_xkb_layout: "us,{% if ansible_os_family == 'Debian' %}el{% else %}gr{% endif %}"
+default_shell: "zsh"

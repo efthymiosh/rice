@@ -27,6 +27,8 @@
     tags: boot
   - role: desktop/x11
     tags: desktop
+  - role: desktop/wayland
+    tags: wayland
 
   tasks:
   - name: modify hostname
