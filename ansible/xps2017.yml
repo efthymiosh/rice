@@ -26,7 +26,11 @@
     tags: development
   - role: terminal
     tags: terminal
-  - role: desktop_linux
+  - role: fonts
+    tags: fonts
+  - role: boot
+    tags: boot
+  - role: desktop/x11
     tags: desktop
 
   tasks:

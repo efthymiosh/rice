@@ -20,7 +20,7 @@
     tags: terminal
   - role: development
     tags: development
-  - role: desktop_mac
+  - role: desktop/mac
     tags: desktop
 
   tasks:

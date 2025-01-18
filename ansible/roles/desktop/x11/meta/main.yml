@@ -1,0 +1,13 @@
+dependencies:
+- role: desktop/x11/cursors
+  tags: cursors
+- role: desktop/x11/picom
+  tags: picom
+- role: desktop/x11/polybar
+  tags: polybar
+- role: desktop/x11/herbstluftwm
+  tags: herbstluftwm
+- role: desktop/x11/rofi
+  tags: rofi
+- role: desktop/x11/xorg
+  tags: xorg

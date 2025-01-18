@@ -1,0 +1,11 @@
+- name: gather package facts
+  package_facts: {}
+
+- name: template systemd-logind configuration
+  become: true
+  template:
+    src: "logind.conf"
+    dest: "/etc/systemd/logind.conf"
+    owner: "root"
+    group: "root"
+    mode: 0644

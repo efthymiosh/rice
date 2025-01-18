@@ -1,4 +1,4 @@
-- name: Configure ubuntu desktop
+- name: Configure arch desktop
   hosts: localhost
   become: true
 
@@ -21,10 +21,12 @@
     tags: development
   - role: terminal
     tags: terminal
-  - role: desktop_linux
+  - role: fonts
+    tags: fonts
+  - role: boot
+    tags: boot
+  - role: desktop/x11
     tags: desktop
-  - role: plymouth
-    tags: plymouth
 
   tasks:
   - name: modify hostname
