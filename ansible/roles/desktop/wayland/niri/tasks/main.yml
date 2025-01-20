@@ -8,17 +8,25 @@
     - "swaybg"
     - "wl-clipboard"
     - "xwayland-satellite"
+    - "waybar"
     state: present
 
-- name: Ensure niri configuration dir exists
+- name: Ensure configuration dirs exist
   become: false
   file:
-    path: "{{ home_folder }}/.config/niri"
+    path: "{{ home_folder }}/.config/{{ item }}"
     state: directory
     mode: 0750
+  loop:
+  - niri
+  - waybar
 
-- name: Template niri configuration
+- name: Template configuration
   become: false
   template:
-    src: config.kdl.j2
-    dest: "{{ home_folder }}/.config/niri/config.kdl"
+    src: "{{ item }}"
+    dest: "{{ home_folder }}/.config/{{ item }}"
+  loop:
+  - niri/config.kdl
+  - waybar/config.jsonc
+  - waybar/style.css

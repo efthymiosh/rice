@@ -1,0 +1,230 @@
+/* ================================ */
+/*            Common CSS            */
+/* ================================ */
+* {
+  padding: 0;
+  border-radius: 0;
+  min-height: 0;
+  margin: 0;
+  border: none;
+  text-shadow: none;
+  transition: none;
+  box-shadow: none;
+}
+
+/* the whole window */
+window#waybar {
+  background: #{{ theme.background }};
+  color: #{{ theme.foreground }};
+  padding: 0px 8px;
+  margin: 0;
+  border-radius: 8px;
+}
+
+.modules-left {
+  padding-left: 8px;
+}
+
+.modules-right {
+  padding-right: 8px;
+}
+
+#workspaces button,
+#workspaces button:hover,
+#workspaces button.visible,
+#workspaces button.visible:hover,
+#workspaces button.active,
+#workspaces button.active:hover,
+#workspaces button.urgent,
+#window,
+#tray,
+#disk,
+#cpu,
+#temperature,
+#temperature.critical,
+#backlight,
+#custom-memory,
+#pulseaudio,
+#pulseaudio.muted,
+#battery,
+#battery.critical,
+#battery.warning,
+#clock {
+  font-family: "{{ global_font }}";
+  font-size: 18px;
+  font-weight: 500;
+  color: #{{ theme.foreground }};
+  background: #{{ theme.normal.black }};
+  border-radius: 4px;
+}
+
+#window,
+#tray,
+#disk,
+#cpu,
+#temperature,
+#temperature.critical,
+#backlight,
+#custom-memory,
+#pulseaudio,
+#pulseaudio.muted,
+#battery,
+#battery.critical,
+#battery.warning,
+#clock {
+  padding-right: 4px;
+  margin: 5px 0px;
+}
+
+/* ================================ */
+/*       workspaces module          */
+/* ================================ */
+#workspaces {
+  margin: 0px;
+  color: #{{ theme.bright.black }};
+  background: #{{ theme.normal.black }};
+  border-radius: 12px;
+}
+
+#workspaces button {
+  color: #{{ theme.bright.black }};
+  min-width: 32px;
+  padding: 0 0px;
+  margin: 0px 0px;
+}
+
+#workspaces button:hover {
+  color: #{{ theme.foreground }};
+}
+
+#workspaces button.active {
+  color: #{{ theme.accent }};
+}
+
+#workspaces button.active:hover {
+  color: #{{ theme.foreground }};
+}
+
+#workspaces button.visible {
+  border: 2px solid #689d6a;
+}
+
+#workspaces button.urgent {
+  background: #{{ theme.bright.black }};
+}
+
+/* ================================ */
+/*            window                 */
+/* ================================ */
+
+#window {
+  color: #a89884;
+  background: #3c3835;
+  /* border: 2px solid #d3869b; */
+}
+
+/* ================================ */
+/*            tray                 */
+/* ================================ */
+
+#tray {
+  /* padding: 0 6px; */
+  background: #3c3835;
+}
+
+/* ================================ */
+/*            disk                 */
+/* ================================ */
+
+#disk {
+  color: #ea6962;
+  border: 2px solid #ea6962;
+}
+
+/* ================================ */
+/*            cpu                  */
+/* ================================ */
+#cpu {
+  color: #e78a4e;
+  border: 2px solid #e78a4e;
+}
+
+/* ================================ */
+/*            temp                  */
+/* ================================ */
+#temperature {
+  color: #d8a657;
+  border: 2px solid #d8a657;
+}
+
+#temperature.critical {
+  color: #cc241d;
+  border: 2px solid #cc241d;
+}
+
+/* ================================ */
+/*            backlight             */
+/* ================================ */
+#custom-backlight {
+  color: #f6c657;
+  background: #3c3835;
+}
+
+/* ================================ */
+/*            memory                */
+/* ================================ */
+#custom-memory {
+  color: #458588;
+  border: 2px solid #458588;
+}
+
+/* ================================ */
+/*         pulseaudio               */
+/* ================================ */
+#pulseaudio {
+  color: #fbf1c7;
+  background: #3c3835;
+}
+
+#pulseaudio.muted {
+  color: #ea6962;
+  background: #3c3835;
+}
+
+/* ================================ */
+/*            battery               */
+/* ================================ */
+#battery {
+  color: #fbf1c7;
+  background: #3c3835;
+}
+
+#battery.critical {
+  color: #cc241d;
+  background: #3c3835;
+}
+
+#battery.warning {
+  color: #e78a4e;
+  background: #3c3835;
+}
+/* ================================ */
+/*            clock                 */
+/* ================================ */
+#clock.time {
+  color: #fbf1c7;
+  background: #3c3835;
+}
+
+#clock.date {
+  color: #fbf1c7;
+  background: #3c3835;
+}
+
+#custom-notification {
+  color: #fbf1c7;
+  font-size: 14px;
+  background: #3c3835;
+  padding: 2px 2px;
+}
+

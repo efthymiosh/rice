@@ -75,7 +75,7 @@ output "eDP-1" {
   // for the resolution.
   // If the mode is omitted altogether or is invalid, niri will pick one automatically.
   // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-  mode "1920x1080@120"
+  mode "1920x1200@120.000"
 
   // You can use integer or fractional scale, for example use 1.5 for 150% scale.
   scale 1
@@ -254,6 +254,7 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 spawn-at-startup "xwayland-satellite"
+spawn-at-startup "swaybg" "-o" "eDP-1" "-m" "fill" "-i" "{{ home_folder }}/Pictures/wallpapers/trees-8136806.png" "-o" "DP-1" "-m" "fill" "-i" "{{ home_folder }}/Pictures/wallpapers/trees-8136806.png"
 
 environment {
   DISPLAY ":0"
@@ -325,6 +326,12 @@ animations {
 window-rule {
   geometry-corner-radius 20
   clip-to-geometry true
+  opacity 1.0
+}
+
+window-rule {
+  match is-active=false
+  opacity 0.9
 }
 
 binds {
@@ -344,7 +351,7 @@ binds {
 
   // Suggested binds for running programs: terminal, app launcher, screen locker.
 
-  Super+Return { spawn "alacritty" "-e" "{{ default_shell }} -c '[ \"$(tmux list-sessions  | grep -v attached | wc -l)\" -ne \"0\" ] && tmux attach-session || tmux new-session -t0'"; }
+  Super+Return { spawn "alacritty" "-e" "{{ default_shell }}" "-c" "[ \"$(tmux list-sessions  | grep -v attached | wc -l)\" -ne \"0\" ] && tmux attach-session || tmux new-session -t0"; }
   //Super+Return { spawn "alacritty"; }
   Super+D { spawn "fuzzel"; }
   Super+Alt+L { spawn "swaylock"; }
@@ -558,5 +565,3 @@ binds {
   // The quit action will show a confirmation dialog to avoid accidental exits.
   Super+Shift+Q { quit; }
 }
-
-// vim:ft=kdl
