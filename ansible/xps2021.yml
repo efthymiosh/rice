@@ -10,7 +10,7 @@
     provision_hostname: "tile"
     x_cursor_theme: "Bibata-Modern-Catpuccin-Mocha"
     global_font: "Fira Code Nerd Font"
-    alacritty_font_size: 10.5
+    alacritty_font_size: 10
 
   pre_tasks:
   - name: update apt package information
