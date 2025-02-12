@@ -9,8 +9,7 @@
   vars:
     provision_hostname: "frisby"
     x_cursor_theme: "Bibata-Modern-Catpuccin-Mocha-Rosewater-Inverse"
-    global_font: "Fira Code Nerd Font"
-    alacritty_font_size: 15
+    alacritty_font_size: "{{ global_font_size }}"
     picom_install_from_source: false
     hlwm_lock: i3lock
     polybar_thermal_zone: "9"
@@ -30,6 +29,8 @@
     tags: desktop
   - role: desktop/wayland
     tags: wayland
+  - role: apps
+    tags: apps
 
   tasks:
   - name: modify hostname

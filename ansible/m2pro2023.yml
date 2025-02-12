@@ -9,7 +9,7 @@
   vars:
     provision_hostname: "pattiha"
     global_font: "FiraCode Nerd Font"
-    alacritty_font_size: 15
+    alacritty_font_size: "{{ global_font_size }}"
 
   roles:
   - role: packages
@@ -22,6 +22,8 @@
     tags: development
   - role: desktop/mac
     tags: desktop
+  - role: apps
+    tags: apps
 
   tasks:
   - name: modify hostname

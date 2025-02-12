@@ -30,6 +30,8 @@
     tags: boot
   - role: desktop/x11
     tags: desktop
+  - role: apps
+    tags: apps
 
   tasks:
   - name: modify hostname

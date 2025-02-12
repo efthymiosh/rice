@@ -1,0 +1,26 @@
+- name: ensure the tridactyl rc dirs exist
+  become: false
+  file:
+    path: "{{ item }}"
+    state: directory
+  loop:
+  - "{{ home_folder }}/.config/tridactyl/"
+  - "{{ home_folder }}/.config/tridactyl/themes/"
+
+- name: template tridactyl conf
+  become: false
+  template:
+    src: tridactylrc
+    dest: "{{ home_folder }}/.config/tridactyl/tridactylrc"
+
+- name: template tridactyl theme to ~/.config/firefox-tridactyl.css
+  become: false
+  template:
+    src: firefox-tridactyl.css
+    dest: "{{ home_folder }}/.config/tridactyl/themes/{{ theme_name }}.css"
+
+- name: Alert user for manual action
+  debug:
+    msg: |
+      Ensure to run :nativeinstall on tridactyl to load the rc.
+      Run :colorscheme {{ theme_name }} to (re)load the theme

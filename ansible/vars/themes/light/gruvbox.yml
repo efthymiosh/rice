@@ -1,3 +1,4 @@
+theme_name: gruvbox_light
 theme:
   background: 'fbf1c7'
   foreground: '3c3836'
