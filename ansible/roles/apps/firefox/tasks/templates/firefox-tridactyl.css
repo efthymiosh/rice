@@ -26,7 +26,7 @@
   /* Mode Indicator */
   --tridactyl-status-font-family: var(--tridactyl-font-family);
   --tridactyl-status-font-size: var(--tridactyl-small-font-size);
-  --tridactyl-status-bg: none;
+  --tridactyl-status-bg: var(--mytheme-background);
   --tridactyl-status-fg: var(--mytheme-foreground);
   --tridactyl-status-border: 0;
   --tridactyl-status-border-radius: 6px;
