@@ -30,8 +30,8 @@
     tags: desktop
   - role: desktop/wayland
     tags: wayland
-  - role: apps
-    tags: apps
+  - role: apps/firefox
+    tags: firefox
 
   tasks:
   - name: modify hostname

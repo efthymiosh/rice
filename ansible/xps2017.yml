@@ -32,8 +32,8 @@
     tags: boot
   - role: desktop/x11
     tags: desktop
-  - role: apps
-    tags: apps
+  - role: apps/firefox
+    tags: firefox
 
   tasks:
   - name: modify hostname

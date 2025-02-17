@@ -22,8 +22,8 @@
     tags: development
   - role: desktop/mac
     tags: desktop
-  - role: apps
-    tags: apps
+  - role: apps/firefox
+    tags: firefox
 
   tasks:
   - name: modify hostname
