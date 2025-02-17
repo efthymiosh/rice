@@ -1,2 +1,3 @@
 set smoothscroll true
+set hintstyles.bg none
 " vim:ft=rc

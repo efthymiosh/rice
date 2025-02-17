@@ -139,34 +139,18 @@ mytheme background color.
   fill: var(--mytheme-comment) !important;
 }
 
-/*
-# Tridactyl New Tab Page
-
-Remove the red and green backgrounds from the changelog button/toggle.
-
-> According to ScreenRant, Craven landed on the color scheme after reading in a
-> scientific article that humans have an especially hard time processing the
-> colors red and green together. As Live Science explains, red light causes
-> retinal cells called opponent neurons to fire—thus alerting our brain that
-> we’re seeing red—while green light doesn’t cause them to do anything (a lack
-> of motion that our brain knows to perceive as green). Since these actions
-> cancel each other out, seeing certain shades of red and green simultaneously
-> can be a little optically confusing (Gutoskey).
-
----
-Gutoskey, Ellen. “The Smart—and Scientific—Reason Freddy Krueger’s
-  Sweater Is Red and Green-Striped.” Mental Floss, 27 October 2020,
-  https://www.mentalfloss.com/article/633068/why-freddy-krueger-wears-red-and-green.
-*/
-
-#trinewtab #nagbar-changelog {
-  background: var(--mytheme-current-line) !important;
-  color: var(--mytheme-foreground) !important;
+:root #completions > div {
+    max-height: calc(20 * var(--tridactyl-cmplt-option-height));
+    min-height: calc(10 * var(--tridactyl-cmplt-option-height));
 }
 
-#trinewtab input[id^="spoiler"] + label {
-  background: var(--mytheme-black) !important;
-  color: var(--mytheme-foreground) !important;
+#completions > div > table {
+    font-size: var(--tridactyl-cmplt-font-size) !important;
+}
+
+:root #command-line-holder {
+    order: 1;
+    font-size: var(--tridactyl-cmplt-font-size);
 }
 
 /*
