@@ -8,6 +8,7 @@
   --mytheme-orange: #{{ theme.normal.yellow }};
   --mytheme-yellow: #{{ theme.bright.yellow }};
   --mytheme-green: #{{ theme.normal.green }};
+  --mytheme-blue: #{{ theme.normal.blue }};
   --mytheme-purple: #{{ theme.normal.magenta }};
   --mytheme-cyan: #{{ theme.normal.cyan }};
   --mytheme-pink: #{{ theme.bright.magenta }};
@@ -55,7 +56,7 @@
   --tridactyl-cmdl-bg: var(--mytheme-background);
   --tridactyl-cmdl-fg: var(--mytheme-foreground);
   --tridactyl-cmdl-line-height: 1.6;
-  --tridactyl-cmdl-font-family: "{{ global_font }}";
+  --tridactyl-cmdl-font-family: var(--tridactyl-font-family);
   --tridactyl-cmdl-font-size: var(--tridactyl-small-font-size);
 
   /* Completions */
@@ -63,7 +64,7 @@
   --tridactyl-cmplt-fg: var(--mytheme-foreground);
   --tridactyl-cmplt-bg: var(--mytheme-background);
   --tridactyl-cmplt-font-size: var(--tridactyl-small-font-size);
-  --tridactyl-cmplt-font-family: "{{ global_font }}";
+  --tridactyl-cmplt-font-family: var(--tridactyl-font-family);
   --tridactyl-cmplt-border-top: 0;
 
   /* Header */
@@ -160,11 +161,11 @@ Gutoskey, Ellen. “The Smart—and Scientific—Reason Freddy Krueger’s
 
 #trinewtab #nagbar-changelog {
   background: var(--mytheme-current-line) !important;
-  color: var(--mytheme-pink) !important;
+  color: var(--mytheme-foreground) !important;
 }
 
 #trinewtab input[id^="spoiler"] + label {
-  background: var(--mytheme-comment) !important;
+  background: var(--mytheme-black) !important;
   color: var(--mytheme-foreground) !important;
 }
 

@@ -1,4 +1,3 @@
-global_font: "Fira Code Nerd Font"
 global_font_size: 15
 
 real_arch: "{% if ansible_architecture == 'x86_64' %}amd64{% else %}arm64{% endif %}"
