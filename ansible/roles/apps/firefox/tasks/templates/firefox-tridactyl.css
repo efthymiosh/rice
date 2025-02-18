@@ -135,6 +135,10 @@ mytheme background color.
   background: none !important;
 }
 
+.TridactylOwnNamespace {
+  background-color: var(--mytheme-background) !important;
+}
+
 .TridactylOwnNamespace .option.incognito .privatewindow {
   fill: var(--mytheme-comment) !important;
 }
