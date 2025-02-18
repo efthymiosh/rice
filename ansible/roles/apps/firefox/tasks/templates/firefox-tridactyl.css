@@ -1,7 +1,7 @@
 :root {
   --mytheme-background: #{{ theme.background }};
   --mytheme-foreground: #{{ theme.foreground }};
-  --mytheme-current-line: #{{ theme.accent }};
+  --mytheme-accent: #{{ theme.accent }};
   --mytheme-comment: #{{ theme.bright.black }};
   --mytheme-black: #{{ theme.normal.black }};
   --mytheme-red: #{{ theme.normal.red }};
@@ -36,9 +36,10 @@
   --tridactyl-hintspan-font-size: var(--tridactyl-small-font-size);
   --tridactyl-hintspan-font-weight: bold;
   --tridactyl-hintspan-fg: var(--mytheme-black);
-  --tridactyl-hintspan-bg: var(--mytheme-green);
-  --tridactyl-hintspan-border-width: 0;
-  --tridactyl-hintspan-js-background: var(--mytheme-red);
+  --tridactyl-hintspan-bg: var(--mytheme-yellow);
+  --tridactyl-hintspan-border-width: 1px;
+  --tridactyl-hintspan-border-color: var(--mytheme-black);
+  --tridactyl-hintspan-js-background: var(--mytheme-orange);
 
   /* Hint Element Highlights */
   --tridactyl-hint-bg: none;
@@ -77,7 +78,7 @@
 
   /* URL Style */
   --tridactyl-url-text-decoration: none;
-  --tridactyl-url-fg: var(--mytheme-current-line);
+  --tridactyl-url-fg: var(--mytheme-accent);
   --tridactyl-url-bg: none;
   --tridactyl-url-cursor: pointer;
 
@@ -86,7 +87,7 @@
 
   /* Option Focused */
   --tridactyl-of-fg: var(--mytheme-background);
-  --tridactyl-of-bg: var(--mytheme-current-line);
+  --tridactyl-of-bg: var(--mytheme-accent);
 
   /* New Tab Page Spoiler Box (Changelog) */
   --tridactyl-highlight-box-bg: var(--mytheme-black);
@@ -164,7 +165,7 @@ Use the mytheme color theme on the `:help` page.
 */
 
 .TridactylOwnNamespace .tsd-flag {
-  background-color: var(--mytheme-current-line) !important;
+  background-color: var(--mytheme-accent) !important;
   color: var(--mytheme-foreground) !important;
 }
 
@@ -177,7 +178,7 @@ Use the mytheme color theme on the `:help` page.
 
 .TridactylOwnNamespace .tsd-signature-symbol,
 .TridactylOwnNamespace .tsd-sources {
-  color: var(--mytheme-current-line) !important;
+  color: var(--mytheme-accent) !important;
 }
 
 .TridactylOwnNamespace .hljs-keyword {
