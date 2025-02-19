@@ -1,0 +1,13 @@
+- name: ensure pipewire.conf.d exists
+  file:
+    path: "/usr/share/pipewire/pipewire.conf.d"
+    state: directory
+
+- name: copy pipewire user overrides
+  copy:
+    remote_src: false
+    src: pipewire.conf
+    dest: "/usr/share/pipewire/pipewire.conf.d/bluez.conf"
+  notify:
+  - restart wireplumber
+  - restart pipewire

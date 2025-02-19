@@ -1,0 +1,13 @@
+- name: restart pipewire
+  become: false
+  systemd_service:
+    scope: user
+    name: pipewire
+    state: restarted
+    
+- name: restart wireplumber
+  become: false
+  systemd_service:
+    scope: user
+    name: wireplumber
+    state: restarted

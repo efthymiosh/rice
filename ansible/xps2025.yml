@@ -32,6 +32,8 @@
     tags: wayland
   - role: apps/firefox
     tags: firefox
+  - role: arch-fixes
+    tags: arch-fixes
 
   tasks:
   - name: modify hostname
