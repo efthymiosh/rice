@@ -44,8 +44,8 @@
   /* Hint Element Highlights */
   --tridactyl-hint-bg: none;
   --tridactyl-hint-outline: 0;
-  --tridactyl-hint-active-fg: none;
-  --tridactyl-hint-active-bg: none;
+  --tridactyl-hint-active-fg: var(--mytheme-yellow);
+  --tridactyl-hint-active-bg: var(--mytheme-background);
   --tridactyl-hint-active-outline: 0;
 
   /* :viewsource */
