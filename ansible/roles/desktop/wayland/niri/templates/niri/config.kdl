@@ -97,10 +97,21 @@ output "eDP-1" {
 }
 
 output "DP-1" {
-  mode "5120x2160@60"
+  mode "5120x2160@74.979"
   scale 1
   transform "normal"
-  position x=1536 y=0
+  position x=1920 y=-960
+}
+
+hotkey-overlay {
+  skip-at-startup
+}
+
+cursor {
+  xcursor-theme "{{ x_cursor_theme }}"
+  xcursor-size {{ x_cursor_size }}
+  hide-when-typing
+  hide-after-inactive-ms 1000
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -200,7 +211,7 @@ layout {
   }
 
   // You can enable drop shadows for windows.
-  /-shadow {
+  shadow {
     // Uncomment the next line to enable shadows.
     on
 
@@ -254,7 +265,7 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "swaybg" "-o" "eDP-1" "-m" "fill" "-i" "{{ home_folder }}/Pictures/wallpapers/trees-8136806.png" "-o" "DP-1" "-m" "fill" "-i" "{{ home_folder }}/Pictures/wallpapers/trees-8136806.png"
+spawn-at-startup "swaybg" "-o" "eDP-1" "-m" "fill" "-i" "{{ home_folder }}/Pictures/wallpapers/firewatch-dark-minimal-5k-5120x2880-MOCHA" "-o" "DP-1" "-m" "fill" "-i" "{{ home_folder }}/Pictures/wallpapers/firewatch-dark-minimal-5k-5120x2880-MOCHA"
 
 environment {
   DISPLAY ":0"
@@ -331,7 +342,7 @@ window-rule {
 
 window-rule {
   match is-active=false
-  opacity 0.9
+  opacity 0.975
 }
 
 binds {
@@ -369,23 +380,23 @@ binds {
 
   Super+Shift+C { close-window; }
 
-  Super+Left  { focus-column-left; }
-  Super+Down  { focus-window-down; }
-  Super+Up    { focus-window-up; }
-  Super+Right { focus-column-right; }
-  Super+H     { focus-column-left; }
-  Super+J     { focus-window-down; }
-  Super+K     { focus-window-up; }
-  Super+L     { focus-column-right; }
+  Super+Left  { focus-column-or-monitor-left; }
+  Super+Down  { focus-window-or-workspace-down; }
+  Super+Up    { focus-window-or-workspace-up; }
+  Super+Right { focus-column-or-monitor-right; }
+  Super+H     { focus-column-or-monitor-left; }
+  Super+J     { focus-window-or-workspace-down; }
+  Super+K     { focus-window-or-workspace-up; }
+  Super+L     { focus-column-or-monitor-right; }
 
-  Super+Shift+Left  { move-column-left; }
-  Super+Shift+Down  { move-window-down; }
-  Super+Shift+Up    { move-window-up; }
-  Super+Shift+Right { move-column-right; }
-  Super+Shift+H     { move-column-left; }
-  Super+Shift+J     { move-window-down; }
-  Super+Shift+K     { move-window-up; }
-  Super+Shift+L     { move-column-right; }
+  Super+Shift+Left  { move-column-left-or-to-monitor-left; }
+  Super+Shift+Down  { move-window-down-or-to-workspace-down; }
+  Super+Shift+Up    { move-window-up-or-to-workspace-up; }
+  Super+Shift+Right { move-column-right-or-to-monitor-right; }
+  Super+Shift+H     { move-column-left-or-to-monitor-left; }
+  Super+Shift+J     { move-window-down-or-to-workspace-down; }
+  Super+Shift+K     { move-window-up-or-to-workspace-up; }
+  Super+Shift+L     { move-column-right-or-to-monitor-right; }
 
   // Alternative commands that move across workspaces when reaching
   // the first or last window in a column.
@@ -506,7 +517,7 @@ binds {
   // The following binds move the focused window in and out of a column.
   // If the window is alone, they will consume it into the nearby column to the side.
   // If the window is already in a column, they will expel it out.
-  Super+R  { consume-or-expel-window-left; }
+  //Super+R  { consume-or-expel-window-left; }
 
   // Consume one window from the right to the bottom of the focused column.
   //Mod+Comma  { consume-window-into-column; }
@@ -516,9 +527,9 @@ binds {
   // Mod+R { switch-preset-column-width; }
   // Mod+Shift+R { switch-preset-window-height; }
   //Mod+Ctrl+R { reset-window-height; }
-  Super+Shift+F { maximize-column; }
-  Super+F { fullscreen-window; }
-  Super+C { center-column; }
+  Super+Shift+F { fullscreen-window; }
+  Super+F { maximize-column; }
+  Super+R { center-column; }
 
   // Finer width adjustments.
   // This command can also:
@@ -563,5 +574,5 @@ binds {
   //Super+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
   // The quit action will show a confirmation dialog to avoid accidental exits.
-  Super+Shift+Q { quit; }
+  Super+Shift+Q { quit skip-confirmation=true; }
 }
