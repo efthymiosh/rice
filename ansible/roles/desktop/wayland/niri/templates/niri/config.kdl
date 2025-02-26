@@ -93,14 +93,14 @@ output "eDP-1" {
   // so to put another output directly adjacent to it on the right, set its x to 1920.
   // If the position is unset or results in an overlap, the output is instead placed
   // automatically.
-  position x=0 y=0
+  position x=0 y=960
 }
 
 output "DP-1" {
   mode "5120x2160@74.979"
   scale 1
   transform "normal"
-  position x=1920 y=-960
+  position x=1920 y=0
 }
 
 hotkey-overlay {
@@ -238,10 +238,10 @@ layout {
     softness 8
 
     // Spread expands the shadow.
-    spread 8
+    spread 3
 
     // Offset moves the shadow relative to the window.
-    offset x=0 y=5
+    offset x=0 y=1
 
     // You can also change the shadow color and opacity.
     color  "#{{ theme.background | upper }}"
@@ -265,6 +265,7 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 spawn-at-startup "xwayland-satellite"
+spawn-at-startup "waybar"
 spawn-at-startup "swaybg" "-o" "eDP-1" "-m" "fill" "-i" "{{ home_folder }}/Pictures/wallpapers/firewatch-dark-minimal-5k-5120x2880-MOCHA.jpeg" "-o" "DP-1" "-m" "fill" "-i" "{{ home_folder }}/Pictures/wallpapers/firewatch-dark-minimal-5k-5120x2880-MOCHA.jpeg"
 
 environment {
@@ -343,6 +344,39 @@ window-rule {
 window-rule {
   match is-active=false
   opacity 0.975
+}
+
+window-rule {
+  match title="^Zoom Workplace.*"
+  default-column-width { proportion 0.25; }
+  min-width 500
+  max-width 1000
+}
+
+//zoom all except base should be floating
+window-rule {
+  match app-id="zoom"
+  exclude title="^Zoom Workplace.*"
+
+  open-floating true
+}
+
+// layer rules for launcher and bar
+layer-rule {
+    match namespace="^launcher$"
+
+    shadow {
+        on
+    }
+    geometry-corner-radius 10
+}
+layer-rule{
+    match namespace="^waybar$"
+
+//  shadow {
+//      on
+//  }
+//  geometry-corner-radius 20
 }
 
 binds {

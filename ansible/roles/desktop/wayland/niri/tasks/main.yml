@@ -20,6 +20,7 @@
   loop:
   - niri
   - waybar
+  - fuzzel
 
 - name: Template configuration
   become: false
@@ -30,3 +31,4 @@
   - niri/config.kdl
   - waybar/config.jsonc
   - waybar/style.css
+  - fuzzel/fuzzel.ini

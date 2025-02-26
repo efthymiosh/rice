@@ -3,7 +3,7 @@
 /* ================================ */
 * {
   padding: 0;
-  border-radius: 0;
+  border-radius: 20px;
   min-height: 0;
   margin: 0;
   border: none;
@@ -51,8 +51,7 @@ window#waybar {
 #battery.warning,
 #clock {
   font-family: "{{ global_font }}";
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 15pt;
   color: #{{ theme.foreground }};
   background: #{{ theme.normal.black }};
   border-radius: 4px;
@@ -106,7 +105,7 @@ window#waybar {
 }
 
 #workspaces button.visible {
-  border: 2px solid #689d6a;
+  border: 2px solid #{{ theme.bright.black }};
 }
 
 #workspaces button.urgent {
@@ -118,8 +117,8 @@ window#waybar {
 /* ================================ */
 
 #window {
-  color: #a89884;
-  background: #3c3835;
+  color: #{{ theme.foreground }};
+  background: #{{ theme.normal.black }};
   /* border: 2px solid #d3869b; */
 }
 
@@ -129,7 +128,7 @@ window#waybar {
 
 #tray {
   /* padding: 0 6px; */
-  background: #3c3835;
+  background: #{{ theme.normal.black }};
 }
 
 /* ================================ */
@@ -153,78 +152,77 @@ window#waybar {
 /*            temp                  */
 /* ================================ */
 #temperature {
-  color: #d8a657;
-  border: 2px solid #d8a657;
+  color: #{{ theme.foreground }};
+  border: 2px solid #{{ theme.foreground }};
 }
 
 #temperature.critical {
-  color: #cc241d;
-  border: 2px solid #cc241d;
+  color: #{{ theme.bright.red }};
+  border: 2px solid #{{ theme.foreground }};
 }
 
 /* ================================ */
 /*            backlight             */
 /* ================================ */
 #custom-backlight {
-  color: #f6c657;
-  background: #3c3835;
+  color: #{{ theme.foreground }};
+  background: #{{ theme.normal.black }};
 }
 
 /* ================================ */
 /*            memory                */
 /* ================================ */
 #custom-memory {
-  color: #458588;
-  border: 2px solid #458588;
+  color: #{{ theme.foreground }};
+  border: 2px solid #{{ theme.foreground }};
 }
 
 /* ================================ */
 /*         pulseaudio               */
 /* ================================ */
 #pulseaudio {
-  color: #fbf1c7;
-  background: #3c3835;
+  color: #{{ theme.foreground }};
+  background: #{{ theme.normal.black }};
 }
 
 #pulseaudio.muted {
-  color: #ea6962;
-  background: #3c3835;
+  color: #{{ theme.bright.red }};
+  background: #{{ theme.normal.black }};
 }
 
 /* ================================ */
 /*            battery               */
 /* ================================ */
 #battery {
-  color: #fbf1c7;
-  background: #3c3835;
+  color: #{{ theme.foreground }};
+  background: #{{ theme.normal.black }};
 }
 
 #battery.critical {
-  color: #cc241d;
-  background: #3c3835;
+  color: #{{ theme.bright.red }};
+  background: #{{ theme.normal.black }};
 }
 
 #battery.warning {
   color: #e78a4e;
-  background: #3c3835;
+  background: #{{ theme.normal.black }};
 }
 /* ================================ */
 /*            clock                 */
 /* ================================ */
 #clock.time {
-  color: #fbf1c7;
-  background: #3c3835;
+  color: #{{ theme.foreground }};
+  background: #{{ theme.normal.black }};
 }
 
 #clock.date {
-  color: #fbf1c7;
-  background: #3c3835;
+  color: #{{ theme.foreground }};
+  background: #{{ theme.normal.black }};
 }
 
 #custom-notification {
-  color: #fbf1c7;
-  font-size: 14px;
-  background: #3c3835;
+  color: #{{ theme.foreground }};
+  font-size: 15pt;
+  background: #{{ theme.normal.black }};
   padding: 2px 2px;
 }
-
