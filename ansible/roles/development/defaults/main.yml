@@ -3,7 +3,8 @@ home_folder: "/home/{{ ansible_env.SUDO_USER }}"
 force_install_rust_analyzer: false
 gradle_version: "7.2"
 groovy_version: "3.0.9"
-git_delta_version: "0.12.1"
+git_delta_version: "0.18.2"
+git_delta_enabled: true
 python_uv_version: "0.4.18"
 helix_version: "22.08.1"
 neovim_version: "0.9.0"

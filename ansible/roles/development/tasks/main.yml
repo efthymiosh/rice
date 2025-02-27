@@ -18,3 +18,4 @@
     {{ home_folder }}/.cargo/bin/rustup component add rust-src
 
 - import_tasks: neovim.yml
+- import_tasks: git.yml

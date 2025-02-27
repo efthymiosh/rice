@@ -1,6 +1,6 @@
 - name: install git-delta
   include_role:
-    name: binpackages
+    name: packages/binpackages
   vars:
     binpackages_items:
     - name: delta
@@ -8,12 +8,10 @@
       fetch_url: "https://github.com/dandavison/delta/releases/download/{{ git_delta_version }}/delta-{{ git_delta_version }}-x86_64-unknown-linux-gnu.tar.gz"
       subpath: "delta-{{ git_delta_version }}-x86_64-unknown-linux-gnu"
 
-- name: ensure git-delta configuration is picked up
+- name: configure base gitconfig
   blockinfile:
     path: "{{ home_folder }}/.gitconfig"
-    block: |
-      [include]
-          path = ~/.gitconfig-delta
+    block: "{{ lookup('ansible.builtin.template', 'templates/gitconfig.part.j2') }}"
 
 - name: configure git-delta
   template:
