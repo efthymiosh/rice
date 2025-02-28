@@ -9,6 +9,7 @@
       subpath: "delta-{{ git_delta_version }}-{{ alt_arch }}-{{ vendor }}-{{ system }}{{ iflinux_gnu }}"
 
 - name: template gitconfig
+  become: false
   blockinfile:
     path: "{{ home_folder }}/.gitconfig"
     block: "{{ lookup('ansible.builtin.template', 'templates/gitconfig.part.j2') }}"

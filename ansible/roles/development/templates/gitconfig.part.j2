@@ -12,7 +12,8 @@
   pruneTags = true
   all = true
 [diff]
-  colorMoved = default
+  colorMoved = true
+  algorithm = histogram
 [merge]
   conflictstyle = zdiff3
 [rerere]
@@ -20,11 +21,10 @@
   autoupdate = true
 [rebase]
   autoStash = true
+[init]
+  defaultBranch = main
 
 {% if git_delta_enabled %}
-
-[include]
-  path = ~/.gitconfig-delta
 [core]
   pager = delta
 
