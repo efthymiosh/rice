@@ -5,8 +5,8 @@
     binpackages_items:
     - name: delta
       version: "{{ git_delta_version }}"
-      fetch_url: "https://github.com/dandavison/delta/releases/download/{{ git_delta_version }}/delta-{{ git_delta_version }}-x86_64-unknown-linux-gnu.tar.gz"
-      subpath: "delta-{{ git_delta_version }}-x86_64-unknown-linux-gnu"
+      fetch_url: "https://github.com/dandavison/delta/releases/download/{{ git_delta_version }}/delta-{{ git_delta_version }}-{{ alt_arch }}-{{ vendor }}-{{ system }}{{ iflinux_gnu }}.tar.gz"
+      subpath: "delta-{{ git_delta_version }}-{{ alt_arch }}-{{ vendor }}-{{ system }}{{ iflinux_gnu }}"
 
 - name: configure base gitconfig
   blockinfile:
