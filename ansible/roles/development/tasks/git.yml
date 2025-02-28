@@ -8,12 +8,7 @@
       fetch_url: "https://github.com/dandavison/delta/releases/download/{{ git_delta_version }}/delta-{{ git_delta_version }}-{{ alt_arch }}-{{ vendor }}-{{ system }}{{ iflinux_gnu }}.tar.gz"
       subpath: "delta-{{ git_delta_version }}-{{ alt_arch }}-{{ vendor }}-{{ system }}{{ iflinux_gnu }}"
 
-- name: configure base gitconfig
+- name: template gitconfig
   blockinfile:
     path: "{{ home_folder }}/.gitconfig"
     block: "{{ lookup('ansible.builtin.template', 'templates/gitconfig.part.j2') }}"
-
-- name: configure git-delta
-  template:
-    src: "gitconfig-delta.j2"
-    dest: "{{ home_folder }}/.gitconfig-delta"
