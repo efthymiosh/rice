@@ -29,6 +29,7 @@
   template:
     src: "picom.j2.conf"
     dest: "{{ home_folder }}/.config/picom.conf"
+  tags: theme
 
 - name: template herbstluftwm configuration
   become: false

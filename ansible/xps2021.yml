@@ -3,12 +3,12 @@
   become: true
 
   vars_files:
-  - "./vars/themes/dark/catpuccin_mochaer.yml"
+  - "./vars/themes/dark/onedark.yml"
   - "./vars/common.yml"
 
   vars:
     provision_hostname: "tile"
-    x_cursor_theme: "Bibata-Modern-Catpuccin-Mocha"
+    x_cursor_theme: "Bibata-Modern-Salmon"
     global_font: "Fira Code Nerd Font"
     alacritty_font_size: 10
 

@@ -13,11 +13,12 @@
     src: tridactylrc
     dest: "{{ home_folder }}/.config/tridactyl/tridactylrc"
 
-- name: template tridactyl theme to ~/.config/firefox-tridactyl.css
+- name: "template tridactyl theme to ~/.config/{{ theme_name }}.css"
   become: false
   template:
     src: firefox-tridactyl.css
     dest: "{{ home_folder }}/.config/tridactyl/themes/{{ theme_name }}.css"
+  tags: theme
 
 - name: Alert user for manual action
   debug:

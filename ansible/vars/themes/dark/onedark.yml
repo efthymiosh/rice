@@ -1,0 +1,24 @@
+theme_name: onedark
+theme:
+  foreground: "abb2bf"
+  background: "181c24"
+  normal:
+    black: "282c34"
+    red: "e06c75"
+    green: "98c379"
+    yellow: "e5c07b"
+    blue: "61afef"
+    magenta: "c678dd"
+    cyan: "56b6c2"
+    white: "abb2bf"
+  bright:
+    black: "545862"
+    red: "e06c75"
+    green: "98c379"
+    yellow: "e5c07b"
+    blue: "61afef"
+    magenta: "c678dd"
+    cyan: "56b6c2"
+    white: "c8ccd4"
+  accent: "e06c75"
+  accent_text: "282c34"
