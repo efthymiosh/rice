@@ -31,5 +31,5 @@
   become: "{{ package_manager_become }}"
   package:
     name:
-    - "rustup-init"
+    - "rustup"
   register: rust_fetch
