@@ -2,11 +2,13 @@
 /*            Common CSS            */
 /* ================================ */
 * {
+  font-family: "{{ global_font }}";
+  font-size: 15pt;
   padding: 0;
-  border-radius: 20px;
   min-height: 0;
   margin: 0;
   border: none;
+  background: none;
   text-shadow: none;
   transition: none;
   box-shadow: none;
@@ -22,11 +24,13 @@ window#waybar {
 }
 
 .modules-left {
-  padding-left: 8px;
+  padding-left: 16px;
+  padding-right: 0px;
 }
 
 .modules-right {
-  padding-right: 8px;
+  padding-left: 0px;
+  padding-right: 16px;
 }
 
 #workspaces button,
@@ -40,6 +44,8 @@ window#waybar {
 #tray,
 #disk,
 #cpu,
+#cpu.medium,
+#cpu.high,
 #temperature,
 #temperature.critical,
 #backlight,
@@ -49,44 +55,20 @@ window#waybar {
 #battery,
 #battery.critical,
 #battery.warning,
-#clock {
-  font-family: "{{ global_font }}";
-  font-size: 15pt;
-  color: #{{ theme.foreground }};
-  background: #{{ theme.normal.black }};
-  border-radius: 4px;
-}
-
-#window,
-#tray,
-#disk,
-#cpu,
-#temperature,
-#temperature.critical,
-#backlight,
-#custom-memory,
-#pulseaudio,
-#pulseaudio.muted,
-#battery,
-#battery.critical,
-#battery.warning,
-#clock {
-  padding-right: 4px;
-  margin: 5px 0px;
-}
+#clock,
+#language,
 
 /* ================================ */
 /*       workspaces module          */
 /* ================================ */
 #workspaces {
   margin: 0px;
-  color: #{{ theme.bright.black }};
-  background: #{{ theme.normal.black }};
-  border-radius: 12px;
 }
 
 #workspaces button {
   color: #{{ theme.bright.black }};
+  background: #{{ theme.normal.black }};
+  border-radius: 8px;
   min-width: 32px;
   padding: 0 0px;
   margin: 0px 0px;
@@ -112,48 +94,44 @@ window#waybar {
   background: #{{ theme.bright.black }};
 }
 
-/* ================================ */
-/*            window                 */
-/* ================================ */
-
 #window {
   color: #{{ theme.foreground }};
-  background: #{{ theme.normal.black }};
+  background: none;
+  border-bottom: 3px solid #{{ theme.foreground }};
   /* border: 2px solid #d3869b; */
 }
 
-/* ================================ */
-/*            tray                 */
-/* ================================ */
+#language {
+  border-bottom: 3px solid #{{ theme.normal.yellow }};
+}
 
 #tray {
-  /* padding: 0 6px; */
   background: #{{ theme.normal.black }};
 }
 
-/* ================================ */
-/*            disk                 */
-/* ================================ */
-
-#disk {
-  color: #ea6962;
-  border: 2px solid #ea6962;
-}
-
-/* ================================ */
-/*            cpu                  */
-/* ================================ */
 #cpu {
-  color: #e78a4e;
-  border: 2px solid #e78a4e;
+  color: #{{ theme.foreground }};
+  border-bottom: 3px solid #{{ theme.normal.red }};
 }
 
-/* ================================ */
-/*            temp                  */
-/* ================================ */
+#cpu.medium {
+  color: #{{ theme.normal.yellow }};
+  border-bottom: 3px solid #{{ theme.normal.red }};
+}
+
+#cpu.high {
+  color: #{{ theme.normal.red }};
+  border-bottom: 3px solid #{{ theme.normal.red }};
+}
+
+#memory {
+  color: #{{ theme.foreground }};
+  border-bottom: 3px solid #{{ theme.normal.cyan }};
+}
+
 #temperature {
   color: #{{ theme.foreground }};
-  border: 2px solid #{{ theme.foreground }};
+  border-bottom: 3px solid #{{ theme.bright.red }};
 }
 
 #temperature.critical {
@@ -161,68 +139,44 @@ window#waybar {
   border: 2px solid #{{ theme.foreground }};
 }
 
-/* ================================ */
-/*            backlight             */
-/* ================================ */
-#custom-backlight {
-  color: #{{ theme.foreground }};
-  background: #{{ theme.normal.black }};
+#backlight {
+  color: #{{ theme.bright.black }};
+  border-bottom: 3px solid #{{ theme.bright.black }};
 }
 
-/* ================================ */
-/*            memory                */
-/* ================================ */
-#custom-memory {
-  color: #{{ theme.foreground }};
-  border: 2px solid #{{ theme.foreground }};
-}
-
-/* ================================ */
-/*         pulseaudio               */
-/* ================================ */
 #pulseaudio {
   color: #{{ theme.foreground }};
-  background: #{{ theme.normal.black }};
+  border-bottom: 3px solid #{{ theme.normal.green }};
 }
 
 #pulseaudio.muted {
   color: #{{ theme.bright.red }};
-  background: #{{ theme.normal.black }};
 }
 
-/* ================================ */
-/*            battery               */
-/* ================================ */
 #battery {
   color: #{{ theme.foreground }};
-  background: #{{ theme.normal.black }};
+  border-bottom: 3px solid #{{ theme.normal.yellow }};
 }
 
 #battery.critical {
   color: #{{ theme.bright.red }};
-  background: #{{ theme.normal.black }};
 }
 
 #battery.warning {
-  color: #e78a4e;
-  background: #{{ theme.normal.black }};
-}
-/* ================================ */
-/*            clock                 */
-/* ================================ */
-#clock.time {
-  color: #{{ theme.foreground }};
-  background: #{{ theme.normal.black }};
+  color: #{{ theme.bright.yellow }};
 }
 
-#clock.date {
+#clock {
   color: #{{ theme.foreground }};
-  background: #{{ theme.normal.black }};
+  border-bottom: 3px solid #{{ theme.normal.blue }};
 }
 
 #custom-notification {
   color: #{{ theme.foreground }};
-  font-size: 15pt;
-  background: #{{ theme.normal.black }};
   padding: 2px 2px;
+}
+
+#bluetooth {
+  color: #{{ theme.normal.blue }};
+  border-bottom: 3px solid #{{ theme.normal.blue }};
 }

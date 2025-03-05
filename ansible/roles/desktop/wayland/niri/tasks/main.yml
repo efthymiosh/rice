@@ -4,6 +4,8 @@
     - "niri"
     - "fuzzel"
     - "dunst"
+    - "grim"
+    - "slurp"
     - "swaylock"
     - "swaybg"
     - "wl-clipboard"

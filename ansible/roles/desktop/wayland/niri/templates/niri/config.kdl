@@ -596,10 +596,16 @@ binds {
 
   Print { spawn "sh" "-c" "grim -g \"$(slurp)\" - | wl-copy"; }
   Super+Print { spawn "sh" "-c" "grim -g \"$(slurp)\" - | tee ~/screen-$(date +%Y%b%d.%H:%M:%S).png | wl-copy"; }
-  XF86MonBrightnessUp { spawn "brightnessctl" "-e" "s" "+5%"; }
-  XF86MonBrightnessDown { spawn "brightnessctl" "-e" "s" "5%-"; }
   Ctrl+Print { screenshot-screen; }
   Alt+Print { screenshot-window; }
+
+  XF86MonBrightnessUp { spawn "brightnessctl" "-e" "s" "+5%"; }
+  XF86MonBrightnessDown { spawn "brightnessctl" "-e" "s" "5%-"; }
+
+  XF86AudioNext { spawn "playerctl" "next"; }
+  XF86AudioPause { spawn "playerctl" "play-pause"; }
+  XF86AudioPlay { spawn "playerctl" "play-pause"; }
+  XF86AudioPrev { spawn "playerctl" "previous"; }
 
   // Applications such as remote-desktop clients and software KVM switches may
   // request that niri stops processing the keyboard shortcuts defined here

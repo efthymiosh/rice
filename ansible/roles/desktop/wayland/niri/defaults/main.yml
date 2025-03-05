@@ -1,3 +1,4 @@
 niri_xkb_layout: "us,{% if ansible_os_family == 'Debian' %}el{% else %}gr{% endif %}"
 xcursor_size: 32
 default_shell: "zsh"
+waybar_thermal_zone: 9
