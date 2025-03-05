@@ -16,11 +16,13 @@
   file:
     path: "{{ home_folder }}/.config/{{ item }}"
     state: directory
-    mode: 0750
+    mode: 0700
   loop:
   - niri
   - waybar
   - fuzzel
+  - gtk-3.0
+  - gtk-4.0
 
 - name: Template configuration
   become: false
@@ -32,3 +34,12 @@
   - waybar/config.jsonc
   - waybar/style.css
   - fuzzel/fuzzel.ini
+  - gtk-3.0/settings.ini
+  - gtk-4.0/settings.ini
+
+- name: Configure gsettings
+  become: false
+  changed_when: false
+  shell: >
+    gsettings set org.gnome.desktop.interface cursor-theme Bibata-Modern-Catpuccin-Mocha-Rosewater-Inverse &&
+    gsettings set org.gnome.desktop.interface cursor-size 32

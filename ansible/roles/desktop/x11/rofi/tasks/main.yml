@@ -1,6 +1,6 @@
 - name: install packages
   package:
-    name: rofi
+    name: "rofi{% if rofi_wayland %}-wayland{% endif %}"
     state: latest
 
 - name: ensure rofi config directory exists

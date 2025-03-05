@@ -398,7 +398,9 @@ binds {
 
   Super+Return { spawn "alacritty" "-e" "{{ default_shell }}" "-c" "[ \"$(tmux list-sessions  | grep -v attached | wc -l)\" -ne \"0\" ] && tmux attach-session || tmux new-session -t0"; }
   //Super+Return { spawn "alacritty"; }
-  Super+D { spawn "fuzzel"; }
+  //Super+D { spawn "fuzzel"; }
+  Super+D repeat=false { spawn "rofi" "-modi" "combi" "-show" "combi"; }
+  Super+Tab repeat=false { spawn "rofi" "-modi" "window" "-show" "window"; }
   Super+Alt+L { spawn "swaylock"; }
 
   // You can also use a shell. Do this if you need pipes, multiple commands, etc.
@@ -407,8 +409,8 @@ binds {
 
   // Example volume keys mappings for PipeWire & WirePlumber.
   // The allow-when-locked=true property makes them work even when the session is locked.
-  XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
-  XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
+  XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+" "-l" "1.0"; }
+  XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-" "-l" "1.0"; }
   XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
   XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
 
