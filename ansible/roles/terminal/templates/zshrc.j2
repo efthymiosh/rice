@@ -43,7 +43,12 @@ PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:{{ home_folder }}/.local/bin:$P
 export EDITOR=nvim
 export VISUAL=nvim
 
+{% if ansible_os_family == "Debian" %}
 complete -C /usr/local/bin/nomad nomad
 complete -C /usr/local/bin/consul consul
+{% elif ansible_os_family == "Archlinux" %}
+complete -C /usr/bin/nomad nomad
+complete -C /usr/bin/consul consul
+{% endif %}
 
 # vi:ft=sh
