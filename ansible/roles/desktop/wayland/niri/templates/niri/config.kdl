@@ -594,6 +594,8 @@ binds {
 
   Print { spawn "sh" "-c" "grim -g \"$(slurp)\" - | wl-copy"; }
   Super+Print { spawn "sh" "-c" "grim -g \"$(slurp)\" - | tee ~/screen-$(date +%Y%b%d.%H:%M:%S).png | wl-copy"; }
+  XF86MonBrightnessUp { spawn "brightnessctl" "-e" "s" "+5%"; }
+  XF86MonBrightnessDown { spawn "brightnessctl" "-e" "s" "5%-"; }
   Ctrl+Print { screenshot-screen; }
   Alt+Print { screenshot-window; }
 
