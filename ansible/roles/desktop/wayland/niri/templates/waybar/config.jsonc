@@ -63,8 +63,8 @@
       "warning": 30,
       "critical": 20
     },
-    "format-icons": [" ", " ", " ", " ", " "],
-    "format": "<span color='#{{ theme.bright.green }}'>{icon}</span>{capacity}%",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "format": "<span color='#{{ theme.bright.green }}'>{icon}</span>{capacity:>3}%",
     "format-critical": "<span color='#{{ theme.bright.red }}'>{icon}</span>{capacity}%",
     "format-warning": "<span color='#{{ theme.bright.yellow }}'>{icon}</span>{capacity}%",
     "format-full": "<span color='#{{ theme.bright.green }}'>{icon}</span>{capacity}%",
@@ -81,24 +81,26 @@
       "medium": 50,
       "high": 80
     },
-    "format": "<span color='#{{ theme.bright.yellow }}'> </span>{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}<span color='#{{ theme.foreground }}'>{usage:>2}%</span>",
+    "format": "<span color='#{{ theme.bright.yellow }}'>  </span>{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}<span color='#{{ theme.foreground }}'>{usage:>2}%</span>",
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
   },
   "memory": {
-    "format": "<span color='#{{ theme.normal.magenta }}'> </span>{percentage}%"
+    "format": "<span color='#{{ theme.normal.magenta }}'> </span>{percentage:>3}%"
   },
   "temperature": {
     "thermal-zone": {{ waybar_thermal_zone }},
     "critical-threshold": 80,
-    "format-critical": "{temperatureC}°C",
-    "format": "{temperatureC}°C"
+    "format-icons": ["", "", "", "", ""],
+    "format": "<span color='#{{ theme.normal.white }}'>{icon}</span>{temperatureC:>3}°C",
+    "format-warning": "<span color='#{{ theme.normal.yellow }}'>{icon}</span>{temperatureC:>3}°C",
+    "format-critical": "<span color='#{{ theme.normal.red }}'>{icon}{temperatureC:>3}</span>°C",
   },
   "clock": {
     "format": "<span color='#{{ theme.normal.blue }}'>󰃭 </span>{:%d/%m %H:%M}",
     "tooltip": false
   },
   "niri/language": {
-    "format": "<span color='#{{ theme.bright.black }}'> </span>{}",
+    "format": "<span color='#{{ theme.bright.black }}'> </span> {}",
     "format-en": "🇬🇧",
     "format-gr": "🇬🇷"
   },
@@ -117,7 +119,7 @@
     "tooltip-format-enumerate-connected": "{device_alias}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}: {device_battery_percentage}%",
     "interval": 1,
-    "min-length": 1,
+    "min-length": 2,
     "max-length": 10
   }
 }

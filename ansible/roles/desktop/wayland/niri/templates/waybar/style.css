@@ -28,6 +28,13 @@ window#waybar {
   padding-right: 0px;
 }
 
+.modules-center {
+  margin-left: 32px;
+  margin-right: 32px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
 .modules-right {
   padding-left: 0px;
   padding-right: 16px;
@@ -134,14 +141,11 @@ window#waybar {
   border-bottom: 3px solid #{{ theme.bright.red }};
 }
 
-#temperature.critical {
-  color: #{{ theme.bright.red }};
-  border: 2px solid #{{ theme.foreground }};
-}
-
 #backlight {
   color: #{{ theme.bright.black }};
   border-bottom: 3px solid #{{ theme.bright.black }};
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 #pulseaudio {
