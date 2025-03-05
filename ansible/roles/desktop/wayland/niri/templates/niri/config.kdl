@@ -363,20 +363,27 @@ window-rule {
 
 // layer rules for launcher and bar
 layer-rule {
-    match namespace="^launcher$"
+  match namespace="^launcher$"
 
-    shadow {
-        on
-    }
-    geometry-corner-radius 10
+  shadow {
+    on
+  }
+  geometry-corner-radius 10
+}
+layer-rule {
+  match namespace="^rofi$"
+  geometry-corner-radius 20
+  shadow {
+    on
+  }
 }
 layer-rule{
     match namespace="^waybar$"
 
-//  shadow {
-//      on
-//  }
-//  geometry-corner-radius 20
+  shadow {
+      on
+  }
+  geometry-corner-radius 10
 }
 
 binds {

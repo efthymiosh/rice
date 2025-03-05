@@ -16,11 +16,14 @@
 
 /* the whole window */
 window#waybar {
-  background: #{{ theme.background }};
+  background-color: rgba(
+    {{- theme.background[0:2] | int(base=16) }},
+    {{- theme.background[2:4] | int(base=16) }},
+    {{- theme.background[4:6] | int(base=16) }}, 0.999); /* workaround for waybar messing rounded corners on full opacity */
   color: #{{ theme.foreground }};
   padding: 0px 8px;
   margin: 0;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .modules-left {
