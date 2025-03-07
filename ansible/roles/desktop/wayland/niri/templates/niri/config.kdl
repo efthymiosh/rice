@@ -111,7 +111,7 @@ cursor {
   xcursor-theme "{{ x_cursor_theme }}"
   xcursor-size {{ x_cursor_size }}
   hide-when-typing
-  hide-after-inactive-ms 1000
+  hide-after-inactive-ms 4000
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -266,7 +266,9 @@ layout {
 // See the binds section below for more spawn examples.
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "waybar"
-spawn-at-startup "swaybg" "-o" "eDP-1" "-m" "fill" "-i" "{{ home_folder }}/Pictures/wallpapers/firewatch-dark-minimal-5k-5120x2880-MOCHA.jpeg" "-o" "DP-1" "-m" "fill" "-i" "{{ home_folder }}/Pictures/wallpapers/firewatch-dark-minimal-5k-5120x2880-MOCHA.jpeg"
+spawn-at-startup "swaybg" \
+  "-o" "eDP-1" "-m" "fill" "-i" "{{ home_folder }}/Pictures/wallpapers/firewatch-dark-minimal-5k-5120x2880-MOCHA.jpeg" \
+  "-o" "DP-1" "-m" "fill" "-i" "{{ home_folder }}/Pictures/wallpapers/firewatch-dark-minimal-5k-5120x2880-MOCHA.jpeg"
 
 environment {
   DISPLAY ":0"
@@ -355,8 +357,8 @@ window-rule {
 
 //zoom all except base should be floating
 window-rule {
-  match app-id="zoom"
-  exclude title="^Zoom Workplace.*"
+  match app-id="^Zoom Workplace$"
+  exclude title="^Zoom Workplace - Licensed Account$"
 
   open-floating true
 }
@@ -378,11 +380,7 @@ layer-rule {
   }
 }
 layer-rule{
-    match namespace="^waybar$"
-
-  shadow {
-      on
-  }
+  match namespace="^waybar$"
   geometry-corner-radius 10
 }
 

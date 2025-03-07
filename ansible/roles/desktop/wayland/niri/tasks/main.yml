@@ -34,6 +34,7 @@
   loop:
   - niri/config.kdl
   - waybar/config.jsonc
+  - waybar/modules.jsonc
   - waybar/style.css
   - fuzzel/fuzzel.ini
   - gtk-3.0/settings.ini
