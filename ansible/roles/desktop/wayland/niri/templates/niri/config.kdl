@@ -254,10 +254,15 @@ layout {
   // Top and bottom struts will simply add outer gaps in addition to the area occupied by
   // layer-shell panels and regular gaps.
   struts {
-    left 24
-    right 24
+    left 0
+    right 0
     top -8 // adjust for added "height" to waybar for its shadow
     // bottom 64
+  }
+
+  insert-hint {
+      // off
+      color "#{{ theme.accent }}80"
   }
 }
 
