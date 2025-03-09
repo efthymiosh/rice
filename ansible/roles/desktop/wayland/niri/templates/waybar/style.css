@@ -11,15 +11,18 @@
   background: none;
   text-shadow: none;
   transition: none;
-  box-shadow: none;
 }
 
 /* the whole window */
 window#waybar {
-  background-color: transparent;
   color: #{{ theme.foreground }};
   padding: 0px 8px;
   margin: 0;
+}
+
+window#waybar > box {
+  margin: 4px 8px 8px 8px;
+  background-color: transparent;
 }
 
 .modules-left {
@@ -27,10 +30,13 @@ window#waybar {
     {{- theme.background[0:2] | int(base=16) }},
     {{- theme.background[2:4] | int(base=16) }},
     {{- theme.background[4:6] | int(base=16) }}, 0.999); /* workaround for waybar messing rounded corners on full opacity */
+  box-shadow: rgba(
+    {{- theme.background[0:2] | int(base=16) }},
+    {{- theme.background[2:4] | int(base=16) }},
+    {{- theme.background[4:6] | int(base=16) }}, 0.34) 0px 2px 3px 3px;
   padding-left: 16px;
-  padding-right: 0px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  padding-right: 16px;
+  border-radius: 10px;
 }
 
 .modules-center {
@@ -38,6 +44,10 @@ window#waybar {
     {{- theme.background[0:2] | int(base=16) }},
     {{- theme.background[2:4] | int(base=16) }},
     {{- theme.background[4:6] | int(base=16) }}, 0.999); /* workaround for waybar messing rounded corners on full opacity */
+  box-shadow: rgba(
+    {{- theme.background[0:2] | int(base=16) }},
+    {{- theme.background[2:4] | int(base=16) }},
+    {{- theme.background[4:6] | int(base=16) }}, 0.34) 0px 2px 3px 3px;
   margin-left: 0px;
   margin-right: 0px;
   padding-left: 16px;
@@ -49,10 +59,13 @@ window#waybar {
     {{- theme.background[0:2] | int(base=16) }},
     {{- theme.background[2:4] | int(base=16) }},
     {{- theme.background[4:6] | int(base=16) }}, 0.999); /* workaround for waybar messing rounded corners on full opacity */
-  padding-left: 0px;
+  box-shadow: rgba(
+    {{- theme.background[0:2] | int(base=16) }},
+    {{- theme.background[2:4] | int(base=16) }},
+    {{- theme.background[4:6] | int(base=16) }}, 0.34) 0px 2px 3px 3px;
+  padding-left: 16px;
   padding-right: 16px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 10px;
 }
 
 #workspaces button,
@@ -80,16 +93,12 @@ window#waybar {
 #clock,
 #language,
 
-/* ================================ */
-/*       workspaces module          */
-/* ================================ */
 #workspaces {
   margin: 0px;
 }
 
 #workspaces button {
   color: #{{ theme.bright.black }};
-  background: #{{ theme.normal.black }};
   border-radius: 8px;
   min-width: 32px;
   padding: 0 0px;
@@ -119,8 +128,7 @@ window#waybar {
 #window {
   color: #{{ theme.foreground }};
   background: none;
-  border-bottom: 3px solid #{{ theme.foreground }};
-  /* border: 2px solid #d3869b; */
+  border-bottom: 0px solid #{{ theme.foreground }};
 }
 
 #language {
@@ -128,7 +136,7 @@ window#waybar {
 }
 
 #tray {
-  background: #{{ theme.normal.black }};
+  background: #{{ theme.background }};
 }
 
 #cpu {

@@ -8,6 +8,16 @@
     }
   },
   "niri/window": {
+    "min-length": 120,
+    "max-length": 120,
+    "separate-outputs": true,
+    "align": 1
+  },
+  "niri/window#2": {
+    "min-length": 60,
+    "max-length": 60,
+    "separate-outputs": true,
+    "align": 1
   },
   "tray": {
     "icon-size": 15,

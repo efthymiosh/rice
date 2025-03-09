@@ -9,17 +9,13 @@
     "margin-right": 32,
     "margin-left": 32,
     "reload_styles_on_change": true,
-    "expand-right": true,
-    "expand-left": true,
     "no-center": true,
     "modules-left": [
       "niri/workspaces",
       "pulseaudio",
       "backlight",
-      "niri/language"
-    ],
-    "modules-center": [
-      "niri/window"
+      "niri/language",
+      "niri/window#2"
     ],
     "modules-right": [
       "bluetooth",
