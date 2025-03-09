@@ -69,31 +69,6 @@ window#waybar > box {
   border-radius: 10px;
 }
 
-#workspaces button,
-#workspaces button:hover,
-#workspaces button.visible,
-#workspaces button.visible:hover,
-#workspaces button.active,
-#workspaces button.active:hover,
-#workspaces button.urgent,
-#window,
-#tray,
-#disk,
-#cpu,
-#cpu.medium,
-#cpu.high,
-#temperature,
-#temperature.critical,
-#backlight,
-#custom-memory,
-#pulseaudio,
-#pulseaudio.muted,
-#battery,
-#battery.critical,
-#battery.warning,
-#clock,
-#language,
-
 #workspaces {
   margin: 0px;
 }
