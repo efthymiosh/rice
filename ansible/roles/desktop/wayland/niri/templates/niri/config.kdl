@@ -129,6 +129,8 @@ layout {
   //   together with the previously focused column.
   center-focused-column "never"
 
+  default-column-display "tabbed"
+
   // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
   preset-column-widths {
     // Proportion sets the width as a fraction of the output width, taking gaps into account.
@@ -261,8 +263,19 @@ layout {
   }
 
   insert-hint {
-      // off
       color "#{{ theme.accent }}80"
+  }
+  tab-indicator {
+    // off
+    hide-when-single-tab
+    gap 5
+    width 4
+    length total-proportion=1.0
+    position "right"
+    gaps-between-tabs 2
+    corner-radius 8
+    active-color "#{{ theme.accent }}"
+    inactive-color "#{{ theme.bright.black }}"
   }
 }
 
