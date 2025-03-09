@@ -11,6 +11,7 @@
   background: none;
   text-shadow: none;
   transition: none;
+  border-radius: 3px;
 }
 
 /* the whole window */
@@ -97,6 +98,11 @@ window#waybar > box {
   margin: 0px;
 }
 
+tooltip {
+  background-color: #{{ theme.background }};
+  border: 1px solid #{{ theme.bright.black }};
+}
+
 #workspaces button {
   color: #{{ theme.bright.black }};
   border-radius: 8px;
@@ -132,6 +138,7 @@ window#waybar > box {
 }
 
 #language {
+  color: #{{ theme.bright.black }};
   border-bottom: 3px solid #{{ theme.normal.yellow }};
 }
 
@@ -141,17 +148,17 @@ window#waybar > box {
 
 #cpu {
   color: #{{ theme.foreground }};
-  border-bottom: 3px solid #{{ theme.normal.red }};
+  border-bottom: 3px solid #{{ theme.bright.yellow }};
 }
 
 #cpu.medium {
-  color: #{{ theme.normal.yellow }};
-  border-bottom: 3px solid #{{ theme.normal.red }};
+  color: #{{ theme.foreground }};
+  border-bottom: 3px solid #{{ theme.bright.yellow }};
 }
 
 #cpu.high {
-  color: #{{ theme.normal.red }};
-  border-bottom: 3px solid #{{ theme.normal.red }};
+  color: #{{ theme.foreground }};
+  border-bottom: 3px solid #{{ theme.bright.red }};
 }
 
 #memory {
@@ -161,7 +168,7 @@ window#waybar > box {
 
 #temperature {
   color: #{{ theme.foreground }};
-  border-bottom: 3px solid #{{ theme.bright.red }};
+  border-bottom: 3px solid #{{ theme.normal.red }};
 }
 
 #backlight {
@@ -172,7 +179,7 @@ window#waybar > box {
 }
 
 #pulseaudio {
-  color: #{{ theme.foreground }};
+  color: #{{ theme.bright.white }};
   border-bottom: 3px solid #{{ theme.normal.green }};
 }
 
@@ -206,4 +213,9 @@ window#waybar > box {
 #bluetooth {
   color: #{{ theme.normal.blue }};
   border-bottom: 3px solid #{{ theme.normal.blue }};
+}
+
+#network {
+  color: #{{ theme.normal.magenta }};
+  border-bottom: 3px solid #{{ theme.normal.magenta }};
 }

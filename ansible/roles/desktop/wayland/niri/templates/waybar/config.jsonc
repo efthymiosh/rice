@@ -18,6 +18,7 @@
       "niri/window#2"
     ],
     "modules-right": [
+      "network",
       "bluetooth",
       "memory",
       "cpu",
@@ -43,11 +44,11 @@
     "modules-left": [
       "niri/workspaces",
       "pulseaudio",
-      "backlight",
       "niri/language",
       "niri/window"
     ],
     "modules-right": [
+      "network",
       "bluetooth",
       "memory",
       "cpu",
