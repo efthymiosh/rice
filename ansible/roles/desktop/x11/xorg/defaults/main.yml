@@ -28,11 +28,3 @@ theme:
     white:   'c5c8c6'
   accent: '81a2be'
   accent_text: '202020'
-
-# The Asus ROG Falchion sends power and suspend button presses to the pc
-# whenever it itself suspends, causing chaos
-logind_powerkey: ignore
-logind_suspendkey: ignore
-
-logind_lidswitch: suspend
-logind_lidswitch_external_power: suspend
