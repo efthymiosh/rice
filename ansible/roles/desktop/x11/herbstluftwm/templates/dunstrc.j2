@@ -8,6 +8,7 @@
     font = {{ dunst_font }}
     format = "<b>%s</b>\n%b"
 {% if ansible_facts.packages.dunst[0].version is version_compare('1.7', 'ge') %}
+    corner_radius = 10
     width = (200, 480)
     height = (10,200)
     offset = 40

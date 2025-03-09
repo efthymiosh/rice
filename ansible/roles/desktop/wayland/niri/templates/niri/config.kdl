@@ -294,11 +294,7 @@ screenshot-path "~/screen-%Y-%m-%d %H-%M-%S.png"
 // The wiki explains how to configure individual animations:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Animations
 animations {
-  // Uncomment to turn off all animations.
-  // off
-
-  // Slow down all animations by this factor. Values below 1 speed them up instead.
-  // slowdown 3.0
+   slowdown 1.2
 }
 
 // Window rules let you adjust behavior for individual windows.
@@ -350,18 +346,8 @@ window-rule {
 }
 
 window-rule {
-  match title="^Zoom Workplace.*"
-  default-column-width { proportion 0.25; }
-  min-width 500
-  max-width 1000
-}
-
-//zoom all except base should be floating
-window-rule {
   match app-id="^Zoom Workplace$"
-  exclude title="^Zoom Workplace - Licensed Account$"
-
-  open-floating true
+  block-out-from "screencast"
 }
 
 // layer rules for launcher and bar
@@ -373,6 +359,7 @@ layer-rule {
   }
   geometry-corner-radius 10
 }
+
 layer-rule {
   match namespace="^rofi$"
   geometry-corner-radius 20
@@ -380,9 +367,19 @@ layer-rule {
     on
   }
 }
-layer-rule{
+
+layer-rule {
   match namespace="^waybar$"
   geometry-corner-radius 10
+}
+
+layer-rule {
+  match namespace="^notifications$"
+
+  geometry-corner-radius 10
+  shadow {
+    on
+  }
 }
 
 binds {

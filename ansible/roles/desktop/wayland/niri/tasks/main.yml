@@ -1,3 +1,5 @@
+# req swaylock-effects from AUR
+
 - name: Install packages
   package:
     name:
@@ -6,7 +8,6 @@
     - "dunst"
     - "grim"
     - "slurp"
-    - "swaylock"
     - "swaybg"
     - "wl-clipboard"
     - "xwayland-satellite"
@@ -25,6 +26,7 @@
   - fuzzel
   - gtk-3.0
   - gtk-4.0
+  - swaylock
 
 - name: Template configuration
   become: false
@@ -39,6 +41,7 @@
   - fuzzel/fuzzel.ini
   - gtk-3.0/settings.ini
   - gtk-4.0/settings.ini
+  - swaylock/config
 
 - name: Configure gsettings
   become: false

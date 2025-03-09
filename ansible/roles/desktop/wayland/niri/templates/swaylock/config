@@ -1,0 +1,51 @@
+ignore-empty-password
+font={{ global_font }}
+
+clock
+timestr=%R
+datestr=%B%e
+
+screenshots
+
+fade-in=0.5
+
+effect-blur=10x2
+
+indicator
+indicator-radius=180
+indicator-thickness=20
+indicator-caps-lock
+
+key-hl-color={{ theme.accent }}
+separator-color={{ theme.background }}00
+bs-hl-color={{ theme.foreground }}FF
+caps-lock-bs-hl-color={{ theme.foreground }}FF
+caps-lock-key-hl-color={{ theme.accent }}88
+
+hide-keyboard-layout
+
+ring-color={{ theme.background }}D9
+inside-color={{ theme.background }}99
+text-color={{ theme.accent}}
+line-color={{ theme.bright.black }}
+
+inside-clear-color={{ theme.background }}99
+ring-clear-color={{ theme.normal.green }}FF
+text-clear-color=00000000
+
+inside-caps-lock-color={{ theme.background }}99
+ring-caps-lock-color={{ theme.background }}D9
+text-caps-lock-color={{ theme.bright.yellow }}
+
+inside-ver-color={{ theme.background }}99
+ring-ver-color={{ theme.normal.blue }}FF
+text-ver-color={{ theme.normal.blue }}
+
+inside-wrong-color={{ theme.background }}99
+ring-wrong-color={{ theme.normal.red }}FF
+text-wrong-color={{ theme.normal.red }}
+
+line-caps-lock-color={{ theme.bright.black }}
+line-ver-color={{ theme.bright.black }}
+line-clear-color={{ theme.bright.black }}
+line-wrong-color={{ theme.bright.black }}
