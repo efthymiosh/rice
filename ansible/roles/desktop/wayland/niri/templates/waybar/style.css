@@ -103,6 +103,12 @@ tooltip {
   border: 1px solid #{{ theme.bright.black }};
 }
 
+menu {
+  background-color: #{{ theme.background }};
+  color: #{{ theme.bright.black }};
+  border: 1px solid #{{ theme.bright.black }};
+}
+
 #workspaces button {
   color: #{{ theme.bright.black }};
   border-radius: 8px;
@@ -168,6 +174,16 @@ tooltip {
 
 #temperature {
   color: #{{ theme.foreground }};
+  border-bottom: 3px solid #{{ theme.normal.red }};
+}
+
+#temperature.warning {
+  color: #{{ theme.normal.yellow }};
+  border-bottom: 3px solid #{{ theme.normal.red }};
+}
+
+#temperature.critical {
+  color: #{{ theme.normal.red }};
   border-bottom: 3px solid #{{ theme.normal.red }};
 }
 

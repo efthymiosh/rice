@@ -75,14 +75,14 @@
     ]
   },
   "memory": {
-    "format": "<span color='#{{ theme.normal.magenta }}'> </span>{percentage:>3}%"
+    "format": "<span color='#{{ theme.normal.cyan }}'> </span>{percentage:>3}%"
   },
   "temperature": {
     "thermal-zone": {{ waybar_thermal_zone }},
     "critical-threshold": 80,
     "format-icons": ["", "", "", "", ""],
-    "format": "<span color='#{{ theme.normal.white }}'>{icon}</span>{temperatureC:>3}°C",
-    "format-warning": "<span color='#{{ theme.normal.yellow }}'>{icon}</span>{temperatureC:>3}°C",
+    "format": "<span color='#{{ theme.normal.red }}'>{icon}</span>{temperatureC:>3}°C",
+    "format-warning": "<span color='#{{ theme.normal.red }}'>{icon}</span>{temperatureC:>3}°C",
     "format-critical": "<span color='#{{ theme.normal.red }}'>{icon}{temperatureC:>3}</span>°C"
   },
   "clock": {
@@ -95,7 +95,7 @@
     "format-gr": "ελ"
   },
   "mpris": {
-    "format": "<span color='#cc241d'> 󰎇  </span>  {artist} - {title}  ",
+    "format": "<span color='#{{ theme.bright.cyan }}'> 󰎇  </span>  {artist} - {title}  ",
     "max-length": 40
   },
   "bluetooth": {
