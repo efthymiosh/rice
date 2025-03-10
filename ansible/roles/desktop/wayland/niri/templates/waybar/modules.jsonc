@@ -14,14 +14,15 @@
     "align": 1
   },
   "niri/window#2": {
-    "min-length": 60,
-    "max-length": 60,
+    "min-length": 40,
+    "max-length": 40,
     "separate-outputs": true,
     "align": 1
   },
   "tray": {
     "icon-size": 15,
-    "spacing": 8
+    "spacing": 8,
+    "reverse-direction": true
   },
   "backlight": {
     "format": "{icon}",
@@ -95,7 +96,9 @@
     "format-gr": "ελ"
   },
   "mpris": {
-    "format": "<span color='#{{ theme.bright.cyan }}'> 󰎇  </span>  {artist} - {title}  ",
+    "interval": 2,
+    "format": "<span color='#{{ theme.bright.cyan }}'>󰎇</span> {artist} - {title}",
+    "align": 0,
     "max-length": 40
   },
   "bluetooth": {

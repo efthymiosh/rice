@@ -210,3 +210,7 @@ menu {
   color: #{{ theme.normal.magenta }};
   border-bottom: 3px solid #{{ theme.normal.magenta }};
 }
+
+#mpris {
+  border-bottom: 3px solid #{{ theme.bright.cyan }};
+}
