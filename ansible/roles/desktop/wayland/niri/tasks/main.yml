@@ -9,6 +9,7 @@
     - "grim"
     - "slurp"
     - "swaybg"
+    - "swayidle"
     - "wl-clipboard"
     - "xwayland-satellite"
     - "waybar"
@@ -27,6 +28,7 @@
   - gtk-3.0
   - gtk-4.0
   - swaylock
+  - systemd/user/niri.service.wants
 
 - name: Template configuration
   become: false
@@ -35,13 +37,47 @@
     dest: "{{ home_folder }}/.config/{{ item }}"
   loop:
   - niri/config.kdl
-  - waybar/config.jsonc
-  - waybar/modules.jsonc
-  - waybar/style.css
   - fuzzel/fuzzel.ini
   - gtk-3.0/settings.ini
   - gtk-4.0/settings.ini
   - swaylock/config
+
+- name: Template waybar configuration
+  become: false
+  template:
+    src: "waybar/{{ item }}"
+    dest: "{{ home_folder }}/.config/waybar/{{ item }}"
+  loop:
+  - config.jsonc
+  - modules.jsonc
+  - style.css
+  notify: reload waybar.service
+
+- name: template systemd service
+  become: false
+  template:
+    src: "systemd/{{ item }}"
+    dest: "{{ home_folder }}/.config/systemd/user/{{ item}}"
+  notify:
+  - restart {{ item }}
+  - reload systemd
+  loop:
+  - swaybg.service
+  - xwayland-satellite.service
+  - waybar.service
+  - swayidle.service
+
+- name: link service to niri.service.wants
+  become: false
+  file:
+    src: "{{ home_folder }}/.config/systemd/user/{{ item}}"
+    dest: "{{ home_folder }}/.config/systemd/user/niri.service.wants/{{ item }}"
+    state: link
+  loop:
+  - swaybg.service
+  - xwayland-satellite.service
+  - waybar.service
+  - swayidle.service
 
 - name: Configure gsettings
   become: false

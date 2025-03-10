@@ -1,0 +1,40 @@
+- name: reload waybar.service
+  become: false
+  systemd:
+    scope: user
+    name: waybar.service
+    state: reloaded
+
+- name: reload systemd
+  become: false
+  systemd:
+    scope: user
+    daemon_reload: true
+
+- name: restart swaybg.service
+  become: false
+  systemd:
+    scope: user
+    name: swaybg.service
+    state: restarted
+
+- name: restart waybar.service
+  become: false
+  systemd:
+    scope: user
+    name: waybar.service
+    state: restarted
+
+- name: restart xwayland-satellite.service
+  become: false
+  systemd:
+    scope: user
+    name: xwayland-satellite.service
+    state: restarted
+
+- name: restart swayidle.service
+  become: false
+  systemd:
+    scope: user
+    name: swayidle.service
+    state: restarted

@@ -9,6 +9,7 @@
   vars:
     provision_hostname: "frisby"
     x_cursor_theme: "Bibata-Modern-Catpuccin-Mocha-Rosewater-Inverse"
+    niri_wallpaper: "Pictures/wallpapers/firewatch-dark-minimal-5k-5120x2880-MOCHA.jpeg"
     global_font: "FiraCode Nerd Font"
     alacritty_font_size: "{{ global_font_size }}"
     picom_install_from_source: false

@@ -1,4 +1,5 @@
 niri_xkb_layout: "us,{% if ansible_os_family == 'Debian' %}el{% else %}gr{% endif %}"
+niri_wallpaper: "Pictures/wallpapers/firewatch-dark-minimal-5k-5120x2880-MOCHA.jpeg"
 xcursor_size: 32
 default_shell: "zsh"
 waybar_thermal_zone: 9

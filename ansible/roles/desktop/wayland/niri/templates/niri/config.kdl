@@ -286,11 +286,7 @@ layout {
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
-spawn-at-startup "xwayland-satellite"
-spawn-at-startup "waybar"
-spawn-at-startup "swaybg" \
-  "-o" "eDP-1" "-m" "fill" "-i" "{{ home_folder }}/Pictures/wallpapers/firewatch-dark-minimal-5k-5120x2880-MOCHA.jpeg" \
-  "-o" "DP-1" "-m" "fill" "-i" "{{ home_folder }}/Pictures/wallpapers/firewatch-dark-minimal-5k-5120x2880-MOCHA.jpeg"
+// spawn-at-startup "xwayland-satellite"
 
 environment {
   DISPLAY ":0"
