@@ -241,7 +241,7 @@ layout {
     softness 8
 
     // Spread expands the shadow.
-    spread 3
+    spread 1
 
     // Offset moves the shadow relative to the window.
     offset x=0 y=1
