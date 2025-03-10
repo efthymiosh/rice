@@ -366,6 +366,7 @@ window-rule {
 window-rule {
   match app-id="^Zoom Workplace$"
   block-out-from "screencast"
+  open-floating true
 }
 
 // layer rules for launcher and bar
