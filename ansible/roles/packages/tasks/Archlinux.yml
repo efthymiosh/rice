@@ -17,7 +17,6 @@
     - "fastfetch"
     - "bitwarden"
     - "bitwarden-cli"
-    - "flatpak"
     - "terraform"
     - "packer"
     - "glab"
@@ -32,8 +31,19 @@
     - "cfssl"
     - "talosctl"
     - "fd"
+    - "spotify-launcher"
     state: present
     update_cache: yes
+
+- name: install AUR packages
+  become: false
+  shell: >
+    yay -Syu --noconfirm --needed
+      slack-desktop
+      swaylock-effects
+      zoom
+
+- include_tasks: "zathura.yml"
 
 - include_role:
     name: packages/binpackages
@@ -62,5 +72,3 @@
     - name: grype
       version: "{{ grype_version }}"
       fetch_url: "https://github.com/anchore/grype/releases/download/v{{ grype_version }}/grype_{{ grype_version }}_linux_amd64.tar.gz"
-
-- include_tasks: "linux.yml"

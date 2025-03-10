@@ -1,0 +1,13 @@
+- name: create directories
+  become: false
+  file:
+    path: "{{ home_folder }}/.config/zathura"
+    state: directory
+
+- name: template configuration
+  become: false
+  template:
+    dest: "{{ home_folder }}/.{{ item }}"
+    src: "templates/{{ item }}.j2"
+  loop: [ "config/zathura/zathurarc" ]
+  tags: theme
