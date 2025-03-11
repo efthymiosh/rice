@@ -2,8 +2,6 @@ ignore-empty-password
 font={{ global_font }}
 
 clock
-timestr=%R
-datestr=%B%e
 
 screenshots
 
@@ -12,9 +10,16 @@ fade-in=0.5
 effect-blur=10x2
 
 indicator
-indicator-radius=180
+indicator-radius=360
 indicator-thickness=20
 indicator-caps-lock
+
+timestr=󰍁
+datestr=%T
+text-ver=󰣯
+text-wrong=󱚳
+text-caps-lock=󰪛
+text-clear=󰉥
 
 key-hl-color={{ theme.accent }}
 separator-color={{ theme.background }}00
@@ -24,28 +29,28 @@ caps-lock-key-hl-color={{ theme.accent }}88
 
 hide-keyboard-layout
 
-ring-color={{ theme.background }}D9
-inside-color={{ theme.background }}99
+ring-color={{ theme.background }}00
+inside-color={{ theme.background }}00
 text-color={{ theme.accent}}
-line-color={{ theme.bright.black }}
+line-color={{ theme.bright.black }}00
 
-inside-clear-color={{ theme.background }}99
-ring-clear-color={{ theme.normal.green }}FF
-text-clear-color=00000000
+inside-clear-color={{ theme.background }}00
+ring-clear-color={{ theme.foreground }}00
+text-clear-color={{ theme.foreground }}
 
-inside-caps-lock-color={{ theme.background }}99
-ring-caps-lock-color={{ theme.background }}D9
+inside-caps-lock-color={{ theme.background }}00
+ring-caps-lock-color={{ theme.background }}00
 text-caps-lock-color={{ theme.bright.yellow }}
 
-inside-ver-color={{ theme.background }}99
-ring-ver-color={{ theme.normal.blue }}FF
+inside-ver-color={{ theme.background }}00
+ring-ver-color={{ theme.normal.blue }}00
 text-ver-color={{ theme.normal.blue }}
 
-inside-wrong-color={{ theme.background }}99
-ring-wrong-color={{ theme.normal.red }}FF
+inside-wrong-color={{ theme.background }}00
+ring-wrong-color={{ theme.normal.red }}00
 text-wrong-color={{ theme.normal.red }}
 
-line-caps-lock-color={{ theme.bright.black }}
-line-ver-color={{ theme.bright.black }}
-line-clear-color={{ theme.bright.black }}
-line-wrong-color={{ theme.bright.black }}
+line-caps-lock-color={{ theme.bright.black }}00
+line-ver-color={{ theme.bright.black }}00
+line-clear-color={{ theme.bright.black }}00
+line-wrong-color={{ theme.bright.black }}00
