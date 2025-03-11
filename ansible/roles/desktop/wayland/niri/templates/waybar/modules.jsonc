@@ -63,7 +63,7 @@
       "medium": 50,
       "high": 80
     },
-    "format": "<span color='#{{ theme.bright.yellow }}'>  </span>{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}<span color='#{{ theme.foreground }}'>{usage:>2}%</span>",
+    "format": "<span color='#{{ theme.bright.yellow }}'>  </span>{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}<span color='#{{ theme.foreground }}'>{usage:>3}%</span>",
     "format-icons": [
       "<span color='#{{ theme.normal.green }}'>▁</span>",
       "<span color='#{{ theme.normal.green }}'>▂</span>",
