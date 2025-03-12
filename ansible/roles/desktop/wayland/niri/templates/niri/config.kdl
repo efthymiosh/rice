@@ -114,7 +114,7 @@ cursor {
   xcursor-theme "{{ x_cursor_theme }}"
   xcursor-size {{ x_cursor_size }}
   hide-when-typing
-  hide-after-inactive-ms 4000
+  hide-after-inactive-ms 60000
 }
 
 // Settings that influence how windows are positioned and sized.
