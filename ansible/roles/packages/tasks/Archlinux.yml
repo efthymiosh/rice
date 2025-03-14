@@ -38,15 +38,27 @@
 
 - name: install AUR packages
   become: false
-  shell: >
-    yay -S --noconfirm --needed
-      slack-desktop
-      swaylock-effects
-      zoom
-      levant-bin
-      duckdb-bin
-      1password-cli
-      1password
+  shell: |
+    yay -S --noconfirm --needed \
+      slack-desktop \
+      swaylock-effects \
+      zoom \
+      levant-bin \
+      duckdb-bin \
+      1password-cli \
+      1password \
       grype-bin
 
 - include_tasks: "zathura.yml"
+
+- include_role:
+    name: packages/binpackages
+  vars:
+    binpackages_items:
+    - name: fluvio
+      version: "{{ fluvio_version }}"
+      fetch_url: "https://github.com/infinyon/fluvio/releases/download/v{{ fluvio_version }}/fluvio-x86_64-unknown-linux-musl.zip"
+    - name: kubelogin
+      version: "{{ kubelogin_version }}"
+      fetch_url: "https://github.com/int128/kubelogin/releases/download/v{{ kubelogin_version }}/kubelogin_linux_amd64.zip"
+      link_name: kubectl-oidc_login
