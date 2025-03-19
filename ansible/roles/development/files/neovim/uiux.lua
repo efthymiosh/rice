@@ -9,58 +9,59 @@ for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
 end
 
 require("neo-tree").setup({
-    enable_diagnostics = false,
-    enable_git_status = true,
-    default_component_configs = {
-        name = {
-            trailing_slash = false,
-            use_git_status_colors = false,
-        },
-        icon = {
-            folder_empty = ""
-        },
-        git_status = {
-            symbols = {
-                untracked = "",
-                ignored   = "",
-                unstaged  = "",
-                staged    = "",
-                conflict  = "",
-            }
-        },
+  enable_diagnostics = false,
+  enable_git_status = true,
+  default_component_configs = {
+    name = {
+      trailing_slash = false,
+      use_git_status_colors = false,
     },
-    filesystem = {
-        use_libuv_file_watcher = true,
-        filtered_items = {
-          hide_gitignored = false,
-        }
+    icon = {
+      folder_empty = ""
     },
-    window = {
-        position = "left",
-        width = "31",
+    git_status = {
+      symbols = {
+        untracked = "",
+        ignored   = "",
+        unstaged  = "",
+        staged    = "",
+        conflict  = "",
+      }
     },
-    buffers = {
-        follow_current_file = {
-          enabled = true
-        }
+  },
+  filesystem = {
+    use_libuv_file_watcher = true,
+    filtered_items = {
+      hide_gitignored = false,
+    },
+    group_empty_dirs = true,
+  },
+  window = {
+    position = "left",
+    width = "31",
+  },
+  buffers = {
+    follow_current_file = {
+      enabled = true
     }
+  }
 })
 
 local ts_actions = require("telescope.actions")
 require("telescope").setup({
-    defaults = {
-        mappings = {
-            i = {
-                ["<esc>"] = ts_actions.close
-            },
-        },
-    }
+  defaults = {
+    mappings = {
+      i = {
+        ["<esc>"] = ts_actions.close
+      },
+    },
+  }
 })
 
 require("gitsigns").setup({
-    signs = {
-        untracked = { text = '│' },
-    }
+  signs = {
+    untracked = { text = '│' },
+  }
 })
 
 require("symbols-outline").setup({
