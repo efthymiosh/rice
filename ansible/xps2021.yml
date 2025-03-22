@@ -8,14 +8,12 @@
 
   vars:
     provision_hostname: "tile"
+    x_cursor_size: "32"
     x_cursor_theme: "Bibata-Modern-Onedark-Green"
     global_font: "0xProto Nerd Font"
-    alacritty_font_size: 10
-
-  pre_tasks:
-  - name: update apt package information
-    apt:
-      update_cache: yes
+    alacritty_font_size: "{{ global_font_size }}"
+    niri_wallpaper: "Pictures/wallpapers/city_by_florentllamas_d8gq6cp.jpg"
+    waybar_thermal_zone: 6
 
   roles:
   - role: packages
@@ -28,10 +26,12 @@
     tags: fonts
   - role: boot
     tags: boot
-  - role: desktop/x11
-    tags: desktop
+  - role: desktop/wayland
+    tags: wayland
   - role: apps/firefox
     tags: firefox
+  - role: arch-fixes
+    tags: arch-fixes
 
   tasks:
   - name: modify hostname
