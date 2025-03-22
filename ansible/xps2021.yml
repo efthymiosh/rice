@@ -37,8 +37,3 @@
   - name: modify hostname
     hostname:
       name: "{{ provision_hostname }}"
-
-  - name: work around rog falchion sending power and suspend signals
-    file:
-      path: "/etc/udev/hwdb.d/99-asus-falchion.hwdb"
-      state: absent
