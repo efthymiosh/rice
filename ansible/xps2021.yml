@@ -12,7 +12,7 @@
     x_cursor_theme: "Bibata-Modern-Onedark-Green"
     global_font: "0xProto Nerd Font"
     alacritty_font_size: "{{ global_font_size }}"
-    niri_wallpaper: "Pictures/wallpapers/city_by_florentllamas_d8gq6cp.jpg"
+    niri_wallpaper: "Pictures/wallpapers/the_frontier.jpg"
     waybar_thermal_zone: 6
 
   roles:
