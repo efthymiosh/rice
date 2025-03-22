@@ -6,5 +6,10 @@
     - "otf-firamono-nerd"
     - "ttf-mononoki-nerd"
     - "ttf-space-mono-nerd"
+    - "ttf-jetbrains-mono-nerd"
+    - "ttf-0xproto-nerd"
+    - "ttf-anonymouspro-nerd"
+    - "ttf-monofur-nerd"
+    - "ttf-cascadia-code-nerd"
     state: present
     update_cache: yes
