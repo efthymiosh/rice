@@ -9,7 +9,7 @@
   vars:
     provision_hostname: "tile"
     x_cursor_theme: "Bibata-Modern-Onedark-Green"
-    global_font: "Mononoki Nerd Font"
+    global_font: "0xProto Nerd Font"
     alacritty_font_size: 10
 
   pre_tasks:
