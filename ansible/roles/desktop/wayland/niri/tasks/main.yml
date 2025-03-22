@@ -13,6 +13,8 @@
     - "wl-clipboard"
     - "xwayland-satellite"
     - "waybar"
+    - "pavucontrol"
+    - "brightnessctl"
     state: present
 
 - name: Ensure configuration dirs exist
