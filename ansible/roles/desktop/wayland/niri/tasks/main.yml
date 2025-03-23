@@ -85,5 +85,5 @@
   become: false
   changed_when: false
   shell: >
-    gsettings set org.gnome.desktop.interface cursor-theme Bibata-Modern-Catpuccin-Mocha-Rosewater-Inverse &&
+    gsettings set org.gnome.desktop.interface cursor-theme {{ x_cursor_theme }} &&
     gsettings set org.gnome.desktop.interface cursor-size 32
