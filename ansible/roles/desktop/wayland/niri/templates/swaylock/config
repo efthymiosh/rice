@@ -15,7 +15,7 @@ indicator-thickness=20
 indicator-caps-lock
 
 timestr=󰍁
-datestr=%T
+datestr=%H:%M
 text-ver=󰣯
 text-wrong=󱚳
 text-caps-lock=󰪛
