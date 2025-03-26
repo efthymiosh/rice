@@ -17,7 +17,8 @@ require("neo-tree").setup({
       use_git_status_colors = false,
     },
     icon = {
-      folder_empty = ""
+      folder_empty = "",
+      folder_empty_open = "",
     },
     git_status = {
       symbols = {
@@ -35,6 +36,8 @@ require("neo-tree").setup({
       hide_gitignored = false,
     },
     group_empty_dirs = true,
+    scan_mode = "deep",
+    async_directory_scan = "auto",
   },
   window = {
     position = "left",
