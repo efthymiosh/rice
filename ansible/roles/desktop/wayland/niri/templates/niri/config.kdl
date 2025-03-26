@@ -99,7 +99,7 @@ output "eDP-1" {
   position x=0 y=960
 }
 
-output "DP-1" {
+output "Lenovo Group Limited P40w-20 V90AFBLG" {
   mode "5120x2160@60.000"
   scale 1
   transform "normal"
