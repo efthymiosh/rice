@@ -1,5 +1,3 @@
 dependencies:
 - role: desktop/wayland/niri
   tags: niri
-- role: desktop/x11/rofi
-  tags: rofi

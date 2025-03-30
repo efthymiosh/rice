@@ -15,7 +15,6 @@
     picom_install_from_source: false
     hlwm_lock: i3lock
     polybar_thermal_zone: "9"
-    rofi_wayland: true
 
   roles:
   - role: packages

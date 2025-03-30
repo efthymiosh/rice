@@ -416,8 +416,7 @@ binds {
 
   Super+Return { spawn "alacritty" "-e" "{{ default_shell }}" "-c" "[ \"$(tmux list-sessions  | grep -v attached | wc -l)\" -ne \"0\" ] && tmux attach-session || tmux new-session -t0"; }
   Super+D { spawn "fuzzel"; }
-  //Super+D repeat=false { spawn "rofi" "-modi" "combi" "-show" "combi"; }
-  Super+Tab repeat=false { spawn "rofi" "-modi" "window" "-show" "window"; }
+  Super+Tab repeat=false { spawn "bash" "{{ home_folder }}/.config/fuzzel/winswitch.sh"; }
   Super+Alt+L { spawn "swaylock" "-f"; }
 
   // You can also use a shell. Do this if you need pipes, multiple commands, etc.
