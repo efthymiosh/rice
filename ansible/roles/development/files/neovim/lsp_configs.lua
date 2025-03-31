@@ -1,3 +1,4 @@
+vim.diagnostic.config({ virtual_text = true })
 require("mason").setup({
   ui = {
     icons = {
