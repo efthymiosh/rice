@@ -7,12 +7,18 @@ The actual dotfiles are in the various ansible role directories.
 
 ## Getting started with a fresh installation
 
-Ensure python and ansible are installed, e.g:
+Ensure python and ansible are installed, and run:
 
 ```bash
-sudo apt update
-sudo apt install -y python3-pip
-python3 -m pip install --user ansible
-cd ansible
 ansible-playbook -K --diff ./${LAPTOP}.yml
+```
+
+## Firefox manual configuration
+
+In `about:config` set:
+
+```
+layout.css.devPixelsPerPx = 1.25
+services.sync.prefs.sync-seen.extensions.activeThemeID = false
+sidebar.verticalTabs = true
 ```
