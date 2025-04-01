@@ -168,6 +168,10 @@ hi link @comment.todo Todo
 hi link @comment.warning Todo
 hi link @type.qualifier Statement
 
+" Trouble
+hi link TroubleNormal Normal
+hi link TroubleNormalNC Normal
+
 " General
 hi Function   cterm=NONE ctermfg=4 ctermbg=NONE
 hi Identifier cterm=NONE ctermfg=11 ctermbg=NONE
