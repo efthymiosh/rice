@@ -8,6 +8,7 @@
   loop:
   - alacritty
   - ghostty
+  tags: dots
 
 - name: template {{ item.name }} configuration
   become: false
@@ -27,7 +28,9 @@
   - name: "ghostty"
     src: "ghostty/config.j2"
     dest: "ghostty/config"
-  tags: theme
+  tags:
+  - theme
+  - dots
 
 - name: fetch and install terminal packages
   become: "{{ package_manager_become }}"
@@ -45,6 +48,7 @@
   - "bash_aliases"
   - "inputrc"
   - "ssh-agent.zsh"
+  tags: dots
 
 - name: template terminal configuration
   become: false
@@ -54,7 +58,9 @@
   loop: 
   - "zshrc"
   - "tmux.conf"
-  tags: theme
+  tags:
+  - theme
+  - dots
 
 - name: ensure user default shell is set
   become: true

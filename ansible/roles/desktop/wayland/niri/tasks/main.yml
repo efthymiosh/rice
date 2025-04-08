@@ -31,6 +31,7 @@
   - gtk-4.0
   - swaylock
   - systemd/user/niri.service.wants
+  tags: dots
 
 - name: Template configuration
   become: false
@@ -44,6 +45,7 @@
   - gtk-3.0/settings.ini
   - gtk-4.0/settings.ini
   - swaylock/config
+  tags: dots
 
 - name: Template waybar configuration
   become: false
@@ -55,6 +57,7 @@
   - modules.jsonc
   - style.css
   notify: reload waybar.service
+  tags: dots
 
 - name: template systemd service
   become: false

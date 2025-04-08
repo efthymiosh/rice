@@ -7,6 +7,7 @@
   loop:
   - "{{ neovim_autoload_dir }}"
   - "{{ home_folder }}/.config/nvim/lua"
+  tags: dots
 
 - name: install vimscript configuration
   become: false
@@ -16,6 +17,7 @@
   loop:
   - init.vim
   - theme.vim
+  tags: dots
 
 - name: install lua configuration
   become: false
@@ -26,6 +28,7 @@
   - plugins.lua
   - uiux.lua
   - lsp_configs.lua
+  tags: dots
 
 - name: set neovim as the default editor
   when: ansible_os_family == "Debian"

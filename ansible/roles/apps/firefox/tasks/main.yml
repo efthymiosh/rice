@@ -6,19 +6,23 @@
   loop:
   - "{{ home_folder }}/.config/tridactyl/"
   - "{{ home_folder }}/.config/tridactyl/themes/"
+  tags: dots
 
 - name: template tridactyl conf
   become: false
   template:
     src: tridactylrc
     dest: "{{ home_folder }}/.config/tridactyl/tridactylrc"
+  tags: dots
 
 - name: "template tridactyl theme to ~/.config/{{ theme_name }}.css"
   become: false
   template:
     src: firefox-tridactyl.css
     dest: "{{ home_folder }}/.config/tridactyl/themes/{{ theme_name }}.css"
-  tags: theme
+  tags:
+  - theme
+  - dots
 
 - name: Alert user for manual action
   debug:

@@ -27,6 +27,7 @@
     state: "directory"
   loop:
   - karabiner
+  tags: dots
 
 - name: set karabiner remappings
   become: false
@@ -34,12 +35,14 @@
     remote_src: false
     src: "karabiner/karabiner.json"
     dest: "{{ home_folder }}/.config/karabiner/karabiner.json"
+  tags: dots
 
 - name: configure skhd
   become: false
   template:
     src: "skhdrc.j2"
     dest: "{{ home_folder }}/.skhdrc"
+  tags: dots
 
 - name: configure yabai
   become: false
@@ -47,3 +50,4 @@
     src: "yabairc.j2"
     dest: "{{ home_folder }}/.yabairc"
   notify: restart yabai
+  tags: dots

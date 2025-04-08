@@ -2,3 +2,4 @@
   become: true
   command:
     cmd: reinstall-kernels
+  when: skip_handlers is not defined or skip_handlers is false

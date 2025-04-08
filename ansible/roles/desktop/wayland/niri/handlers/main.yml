@@ -4,12 +4,14 @@
     scope: user
     name: waybar.service
     state: reloaded
+  when: skip_handlers is not defined or skip_handlers is false
 
 - name: reload systemd
   become: false
   systemd:
     scope: user
     daemon_reload: true
+  when: skip_handlers is not defined or skip_handlers is false
 
 - name: restart swaybg.service
   become: false
@@ -17,6 +19,7 @@
     scope: user
     name: swaybg.service
     state: restarted
+  when: skip_handlers is not defined or skip_handlers is false
 
 - name: restart waybar.service
   become: false
@@ -24,6 +27,7 @@
     scope: user
     name: waybar.service
     state: restarted
+  when: skip_handlers is not defined or skip_handlers is false
 
 - name: restart xwayland-satellite.service
   become: false
@@ -31,6 +35,7 @@
     scope: user
     name: xwayland-satellite.service
     state: restarted
+  when: skip_handlers is not defined or skip_handlers is false
 
 - name: restart swayidle.service
   become: false
@@ -38,3 +43,4 @@
     scope: user
     name: swayidle.service
     state: restarted
+  when: skip_handlers is not defined or skip_handlers is false

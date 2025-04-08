@@ -4,6 +4,7 @@
     scope: user
     name: pipewire
     state: restarted
+  when: skip_handlers is not defined or skip_handlers is false
     
 - name: restart wireplumber
   become: false
@@ -11,3 +12,4 @@
     scope: user
     name: wireplumber
     state: restarted
+  when: skip_handlers is not defined or skip_handlers is false

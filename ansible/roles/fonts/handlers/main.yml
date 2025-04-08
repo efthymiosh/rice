@@ -1,3 +1,4 @@
 - name: refresh font cache
   become: false
   shell: "fc-cache -f"
+  when: skip_handlers is not defined or skip_handlers is false
