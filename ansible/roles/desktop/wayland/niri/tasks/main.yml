@@ -87,4 +87,4 @@
   changed_when: false
   shell: >
     gsettings set org.gnome.desktop.interface cursor-theme {{ x_cursor_theme }} &&
-    gsettings set org.gnome.desktop.interface cursor-size 32
+    gsettings set org.gnome.desktop.interface cursor-size {{ x_cursor_size }}
