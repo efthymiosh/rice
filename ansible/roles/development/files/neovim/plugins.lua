@@ -29,8 +29,8 @@ require("lazy").setup({
     {
         'mfussenegger/nvim-dap',
     },
-    { -- Symbols Outline: LSP-powered symbols bar
-        'simrat39/symbols-outline.nvim',
+    { -- Outline: LSP-powered symbols bar
+        'hedyhli/outline.nvim',
     },
     { -- Treesitter: syntax parsing
         'nvim-treesitter/nvim-treesitter',

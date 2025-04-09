@@ -11,8 +11,8 @@ lua vim.api.nvim_set_hl(0, "LineflyReplace", { link = "ErrorMsg" })
 nnoremap <c-h> <cmd>Neotree toggle action=focus<CR>
 nnoremap <c-k> <cmd>Neotree reveal action=focus<CR>
 
-" Symbol Outline settings
-nnoremap <c-l> <cmd>SymbolsOutline<CR>
+" Outline settings
+nnoremap <c-l> <cmd>Outline<CR>
 
 " Fugitive settings
 set diffopt+=vertical
