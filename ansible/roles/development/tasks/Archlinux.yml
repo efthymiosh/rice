@@ -10,7 +10,6 @@
     - "jdk21-openjdk"
     - "groovy"
     - "nodejs-lts-iron"
-    - "npm"
     - "helix"
     - "neovim"
     state: "present"
