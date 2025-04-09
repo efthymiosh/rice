@@ -40,7 +40,7 @@
   become: false
   shell: |
     yay -S --noconfirm --needed \
-      slack-desktop \
+      slack-desktop-wayland \
       swaylock-effects \
       zoom \
       levant-bin \
