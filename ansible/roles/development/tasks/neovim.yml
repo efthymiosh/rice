@@ -5,7 +5,6 @@
     path: "{{ item }}"
     state: directory
   loop:
-  - "{{ neovim_autoload_dir }}"
   - "{{ home_folder }}/.config/nvim/lua"
   tags: dots
 

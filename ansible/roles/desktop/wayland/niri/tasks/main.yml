@@ -30,7 +30,6 @@
   - gtk-3.0
   - gtk-4.0
   - swaylock
-  - systemd/user/niri.service.wants
   tags: dots
 
 - name: Template configuration
@@ -72,6 +71,13 @@
   - xwayland-satellite.service
   - waybar.service
   - swayidle.service
+
+- name: Ensure systemd niri.service.wants dir exists
+  become: false
+  file:
+    path: "{{ home_folder }}/.config/systemd/user/niri.service.wants"
+    state: directory
+    mode: 0700
 
 - name: link service to niri.service.wants
   become: false
