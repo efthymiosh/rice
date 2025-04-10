@@ -1,0 +1,32 @@
+name: release dots
+on:
+  push: {}
+#   tags: ['*']
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: prep temp release dir
+      run: mkdir -p /tmp/dots
+
+    - name: Generate dotfiles
+      uses: dawidd6/action-ansible-playbook@v3
+      with:
+        playbook: dotgen.yml
+        directory: ./ansible
+        options: |
+          --tags=dots
+          --extra-vars home_folder=/tmp/dots
+
+    - uses: montudor/action-zip@v1
+      with:
+        args: zip -qq -r /tmp/efthymiosh_dots.zip /tmp/dots
+
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "/tmp/efthymiosh_dots.zip"
+        bodyFile: "${{ github.event.head_commit.message }}"
+        tag: "${{ github.ref_name }}"
