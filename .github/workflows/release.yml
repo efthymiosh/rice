@@ -27,5 +27,5 @@ jobs:
     - uses: ncipollo/release-action@v1
       with:
         artifacts: "/tmp/efthymiosh_dots.tar.gz"
-        bodyFile: "${{ github.event.head_commit.message }}"
+        body: "${{ github.event.head_commit.message }}"
         tag: "${{ github.ref_name }}"
