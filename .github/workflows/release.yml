@@ -1,7 +1,7 @@
 name: release dots
 on:
-  push: {}
-#   tags: ['*']
+  push:
+    tags: ['*']
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -22,7 +22,7 @@ jobs:
           --extra-vars home_folder=/tmp/dots
 
     - name: archive dotfiles
-      run: tar czvvf /tmp/efthymiosh_dots.tar.gz -C /tmp/dots .
+      run: tar czvvf /tmp/efthymiosh_dots.tar.gz -C /tmp/ dots
 
     - uses: ncipollo/release-action@v1
       with:
