@@ -21,12 +21,11 @@ jobs:
           --tags=dots
           --extra-vars home_folder=/tmp/dots
 
-    - uses: montudor/action-zip@v1
-      with:
-        args: zip -qq -r /tmp/efthymiosh_dots.zip /tmp/dots
+    - name: archive dotfiles
+      run: tar czvvf /tmp/efthymiosh_dots.tar.gz -C /tmp/dots .
 
     - uses: ncipollo/release-action@v1
       with:
-        artifacts: "/tmp/efthymiosh_dots.zip"
+        artifacts: "/tmp/efthymiosh_dots.tar.gz"
         bodyFile: "${{ github.event.head_commit.message }}"
         tag: "${{ github.ref_name }}"
