@@ -9,6 +9,7 @@
     - "jdk11-openjdk"
     - "jdk21-openjdk"
     - "groovy"
+    - "npm"
     - "nodejs-lts-iron"
     - "helix"
     - "neovim"
