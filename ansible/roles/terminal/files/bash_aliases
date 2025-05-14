@@ -11,8 +11,7 @@ alias info='info --vi-keys'
 
 alias vim='nvim'
 alias myip='dig @resolver1.opendns.com myip.opendns.com +short'
-
-alias pssh='parallel-ssh'
+alias zf='z $(fd . --type d | fzf)'
 
 function git-clean {
     git branch --merged | grep -ve '*' -e '^[ ]*master$' -e '^[ ]main*' | xargs git branch -d
