@@ -11,5 +11,6 @@
     - "ttf-anonymouspro-nerd"
     - "ttf-monofur-nerd"
     - "ttf-cascadia-code-nerd"
+    - "otf-geist-mono-nerd"
     state: present
     update_cache: yes
