@@ -22,6 +22,7 @@ require("lazy").setup({
     },
     { -- Alt status line
         'bluz71/nvim-linefly',
+        commit = 'e1aca58',
         dependencies = {
             'nvim-tree/nvim-web-devicons',
         }
