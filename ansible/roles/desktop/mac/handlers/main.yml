@@ -1,4 +1,9 @@
-- name: spooninstall
+- name: restart skhd
   become: false
   shell: "skhd --restart-service"
+  when: skip_handlers is not defined or skip_handlers is false
+
+- name: restart yabai
+  become: false
+  shell: "yabai --restart-service"
   when: skip_handlers is not defined or skip_handlers is false

@@ -1,8 +1,18 @@
+- name: add yabai tap
+  become: false
+  homebrew_tap:
+    name: "{{ item }}"
+  loop:
+  - "koekeishiya/formulae"
+  - "FelixKratz/formulae"
+
 - name: install packages
   become: false
   homebrew:
     name:
-    - "hammerspoon"
+    - "koekeishiya/formulae/yabai"
+    - "koekeishiya/formulae/skhd"
+  notify: restart skhd
 
 - name: install casks
   become: false
@@ -13,11 +23,10 @@
 - name: ensure configuration directories exist
   become: false
   file:
-    path: "{{ home_folder }}/{{ item }}"
+    path: "{{ home_folder }}/.config/{{ item }}"
     state: "directory"
   loop:
-  - .config/karabiner
-  - .hammerspoon
+  - karabiner
   tags: dots
 
 - name: set karabiner remappings
@@ -28,28 +37,17 @@
     dest: "{{ home_folder }}/.config/karabiner/karabiner.json"
   tags: dots
 
-
-- name: clone hammerspoon spoons
+- name: configure skhd
   become: false
-  ansible.builtin.git:
-    repo: "{{ item.repo }}"
-    dest: "{{ home_folder }}/.hammerspoon/Spoons/{{ item.spoon }}"
-    version: main
-  loop:
-  - repo: git@github.com:mogenson/PaperWM.spoon.git
-    spoon: PaperWM.spoon
-  - repo: git@github.com:mogenson/WarpMouse.spoon.git
-    spoon: WarpMouse.spoon
+  template:
+    src: "skhdrc.j2"
+    dest: "{{ home_folder }}/.skhdrc"
   tags: dots
 
-- name: configure hammerspoon/paperwm
+- name: configure yabai
   become: false
-  copy:
-    remote_src: false
-    src: "hammerspoon/{{ item }}"
-    dest: "{{ home_folder }}/.hammerspoon/{{ item }}"
-  loop:
-  - init.lua
-  - paperwm_hotkeys.lua
-#  notify: hammerspoon reload
+  template:
+    src: "yabairc.j2"
+    dest: "{{ home_folder }}/.yabairc"
+  notify: restart yabai
   tags: dots
