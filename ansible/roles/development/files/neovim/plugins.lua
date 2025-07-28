@@ -54,13 +54,13 @@ require("lazy").setup({
         }
     },
     { -- mason.nvim
-        'williamboman/mason.nvim',
+        'mason-org/mason.nvim',
         build = function()
             pcall(vim.cmd, 'MasonUpdate')
         end,
     },
     {
-        'williamboman/mason-lspconfig.nvim',
+        'mason-org/mason-lspconfig.nvim',
         dependencies = {
             'neovim/nvim-lspconfig',
         }
