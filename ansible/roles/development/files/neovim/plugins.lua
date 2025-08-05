@@ -96,6 +96,10 @@ require("lazy").setup({
             }
         },
     },
+    { -- filetype recognition for helm
+      "qvalentin/helm-ls.nvim",
+      ft = "helm"
+    }
 })
 
 require("nvim-web-devicons").setup({
