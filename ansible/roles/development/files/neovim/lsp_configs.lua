@@ -88,6 +88,12 @@ lspconfig.basedpyright.setup({
     }
   }
 })
+lspconfig.jdtls.setup({
+  handlers = {
+    ["language/status"] = function() end,
+    ["$/progress"] = function() end,
+  }
+})
 local ruff_on_attach = function(client, bufnr)
   -- Disable hover in favor of basedpyright
   client.server_capabilities.hoverProvider = false
