@@ -10,7 +10,7 @@
     provision_hostname: "tile"
     x_cursor_size: "32"
     x_cursor_theme: "Bibata-Modern-Onedark-Green"
-    global_font: "JetBrainsMono Nerd Font"
+    global_font: "FiraCode Nerd Font"
     alacritty_font_size: "{{ global_font_size }}"
     niri_wallpaper: "Pictures/wallpapers/sunset-beyond-liyue-genshin-impact-5k-7q.jpg"
     waybar_thermal_zone: 6
