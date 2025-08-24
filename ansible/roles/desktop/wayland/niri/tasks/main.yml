@@ -58,20 +58,6 @@
   notify: reload waybar.service
   tags: dots
 
-- name: template systemd service
-  become: false
-  template:
-    src: "systemd/{{ item }}"
-    dest: "{{ home_folder }}/.config/systemd/user/{{ item}}"
-  notify:
-  - restart {{ item }}
-  - reload systemd
-  loop:
-  - swaybg.service
-  - xwayland-satellite.service
-  - waybar.service
-  - swayidle.service
-
 - name: Ensure systemd niri.service.wants dir exists
   become: false
   file:
@@ -85,6 +71,20 @@
     src: "{{ home_folder }}/.config/systemd/user/{{ item}}"
     dest: "{{ home_folder }}/.config/systemd/user/niri.service.wants/{{ item }}"
     state: link
+  loop:
+  - swaybg.service
+  - xwayland-satellite.service
+  - waybar.service
+  - swayidle.service
+
+- name: template systemd service
+  become: false
+  template:
+    src: "systemd/{{ item }}"
+    dest: "{{ home_folder }}/.config/systemd/user/{{ item}}"
+  notify:
+  - restart {{ item }}
+  - reload systemd
   loop:
   - swaybg.service
   - xwayland-satellite.service
