@@ -65,18 +65,6 @@
     state: directory
     mode: 0700
 
-- name: link service to niri.service.wants
-  become: false
-  file:
-    src: "{{ home_folder }}/.config/systemd/user/{{ item}}"
-    dest: "{{ home_folder }}/.config/systemd/user/niri.service.wants/{{ item }}"
-    state: link
-  loop:
-  - swaybg.service
-  - xwayland-satellite.service
-  - waybar.service
-  - swayidle.service
-
 - name: template systemd service
   become: false
   template:
@@ -85,6 +73,18 @@
   notify:
   - restart {{ item }}
   - reload systemd
+  loop:
+  - swaybg.service
+  - xwayland-satellite.service
+  - waybar.service
+  - swayidle.service
+
+- name: link service to niri.service.wants
+  become: false
+  file:
+    src: "{{ home_folder }}/.config/systemd/user/{{ item}}"
+    dest: "{{ home_folder }}/.config/systemd/user/niri.service.wants/{{ item }}"
+    state: link
   loop:
   - swaybg.service
   - xwayland-satellite.service
