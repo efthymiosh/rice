@@ -1,0 +1,43 @@
+- name: Configure arch desktop
+  hosts: localhost
+  become: true
+
+  vars_files:
+  - "./vars/themes/dark/catpuccin_mochaer.yml"
+  - "./vars/common.yml"
+
+  vars:
+    provision_hostname: "jarvis"
+    x_cursor_size: "32"
+    x_cursor_theme: "Bibata-Modern-Salmon"
+    niri_wallpaper: "Pictures/wallpapers/firewatch-dark-minimal-5k-5120x2880-MOCHA.jpeg"
+    global_font: "FiraCode Nerd Font"
+    alacritty_font_size: "{{ global_font_size }}"
+    picom_install_from_source: false
+    hlwm_lock: i3lock
+    polybar_thermal_zone: "9"
+
+  roles:
+  - role: packages
+    tags: packages
+  - role: development
+    tags: development
+  - role: terminal
+    tags: terminal
+  - role: fonts
+    tags: fonts
+  - role: boot
+    tags: boot
+  - role: desktop/x11
+    tags: desktop
+  - role: desktop/wayland
+    tags: wayland
+  - role: apps/firefox
+    tags: firefox
+  - role: arch-fixes
+    tags: arch-fixes
+
+  tasks:
+  - name: modify hostname
+    hostname:
+      name: "{{ provision_hostname }}"
