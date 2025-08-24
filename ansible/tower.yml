@@ -8,7 +8,7 @@
 
   vars:
     provision_hostname: "jarvis"
-    packages_bash_user_color: 31
+    starship_user_color: red
     x_cursor_size: "32"
     x_cursor_theme: "Bibata-Modern-Salmon"
     niri_wallpaper: "Pictures/wallpapers/firewatch-dark-minimal-5k-5120x2880-MOCHA.jpeg"
