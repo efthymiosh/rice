@@ -168,6 +168,12 @@ hi link @comment.todo Todo
 hi link @comment.warning Todo
 hi link @type.qualifier Statement
 
+" helm/yaml
+hi @property.yaml cterm=NONE ctermfg=11 ctermbg=NONE
+hi @punctuation.bracket.yaml cterm=NONE ctermfg=1 ctermbg=NONE
+hi @punctuation.delimiter.yaml cterm=NONE ctermfg=5 ctermbg=NONE
+
+
 " Trouble
 hi link TroubleNormal Normal
 hi link TroubleNormalNC Normal
