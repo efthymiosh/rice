@@ -46,6 +46,7 @@ if has("autocmd")
     " Per-language indentation configuration
     autocmd FileType go   setlocal shiftwidth=4 noexpandtab
     autocmd FileType java setlocal shiftwidth=4
+    autocmd FileType sql  setlocal shiftwidth=4
     " When done autocompleting, close any preview windows
     autocmd CompleteDone * pclose
     " some ansible/jinja2 template overrides
