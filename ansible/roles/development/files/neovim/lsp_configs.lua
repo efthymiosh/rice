@@ -52,8 +52,7 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 -- Configurations: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-local lspconfig = require('lspconfig')
-lspconfig.yamlls.setup({
+vim.lsp.config('yamlls', {
   settings = {
     yaml = {
       schemaStore = {
@@ -64,7 +63,7 @@ lspconfig.yamlls.setup({
     }
   }
 })
-lspconfig.lua_ls.setup({
+vim.lsp.config('lua_ls', {
   settings = {
     Lua = {
       diagnostics = {
@@ -73,7 +72,7 @@ lspconfig.lua_ls.setup({
     }
   }
 })
-lspconfig.basedpyright.setup({
+vim.lsp.config('basedpyright', {
   settings = {
     -- some of these defaults are completely replaced by any project-level configuration
     basedpyright = {
@@ -88,7 +87,7 @@ lspconfig.basedpyright.setup({
     }
   }
 })
-lspconfig.jdtls.setup({
+vim.lsp.config('jdtls', {
   handlers = {
     ["language/status"] = function() end,
     ["$/progress"] = function() end,
@@ -98,7 +97,7 @@ local ruff_on_attach = function(client, bufnr)
   -- Disable hover in favor of basedpyright
   client.server_capabilities.hoverProvider = false
 end
-lspconfig.ruff.setup({
+vim.lsp.config('ruff', {
   on_attach = ruff_on_attach,
   init_options = {
     settings = {
