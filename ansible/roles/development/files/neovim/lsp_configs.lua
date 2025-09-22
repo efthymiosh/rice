@@ -32,9 +32,7 @@ require("mason-lspconfig").setup({
     "ts_ls",
     "yamlls",
   },
-  automatic_installation = true,
-  automatic_setup = false,
-  automatic_enable = false,
+  automatic_enable = true,
 })
 
 local lsp = require('lsp-zero').preset({
