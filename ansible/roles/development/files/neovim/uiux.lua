@@ -40,6 +40,7 @@ require("neo-tree").setup({
     },
     git_status = {
       symbols = {
+        renamed   = "↪",
         untracked = "",
         ignored   = "",
         unstaged  = "",
