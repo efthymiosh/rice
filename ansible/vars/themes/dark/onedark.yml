@@ -20,5 +20,6 @@ theme:
     magenta: "c678dd"
     cyan: "56b6c2"
     white: "c8ccd4"
-  accent: "a8d389"
+# accent: "a8d389"
+  accent: "ad9183"
   accent_text: "282c34"
