@@ -16,6 +16,8 @@
     picom_install_from_source: false
     hlwm_lock: i3lock
     polybar_thermal_zone: "9"
+    niri_swayidle_lock_seconds: 7200
+    niri_swayidle_display_blank_seconds: 10801
 
   roles:
   - role: packages
