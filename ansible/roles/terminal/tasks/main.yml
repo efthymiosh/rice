@@ -10,7 +10,7 @@
   - ghostty
   tags: dots
 
-- name: template {{ item.name }} configuration
+- name: template configuration
   become: false
   template:
     src: "templates/{{ item.src }}"
