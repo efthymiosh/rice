@@ -18,3 +18,11 @@
   become: "{{ package_manager_become }}"
   homebrew_cask:
     name: [ "alacritty", "ghostty" ]
+
+- name: template zprofile for correct PATH priority
+  become: false
+  template:
+    src: "templates/zprofile"
+    dest: "{{ home_folder }}/.zprofile"
+  tags:
+  - dots
