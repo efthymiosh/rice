@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  {   -- Neotree: tree-style file explorer
+  { -- Neotree: tree-style file explorer
     'nvim-neo-tree/neo-tree.nvim',
     dependencies = {
       'nvim-lua/plenary.nvim',
@@ -20,7 +20,7 @@ require("lazy").setup({
       'nvim-tree/nvim-web-devicons',
     }
   },
-  {   -- Alt status line
+  { -- Alt status line
     'bluz71/nvim-linefly',
     commit = 'e1aca58',
     dependencies = {
@@ -30,30 +30,30 @@ require("lazy").setup({
   {
     'mfussenegger/nvim-dap',
   },
-  {   -- Outline: LSP-powered symbols bar
+  { -- Outline: LSP-powered symbols bar
     'hedyhli/outline.nvim',
   },
-  {   -- Treesitter: syntax parsing
+  { -- Treesitter: syntax parsing
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate'
   },
-  {   -- Fugitive: :G* git commands
+  { -- Fugitive: :G* git commands
     'tpope/vim-fugitive',
   },
-  {   -- Gitsigns: Ruler marks for git changes
+  { -- Gitsigns: Ruler marks for git changes
     'lewis6991/gitsigns.nvim',
   },
-  {   -- Jinja2 Syntax:
+  { -- Jinja2 Syntax:
     'Glench/Vim-Jinja2-Syntax',
   },
-  {   -- Telescope: Fuzzy searching
+  { -- Telescope: Fuzzy searching
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
     }
   },
-  {   -- mason.nvim
+  { -- mason.nvim
     'mason-org/mason.nvim',
     build = function()
       pcall(vim.cmd, 'MasonUpdate')
@@ -65,7 +65,7 @@ require("lazy").setup({
       'neovim/nvim-lspconfig',
     }
   },
-  {   --lsp setup helper
+  { --lsp setup helper
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
     dependencies = {
@@ -79,10 +79,10 @@ require("lazy").setup({
       'onsails/lspkind.nvim',
     },
   },
-  {   -- vim-illuminate: Highlight other uses of word under cursor
+  { -- vim-illuminate: Highlight other uses of word under cursor
     'RRethy/vim-illuminate',
   },
-  {   -- trouble.nvim: Improve diagnostics
+  { -- trouble.nvim: Improve diagnostics
     'folke/trouble.nvim',
     dependencies = {
       'nvim-tree/nvim-web-devicons',
@@ -96,10 +96,45 @@ require("lazy").setup({
       }
     },
   },
-  {   -- filetype recognition for helm
+  { -- filetype recognition for helm
     "qvalentin/helm-ls.nvim",
     ft = "helm"
-  }
+  },
+  -- AI Companion Setup
+  {
+    "olimorris/codecompanion.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    opts = {
+      -- NOTE: The log_level is in `opts.opts`
+      opts = {
+        log_level = "INFO", -- or "TRACE"
+      },
+    },
+  },
+  {
+    "OXY2DEV/markview.nvim",
+    lazy = false,
+    opts = {
+      preview = {
+        filetypes = { "markdown", "codecompanion" },
+        ignore_buftypes = {},
+      },
+    },
+  },
+  {
+    "echasnovski/mini.diff",
+    config = function()
+      local diff = require("mini.diff")
+      diff.setup({
+        -- Disabled by default
+        source = diff.gen_source.none(),
+      })
+    end,
+  },
+  -- AI Companion Setup END^^
 })
 
 require("nvim-web-devicons").setup({
@@ -108,3 +143,4 @@ require("nvim-web-devicons").setup({
 
 require("lsp_configs")
 require("uiux")
+require("ai")
