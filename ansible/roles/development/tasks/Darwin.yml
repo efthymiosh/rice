@@ -10,7 +10,6 @@
     - "groovy"
     - "pipx"
     - "uv"
-    - "gemini-cli"
     state: "present"
 
 - name: install node

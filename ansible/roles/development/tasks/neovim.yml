@@ -26,7 +26,6 @@
   loop:
   - plugins.lua
   - uiux.lua
-  - ai.lua
   - lsp_configs.lua
   tags: dots
 
