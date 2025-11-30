@@ -35,19 +35,11 @@ require("mason-lspconfig").setup({
   automatic_enable = true,
 })
 
-local lsp = require('lsp-zero').preset({
-  name = 'minimal',
-  manage_nvim_cmp = false,
-})
-
-lsp.on_attach(function(client, bufnr)
-  local opts = { buffer = bufnr }
-  lsp.default_keymaps(opts)
-  vim.keymap.set('n', '<leader>ac', vim.lsp.buf.code_action, opts)
-  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-  vim.keymap.set('n', '<leader>fm', vim.lsp.buf.format, opts)
-  vim.keymap.set('n', '<C-space>', vim.diagnostic.open_float, opts)
-end)
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
+vim.keymap.set('n', '<leader>ac', vim.lsp.buf.code_action)
+vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
+vim.keymap.set('n', '<leader>fm', vim.lsp.buf.format)
+vim.keymap.set('n', '<C-space>', vim.diagnostic.open_float)
 
 -- Configurations: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 vim.lsp.config('yamlls', {
@@ -104,62 +96,6 @@ vim.lsp.config('ruff', {
       lineLength = 120,
     }
   }
-})
-
-lsp.setup()
-
-local cmp = require('cmp')
-local select_opts = { behavior = cmp.SelectBehavior.Insert }
-cmp.setup({
-  window = {
-    --  completion = cmp.config.window.bordered(),
-    --  documentation = cmp.config.window.bordered(),
-  },
-  sources = cmp.config.sources({
-    { name = 'path' },
-    { name = 'nvim_lsp' },
-    { name = 'nvim_lua' },
-    {
-      name = 'buffer',
-      keyword_length = 3,
-      option = {
-        get_bufnrs = function()
-          return vim.api.nvim_list_bufs()
-        end
-      }
-    },
-  }),
-  mapping = cmp.config.mapping({
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-    ["<C-n>"] = cmp.mapping.select_next_item(select_opts),
-    ["<C-p>"] = cmp.mapping.select_prev_item(select_opts),
-  }),
-  formatting = {
-    fields = { 'kind', 'abbr', 'menu' },
-    format = require('lspkind').cmp_format({
-
-      mode = 'symbol', -- show only symbol annotations
-      maxwidth = 50, -- prevent the popup from showing more than provided characters
-      ellipsis_char = '…', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead
-      before = function(entry, item)
-        local menu_icon = {
-          nvim_lsp = 'λ',
-          luasnip = '⋗',
-          buffer = 'Ω',
-          path = '',
-          nvim_lua = 'Π',
-        }
-        item.menu = menu_icon[entry.source.name]
-        return item
-      end,
-    })
-  },
-  snippet = {
-    expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body)
-    end,
-  },
 })
 
 -- treesitter
