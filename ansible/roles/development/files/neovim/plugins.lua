@@ -119,7 +119,7 @@ require("lazy").setup({
     lazy = false,
     opts = {
       preview = {
-        filetypes = { "codecompanion" },
+        filetypes = { "markdown", "codecompanion" },
         ignore_buftypes = {},
       },
     },
