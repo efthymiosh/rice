@@ -27,6 +27,7 @@
     - "htop"
     - "gnu-tar"
     - "grype"
+    - "google-chrome"
 
 - name: install cask packages
   become: false
