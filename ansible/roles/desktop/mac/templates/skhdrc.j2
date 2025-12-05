@@ -111,11 +111,16 @@ cmd - return : open -na /Applications/Alacritty.app --args -e zsh -c 'tmux attac
 # make floating window fill left-half of screen
 # shift + alt - left   : yabai -m window --grid 1:2:0:0:1:1
 
+## space changes require scripting-addition
+
 # create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
 # shift + cmd - n : yabai -m space --create && \
 #                   index="$(yabai -m query --spaces --display | jq 'map(select(."is-native-fullscreen" == false))[-1].index')" && \
 #                   yabai -m window --space "${index}" && \
 #                   yabai -m space --focus "${index}"
+# shift + cmd + ctrl - l : yabai -m window --space next; yabai -m space --focus next
+# shift + cmd + ctrl - l : yabai -m window --space next; yabai -m space --focus next
+
 
 # fast focus desktop
 # cmd + alt - x : yabai -m space --focus recent

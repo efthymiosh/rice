@@ -43,6 +43,7 @@
     src: "skhdrc.j2"
     dest: "{{ home_folder }}/.skhdrc"
   tags: dots
+  notify: reload skhd
 
 - name: configure yabai
   become: false
