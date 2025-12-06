@@ -1,7 +1,7 @@
 theme_name: onedark
 theme:
   foreground: "abb2bf"
-  background: "181c24"
+  background: "181a1f"
   normal:
     black: "282c34"
     red: "e06c75"
