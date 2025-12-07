@@ -1,3 +1,13 @@
+[difftool]
+    prompt = false
+[diff]
+    tool = nvimdiff
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+[pull]
+	ff = only
+[push]
+	autoSetupRemote = true
 [tag]
   sort = version:refname
 [branch]
