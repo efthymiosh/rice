@@ -1,6 +1,7 @@
 {
     "profiles": [
         {
+            "global": { "show_in_menu_bar": false },
             "complex_modifications": {
                 "parameters": {
                     "basic.to_delayed_action_delay_milliseconds": 300,
