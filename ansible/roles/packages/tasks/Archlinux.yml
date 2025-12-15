@@ -33,6 +33,7 @@
     - "fd"
     - "spotify-launcher"
     - "yay"
+    - "bat"
     state: present
     update_cache: yes
 

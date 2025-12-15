@@ -28,6 +28,7 @@
     - "gnu-tar"
     - "grype"
     - "google-chrome"
+    - "bat"
 
 - name: install cask packages
   become: false

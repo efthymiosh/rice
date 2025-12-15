@@ -8,6 +8,7 @@ alias less='less -R'
 alias ls='ls --literal --color=auto'
 alias ll='ls --literal --color=auto -l'
 alias info='info --vi-keys'
+alias bat='bat --theme=ansi'
 
 alias vim='nvim'
 alias myip='dig @resolver1.opendns.com myip.opendns.com +short'
