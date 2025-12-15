@@ -20,7 +20,8 @@ set diffopt+=vertical
 " Telescope settings
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fb <cmd>Telescope buffers initial_mode=normal<cr>
+nnoremap grr <cmd>Telescope lsp_references initial_mode=normal<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Trouble settings
