@@ -10,7 +10,7 @@ require("mason").setup({
 require("mason-lspconfig").setup({
   ensure_installed = {
     "ansiblels",
-    "basedpyright",
+    "ty",
     "bashls",
     "clangd",
     "cssls",
@@ -62,38 +62,22 @@ vim.lsp.config('lua_ls', {
     }
   }
 })
-vim.lsp.config('basedpyright', {
-  settings = {
-    -- some of these defaults are completely replaced by any project-level configuration
-    basedpyright = {
-      analysis = {
-        -- ["off", "basic", "standard", "strict", "all"]
-        typeCheckingMode = "standard",
-      },
-      disableOrganizeImports = true,
-    },
-    python = {
-      pythonPath = ".venv/bin/python"
-    }
-  }
-})
 vim.lsp.config('jdtls', {
   handlers = {
     ["language/status"] = function() end,
     ["$/progress"] = function() end,
   }
 })
-local ruff_on_attach = function(client, bufnr)
-  -- Disable hover in favor of basedpyright
-  client.server_capabilities.hoverProvider = false
-end
 vim.lsp.config('ruff', {
-  on_attach = ruff_on_attach,
   init_options = {
     settings = {
       configurationPreference = "filesystemFirst",
-
       lineLength = 120,
+      lint = {
+        ignore = {
+          "F821"
+        }
+      },
     }
   }
 })
