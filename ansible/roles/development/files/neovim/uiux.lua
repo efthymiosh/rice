@@ -88,8 +88,34 @@ require("gitsigns").setup({
     untracked = { text = '│' },
   }
 })
-
-require("outline").setup({
+require("trouble").setup({
+  open_no_results = false,
+  warn_no_results = true,
+  modes = {
+    lsp = {
+      win = {
+        position = "bottom",
+        size = { height = 0.2 },
+      },
+      preview = {
+        type = "split",
+        relative = "win",
+        position = "right",
+        size = { width = 0.35 },
+      },
+    },
+    diagnostics = {
+      win = {
+        position = "bottom",
+      },
+    },
+    lsp_document_symbols = {
+      win = {
+        position = "right",
+        size = 0.25,
+      },
+    },
+  },
 })
 
 vim.g.linefly_options = {

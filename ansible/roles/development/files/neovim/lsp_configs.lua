@@ -114,10 +114,6 @@ require("illuminate").configure({
   delay = 100,
   min_count_to_highlight = 1,
 })
-require("trouble").setup({
-  open_no_results = true,
-  warn_no_results = false,
-})
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
     vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { underline = false })

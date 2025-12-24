@@ -11,9 +11,6 @@ lua vim.api.nvim_set_hl(0, "LineflyReplace", { link = "ErrorMsg" })
 nnoremap <c-h> <cmd>Neotree toggle action=focus<CR>
 nnoremap <c-k> <cmd>Neotree reveal action=focus<CR>
 
-" Outline settings
-nnoremap <c-l> <cmd>Outline<CR>
-
 " Fugitive settings
 set diffopt+=vertical
 
@@ -21,11 +18,12 @@ set diffopt+=vertical
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers initial_mode=normal<cr>
-nnoremap grr <cmd>Telescope lsp_references initial_mode=normal<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Trouble settings
-nnoremap <c-j> <cmd>Trouble diagnostics toggle focus=false win.position=bottom<CR>
+nnoremap <c-j> <cmd>Trouble diagnostics toggle<CR>
+nnoremap <c-l> <cmd>Trouble lsp_document_symbols toggle<CR>
+nnoremap <nowait>gr <cmd>Trouble lsp<CR>
 
 " Theme configuration
 

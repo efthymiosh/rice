@@ -30,9 +30,6 @@ require("lazy").setup({
   {
     'mfussenegger/nvim-dap',
   },
-  { -- Outline: LSP-powered symbols bar
-    'hedyhli/outline.nvim',
-  },
   { -- Treesitter: syntax parsing
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate'
@@ -125,7 +122,7 @@ require("lazy").setup({
     'folke/trouble.nvim',
     dependencies = {
       'nvim-tree/nvim-web-devicons',
-    }
+    },
   },
   {
     'j-hui/fidget.nvim',
