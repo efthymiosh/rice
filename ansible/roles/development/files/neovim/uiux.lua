@@ -27,6 +27,8 @@ for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
 end
 
 require("neo-tree").setup({
+  log_level = "warn",
+  close_if_last_window = true,
   enable_diagnostics = false,
   enable_git_status = true,
   default_component_configs = {
@@ -59,8 +61,9 @@ require("neo-tree").setup({
     async_directory_scan = "auto",
   },
   window = {
+    auto_expand_width = true,
+    width = 36,
     position = "left",
-    width = "31",
   },
   buffers = {
     follow_current_file = {
