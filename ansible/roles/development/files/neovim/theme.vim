@@ -24,6 +24,7 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <c-j> <cmd>Trouble diagnostics toggle<CR>
 nnoremap <c-l> <cmd>Trouble lsp_document_symbols toggle<CR>
 nnoremap <nowait>gr <cmd>Trouble lsp<CR>
+nnoremap gd <cmd>Trouble lsp_definitions toggle<CR>
 
 " Theme configuration
 

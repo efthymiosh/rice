@@ -35,7 +35,6 @@ require("mason-lspconfig").setup({
   automatic_enable = true,
 })
 
-vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
 vim.keymap.set('n', '<leader>ac', vim.lsp.buf.code_action)
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
 vim.keymap.set('n', '<leader>fm', vim.lsp.buf.format)
