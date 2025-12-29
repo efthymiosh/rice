@@ -28,8 +28,7 @@ end
 
 require("neo-tree").setup({
   log_level = "warn",
-  close_if_last_window = true,
-  enable_diagnostics = false,
+  enable_diagnostics = true,
   enable_git_status = true,
   default_component_configs = {
     name = {
@@ -93,6 +92,7 @@ require("trouble").setup({
   warn_no_results = true,
   modes = {
     lsp = {
+      focus = true,
       win = {
         position = "bottom",
         size = { height = 0.2 },
@@ -105,6 +105,7 @@ require("trouble").setup({
       },
     },
     diagnostics = {
+      focus = true,
       win = {
         position = "bottom",
       },
