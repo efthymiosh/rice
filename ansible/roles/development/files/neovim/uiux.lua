@@ -104,6 +104,9 @@ require("trouble").setup({
         size = { width = 0.35 },
       },
     },
+    lsp_references = {
+      focus = true,
+    },
     diagnostics = {
       focus = true,
       win = {
