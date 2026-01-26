@@ -107,6 +107,9 @@ require("trouble").setup({
     lsp_references = {
       focus = true,
     },
+    lsp_definitions = {
+      focus = true,
+    },
     diagnostics = {
       focus = true,
       win = {
