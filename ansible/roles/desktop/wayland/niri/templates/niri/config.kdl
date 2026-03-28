@@ -97,6 +97,15 @@ output "eDP-1" {
   // If the position is unset or results in an overlap, the output is instead placed
   // automatically.
   position x=0 y=960
+  layout {
+    preset-column-widths {
+      proportion 0.5
+      proportion 0.66667
+    }
+
+    default-column-width { proportion 0.66667; }
+
+  }
 }
 
 output "Lenovo Group Limited P40w-20 V90AFBLG" {
