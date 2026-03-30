@@ -135,6 +135,91 @@ require("lazy").setup({
   { -- filetype recognition for helm
     "qvalentin/helm-ls.nvim",
     ft = "helm"
+  },
+  {
+    "folke/sidekick.nvim",
+    opts = {
+      -- add any options here
+      cli = {
+        mux = {
+          backend = "tmux",
+          enabled = true,
+        },
+        win = {
+          keys = {
+            nav_left      = { "<c-w>h", "nav_left"  , expr = false, desc = "navigate to the left window" },
+            nav_down      = { "<c-w>j", "nav_down"  , expr = false, desc = "navigate to the below window" },
+            nav_up        = { "<c-w>k", "nav_up"    , expr = false, desc = "navigate to the above window" },
+            nav_right     = { "<c-w>l", "nav_right" , expr = false, desc = "navigate to the right window" },
+          }
+        }
+      },
+    },
+    keys = {
+      {
+        "<S-Tab>",
+        function()
+          -- if there is a next edit, jump to it, otherwise apply it if any
+          if not require("sidekick").nes_jump_or_apply() then
+            return "<S-Tab>" -- fallback to normal tab
+          end
+        end,
+        expr = true,
+        desc = "Goto/Apply Next Edit Suggestion",
+      },
+      {
+        "<c-.>",
+        function() require("sidekick.cli").focus() end,
+        desc = "Sidekick Focus",
+        mode = { "n", "t", "i", "x" },
+      },
+      {
+        "<leader>ca",
+        function() require("sidekick.cli").toggle() end,
+        desc = "Sidekick Toggle CLI",
+      },
+      {
+        "<leader>cs",
+        function() require("sidekick.cli").select() end,
+        -- Or to select only installed tools:
+        -- require("sidekick.cli").select({ filter = { installed = true } })
+        desc = "Select CLI",
+      },
+      {
+        "<leader>cd",
+        function() require("sidekick.cli").close() end,
+        desc = "Detach a CLI Session",
+      },
+      {
+        "<leader>ct",
+        function() require("sidekick.cli").send({ msg = "{this}" }) end,
+        mode = { "x", "n" },
+        desc = "Send This",
+      },
+      {
+        "<leader>cf",
+        function() require("sidekick.cli").send({ msg = "{file}" }) end,
+        desc = "Send File",
+      },
+      {
+        "<leader>cv",
+        function() require("sidekick.cli").send({ msg = "{selection}" }) end,
+        mode = { "x" },
+        desc = "Send Visual Selection",
+      },
+      {
+        "<leader>cp",
+        function() require("sidekick.cli").prompt() end,
+        mode = { "n", "x" },
+        desc = "Sidekick Select Prompt",
+      },
+      -- Example of a keybinding to open Claude directly
+      {
+        "<leader>cc",
+        function() require("sidekick.cli").toggle({ name = "claude", focus = true }) end,
+        desc = "Sidekick Toggle Claude",
+      },
+    },
   }
 })
 

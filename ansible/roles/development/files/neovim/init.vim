@@ -59,6 +59,6 @@ if has("autocmd")
 endif
 
 " Don't fill unused lines with tildes :`)
-lua vim.o.fillchars='eob: '
+lua vim.o.fillchars='eob: ,vert: '
 
 set path=.,/usr/include,**,,

@@ -179,6 +179,11 @@ hi @punctuation.delimiter.yaml cterm=NONE ctermfg=5 ctermbg=NONE
 hi link TroubleNormal Normal
 hi link TroubleNormalNC Normal
 
+" Sidekick
+hi SidekickChat ctermbg=0
+hi NeoTreeNormal ctermbg=0
+hi NeoTreeNormalNC ctermbg=0
+
 " General
 hi Function   cterm=NONE ctermfg=4 ctermbg=NONE
 hi Identifier cterm=NONE ctermfg=11 ctermbg=NONE
