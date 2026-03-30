@@ -151,6 +151,8 @@ require("lazy").setup({
             nav_down      = { "<c-w>j", "nav_down"  , expr = false, desc = "navigate to the below window" },
             nav_up        = { "<c-w>k", "nav_up"    , expr = false, desc = "navigate to the above window" },
             nav_right     = { "<c-w>l", "nav_right" , expr = false, desc = "navigate to the right window" },
+            fullscreen    = { "<leader>ch", function(t) vim.api.nvim_win_set_width(t.win, vim.o.columns) end, mode = "nt", desc = "sidekick fullscreen" },
+            restore_size  = { "<leader>cl", function(t) vim.api.nvim_win_set_width(t.win, 80) end, mode = "nt", desc = "sidekick restore size" },
           }
         }
       },
