@@ -153,6 +153,8 @@ require("lazy").setup({
             nav_right     = { "<c-w>l", "nav_right" , expr = false, desc = "navigate to the right window" },
             fullscreen    = { "<leader>ch", function(t) vim.api.nvim_win_set_width(t.win, vim.o.columns) end, mode = "nt", desc = "sidekick fullscreen" },
             restore_size  = { "<leader>cl", function(t) vim.api.nvim_win_set_width(t.win, 80) end, mode = "nt", desc = "sidekick restore size" },
+            stopinsert_esc = { "<Esc>", "stopinsert", mode = "t", desc = "capture escape in vim (enter normal mode)" },
+            send_escape    = { "<C-\\>", function(t) vim.fn.chansend(vim.b.terminal_job_id, "\x1b") end, mode = "t", desc = "send escape to terminal process" },
           }
         }
       },
