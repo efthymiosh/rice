@@ -32,6 +32,7 @@ require("lazy").setup({
   },
   { -- Treesitter: syntax parsing
     'nvim-treesitter/nvim-treesitter',
+    branch = 'main',
     build = ':TSUpdate'
   },
   { -- Fugitive: :G* git commands
