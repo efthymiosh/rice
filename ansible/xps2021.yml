@@ -9,10 +9,10 @@
   vars:
     provision_hostname: "tile"
     x_cursor_size: "32"
-    x_cursor_theme: "Bibata-Modern-Onedark-Green"
+    x_cursor_theme: "Bibata-Modern-Catpuccin-Mocha"
     global_font: "FiraCode Nerd Font"
     alacritty_font_size: "{{ global_font_size }}"
-    niri_wallpaper: "Pictures/wallpapers/firewatch-dark-minimal-5k-5120x2880.jpeg"
+    niri_wallpaper: "Pictures/wallpapers/firewatch-dark-minimal-5k-5120x2880-MOCHA.jpeg"
     waybar_thermal_zone: 6
 
   roles:
