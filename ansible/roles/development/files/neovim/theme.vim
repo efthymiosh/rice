@@ -186,17 +186,22 @@ hi NeoTreeNormalNC ctermbg=0
 
 " General
 hi Function   cterm=NONE ctermfg=4 ctermbg=NONE
+hi link @lsp.type.method Function
 hi Identifier cterm=NONE ctermfg=11 ctermbg=NONE
-hi Type       cterm=NONE ctermfg=3 ctermbg=NONE
-hi Structure  cterm=NONE ctermfg=11 ctermbg=NONE
+hi link @variable Identifier
+hi Type       cterm=NONE ctermfg=11 ctermbg=NONE
+hi link @lsp.type Type
+hi @lsp.typemod.variable.definition cterm=NONE ctermfg=1 ctermbg=NONE
+hi Structure  cterm=NONE ctermfg=1 ctermbg=NONE
+hi @lsp.type.class cterm=NONE ctermfg=3 ctermbg=NONE
 hi String     cterm=NONE ctermfg=2 ctermbg=NONE
 hi Constant   cterm=NONE ctermfg=6 ctermbg=NONE
 hi Statement  cterm=NONE ctermfg=5 ctermbg=NONE
 hi PreProc    cterm=bold ctermfg=1 ctermbg=NONE
 hi Special    cterm=NONE ctermfg=1 ctermbg=NONE
 hi @field     cterm=NONE ctermfg=NONE ctermbg=NONE
-hi @variable  cterm=NONE ctermfg=NONE ctermbg=NONE
 hi @property  cterm=NONE ctermfg=NONE ctermbg=NONE
+
 
 " DiagnosticsOverride
 hi DiagnosticUnderlineError  cterm=NONE

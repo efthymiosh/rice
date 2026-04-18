@@ -84,7 +84,14 @@ vim.lsp.config('ruff', {
 -- treesitter
 require("nvim-treesitter").setup({
   ensure_installed = "all",
-  auto_install = false,
+  auto_install = true,
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+  indent = {
+    enable = true,
+  }
 })
 require("illuminate").configure({
   providers = {
