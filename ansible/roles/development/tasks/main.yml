@@ -17,5 +17,13 @@
   shell: |
     {{ home_folder }}/.cargo/bin/rustup component add rust-src
 
+- name: install tree-sitter-cli via cargo
+  when: ansible_os_family == "Debian"
+  become: false
+  shell: |
+    {{ home_folder }}/.cargo/bin/cargo install tree-sitter-cli
+  args:
+    creates: "{{ home_folder }}/.cargo/bin/tree-sitter"
+
 - import_tasks: neovim.yml
 - import_tasks: git.yml

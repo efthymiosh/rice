@@ -13,6 +13,7 @@
     - "nodejs-lts-jod"
     - "helix"
     - "neovim"
+    - "tree-sitter-cli"
     state: "present"
 
 - name: fetch rustup-init

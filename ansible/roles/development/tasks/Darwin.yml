@@ -10,6 +10,7 @@
     - "groovy"
     - "pipx"
     - "uv"
+    - "tree-sitter"
     state: "present"
 
 - name: install node
