@@ -10,6 +10,8 @@ lua vim.api.nvim_set_hl(0, "LineflyReplace", { link = "ErrorMsg" })
 " Neotree settings
 nnoremap <c-h> <cmd>Neotree toggle action=focus<CR>
 nnoremap <c-k> <cmd>Neotree reveal action=focus<CR>
+tnoremap <c-h> <cmd>Neotree toggle action=focus<CR>
+tnoremap <c-k> <cmd>Neotree reveal action=focus<CR>
 
 " Fugitive settings
 set diffopt+=vertical

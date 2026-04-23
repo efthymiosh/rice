@@ -152,8 +152,6 @@ require("lazy").setup({
             nav_down      = { "<c-w>j", "nav_down"  , expr = false, desc = "navigate to the below window" },
             nav_up        = { "<c-w>k", "nav_up"    , expr = false, desc = "navigate to the above window" },
             nav_right     = { "<c-w>l", "nav_right" , expr = false, desc = "navigate to the right window" },
-            fullscreen    = { "<leader>ch", function(t) vim.api.nvim_win_set_width(t.win, vim.o.columns) end, mode = "nt", desc = "sidekick fullscreen" },
-            restore_size  = { "<leader>cl", function(t) vim.api.nvim_win_set_width(t.win, 80) end, mode = "nt", desc = "sidekick restore size" },
             stopinsert_esc = { "<Esc>", "stopinsert", mode = "t", desc = "capture escape in vim (enter normal mode)" },
             send_escape    = { "<C-\\>", function(t) vim.fn.chansend(vim.b.terminal_job_id, "\x1b") end, mode = "t", desc = "send escape to terminal process" },
           }
@@ -222,7 +220,22 @@ require("lazy").setup({
       {
         "<leader>cc",
         function() require("sidekick.cli").toggle({ name = "claude", focus = true }) end,
+        mode = { "n", "t", "x" },
         desc = "Sidekick Toggle Claude",
+      },
+      {
+        "<leader>cl",
+        function()
+          for _, win in ipairs(vim.api.nvim_list_wins()) do
+            if vim.bo[vim.api.nvim_win_get_buf(win)].filetype == "sidekick_terminal" then
+              local width = vim.api.nvim_win_get_width(win) == 80 and vim.o.columns or 80
+              vim.api.nvim_win_set_width(win, width)
+              return
+            end
+          end
+        end,
+        mode = { "n", "t", "i", "x" },
+        desc = "Sidekick Toggle Fullscreen",
       },
     },
   }
