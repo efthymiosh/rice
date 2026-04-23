@@ -17,7 +17,7 @@
   become: false
   shell: |
     mise use --global node@20
-    mise use --global npm
+    mise use --global npm@10
 
 - name: install rustup-init package
   become: "{{ package_manager_become }}"
