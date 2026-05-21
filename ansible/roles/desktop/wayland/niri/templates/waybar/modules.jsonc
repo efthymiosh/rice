@@ -116,16 +116,17 @@
     "max-length": 2
   },
   "network": {
-    "interval": 2,
-  	"format": "󰌘 ",
-  	"format-wifi": " ",
-  	"format-ethernet": "󰌘 ",
-  	"format-disconnected": "󰌙 ",
-  	"tooltip-format": "{ifname}\n󰅢 {bandwidthDownBytes:>3}\n󰅧 {bandwidthUpBytes:>3}",
-  	"tooltip-format-wifi": "{essid} ({signalStrength}%)  \n󰅢 {bandwidthDownBytes:>3}\n󰅧 {bandwidthUpBytes:>3}",
-  	"tooltip-format-ethernet": "{ifname}  \n󰅢 {bandwidthDownBytes:>3}\n󰅧 {bandwidthUpBytes:>3}",
-  	"tooltip-format-disconnected": "Disconnected",
-  	"min-length": 2,
-  	"max-length": 2
+    "interface": "w*",
+    "interval": 1,
+    "format": "󰌘 ",
+    "format-wifi": " ",
+    "format-ethernet": "󰌘 ",
+    "format-disconnected": "󰌙 ",
+    "tooltip-format": "{ifname}\n󰅢 {bandwidthDownBytes:>3}\n󰅧 {bandwidthUpBytes:>3}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)  \n󰅢 {bandwidthDownBytes:>3}\n󰅧 {bandwidthUpBytes:>3}",
+    "tooltip-format-ethernet": "{ifname}  \n󰅢 {bandwidthDownBytes:>3}\n󰅧 {bandwidthUpBytes:>3}",
+    "tooltip-format-disconnected": "Disconnected",
+    "min-length": 2,
+    "max-length": 2
   }
 }
