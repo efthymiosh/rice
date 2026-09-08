@@ -2,10 +2,10 @@
   become: false
   homebrew_tap:
     name: "{{ item }}"
+    trust: true
   loop:
   - 1password/tap
   - hashicorp/tap
-  - anchore/grype
 
 - name: install packages
   become: false

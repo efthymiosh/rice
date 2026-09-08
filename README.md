@@ -7,9 +7,11 @@ The actual dotfiles are in the various ansible role directories.
 
 ## Getting started with a fresh installation
 
-Ensure python and ansible are installed, and run:
+Ensure python and ansible are installed, then install the required collections and run:
 
 ```bash
+cd ansible
+ansible-galaxy install -r requirements.yml
 ansible-playbook -K --diff ./${LAPTOP}.yml
 ```
 
