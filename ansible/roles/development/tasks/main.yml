@@ -1,5 +1,5 @@
 ---
-- include_tasks: "{{ ansible_os_family }}.yml"
+- include_tasks: "{{ ansible_facts['os_family'] }}.yml"
 
 - name: install rust
   when: rust_fetch.changed
@@ -18,7 +18,7 @@
     {{ home_folder }}/.cargo/bin/rustup component add rust-src
 
 - name: install tree-sitter-cli via cargo
-  when: ansible_os_family == "Debian"
+  when: ansible_facts['os_family'] == "Debian"
   become: false
   shell: |
     {{ home_folder }}/.cargo/bin/cargo install tree-sitter-cli

@@ -1,5 +1,5 @@
 ---
-home_folder: "/home/{{ ansible_env.SUDO_USER }}"
+home_folder: "/home/{{ ansible_facts['env']['SUDO_USER'] }}"
 fonts_dir: "{{ home_folder }}/.local/share/fonts"
 nerd_fonts_version: "3.3.0"
 nerd_fonts_list:

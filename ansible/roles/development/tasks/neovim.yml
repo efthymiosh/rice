@@ -30,7 +30,7 @@
   tags: dots
 
 - name: set neovim as the default editor
-  when: ansible_os_family == "Debian"
+  when: ansible_facts['os_family'] == "Debian"
   alternatives:
     name: editor
     path: "/usr/bin/nvim"

@@ -1,4 +1,4 @@
-home_folder: "/home/{{ ansible_env.SUDO_USER }}"
+home_folder: "/home/{{ ansible_facts['env']['SUDO_USER'] }}"
 rofi_wayland: false
 
 theme:

@@ -1,4 +1,4 @@
 dependencies:
 - role: boot/systemd-logind
 - role: boot/plymouth
-  when: ansible_os_family == "Archlinux"
+  when: ansible_facts['os_family'] == "Archlinux"

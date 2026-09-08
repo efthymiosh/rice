@@ -22,7 +22,7 @@
     state: present
 
 - name: build and install polybar
-  shell: "cd {{ polybar_temp_dir }}/polybar/build && cmake .. && make -j{{ ansible_processor_vcpus }} && make install"
+  shell: "cd {{ polybar_temp_dir }}/polybar/build && cmake .. && make -j{{ ansible_facts['processor_vcpus'] }} && make install"
 
 - name: remove polybar sources
   file:
