@@ -7,6 +7,7 @@
   - "./vars/common.yml"
 
   vars:
+    global_font_size: 15
     provision_hostname: "sand"
     x_cursor_theme: "Bibata-Modern-Greenish"
     global_font: "Fira Code Nerd Font"
