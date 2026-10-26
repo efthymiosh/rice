@@ -7,7 +7,7 @@
   - "./vars/common.yml"
 
   vars:
-    global_font_size: 15
+    global_font_size: 14
     provision_hostname: "tile"
     x_cursor_size: "32"
     x_cursor_theme: "Bibata-Modern-Catpuccin-Mocha"
